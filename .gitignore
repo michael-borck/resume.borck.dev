@@ -71,6 +71,10 @@ Thumbs.db
 *.cb2
 .*.lb
 
+# Astro
+dist/
+.astro/
+
 # Build artifacts
 *.dvi
 *.xdv
