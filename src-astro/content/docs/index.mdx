@@ -154,7 +154,7 @@ Plain-text, structured resume optimised for LLM ingestion. Like robots.txt but f
 
 ### The Source
 
-Everything above is generated from a single 320-line YAML file. One edit, ten outputs. This is the file.
+One 320-line YAML file generates everything above. One edit, ten outputs.
 
 <span class="badge">YAML</span>
 <span class="badge">Source</span>
@@ -162,23 +162,24 @@ Everything above is generated from a single 320-line YAML file. One edit, ten ou
 
 </div>
 
+<div class="format-card format-card--source">
+<span class="card-icon">⚙️</span>
+
+### How It Works
+
+<pre class="workflow-ascii">cv-data.yml
+ +-> Quarto --> PDF, HTML, Slides
+ +-> Python --> Quest, Terminal,
+ |             Magazine, API Docs
+ +-> FastAPI -> Live API + Swagger
+ +-> MCP -----> AI integration
+ +-> Gen -----> llms.txt</pre>
+
+<span class="badge">Pipeline</span>
+<span class="badge">Make</span>
+<a class="card-link" href="https://github.com/michael-borck/resume.borck.dev">View on GitHub</a>
+
 </div>
-
-<div class="workflow-section">
-
-### How it works
-
-```
-cv-data.yml (single source of truth)
-      |
-      +---> Quarto ---------> PDF, HTML, Slides
-      +---> Python scripts --> Quest, Terminal, Magazine, API Docs
-      +---> FastAPI ---------> Live API + Swagger
-      +---> MCP Server -----> AI assistant integration
-      +---> Generator -------> llms.txt
-```
-
-Edit the YAML. Run `make all`. Ten formats update. [View on GitHub →](https://github.com/michael-borck/resume.borck.dev)
 
 </div>
 

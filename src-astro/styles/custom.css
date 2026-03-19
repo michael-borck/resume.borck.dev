@@ -192,6 +192,19 @@ code {
 }
 
 /* ── Footer ── */
+.workflow-ascii {
+  font-family: 'Courier New', monospace;
+  font-size: 0.65rem;
+  line-height: 1.6;
+  color: var(--sl-color-accent);
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  white-space: pre;
+  overflow-x: auto;
+}
+
 .site-footer {
   margin-top: 4rem;
   padding-top: 2rem;
