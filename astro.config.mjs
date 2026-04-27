@@ -7,10 +7,6 @@ export default defineConfig({
     starlight({
       title: 'resume.borck.dev',
       favicon: '/favicon.svg',
-      logo: {
-        src: './src-astro/assets/logo.svg',
-        replacesTitle: true,
-      },
       description: 'Michael Borck — Interactive resume experiences',
       social: [
         { icon: 'github', label: 'GitHub', href: 'https://github.com/michael-borck' },
