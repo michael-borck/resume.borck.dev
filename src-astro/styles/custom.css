@@ -130,32 +130,9 @@ code {
   background: var(--sl-color-gray-5);
   border: 1px solid var(--sl-color-gray-4);
   border-radius: 12px;
-  overflow: hidden;
-  padding: 0;
+  padding: 1.5rem;
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
-
-.format-thumb {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  object-position: top;
-  display: block;
-  border-bottom: 1px solid var(--sl-color-gray-4);
-}
-
-.format-card .card-icon,
-.format-card .sl-heading-wrapper,
-.format-card p,
-.format-card .badge,
-.format-card a.card-link,
-.format-card pre,
-.format-card .workflow-ascii {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-.format-card .card-icon { padding-top: 1.25rem; }
 
 .format-card:hover {
   border-color: var(--sl-color-accent);
