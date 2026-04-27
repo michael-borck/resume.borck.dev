@@ -1,0 +1,72 @@
+---
+import '../styles/global.css';
+
+const formats = [
+  { icon: '📄', title: 'Traditional PDF', desc: 'ATS-friendly, print-ready professional format. Clean layout, proper headings, downloadable.', href: '/output/cv-michael-borck.pdf', badges: ['Classic', 'Print'] },
+  { icon: '🌐', title: 'Traditional HTML', desc: 'Responsive web version with clean styling, table of contents, and an embedded chat widget.', href: '/output/cv-michael-borck.html', badges: ['Web', 'Responsive'] },
+  { icon: '🎮', title: 'CV Quest', desc: 'Retro 8-bit swipe card adventure. Explore my career through a playful card game.', href: '/creative/quest/', badges: ['Interactive', 'Game'], accent: true },
+  { icon: '🖥️', title: 'Terminal Adventure', desc: 'Zork-style text adventure through my career. Type commands to explore experience and skills.', href: '/creative/terminal/', badges: ['Interactive', 'CLI'], accent: true },
+  { icon: '📰', title: 'TechLife Magazine', desc: 'Magazine-style layout with pull quotes and editorial design. My career as feature articles.', href: '/creative/magazine/', badges: ['Visual', 'Editorial'], accent: true },
+  { icon: '🔌', title: 'API Documentation', desc: 'Swagger-style REST API interface. Browse my experience and skills as structured endpoints.', href: '/creative/api/', badges: ['Developer', 'REST'], accent: true },
+  { icon: '🎤', title: 'Presentation Slides', desc: 'Reveal.js HTML5 presentation. Navigate my career as a slide deck — perfect for interviews.', href: '/output/cv-michael-borck-slides.html', badges: ['Visual', 'Slides'] },
+  { icon: '⚡', title: 'Live API', desc: 'Real FastAPI backend serving my resume as structured JSON with interactive Swagger docs.', href: 'https://api.resume.michaelborck.dev/docs', badges: ['Live', 'FastAPI'], accent: true },
+  { icon: '🤖', title: 'MCP Server', desc: 'Model Context Protocol server for Claude and other AI assistants. Query my resume from your AI tools.', href: 'https://www.npmjs.com/package/@michaelborck/resume-mcp-server', badges: ['AI', 'MCP'], accent: true },
+  { icon: '📋', title: 'llms.txt', desc: 'Plain-text resume optimised for LLM ingestion. Like robots.txt but for AI assistants.', href: '/llms.txt', badges: ['AI', 'Plain Text'], accent: true },
+  { icon: '📦', title: 'The Source', desc: 'One 320-line YAML file generates everything above. One edit, every format updated.', href: 'https://github.com/michael-borck/resume.borck.dev/blob/main/data/cv-data.yml', badges: ['YAML', 'Source'] },
+  { icon: '⚙️', title: 'How It Works', desc: 'Quarto → PDF/HTML/Slides · Python → Quest/Terminal/Magazine · FastAPI → Live API · MCP → AI', href: 'https://github.com/michael-borck/resume.borck.dev', badges: ['Pipeline', 'Make'] },
+];
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>resume.borck.dev</title>
+  <meta name="description" content="One YAML file, ten ways to explore it — Michael Borck's interactive resume." />
+  <link rel="icon" href="/favicon.svg" />
+</head>
+<body>
+
+<div class="topbar">
+  <a class="topbar-logo" href="/">resume<span class="dot">.</span><span class="sub">borck.dev</span></a>
+  <div class="topbar-spacer"></div>
+  <nav class="topbar-links">
+    <a href="https://borck.dev">borck.dev</a>
+    <a href="https://github.com/michael-borck">GitHub</a>
+  </nav>
+</div>
+
+<div class="hero">
+  <h1 class="hero-title">One YAML file,<br><span class="accent">twelve ways</span> to explore it.</h1>
+  <p class="hero-sub">Michael Borck — resume.borck.dev</p>
+</div>
+
+<div class="grid-wrap">
+  <div class="format-grid">
+    {formats.map(f => (
+      <a class="format-card" href={f.href} target={f.href.startsWith('http') ? '_blank' : undefined} rel={f.href.startsWith('http') ? 'noopener' : undefined}>
+        <span class="card-icon">{f.icon}</span>
+        <div class="card-title">{f.title}</div>
+        <div class="card-desc">{f.desc}</div>
+        <div class="card-footer">
+          {f.badges.map(b => (
+            <span class={`badge${f.accent ? ' badge-accent' : ''}`}>{b}</span>
+          ))}
+        </div>
+      </a>
+    ))}
+  </div>
+</div>
+
+<footer class="site-footer">
+  <a href="https://borck.dev">borck.dev</a>
+  <span class="sep">·</span>
+  <a href="https://github.com/michael-borck">GitHub</a>
+  <span class="sep">·</span>
+  <a href="https://linkedin.com/in/michaelborck">LinkedIn</a>
+  <div class="spacer"></div>
+  <span>michael@borck.dev</span>
+</footer>
+
+</body>
+</html>
