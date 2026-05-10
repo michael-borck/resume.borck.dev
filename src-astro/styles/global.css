@@ -29,7 +29,7 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
   background: var(--gray-6);
   position: sticky; top: 0; z-index: 10;
 }
-.topbar-logo { font-family: var(--mono); font-size: 0.85rem; font-weight: 700; text-decoration: none; color: var(--text); white-space: nowrap; }
+.topbar-logo { font-family: var(--mono); font-size: 0.88rem; font-weight: 700; text-decoration: none; color: var(--text); white-space: nowrap; }
 .topbar-logo .dot { color: var(--gray-2); }
 .topbar-logo .sub { color: var(--accent); }
 .topbar-spacer { flex: 1; }
@@ -94,11 +94,14 @@ html, body { height: 100%; background: var(--black); color: var(--text); font-fa
 /* ── Footer ── */
 .site-footer {
   border-top: 1px solid var(--gray-3);
-  padding: 1.25rem 2rem;
-  display: flex; align-items: center; gap: 1.5rem;
-  font-size: 0.72rem; color: var(--gray-2);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--gray-2);
 }
-.site-footer a { color: var(--gray-2); text-decoration: none; transition: color 0.15s; }
-.site-footer a:hover { color: var(--gray-1); }
-.site-footer .sep { color: var(--gray-3); }
-.site-footer .spacer { flex: 1; }
+.site-footer .footer-links {
+  display: flex; justify-content: center; gap: 1.25rem;
+  flex-wrap: wrap; margin-bottom: 0.75rem;
+}
+.site-footer a { color: var(--gray-1); text-decoration: none; transition: color 0.15s; }
+.site-footer a:hover { color: var(--accent); }
