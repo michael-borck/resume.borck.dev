@@ -46,6 +46,7 @@ Thumbs.db
 .DS_Store
 .AppleDouble
 .LSOverride
+._*
 
 # Temporary files
 *.tmp
