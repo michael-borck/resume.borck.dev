@@ -8,12 +8,12 @@ all: pdf html slides
 
 # Install dependencies
 install:
-	@echo "Installing required R packages..."
-	@Rscript -e "if (!require('yaml')) install.packages('yaml', repos='https://cloud.r-project.org/')"
-	@Rscript -e "if (!require('knitr')) install.packages('knitr', repos='https://cloud.r-project.org/')"
-	@Rscript -e "if (!require('rmarkdown')) install.packages('rmarkdown', repos='https://cloud.r-project.org/')"
+	@echo "Installing required Python packages..."
+	@python3 -m pip install --user pyyaml jupyter || echo "Install pyyaml and jupyter manually (e.g. pipx or a venv)"
 	@echo "Checking Quarto installation..."
 	@quarto --version || echo "Please install Quarto from https://quarto.org/docs/get-started/"
+	@echo "Checking Node (for the Astro portal)..."
+	@node --version && npm install || echo "Install Node 22+ to build the Astro portal"
 
 # Generate PDF version (via LaTeX)
 pdf-latex:
@@ -185,7 +185,7 @@ help:
 	@echo "  make validate   - Check if cv-data.yml is valid"
 	@echo "  make edit       - Open cv-data.yml in your default editor"
 	@echo "  make preview    - Generate all formats and open in browser"
-	@echo "  make install    - Install required R packages (for R template)"
+	@echo "  make install    - Install Python/Node dependencies and check Quarto"
 	@echo "  make commit     - Commit all changes to git"
 	@echo "  make push       - Commit and push to remote repository"
 	@echo "  make help       - Show this help message"
