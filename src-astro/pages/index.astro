@@ -2,19 +2,24 @@
 import '../styles/global.css';
 
 const formats = [
-  { icon: '📄', title: 'Traditional PDF', desc: 'ATS-friendly, print-ready professional format. Clean layout, proper headings, downloadable.', href: '/output/cv-michael-borck.pdf', badges: ['Classic', 'Print'] },
-  { icon: '🌐', title: 'Traditional HTML', desc: 'Responsive web version with clean styling, table of contents, and an embedded chat widget.', href: '/output/cv-michael-borck.html', badges: ['Web', 'Responsive'] },
-  { icon: '🎮', title: 'CV Quest', desc: 'Retro 8-bit swipe card adventure. Explore my career through a playful card game.', href: '/creative/quest/', badges: ['Interactive', 'Game'], accent: true },
-  { icon: '🖥️', title: 'Terminal Adventure', desc: 'Zork-style text adventure through my career. Type commands to explore experience and skills.', href: '/creative/terminal/', badges: ['Interactive', 'CLI'], accent: true },
-  { icon: '📰', title: 'TechLife Magazine', desc: 'Magazine-style layout with pull quotes and editorial design. My career as feature articles.', href: '/creative/magazine/', badges: ['Visual', 'Editorial'], accent: true },
-  { icon: '🔌', title: 'API Documentation', desc: 'Swagger-style REST API interface. Browse my experience and skills as structured endpoints.', href: '/creative/api/', badges: ['Developer', 'REST'], accent: true },
-  { icon: '🎤', title: 'Presentation Slides', desc: 'Reveal.js HTML5 presentation. Navigate my career as a slide deck — perfect for interviews.', href: '/output/cv-michael-borck-slides.html', badges: ['Visual', 'Slides'] },
-  { icon: '⚡', title: 'Live API', desc: 'Real FastAPI backend serving my resume as structured JSON with interactive Swagger docs.', href: 'https://api.resume.michaelborck.dev/docs', badges: ['Live', 'FastAPI'], accent: true },
-  { icon: '🤖', title: 'MCP Server', desc: 'Model Context Protocol server for Claude and other AI assistants. Query my resume from your AI tools.', href: 'https://www.npmjs.com/package/@michaelborck/resume-mcp-server', badges: ['AI', 'MCP'], accent: true },
-  { icon: '📋', title: 'llms.txt', desc: 'Plain-text resume optimised for LLM ingestion. Like robots.txt but for AI assistants.', href: '/llms.txt', badges: ['AI', 'Plain Text'], accent: true },
-  { icon: '📦', title: 'The Source', desc: 'One 320-line YAML file generates everything above. One edit, every format updated.', href: 'https://github.com/michael-borck/resume.borck.dev/blob/main/data/cv-data.yml', badges: ['YAML', 'Source'] },
-  { icon: '⚙️', title: 'How It Works', desc: 'Quarto → PDF/HTML/Slides · Python → Quest/Terminal/Magazine · FastAPI → Live API · MCP → AI', href: 'https://github.com/michael-borck/resume.borck.dev', badges: ['Pipeline', 'Make'] },
+  { icon: '📄', title: 'Traditional PDF', desc: 'ATS-friendly, print-ready professional format. Clean layout, proper headings, downloadable.', href: '/output/cv-michael-borck.pdf', badges: ['Classic', 'Print'], group: 'read' },
+  { icon: '🌐', title: 'Traditional HTML', desc: 'Responsive web version with clean styling, table of contents, and an embedded chat widget.', href: '/output/cv-michael-borck.html', badges: ['Web', 'Responsive'], group: 'read' },
+  { icon: '🎮', title: 'CV Quest', desc: 'Retro 8-bit swipe card adventure. Explore my career through a playful card game.', href: '/creative/quest/', badges: ['Interactive', 'Game'], group: 'play' },
+  { icon: '🖥️', title: 'Terminal Adventure', desc: 'Zork-style text adventure through my career. Type commands to explore experience and skills.', href: '/creative/terminal/', badges: ['Interactive', 'CLI'], group: 'play' },
+  { icon: '📰', title: 'TechLife Magazine', desc: 'Magazine-style layout with pull quotes and editorial design. My career as feature articles.', href: '/creative/magazine/', badges: ['Visual', 'Editorial'], group: 'play' },
+  { icon: '🔌', title: 'API Documentation', desc: 'Swagger-style REST API interface. Browse my experience and skills as structured endpoints.', href: '/creative/api/', badges: ['Developer', 'REST'], group: 'play' },
+  { icon: '🎤', title: 'Presentation Slides', desc: 'Reveal.js HTML5 presentation. Navigate my career as a slide deck — perfect for interviews.', href: '/output/cv-michael-borck-slides.html', badges: ['Visual', 'Slides'], group: 'read' },
+  { icon: '⚡', title: 'Live API', desc: 'Real FastAPI backend serving my resume as structured JSON with interactive Swagger docs.', href: 'https://api.resume.michaelborck.dev/docs', badges: ['Live', 'FastAPI'], group: 'build' },
+  { icon: '🤖', title: 'MCP Server', desc: 'Model Context Protocol server for Claude and other AI assistants. Query my resume from your AI tools.', href: 'https://www.npmjs.com/package/@michaelborck/resume-mcp-server', badges: ['AI', 'MCP'], group: 'build' },
+  { icon: '📋', title: 'llms.txt', desc: 'Plain-text resume optimised for LLM ingestion. Like robots.txt but for AI assistants.', href: '/llms.txt', badges: ['AI', 'Plain Text'], group: 'build' },
+  { icon: '📦', title: 'The Source', desc: 'One 320-line YAML file generates everything above. One edit, every format updated.', href: 'https://github.com/michael-borck/resume.borck.dev/blob/main/data/cv-data.yml', badges: ['YAML', 'Source'], group: 'build' },
+  { icon: '⚙️', title: 'How It Works', desc: 'Quarto → PDF/HTML/Slides · Python → Quest/Terminal/Magazine · FastAPI → Live API · MCP → AI', href: 'https://github.com/michael-borck/resume.borck.dev', badges: ['Pipeline', 'Make'], group: 'build' },
 ];
+
+const read = formats.filter((f) => f.group === 'read');
+const play = formats.filter((f) => f.group === 'play');
+const build = formats.filter((f) => f.group === 'build');
+const ext = (href) => href.startsWith('http');
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -37,27 +42,77 @@ const formats = [
   </nav>
 </div>
 
-<div class="hero">
+<section class="hero">
   <h1 class="hero-title">One YAML file,<br><span class="accent">twelve ways</span> to explore it.</h1>
-  <p class="hero-sub">Michael Borck — resume.borck.dev</p>
-</div>
-
-<div class="grid-wrap">
-  <div class="format-grid">
-    {formats.map(f => (
-      <a class="format-card" href={f.href} target={f.href.startsWith('http') ? '_blank' : undefined} rel={f.href.startsWith('http') ? 'noopener' : undefined}>
-        <span class="card-icon">{f.icon}</span>
-        <div class="card-title">{f.title}</div>
-        <div class="card-desc">{f.desc}</div>
-        <div class="card-footer">
-          {f.badges.map(b => (
-            <span class={`badge${f.accent ? ' badge-accent' : ''}`}>{b}</span>
-          ))}
-        </div>
-      </a>
-    ))}
+  <p class="hero-sub">Michael Borck — educator, builder, researcher.</p>
+  <div class="hero-ctas">
+    <a class="btn btn-solid" href="/output/cv-michael-borck.pdf">Download PDF</a>
+    <a class="btn btn-ghost" href="/creative/terminal/">Try the terminal ›</a>
   </div>
-</div>
+</section>
+
+<main class="tiers">
+
+  <section class="tier" style="animation-delay: 0ms">
+    <header class="tier-head">
+      <span class="tier-num">01</span>
+      <h2 class="tier-title">Read it</h2>
+      <span class="tier-rule"></span>
+      <p class="tier-sub">for recruiters &amp; humans in a hurry</p>
+    </header>
+    <div class="row-list">
+      {read.map((f) => (
+        <a class="row" href={f.href} target={ext(f.href) ? '_blank' : undefined} rel={ext(f.href) ? 'noopener' : undefined}>
+          <span class="row-icon">{f.icon}</span>
+          <span class="row-text">
+            <span class="row-title">{f.title}</span>
+            <span class="row-desc">{f.desc}</span>
+          </span>
+          <span class="row-arrow">→</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="tier" style="animation-delay: 120ms">
+    <header class="tier-head">
+      <span class="tier-num">02</span>
+      <h2 class="tier-title">Play it</h2>
+      <span class="tier-rule"></span>
+      <p class="tier-sub">the same career, four unexpected skins</p>
+    </header>
+    <div class="feature-grid">
+      {play.map((f) => (
+        <a class="feature" href={f.href} target={ext(f.href) ? '_blank' : undefined} rel={ext(f.href) ? 'noopener' : undefined}>
+          <span class="feature-icon">{f.icon}</span>
+          <span class="feature-title">{f.title}</span>
+          <span class="feature-desc">{f.desc}</span>
+          <span class="feature-badges">
+            {f.badges.map((b) => <span class="badge">{b}</span>)}
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="tier" style="animation-delay: 240ms">
+    <header class="tier-head">
+      <span class="tier-num">03</span>
+      <h2 class="tier-title">Build with it</h2>
+      <span class="tier-rule"></span>
+      <p class="tier-sub">for developers &amp; AI assistants</p>
+    </header>
+    <div class="chip-grid">
+      {build.map((f) => (
+        <a class="chip" href={f.href} target={ext(f.href) ? '_blank' : undefined} rel={ext(f.href) ? 'noopener' : undefined}>
+          <span class="chip-head"><span class="chip-dollar">$</span> {f.title.toLowerCase()}</span>
+          <span class="chip-desc">{f.desc}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+</main>
 
 <footer class="site-footer">
   <div class="footer-links">
