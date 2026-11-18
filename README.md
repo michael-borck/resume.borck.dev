@@ -49,9 +49,15 @@ Astro portal (src-astro/ + public-astro/) ────┘ links them all togethe
 GitHub Actions (`.github/workflows/deploy-pages.yml`) runs `astro build` and deploys `dist/` to GitHub Pages on every push to main. The Astro build **does not** run Quarto or the Python generators — instead, `public-astro/output` and `public-astro/creative` are symlinks into the repo, so the generated files in `output/` and `creative/` are **committed on purpose**. After editing `data/cv-data.yml`, regenerate locally and commit the outputs:
 
 ```bash
-make all quest terminal magazine api chatbot llms-txt world-data
-git add -A && git commit
+make regenerate      # rebuild all data-driven formats (quest, doom, dungeon, ink, voxel, world-data, mario, swipeverse, knotebook, …) — fast
+make all             # PDF / HTML / slides (needs Quarto)
+make world-art       # only if you want new limn pixel art
+git add -A && git commit && git push
 ```
+
+**Nothing on the live site reads `cv-data.yml` directly.** Every format consumes a *generated* artifact (JSON/HTML/ink/PDF) that is built by these commands and committed; `astro build` only copies them into `dist/`. So the rule is: **edit YAML → `make …` → commit → push**. The browser apps then fetch their regenerated `data/*.json` at runtime.
+
+Fast vs slow: the generators are quick (`make regenerate`), while `make all` needs Quarto and `make world-art` calls limn (SwarmUI) — run those only when you need those outputs.
 
 The live API and MCP server are deployed separately — see `api/VPS_DEPLOYMENT.md` and `mcp-server/README.md`.
 

@@ -6,6 +6,13 @@
 # Default target
 all: pdf html slides
 
+# Regenerate every data-driven format from data/cv-data.yml (fast: no Quarto,
+# no limn pixel-art pass). PDF/HTML/slides: `make all`. World art: `make world-art`.
+.PHONY: regenerate
+regenerate: quest terminal magazine api chatbot llms-txt world-data doom dungeon ink voxel mario swipeverse knotebook
+	@echo "✓ Regenerated all data-driven formats from data/cv-data.yml"
+	@echo "  Still separate: 'make all' (PDF/HTML/slides), 'make world-art' (limn pixel art)"
+
 # Install dependencies
 install:
 	@echo "Installing required Python packages..."
@@ -240,6 +247,7 @@ help:
 	@echo "CV Generation System - Available Commands:"
 	@echo "=========================================="
 	@echo "  make all        - Generate all output formats (PDF, HTML, Reveal.js)"
+	@echo "  make regenerate - Rebuild ALL data-driven formats from cv-data.yml (fast)"
 	@echo "  make pdf        - Generate PDF from HTML (uses Playwright/wkhtmltopdf/weasyprint)"
 	@echo "  make pdf-latex  - Generate PDF via LaTeX (traditional method)"
 	@echo "  make html       - Generate HTML version only"
