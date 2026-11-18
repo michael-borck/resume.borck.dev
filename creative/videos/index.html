@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Narrated video — Michael Borck</title>
+<meta name="description" content="A slide-stream source that renders to a narrated CV video or PowerPoint." />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0a0a0b;--panel:#14171c;--line:#2a3038;--text:#e8ecef;--muted:#9aa6b2;--gold:#ffcf6b;--cyan:#6ee0d8;--mono:"JetBrains Mono",monospace;--pixel:"Press Start 2P",monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(ellipse at 50% 0%,#1a2430,#0a0d11 70%);color:var(--text);font-family:var(--mono);min-height:100vh}
+.wrap{max-width:680px;margin:0 auto;padding:40px 20px 64px}
+a.back{position:fixed;top:12px;right:14px;font-size:11px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:5px 9px;border-radius:6px;background:rgba(10,10,11,.7)}
+a.back:hover{color:var(--gold);border-color:var(--gold)}
+.brand{font-family:var(--pixel);font-size:12px;color:var(--gold);text-shadow:2px 2px 0 #000;margin-bottom:8px}
+h1{font-size:22px;margin-bottom:12px}
+p{font-size:13px;line-height:1.7;color:#cfd8df;margin-bottom:12px}
+code{background:#1a2029;padding:1px 5px;border-radius:3px}
+pre{background:#0f1318;border:1px solid var(--line);border-radius:8px;padding:14px;overflow:auto;font-size:12px;color:#bfe9c0;margin:12px 0}
+a.btn{display:inline-block;font-weight:700;font-size:12px;color:var(--ink);background:var(--gold);border-bottom:3px solid #b8863b;border-radius:6px;padding:10px 14px;text-decoration:none;margin-top:6px}
+</style></head><body>
+<a class="back" href="../../index.html">← CV Portal</a>
+<div class="wrap">
+  <div class="brand">NARRATED VIDEO</div>
+  <h1>The CV as a narrated talk</h1>
+  <p>This is a <b>slide-stream</b> Markdown source. slide-stream writes narration, voices it offline (Kokoro — no API key), and assembles an MP4 or PowerPoint.</p>
+  <p><a class="btn" href="deck.md" download>Download deck.md</a></p>
+  <p>Render locally (Python 3.10+):</p>
+  <pre>pip install "slide-stream[all]"
+slide-stream create deck.md talk.mp4     # narrated video
+slide-stream create deck.md deck.pptx    # editable PowerPoint</pre>
+  <p>It works with no account and no keys; optional LLM/TTS providers (Ollama, OpenAI, Gemini, your cloned voice) can be switched on in <code>slidestream.yaml</code>.</p>
+</div>
+</body></html>

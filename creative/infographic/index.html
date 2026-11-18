@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infographic — Michael Borck</title>
+<meta name="description" content="A one-page infographic CV for Michael Borck." />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0a0a0b;--panel:#14171c;--line:#2a3038;--text:#e8ecef;--muted:#9aa6b2;--gold:#ffcf6b;--cyan:#6ee0d8;--green:#7ddc7d;--red:#ff7a6b;--violet:#c084fc;--mono:"JetBrains Mono",monospace;--pixel:"Press Start 2P",monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(ellipse at 50% 0%,#16202a,#0a0d11 70%);color:var(--text);font-family:var(--mono);min-height:100vh}
+a.back{position:fixed;top:12px;right:14px;z-index:5;font-size:11px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:5px 9px;border-radius:6px;background:rgba(10,10,11,.7)}
+a.back:hover{color:var(--gold);border-color:var(--gold)}
+
+.page{max-width:1000px;margin:0 auto;padding:34px 22px 60px}
+.hero{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;border-bottom:2px solid var(--line);padding-bottom:16px;margin-bottom:22px}
+.name{font-family:var(--pixel);font-size:clamp(20px,4vw,32px);color:var(--gold);text-shadow:3px 3px 0 #000;line-height:1.3}
+.tag{color:var(--muted);font-size:12px;margin-top:8px}
+.meta{text-align:right;color:var(--muted);font-size:11px;line-height:1.7}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:26px}
+@media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}.hero{flex-direction:column;align-items:flex-start}.meta{text-align:left}}
+.stat{background:var(--panel);border:2px solid var(--line);border-radius:10px;padding:16px}
+.stat .n{font-family:var(--pixel);font-size:22px;color:var(--cyan)}
+.stat .d{color:var(--muted);font-size:11px;margin-top:6px;line-height:1.5}
+h2{font-family:var(--pixel);font-size:12px;color:var(--gold);letter-spacing:1px;margin:26px 0 12px}
+.bars{display:flex;flex-direction:column;gap:8px}
+.bar{display:grid;grid-template-columns:150px 1fr 30px;gap:10px;align-items:center;font-size:11px}
+.bl{color:var(--text)} .bn{color:var(--muted);text-align:right}
+.track{height:12px;background:#0f1318;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.fill{display:block;height:100%;background:linear-gradient(90deg,#4fc9a8,#6ee0d8)}
+.tl{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:12px}
+.tl .per{color:var(--gold)} .tl .org{color:var(--muted);font-size:11px}
+ul{margin:8px 0 0 18px;font-size:12px;line-height:1.7;color:#cfd8df}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:700px){.two{grid-template-columns:1fr}}
+.contact{margin-top:26px;border-top:2px solid var(--line);padding-top:14px;font-size:11px;color:var(--muted);line-height:1.7}
+@media print{
+  body{background:#fff!important;color:#111!important}
+  a.back{display:none!important}
+  .stat,.tl,.bar{break-inside:avoid}
+  .name{color:#8a5a00!important} h2{color:#8a5a00!important} .stat .n{color:#0b7285!important} .fill{background:#0b7285!important}
+  .tag,.meta,.stat .d,.bn,.tl .org,.contact,ul{color:#333!important} .bl{color:#111!important}
+  .stat,.track{border-color:#ccc!important} .stat{background:#f7f7f7!important}
+}
+</style></head><body>
+<a class="back" href="../../index.html">← CV Portal</a>
+<div class="page">
+  <div class="hero">
+    <div><div class="name">Michael Borck</div><div class="tag">AI Leader and Cyber Security expert with 25+ years spanning military → academia → industry consulting transition. Author of the Conversation…</div></div>
+    <div class="meta">Perth, WA<br>michael.borck@curtin.edu.au<br>https://linkedin.com/in/michaelborck<br>https://borck.dev</div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">25+</div><div class="d">years across military, academia &amp; consulting</div></div><div class="stat"><div class="n">100%</div><div class="d">student satisfaction across several units</div></div><div class="stat"><div class="n">4</div><div class="d">books (Creative Commons)</div></div><div class="stat"><div class="n">5+</div><div class="d">peer-reviewed papers</div></div><div class="stat"><div class="n">500+</div><div class="d">students taught</div></div><div class="stat"><div class="n">100+</div><div class="d">executives trained</div></div>
+  </div>
+
+  <h2>SKILLS BY VOLUME</h2>
+  <div class="bars"><div class="bar"><span class="bl">Programming</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="bn">25</span></div></div>
+
+  <h2>TIMELINE</h2>
+  <div class="tl"><span class="per">Feb 2016 – Present</span><span class="role"><b>Lecturer — School of Marketing and Management</b><br><span class="org">Curtin University</span></span></div><div class="tl"><span class="per">Ongoing</span><span class="role"><b>Course Leadership &amp; Development</b><br><span class="org">Curtin University</span></span></div><div class="tl"><span class="per">Jan 2001 – Dec 2007</span><span class="role"><b>Associate Lecturer</b><br><span class="org">Curtin University</span></span></div><div class="tl"><span class="per">Jan 2016 – Present</span><span class="role"><b>AI, IS &amp; Educational Technology Consultant</b><br><span class="org">Self-Employed</span></span></div><div class="tl"><span class="per">Mar 2018 – 2019</span><span class="role"><b>Researcher</b><br><span class="org">Curtin University</span></span></div><div class="tl"><span class="per">Mar 2015 – Jan 2016</span><span class="role"><b>Software Contractor</b><br><span class="org">CRCSI &amp; Landgate WA</span></span></div><div class="tl"><span class="per">Jan 2008 – Jan 2011</span><span class="role"><b>IT Consultant — Owner</b><br><span class="org">Bital IT Consulting Services</span></span></div><div class="tl"><span class="per">Jul 1996 – Jan 2000</span><span class="role"><b>IT Manager</b><br><span class="org">Submarine Systems Centre, RAN</span></span></div><div class="tl"><span class="per">Jul 1993 – Dec 1996</span><span class="role"><b>Project Manager — Command and Control</b><br><span class="org">HQADF</span></span></div><div class="tl"><span class="per">Aug 1991 – Jun 1993</span><span class="role"><b>Analyst/Programmer — Manpower and Pay Project</b><br><span class="org">HQADF</span></span></div><div class="tl"><span class="per">Mar 1989 – Aug 1993</span><span class="role"><b>System Administrator — Manpower and Personnel</b><br><span class="org">RAN</span></span></div>
+
+  <div class="two">
+    <div><h2>EDUCATION</h2><ul><li>Doctor of Philosophy (PhD) — Curtin University, 2017</li><li>Bachelor of Science (Computer Science) (Honours) — Curtin University, 2001</li><li>Graduate Diploma in Business — Curtin University, 2000</li><li>Bachelor of Science (Computer Science) — Australian National University, 1994</li><li>Bachelor of Applied Science (Mathematics) — Queensland University of Technology, 1989</li></ul></div>
+    <div><h2>SELECTED PROJECTS</h2><ul><li><b>Reality Reigns</b> — Swipe-based decision game providing interactive fiction storytelling from fantasy adventures to educational simulations</li><li><b>Talk Buddy</b> — AI-based audio interface tool for conversation practice (medical diagnoses, HR discussions, English conversation)</li><li><b>Curriculum Curator</b> — AI-based tool for creating, managing and curating learning materials based on unique teaching philosophies</li><li><b>Feed Forward System</b> — AI-based assessment feedback tool for various assessment types</li><li><b>Student Feedback Analyzer</b> — AI tool that analyzes student feedback forms to suggest course improvements</li><li><b>Image Processing for Orange</b> — </li></ul></div>
+  </div>
+
+  <div class="contact">Michael Borck · Perth, WA · michael.borck@curtin.edu.au · https://github.com/michael-borck</div>
+</div>
+</body></html>

@@ -17,6 +17,14 @@ One YAML file, twelve ways to explore it. Everything on [resume.borck.dev](https
 | 💀 **Resume Doom** (FPS raycaster) | `scripts/generate_doom_data.py` | `creative/doom/` |
 | 🍄 **Michael Borck's World** (Mario-style level select) | `scripts/generate_mario_data.py` | `creative/mario/` |
 | 🗄️ **Data exports** (md, qmd, tex, json, xml, csv, py, mysql) | `scripts/generate_data_exports.py` | `creative/data/` |
+| 🖼️ Slide deck (deck-engine) | `scripts/generate_slides_deck.py` | `creative/slides-deck/` |
+| ❓ Quiz (replayable MCQ) | `scripts/generate_learn.py` | `creative/quiz/` |
+| 🃏 Flashcards | `scripts/generate_learn.py` | `creative/flashcards/` |
+| 🕸️ Mindmap | `scripts/generate_learn.py` | `creative/mindmap/` |
+| 📊 Infographic | `scripts/generate_print.py` | `creative/infographic/` |
+| 🎴 Printable cards | `scripts/generate_print.py` | `creative/cards/` |
+| 🎧 Podcast (script) | `scripts/generate_podcast.py` | `creative/podcast/` |
+| 🎬 Narrated video | `scripts/generate_podcast.py` + slide-stream | `creative/videos/` |
 | 🕯️ **The Delve** (text dungeon) | `scripts/generate_dungeon_data.py` | `creative/dungeon/` |
 | 📖 **The Valley** (Ink interactive fiction) | `scripts/generate_ink_story.py` + `scripts/compile_ink.mjs` | `creative/ink/` |
 | ⛏️ **MineBorck** (isometric voxel dig/build) | `scripts/generate_voxel_data.py` | `creative/voxel/` |

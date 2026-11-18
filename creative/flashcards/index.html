@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV Flashcards — Michael Borck</title><meta name="description" content="Flip-card flashcards generated from Michael Borck's CV.">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+:root{{--ink:#0a0a0b;--panel:#14171c;--line:#2a3038;--text:#e8ecef;--muted:#9aa6b2;--gold:#ffcf6b;--cyan:#6ee0d8;--green:#7ddc7d;--red:#ff7a6b;--mono:"JetBrains Mono",monospace;--pixel:"Press Start 2P",monospace}}
+*{{box-sizing:border-box;margin:0;padding:0}}
+body{{background:radial-gradient(ellipse at 50% 0%,#16202a,#0a0d11 70%);color:var(--text);font-family:var(--mono);min-height:100vh}}
+.wrap{{max-width:920px;margin:0 auto;padding:28px 18px 60px}}
+.head{{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}}
+.brand{{font-family:var(--pixel);font-size:12px;color:var(--gold);letter-spacing:1px;text-shadow:2px 2px 0 #000}}
+.sub{{color:var(--muted);font-size:11px}}
+.btn{{font-family:var(--mono);font-weight:700;font-size:12px;color:var(--ink);background:var(--gold);border:none;border-bottom:3px solid #b8863b;border-radius:6px;padding:9px 14px;cursor:pointer}}
+.btn:hover{{filter:brightness(1.08)}}
+.ghost{{background:transparent;color:var(--text);border:2px solid var(--line);border-bottom-width:2px}}
+.ghost:hover{{border-color:var(--gold);color:var(--gold)}}
+a.back{{position:fixed;top:12px;right:14px;font-size:11px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:5px 9px;border-radius:6px;background:rgba(10,10,11,.7)}}
+a.back:hover{{color:var(--gold);border-color:var(--gold)}}
+@media print{{ .head,.btn,a.back{{display:none!important}} body{{background:#fff!important;color:#000!important}} }}
+
+.card{perspective:1200px;height:260px;margin-bottom:14px;cursor:pointer}
+.inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.card.flip .inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;border:2px solid var(--line);padding:26px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:18px;line-height:1.5}
+.front{background:linear-gradient(160deg,#141c26,#0d1117);color:#fff}
+.back{background:linear-gradient(160deg,#1a2a22,#0f1a14);color:var(--gold);transform:rotateY(180deg);font-size:15px}
+.meta{color:var(--muted);font-size:11px;text-align:center}
+.tip{color:var(--muted);font-size:11px;text-align:center;margin-top:10px}
+</style></head><body>
+<a class="back" href="../../index.html">← CV Portal</a>
+<div class="wrap">
+  <div class="head"><div><div class="brand">FLASHCARDS</div><div class="sub">click to flip · shuffle · print</div></div>
+    <div><button class="btn ghost" id="shuffle">SHUFFLE</button> <button class="btn" id="prev">‹</button> <button class="btn" id="next">›</button></div>
+  </div>
+  <div class="deck" id="deck"></div>
+  <div class="meta" id="meta"></div>
+</div><script>
+const CARDS = [{"q": "Where did Michael work as Lecturer — School of Marketing and Management?", "a": "Curtin University · Feb 2016 – Present"}, {"q": "Where did Michael work as Course Leadership & Development?", "a": "Curtin University · Ongoing"}, {"q": "Where did Michael work as Associate Lecturer?", "a": "Curtin University · Jan 2001 – Dec 2007"}, {"q": "Where did Michael work as AI, IS & Educational Technology Consultant?", "a": "Self-Employed · Jan 2016 – Present"}, {"q": "Where did Michael work as Researcher?", "a": "Curtin University · Mar 2018 – 2019"}, {"q": "Where did Michael work as Software Contractor?", "a": "CRCSI & Landgate WA · Mar 2015 – Jan 2016"}, {"q": "Where did Michael work as IT Consultant — Owner?", "a": "Bital IT Consulting Services · Jan 2008 – Jan 2011"}, {"q": "Where did Michael work as IT Manager?", "a": "Submarine Systems Centre, RAN · Jul 1996 – Jan 2000"}, {"q": "Where did Michael work as Project Manager — Command and Control?", "a": "HQADF · Jul 1993 – Dec 1996"}, {"q": "Where did Michael work as Analyst/Programmer — Manpower and Pay Project?", "a": "HQADF · Aug 1991 – Jun 1993"}, {"q": "Where did Michael work as System Administrator — Manpower and Personnel?", "a": "RAN · Mar 1989 – Aug 1993"}, {"q": "Which institution awarded: Doctor of Philosophy (PhD)?", "a": "Curtin University, 2017"}, {"q": "Which institution awarded: Bachelor of Science (Computer Science) (Honours)?", "a": "Curtin University, 2001"}, {"q": "Which institution awarded: Graduate Diploma in Business?", "a": "Curtin University, 2000"}, {"q": "Which institution awarded: Bachelor of Science (Computer Science)?", "a": "Australian National University, 1994"}, {"q": "Which institution awarded: Bachelor of Applied Science (Mathematics)?", "a": "Queensland University of Technology, 1989"}, {"q": "What is Reality Reigns?", "a": "Swipe-based decision game providing interactive fiction storytelling from fantasy adventures to educational simulations"}, {"q": "What is Talk Buddy?", "a": "AI-based audio interface tool for conversation practice (medical diagnoses, HR discussions, English conversation)"}, {"q": "What is Curriculum Curator?", "a": "AI-based tool for creating, managing and curating learning materials based on unique teaching philosophies"}, {"q": "What is Feed Forward System?", "a": "AI-based assessment feedback tool for various assessment types"}, {"q": "What is Student Feedback Analyzer?", "a": "AI tool that analyzes student feedback forms to suggest course improvements"}, {"q": "What is Image Processing for Orange?", "a": ""}, {"q": "Book: Python Step By Step in an AI World", "a": "Comprehensive guide to Python programming in the context of artificial intelligence"}, {"q": "Book: JumpStart Python in the AI Era", "a": "Accelerated learning approach for Python in AI applications"}];
+
+let cards = CARDS.slice(), i = 0;
+const deck = document.getElementById('deck'), meta = document.getElementById('meta');
+function render(){
+  const c = cards[i];
+  deck.innerHTML = `<div class="card" id="card"><div class="inner">
+    <div class="face front">${esc(c.q)}</div>
+    <div class="face back">${esc(c.a)}</div></div></div>`;
+  document.getElementById('card').onclick = ()=> document.getElementById('card').classList.toggle('flip');
+  meta.textContent = `${i+1} / ${cards.length}`;
+}
+function shuffle(a){ for(let j=a.length-1;j>0;j--){const k=Math.floor(Math.random()*(j+1));[a[j],a[k]]=[a[k],a[j]];} return a; }
+document.getElementById('next').onclick=()=>{ i=(i+1)%cards.length; render(); };
+document.getElementById('prev').onclick=()=>{ i=(i-1+cards.length)%cards.length; render(); };
+document.getElementById('shuffle').onclick=()=>{ cards=shuffle(cards.slice()); i=0; render(); };
+document.addEventListener('keydown',ev=>{ if(ev.key==='ArrowRight'){i=(i+1)%cards.length;render();} if(ev.key==='ArrowLeft'){i=(i-1+cards.length)%cards.length;render();} if(ev.key===' '){ev.preventDefault();document.getElementById('card')?.classList.toggle('flip');} });
+function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+render();
+
+</script></body></html>
