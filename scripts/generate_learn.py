@@ -187,14 +187,14 @@ body{background:radial-gradient(ellipse at 50% 0%,#16202a,#0a0d11 70%);color:var
 .btn:hover{filter:brightness(1.08)} .btn:active{transform:translateY(2px);border-bottom-width:1px}
 .ghost{background:transparent;color:var(--text);border:2px solid var(--line);border-bottom-width:2px}
 .ghost:hover{border-color:var(--gold);color:var(--gold)}
-a.back{position:fixed;top:12px;right:14px;z-index:8;font-size:11px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:5px 9px;border-radius:6px;background:rgba(10,10,11,.7)}
-a.back:hover{color:var(--gold);border-color:var(--gold)}
+a.portal-link{position:fixed;top:12px;right:14px;z-index:8;font-size:11px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:5px 9px;border-radius:6px;background:rgba(10,10,11,.7)}
+a.portal-link:hover{color:var(--gold);border-color:var(--gold)}
 .overlay{position:fixed;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;background:rgba(4,8,11,.82);backdrop-filter:blur(3px);padding:20px}
 .overlay.hidden{display:none}
 .modal{max-width:480px;width:100%;background:linear-gradient(180deg,#141d26,#0d1319);border:2px solid var(--line);border-radius:14px;padding:28px;box-shadow:0 24px 60px rgba(0,0,0,.7)}
 .modal h1{font-size:20px;line-height:1.35;margin-bottom:10px;color:#fff}
 .modal p{font-size:13px;line-height:1.6;color:#cfd8df;margin-bottom:16px}
-@media print{body{background:#fff!important;color:#000!important}.head,.btn,a.back,.overlay{display:none!important}}
+@media print{body{background:#fff!important;color:#000!important}.head,.btn,a.portal-link,.overlay{display:none!important}}
 """
 
 
@@ -209,7 +209,7 @@ def write(path, content):
 def gen_quiz(cv):
     bank = build_quiz(cv)
     body = """
-<a class="back" href="../../index.html">← CV Portal</a>
+<a class="portal-link" href="../../index.html">← CV Portal</a>
 <div class="wrap">
   <div class="head"><div><div class="brand">CV QUIZ</div><div class="sub">10 questions · hints allowed · replay for a fresh set</div></div>
     <button class="btn ghost" id="restartBtn">Restart</button></div>
@@ -327,7 +327,7 @@ $('restartBtn').onclick=start;
 def gen_flashcards(cv):
     cards = build_cards(cv)
     body = """
-<a class="back" href="../../index.html">← CV Portal</a>
+<a class="portal-link" href="../../index.html">← CV Portal</a>
 <div class="wrap">
   <div class="head"><div><div class="brand">FLASHCARDS</div><div class="sub">click to flip · hint · shuffle · print</div></div>
     <div class="sub" id="meta"></div></div>
@@ -417,7 +417,7 @@ render();
 def gen_mindmap(cv):
     data = build_mindmap(cv)
     body = """
-<a class="back" href="../../index.html">← CV Portal</a>
+<a class="portal-link" href="../../index.html">← CV Portal</a>
 <div class="wrap">
   <div class="head"><div><div class="brand">CV MINDMAP</div><div class="sub">Click the name to expand · click a branch to open it · click again to close</div></div>
     <button class="btn ghost" id="resetBtn">Reset</button></div>
