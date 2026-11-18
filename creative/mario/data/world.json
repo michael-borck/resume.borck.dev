@@ -1,0 +1,286 @@
+{
+ "title": "MICHAEL BORCK'S WORLD",
+ "subtitle": "Walk the paths. Clear the levels. Reach the castle.",
+ "background": "../world/assets/img/world-map.webp",
+ "avatar": "../world/assets/img/hero.png",
+ "start": "base",
+ "castle": "castle",
+ "nodes": [
+  {
+   "id": "base",
+   "name": "Base Camp",
+   "icon": "camp",
+   "x": 12,
+   "y": 78,
+   "body": [
+    "Start here. Grab a map and pick a path."
+   ],
+   "castle": false,
+   "links": [
+    "navy"
+   ]
+  },
+  {
+   "id": "navy",
+   "name": "The Naval Years",
+   "icon": "keep",
+   "x": 26,
+   "y": 60,
+   "body": [
+    "IT Manager \u2014 Submarine Systems Centre, RAN (Jul 1996 \u2013 Jan 2000)",
+    "Project Manager \u2014 Command and Control \u2014 HQADF (Jul 1993 \u2013 Dec 1996)",
+    "Analyst/Programmer \u2014 Manpower and Pay Project \u2014 HQADF (Aug 1991 \u2013 Jun 1993)",
+    "System Administrator \u2014 Manpower and Personnel \u2014 RAN (Mar 1989 \u2013 Aug 1993)"
+   ],
+   "castle": false,
+   "links": [
+    "base",
+    "lecturer",
+    "awards"
+   ]
+  },
+  {
+   "id": "lecturer",
+   "name": "Curtin Lecturer",
+   "icon": "keep",
+   "x": 40,
+   "y": 48,
+   "body": [
+    "Lecturer \u2014 School of Marketing and Management \u2014 Curtin University (Feb 2016 \u2013 Present)",
+    "AI Program Leadership - AI Leader for the School, developing new AI programs within undergraduate and postgraduate curricula",
+    "Research Leadership - Founder of LocoLabo, an applied local-AI research lab",
+    "Core Teaching Areas - AI, Programming (Python), and Cyber Security",
+    "Curriculum Development - Backbone developer for Python and Web development programs"
+   ],
+   "castle": false,
+   "links": [
+    "navy",
+    "phd",
+    "cloudcore",
+    "tools"
+   ]
+  },
+  {
+   "id": "cloudcore",
+   "name": "Cloud Core",
+   "icon": "chest",
+   "x": 30,
+   "y": 30,
+   "body": [
+    "Cloud Core Simulation",
+    "Created complete virtual company with IT infrastructure, policies, and staff chatbot for authentic audit experiences"
+   ],
+   "castle": false,
+   "links": [
+    "lecturer",
+    "tools"
+   ]
+  },
+  {
+   "id": "phd",
+   "name": "The Doctorate",
+   "icon": "tower",
+   "x": 55,
+   "y": 36,
+   "body": [
+    "Doctor of Philosophy (PhD) \u2014 Curtin University, 2017",
+    "Feature Extraction from Multi-modal Data (GIS, Machine Learning & Computer Vision)"
+   ],
+   "castle": false,
+   "links": [
+    "lecturer",
+    "python",
+    "degrees"
+   ]
+  },
+  {
+   "id": "python",
+   "name": "Python & Web",
+   "icon": "dojo",
+   "x": 68,
+   "y": 26,
+   "body": [
+    "Core: Python, C/C++, C#, Java, JavaScript, Matlab, PHP, CSS, HTML, LaTeX, SQL, Bash",
+    "Web: React, Flask, FastAPI, FastHTML, Vanilla JS, WordPress",
+    "AI/ML: Langchain, TensorFlow, PyTorch, Scikit-learn"
+   ],
+   "castle": false,
+   "links": [
+    "phd",
+    "locolab"
+   ]
+  },
+  {
+   "id": "locolab",
+   "name": "LocoLabo",
+   "icon": "tower",
+   "x": 80,
+   "y": 46,
+   "body": [
+    "Founder of LocoLabo, an applied local-AI research lab."
+   ],
+   "castle": false,
+   "links": [
+    "python",
+    "castle",
+    "degrees"
+   ]
+  },
+  {
+   "id": "awards",
+   "name": "100% Satisfaction",
+   "icon": "scroll",
+   "x": 34,
+   "y": 76,
+   "body": [
+    "100% Satisfaction Scores \u2014 Achieved across ISYS3015 Business Application Development, ISYS2001 Introduction to Business Programming, and ISYS6018 Information Security",
+    "100% 'Effective Teacher' Ratings \u2014 Across Enterprise Network Security, Business Systems Selection, and Introduction to Programming units",
+    "Teaching Excellence - Achieved 100% student satisfaction scores across multiple units (ISYS3015, ISYS2001, ISYS6018) with consistent \"effective teacher\" ratings",
+    "Technical Innovation - Creator of multiple AI-powered educational tools including Reality Reigns, Talk Buddy, and Curriculum Curator with 290+ downloads"
+   ],
+   "castle": false,
+   "links": [
+    "navy",
+    "books"
+   ]
+  },
+  {
+   "id": "books",
+   "name": "Published Author",
+   "icon": "scroll",
+   "x": 52,
+   "y": 70,
+   "body": [
+    "Python Step By Step in an AI World",
+    "JumpStart Python in the AI Era",
+    "Intentional Prompting: Blending AI and Human Oversight",
+    "Python Dev Book: From Zero to Production"
+   ],
+   "castle": false,
+   "links": [
+    "awards",
+    "tools"
+   ]
+  },
+  {
+   "id": "tools",
+   "name": "Reality Reigns &c.",
+   "icon": "chest",
+   "x": 62,
+   "y": 58,
+   "body": [
+    "Reality Reigns: Swipe-based decision game providing interactive fiction storytelling from fantasy adventures to educational simulations",
+    "Talk Buddy: AI-based audio interface tool for conversation practice (medical diagnoses, HR discussions, English conversation)",
+    "Curriculum Curator: AI-based tool for creating, managing and curating learning materials based on unique teaching philosophies",
+    "Feed Forward System: AI-based assessment feedback tool for various assessment types"
+   ],
+   "castle": false,
+   "links": [
+    "lecturer",
+    "cloudcore",
+    "books",
+    "degrees"
+   ]
+  },
+  {
+   "id": "degrees",
+   "name": "The Degrees",
+   "icon": "scroll",
+   "x": 70,
+   "y": 74,
+   "body": [
+    "Doctor of Philosophy (PhD) \u2014 Curtin University (2017)",
+    "Bachelor of Science (Computer Science) (Honours) \u2014 Curtin University (2001)",
+    "Graduate Diploma in Business \u2014 Curtin University (2000)",
+    "Bachelor of Science (Computer Science) \u2014 Australian National University (1994)",
+    "Bachelor of Applied Science (Mathematics) \u2014 Queensland University of Technology (1989)"
+   ],
+   "castle": false,
+   "links": [
+    "phd",
+    "tools",
+    "locolab"
+   ]
+  },
+  {
+   "id": "castle",
+   "name": "Castle Borck",
+   "icon": "keep",
+   "x": 90,
+   "y": 22,
+   "body": [
+    "Michael Borck",
+    "Perth, WA",
+    "michael.borck@curtin.edu.au",
+    "https://linkedin.com/in/michaelborck",
+    "https://github.com/michael-borck"
+   ],
+   "castle": true,
+   "links": [
+    "locolab"
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "awards",
+   "books"
+  ],
+  [
+   "awards",
+   "navy"
+  ],
+  [
+   "base",
+   "navy"
+  ],
+  [
+   "books",
+   "tools"
+  ],
+  [
+   "castle",
+   "locolab"
+  ],
+  [
+   "cloudcore",
+   "lecturer"
+  ],
+  [
+   "cloudcore",
+   "tools"
+  ],
+  [
+   "degrees",
+   "locolab"
+  ],
+  [
+   "degrees",
+   "phd"
+  ],
+  [
+   "degrees",
+   "tools"
+  ],
+  [
+   "lecturer",
+   "navy"
+  ],
+  [
+   "lecturer",
+   "phd"
+  ],
+  [
+   "lecturer",
+   "tools"
+  ],
+  [
+   "locolab",
+   "python"
+  ],
+  [
+   "phd",
+   "python"
+  ]
+ ]
+}

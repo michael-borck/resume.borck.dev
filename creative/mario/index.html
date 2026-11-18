@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<title>Michael Borck's World — a level-select resume</title>
+<meta name="description" content="A Super-Mario-World-style overworld resume. Walk the paths, enter levels, and clear them all to reach the castle." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%2318273a'/%3E%3Crect x='3' y='7' width='10' height='6' rx='1' fill='%23ffcf6b'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
+<link href="assets/css/mario.css" rel="stylesheet" />
+</head>
+<body>
+<canvas id="map"></canvas>
+
+<div class="hud">
+  <div class="top">
+    <div class="brand">MICHAEL BORCK'S <span>WORLD</span></div>
+    <div class="right">
+      <span class="stat" id="progress">LEVELS 0/11</span>
+      <button class="mini" id="helpBtn">?</button>
+    </div>
+  </div>
+  <div class="hint" id="hint">Arrows / WASD walk the paths · Enter enters a level · click a node</div>
+  <div class="toast" id="toast"></div>
+</div>
+
+<a class="portal-backlink" href="../../index.html">← CV Portal</a>
+
+<!-- Level panel -->
+<div class="overlay hidden" id="panel">
+  <div class="card">
+    <div class="eyebrow" id="panelEyebrow">LEVEL</div>
+    <h1 id="panelTitle"></h1>
+    <div class="body" id="panelBody"></div>
+    <div class="actions">
+      <button id="panelClose">CONTINUE</button>
+    </div>
+  </div>
+</div>
+
+<!-- Welcome -->
+<div class="overlay" id="welcome">
+  <div class="card">
+    <div class="eyebrow">A level-select resume</div>
+    <h1>MICHAEL BORCK'S WORLD</h1>
+    <p>Walk the paths between levels. Step onto a level and press <b>Enter</b> to open it. Clear every level, then reach the <b>castle</b>.</p>
+    <div class="keys"><span>Arrows / WASD — walk</span><span>Enter — enter a level</span><span>Click a node — move/open</span></div>
+    <div class="actions"><button id="startBtn">START</button></div>
+  </div>
+</div>
+
+<!-- Win -->
+<div class="overlay hidden" id="won">
+  <div class="card win">
+    <div class="eyebrow">World complete</div>
+    <h1>YOU REACHED THE CASTLE</h1>
+    <div class="body" id="wonBody"></div>
+    <div class="actions"><button id="againBtn">PLAY AGAIN</button></div>
+  </div>
+</div>
+
+<script src="assets/js/mario.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+/* Michael Borck's World — SNES overworld chrome. */
+:root{
+  --sky:#141f2e; --sky2:#0d1520; --gold:#ffcf6b; --gold-2:#e0a83f;
+  --green:#6bd06b; --cyan:#6ee0d8; --red:#ff7a6b; --ink:#0a0f16;
+  --panel:#121a24; --line:#2a3a4a; --text:#e8eef2; --muted:#9fb0bd;
+  --mono:"JetBrains Mono",monospace; --pixel:"Press Start 2P",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden}
+body{background:var(--sky);color:var(--text);font-family:var(--mono)}
+#map{position:fixed;inset:0;width:100vw;height:100vh;display:block;image-rendering:pixelated;cursor:pointer}
+
+.hud{position:fixed;inset:0;pointer-events:none;z-index:4}
+.hud>*{pointer-events:auto}
+.top{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:flex-start;padding:12px 14px}
+.brand{font-family:var(--pixel);font-size:12px;letter-spacing:1px;color:#cfe3f0;background:rgba(10,15,22,.72);border:2px solid var(--line);padding:8px 10px;border-radius:6px;text-shadow:2px 2px 0 #000}
+.brand span{color:var(--gold)}
+.right{display:flex;gap:8px;align-items:center}
+.stat{font-size:11px;font-weight:700;color:var(--gold);background:rgba(10,15,22,.72);border:2px solid var(--line);padding:7px 10px;border-radius:6px;letter-spacing:1px}
+.mini{background:rgba(10,15,22,.72);border:2px solid var(--line);color:var(--text);width:34px;height:34px;border-radius:6px;font-family:var(--mono);font-weight:700;cursor:pointer}
+.mini:hover{border-color:var(--gold);color:var(--gold)}
+.hint{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);font-size:11px;color:var(--muted);background:rgba(10,15,22,.7);padding:6px 12px;border-radius:6px;white-space:nowrap}
+.toast{position:absolute;left:50%;bottom:64px;transform:translateX(-50%);font-family:var(--pixel);font-size:11px;color:var(--gold);text-shadow:2px 2px 0 #000;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+
+.portal-backlink{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:9;background:rgba(10,15,22,.82);border:2px solid var(--line);color:var(--text);padding:5px 10px;border-radius:6px;font-size:10px;font-weight:700;text-decoration:none}
+.portal-backlink:hover{border-color:var(--gold);color:var(--gold)}
+
+.overlay{position:fixed;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;background:rgba(6,10,16,.9);padding:20px;backdrop-filter:blur(2px)}
+.overlay.hidden{display:none}
+.card{max-width:560px;width:100%;background:linear-gradient(180deg,#141d28,#0d141c);border:2px solid var(--line);border-radius:12px;padding:26px;box-shadow:0 24px 60px rgba(0,0,0,.7)}
+.card .eyebrow{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:8px}
+.card h1{font-family:var(--pixel);font-size:16px;line-height:1.5;color:var(--gold);margin-bottom:12px;text-shadow:2px 2px 0 #000}
+.card.win h1{color:var(--green)}
+.card p{font-size:14px;line-height:1.6;color:#cfd8df;margin-bottom:12px}
+.card .body{font-size:13px;line-height:1.6;color:#cfd8df;max-height:46vh;overflow:auto;margin-bottom:14px}
+.card .body p{margin-bottom:8px}
+.card b{color:var(--gold)}
+.keys{display:flex;flex-wrap:wrap;gap:8px;font-size:11px;color:var(--muted);margin:12px 0}
+.keys span{border:1px solid var(--line);border-radius:6px;padding:5px 8px}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+.card button{font-family:var(--pixel);font-size:11px;background:var(--gold);color:#201600;border:none;border-bottom:4px solid var(--gold-2);border-radius:6px;padding:11px 16px;cursor:pointer;letter-spacing:1px}
+.card button:hover{filter:brightness(1.1)}
+.card button:active{transform:translateY(2px);border-bottom-width:2px}
+@media(max-width:640px){.hint{font-size:9px;padding:5px 8px}}
+@media(prefers-reduced-motion:reduce){.toast{transition:none}}

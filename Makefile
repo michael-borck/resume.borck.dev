@@ -1,7 +1,7 @@
 # Makefile for CV Generation
 # Single source of truth CV system using Quarto
 
-.PHONY: all pdf pdf-latex html slides quest world world-data world-art world-pick doom dungeon ink voxel swipeverse knotebook creative-server terminal magazine api chatbot llms-txt clean install help watch serve validate edit preview commit push
+.PHONY: all pdf pdf-latex html slides quest world world-data world-art world-pick doom dungeon ink voxel mario swipeverse knotebook creative-server terminal magazine api chatbot llms-txt clean install help watch serve validate edit preview commit push
 
 # Default target
 all: pdf html slides
@@ -130,6 +130,13 @@ voxel:
 	@echo "MineBorck ready: creative/voxel/index.html"
 	@echo "  serve: cd creative/voxel && python3 -m http.server 8013"
 
+# Generate Michael Borck's World - Mario-style level-select overworld
+mario:
+	@echo "Generating Mario-world overworld graph..."
+	@python3 scripts/generate_mario_data.py
+	@echo "Mario World ready: creative/mario/index.html"
+	@echo "  serve from repo root: python3 -m http.server 8018 then /creative/mario/"
+
 # Export a SwipeVerse deck (cross-app) from the CV
 swipeverse:
 	@echo "Generating SwipeVerse deck..."
@@ -244,6 +251,7 @@ help:
 	@echo "  make dungeon    - Generate The Delve - roguelike text dungeon"
 	@echo "  make ink        - Generate + compile The Valley - Ink interactive fiction"
 	@echo "  make voxel      - Generate MineBorck - isometric voxel dig/build"
+	@echo "  make mario      - Generate Mario World - level-select overworld"
 	@echo "  make swipeverse - Export a SwipeVerse deck (cross-app)"
 	@echo "  make knotebook  - Build a Knotebook pack from the Ink story (cross-app)"
 	@echo "  make terminal   - Generate Terminal CV - standalone Zork-like text adventure"
