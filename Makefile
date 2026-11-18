@@ -123,6 +123,13 @@ ink:
 	@echo "The Valley ready: creative/ink/index.html"
 	@echo "  serve from repo root: python3 -m http.server 8012 then /creative/ink/"
 
+# Generate MineBorck - isometric voxel dig/build resume
+voxel:
+	@echo "Generating MineBorck voxel world..."
+	@python3 scripts/generate_voxel_data.py
+	@echo "MineBorck ready: creative/voxel/index.html"
+	@echo "  serve: cd creative/voxel && python3 -m http.server 8013"
+
 # Generate Terminal CV - Standalone Zork-like Text Adventure
 terminal:
 	@echo "Generating Terminal CV - Standalone Version..."

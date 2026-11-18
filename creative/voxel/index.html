@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MineBorck — dig for a career</title>
+<meta name="description" content="A blocky isometric resume. Dig through the island to uncover ore blocks, each holding a fact about Michael Borck." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='2' y='6' width='12' height='8' fill='%235a9e3b'/%3E%3Crect x='5' y='3' width='6' height='4' fill='%239a6a38'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
+<link href="assets/css/voxel.css" rel="stylesheet" />
+</head>
+<body>
+<canvas id="world"></canvas>
+
+<div class="hud">
+  <div class="top">
+    <div class="brand">MINE<span>BORCK</span></div>
+    <div class="stats"><span class="k">ORE</span> <span id="oreCount">0/0</span></div>
+  </div>
+
+  <div class="toolbar">
+    <button class="tool active" data-mode="dig">⛏ DIG</button>
+    <button class="tool" data-mode="build">▣ BUILD</button>
+  </div>
+
+  <div class="log" id="log"></div>
+  <div class="hint">Click a block to dig · switch to BUILD to place blocks · right-click to place</div>
+</div>
+
+<a class="portal-backlink" href="../../index.html">← CV Portal</a>
+
+<div class="overlay" id="welcome">
+  <div class="card">
+    <h1>MINEBORCK</h1>
+    <div class="sub">Dig for a career</div>
+    <p>A little blocky island. Ten <b>golden ore</b> blocks are buried in it — each one holds a fact about Michael Borck. Dig them out.</p>
+    <p>Or just mess about: switch to <b>BUILD</b> and stack your own blocks.</p>
+    <div class="keys"><span>⛏ Click to dig</span><span>▣ Build mode to place</span></div>
+    <button id="startBtn">START DIGGING</button>
+  </div>
+</div>
+<div class="overlay hidden" id="won">
+  <div class="card win">
+    <h1>ORE-LY DONE</h1>
+    <div class="sub">you found every vein</div>
+    <p id="wonText"></p>
+    <button id="againBtn">DIG AGAIN</button>
+  </div>
+</div>
+
+<script src="assets/js/voxel.js"></script>
+</body>
+</html>

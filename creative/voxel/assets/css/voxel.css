@@ -1,0 +1,42 @@
+/* MineBorck — isometric voxel dig/build chrome. */
+:root{ --sky:#111a24; --ink:#0a0f14; --panel:#141b22; --line:#2a3742; --gold:#ffcf6b; --grass:#7cc24f; --mono:"JetBrains Mono",monospace; --pixel:"Press Start 2P",monospace; }
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden}
+body{background:radial-gradient(ellipse at 50% 10%,#1b2a33,#0a1016 70%);font-family:var(--mono);color:#dfe6e2}
+#world{position:fixed;inset:0;width:100vw;height:100vh;display:block;image-rendering:pixelated;cursor:crosshair}
+
+.hud{position:fixed;inset:0;pointer-events:none;z-index:4}
+.hud>*{pointer-events:auto}
+.top{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:flex-start;padding:12px 14px;pointer-events:none}
+.brand{font-family:var(--pixel);font-size:13px;color:#8fd0ff;text-shadow:2px 2px 0 #000;background:rgba(10,15,20,.7);border:2px solid var(--line);padding:7px 10px;border-radius:5px}
+.brand span{color:var(--gold)}
+.stats{font-size:12px;background:rgba(10,15,20,.75);border:2px solid var(--line);padding:7px 10px;border-radius:5px}
+.stats .k{color:#c08f3f;font-size:10px;letter-spacing:1px}
+
+.toolbar{position:absolute;top:64px;right:14px;display:flex;flex-direction:column;gap:6px}
+.tool{pointer-events:auto;font-family:var(--mono);font-size:12px;font-weight:700;color:#cdd6d2;background:rgba(10,15,20,.85);border:2px solid var(--line);border-radius:6px;padding:8px 12px;cursor:pointer}
+.tool:hover{border-color:#8fd0ff}
+.tool.active{background:#22303a;border-color:var(--gold);color:var(--gold)}
+
+.log{position:absolute;left:14px;bottom:14px;width:min(380px,64vw);max-height:42vh;display:flex;flex-direction:column;gap:5px;overflow:hidden}
+.log .entry{background:rgba(10,15,20,.85);border-left:3px solid var(--gold);border-radius:4px;padding:6px 9px;font-size:12px;line-height:1.4;color:#e6ece8;animation:pop .2s ease}
+.log .entry b{color:var(--gold)}
+.log .entry small{display:block;color:#9fb0aa;margin-top:2px}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+.hint{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);font-size:10px;color:#7d8f89;background:rgba(10,15,20,.6);padding:5px 10px;border-radius:4px;white-space:nowrap}
+.portal-backlink{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:9;background:rgba(10,15,20,.85);border:2px solid var(--line);color:#cdd6d2;padding:5px 10px;border-radius:4px;font-size:10px;font-weight:700;text-decoration:none}
+.portal-backlink:hover{border-color:#8fd0ff;color:#8fd0ff}
+
+.overlay{position:fixed;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;background:rgba(4,8,11,.9);padding:20px;backdrop-filter:blur(2px)}
+.overlay.hidden{display:none}
+.card{max-width:520px;width:100%;background:linear-gradient(180deg,#16202a,#0c141b);border:2px solid var(--line);border-radius:10px;padding:26px;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+.card h1{font-family:var(--pixel);font-size:20px;color:#8fd0ff;letter-spacing:1px;text-shadow:2px 2px 0 #000;margin-bottom:6px}
+.card.win h1{color:var(--gold)}
+.card .sub{font-size:11px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.card p{font-size:13px;line-height:1.6;color:#cdd6d2;margin-bottom:12px}
+.card b{color:var(--gold)}
+.keys{display:flex;gap:16px;font-size:11px;color:#8fa39c;margin:14px 0}
+.card button{font-family:var(--pixel);font-size:12px;background:var(--gold);color:#201600;border:none;border-bottom:4px solid #b8863b;border-radius:5px;padding:12px 18px;cursor:pointer;letter-spacing:1px}
+.card button:hover{filter:brightness(1.1)}
+@media(max-width:640px){.hint{display:none}}
