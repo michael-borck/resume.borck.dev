@@ -1,0 +1,515 @@
+{
+ "title": "Michael Borck: RIP AND SHIP",
+ "subtitle": "A career you have to fight through",
+ "width": 41,
+ "height": 41,
+ "grid": [
+  "#########################################",
+  "######################....###############",
+  "######################....###############",
+  "###.......................###############",
+  "###.##.###############....###############",
+  "###.##.###############....###############",
+  "###.......###############################",
+  "###.......###############################",
+  "###................................######",
+  "###.......########....############.######",
+  "###.......########....############.######",
+  "###.##############....############.######",
+  "###.##############....############.######",
+  "###.##############....############.######",
+  "###.################.###........##.######",
+  "###.################.###........##.######",
+  "###.################.###........##.######",
+  "#....####.....#.................##.######",
+  "#....####.....#.########........##.######",
+  "#....####.....#.########........##.######",
+  "#....####.......................##.######",
+  "#....####.....#.#########.########.######",
+  "#########.....#.#########.########.######",
+  "###########.###.#########.#####.......###",
+  "###########.###.#########.#####.......###",
+  "###########.###.#########.#####.......###",
+  "###########.###.#########.#####.......###",
+  "###########.#.....#######.#####.......###",
+  "###########.#.....#######.########.######",
+  "###########.......#######.########.######",
+  "#############.....#######.########.######",
+  "#......##################.########.######",
+  "#......##################.########.######",
+  "#......##################.########.######",
+  "#......##################.########.######",
+  "#..................................######",
+  "#......################.....#############",
+  "#......################.....#############",
+  "#......################.....#############",
+  "#######################.....#############",
+  "#########################################"
+ ],
+ "spawn": {
+  "x": 20.5,
+  "y": 11.5,
+  "angle": 0.0
+ },
+ "exit": {
+  "x": 4.5,
+  "y": 35.5
+ },
+ "entities": [
+  {
+   "type": "demon",
+   "x": 31.5,
+   "y": 25.5,
+   "title": "Lecturer \u2014 School of Marketing and Management",
+   "body": [
+    "Curtin University",
+    "Feb 2016 \u2013 Present",
+    "AI Program Leadership - AI Leader for the School, developing new AI programs within undergraduate and postgraduate curricula",
+    "Research Leadership - Founder of LocoLabo, an applied local-AI research lab",
+    "Core Teaching Areas - AI, Programming (Python), and Cyber Security"
+   ],
+   "icon": "demon"
+  },
+  {
+   "type": "demon",
+   "x": 24.5,
+   "y": 2.5,
+   "title": "Course Leadership & Development",
+   "body": [
+    "Curtin University",
+    "Ongoing",
+    "Course Lead for Information Systems undergraduate and postgraduate degree programs",
+    "Unit coordination across multiple levels - postgraduate, undergraduate, core, non-core, and service units (domestic and international)",
+    "Advanced Canvas LMS and Blackboard development and customization"
+   ],
+   "icon": "demon"
+  },
+  {
+   "type": "demon",
+   "x": 4.5,
+   "y": 37.5,
+   "title": "Associate Lecturer",
+   "body": [
+    "Curtin University",
+    "Jan 2001 \u2013 Dec 2007",
+    "Academic Leadership - Provided departmental representation on institutional committees",
+    "Program Development - Developed and delivered comprehensive course material for Software Engineering and Computer Science degrees",
+    "International Coordination - Managed unit coordination across domestic and international campuses"
+   ],
+   "icon": "demon"
+  },
+  {
+   "type": "demon",
+   "x": 4.5,
+   "y": 32.5,
+   "title": "AI, IS & Educational Technology Consultant",
+   "body": [
+    "Self-Employed",
+    "Jan 2016 \u2013 Present",
+    "AI strategy and implementation consultation",
+    "IS/IT consultation and analysis",
+    "Educational technology consulting and training"
+   ],
+   "icon": "demon"
+  },
+  {
+   "type": "demon",
+   "x": 24.5,
+   "y": 36.5,
+   "title": "Researcher",
+   "body": [
+    "Curtin University",
+    "Mar 2018 \u2013 2019",
+    "Advanced AI Research - Investigation and development of CNN models and their application to the maritime environment",
+    "Applied Machine Learning - Focused research on computer vision applications for marine and coastal monitoring"
+   ],
+   "icon": "demon"
+  },
+  {
+   "type": "demon",
+   "x": 3.5,
+   "y": 32.5,
+   "title": "Software Contractor",
+   "body": [
+    "CRCSI & Landgate WA",
+    "Mar 2015 \u2013 Jan 2016",
+    "Computer Vision Innovation - Developed automated detection and recognition systems for street sign inventory",
+    "Technical Expertise - Provided specialized skills in machine learning and image processing for government applications"
+   ],
+   "icon": "demon"
+  },
+  {
+   "type": "demon",
+   "x": 29.5,
+   "y": 15.5,
+   "title": "IT Consultant \u2014 Owner",
+   "body": [
+    "Bital IT Consulting Services",
+    "Jan 2008 \u2013 Jan 2011",
+    "Business Analysis - Provided comprehensive business and technical analysis to diverse client base",
+    "Infrastructure Development - Developed and supported critical backup and monitoring solutions for servers and databases"
+   ],
+   "icon": "demon"
+  },
+  {
+   "type": "demon",
+   "x": 3.5,
+   "y": 33.5,
+   "title": "IT Manager",
+   "body": [
+    "Submarine Systems Centre, RAN",
+    "Jul 1996 \u2013 Jan 2000",
+    "Strategic IT Leadership - Managed comprehensive information technology infrastructure supporting submarine operations and maintenance",
+    "Executive Advisory - Provided strategic IT guidance to senior military leadership and operational boards",
+    "Organisational Impact - Delivered technology solutions that directly supported critical defence capabilities and mission readiness"
+   ],
+   "icon": "demon"
+  },
+  {
+   "type": "demon",
+   "x": 13.5,
+   "y": 30.5,
+   "title": "Project Manager \u2014 Command and Control",
+   "body": [
+    "HQADF",
+    "Jul 1993 \u2013 Dec 1996",
+    "Strategic Leadership - Managed development of critical military messaging systems for Australian Defence Force headquarters",
+    "Project Excellence - Successfully controlled cost, schedule, and quality across multi-year defense communications project",
+    "Cross-functional Coordination - Led technical teams and stakeholder management across multiple defence departments"
+   ],
+   "icon": "demon"
+  },
+  {
+   "type": "demon",
+   "x": 32.5,
+   "y": 26.5,
+   "title": "Analyst/Programmer \u2014 Manpower and Pay Project",
+   "body": [
+    "HQADF",
+    "Aug 1991 \u2013 Jun 1993",
+    "Systems Development - Designed and implemented large-scale personnel management systems for defence operations",
+    "Technical Excellence - Conducted comprehensive code reviews and built sophisticated models using CASE tools",
+    "Full-cycle Development - Led data modeling, process modeling, database design, program design, and interface design"
+   ],
+   "icon": "demon"
+  },
+  {
+   "type": "demon",
+   "x": 29.5,
+   "y": 19.5,
+   "title": "System Administrator \u2014 Manpower and Personnel",
+   "body": [
+    "RAN",
+    "Mar 1989 \u2013 Aug 1993",
+    "Infrastructure Management - Installed, configured, and maintained critical network and computer systems for Royal Australian Navy",
+    "Crisis Management - Executed rapid recovery procedures during system failures, ensuring minimal operational disruption",
+    "Security Operations - Maintained secure computing environments for sensitive military personnel data"
+   ],
+   "icon": "demon"
+  },
+  {
+   "type": "chest",
+   "x": 31.5,
+   "y": 18.5,
+   "title": "Doctor of Philosophy (PhD)",
+   "body": [
+    "Curtin University",
+    "2017",
+    "Feature Extraction from Multi-modal Data (GIS, Machine Learning & Computer Vision)"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 37.5,
+   "y": 23.5,
+   "title": "Bachelor of Science (Computer Science) (Honours)",
+   "body": [
+    "Curtin University",
+    "2001",
+    "A Bayesian Belief Network Approach to Predicting the Prices of Australian Commonwealth Government Interest Rate Securities"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 17.5,
+   "y": 27.5,
+   "title": "Graduate Diploma in Business",
+   "body": [
+    "Curtin University",
+    "2000"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 6.5,
+   "y": 35.5,
+   "title": "Bachelor of Science (Computer Science)",
+   "body": [
+    "Australian National University",
+    "1994"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 9.5,
+   "y": 9.5,
+   "title": "Bachelor of Applied Science (Mathematics)",
+   "body": [
+    "Queensland University of Technology",
+    "1989"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "barrel",
+   "x": 1.5,
+   "y": 17.5,
+   "title": "Programming \u00b7 Core",
+   "body": [
+    "Python, C/C++, C#, Java, JavaScript, Matlab, PHP, CSS, HTML, LaTeX, SQL, Bash"
+   ],
+   "icon": "barrel"
+  },
+  {
+   "type": "barrel",
+   "x": 11.5,
+   "y": 18.5,
+   "title": "Programming \u00b7 Web",
+   "body": [
+    "React, Flask, FastAPI, FastHTML, Vanilla JS, WordPress"
+   ],
+   "icon": "barrel"
+  },
+  {
+   "type": "barrel",
+   "x": 12.5,
+   "y": 22.5,
+   "title": "Programming \u00b7 Ai_Ml",
+   "body": [
+    "Langchain, TensorFlow, PyTorch, Scikit-learn"
+   ],
+   "icon": "barrel"
+  },
+  {
+   "type": "barrel",
+   "x": 4.5,
+   "y": 31.5,
+   "title": "Programming \u00b7 Educational",
+   "body": [
+    "Blackboard LMS, Canvas LMS, Interactive Content Development"
+   ],
+   "icon": "barrel"
+  },
+  {
+   "type": "chest",
+   "x": 36.5,
+   "y": 23.5,
+   "title": "Reality Reigns",
+   "body": [
+    "Swipe-based decision game providing interactive fiction storytelling from fantasy adventures to educational simulations"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 30.5,
+   "y": 14.5,
+   "title": "Talk Buddy",
+   "body": [
+    "AI-based audio interface tool for conversation practice (medical diagnoses, HR discussions, English conversation)"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 4.5,
+   "y": 21.5,
+   "title": "Curriculum Curator",
+   "body": [
+    "AI-based tool for creating, managing and curating learning materials based on unique teaching philosophies"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 5.5,
+   "y": 32.5,
+   "title": "Feed Forward System",
+   "body": [
+    "AI-based assessment feedback tool for various assessment types"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 35.5,
+   "y": 26.5,
+   "title": "Student Feedback Analyzer",
+   "body": [
+    "AI tool that analyzes student feedback forms to suggest course improvements"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 24.5,
+   "y": 4.5,
+   "title": "Image Processing for Orange",
+   "body": [
+    "Ongoing"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 3.5,
+   "y": 9.5,
+   "title": "Graph Merging, Scikit Image",
+   "body": [
+    "2015"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 9.5,
+   "y": 10.5,
+   "title": "User Guide, imgAnnotation Tool",
+   "body": [
+    "2014"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 35.5,
+   "y": 23.5,
+   "title": "Educational Leadership",
+   "body": [
+    "AI Leader for School of Marketing and Management, led development of AI curriculum serving 500+ students across undergraduate and postgraduate programs"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 23.5,
+   "y": 36.5,
+   "title": "Teaching Excellence",
+   "body": [
+    "Achieved 100% student satisfaction scores across multiple units (ISYS3015, ISYS2001, ISYS6018) with consistent \"effective teacher\" ratings"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 35.5,
+   "y": 27.5,
+   "title": "Technical Innovation",
+   "body": [
+    "Creator of multiple AI-powered educational tools including Reality Reigns, Talk Buddy, and Curriculum Curator with 290+ downloads"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 3.5,
+   "y": 19.5,
+   "title": "Industry Impact",
+   "body": [
+    "Executive education training delivered to 100+ professionals across 15+ companies in academics, education, agriculture and mining sectors"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 12.5,
+   "y": 18.5,
+   "title": "Assessment Innovation",
+   "body": [
+    "Developed award-winning \"Cloud Core\" virtual company simulation providing authentic industry experience"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 8.5,
+   "y": 10.5,
+   "title": "Research Excellence",
+   "body": [
+    "6+ peer-reviewed publications in computer vision and machine learning with focus on mobile mapping systems"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 5.5,
+   "y": 38.5,
+   "title": "Open Source Contribution",
+   "body": [
+    "Lead developer for Image Processing for Orange, serving the broader scientific community"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 13.5,
+   "y": 22.5,
+   "title": "Military Leadership",
+   "body": [
+    "Managed critical defence projects including military messaging systems and submarine IT infrastructure"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 5.5,
+   "y": 36.5,
+   "title": "Python Step By Step in an AI World",
+   "body": [
+    "Comprehensive guide to Python programming in the context of artificial intelligence"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 25.5,
+   "y": 19.5,
+   "title": "JumpStart Python in the AI Era",
+   "body": [
+    "Accelerated learning approach for Python in AI applications"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 5.5,
+   "y": 6.5,
+   "title": "Intentional Prompting: Blending AI and Human Oversight",
+   "body": [
+    "Strategic guide to effective AI interaction and governance"
+   ],
+   "icon": "chest"
+  },
+  {
+   "type": "chest",
+   "x": 5.5,
+   "y": 33.5,
+   "title": "Python Dev Book: From Zero to Production",
+   "body": [
+    "Complete development lifecycle guide for Python applications"
+   ],
+   "icon": "chest"
+  }
+ ],
+ "contact": {
+  "name": "Michael Borck",
+  "email": "michael.borck@curtin.edu.au",
+  "location": "Perth, WA",
+  "linkedin": "https://linkedin.com/in/michaelborck",
+  "github": "https://github.com/michael-borck"
+ }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<title>Resume Doom — Michael Borck</title>
+<meta name="description" content="A Doom-style first-person resume. Blast barrels, open chests, and defeat the career to uncover Michael Borck's experience." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23181010'/%3E%3Crect x='2' y='7' width='12' height='3' fill='%23e23b2e'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
+<link href="assets/css/doom.css" rel="stylesheet" />
+</head>
+<body>
+
+<canvas id="view"></canvas>
+
+<!-- HUD -->
+<div class="hud">
+  <div class="hud-top">
+    <div class="brand"><span class="skull">☠</span> RESUME DOOM</div>
+    <div class="statline">
+      <span class="stat"><span class="lbl">FACTS</span> <span id="factCount">0/0</span></span>
+      <span class="stat"><span class="lbl">HP</span> <span id="hp" class="hp">100</span></span>
+      <button class="mini-btn" id="helpBtn">?</button>
+    </div>
+  </div>
+
+  <div class="crosshair" id="crosshair">+</div>
+
+  <canvas id="minimap" class="minimap" width="180" height="180"></canvas>
+
+  <div class="log" id="log" aria-live="polite"></div>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="hint" id="hint">WASD move · mouse look · click / SPACE fire</div>
+</div>
+
+<a class="portal-backlink" href="../../index.html">← CV Portal</a>
+
+<!-- Welcome -->
+<div class="overlay" id="welcome">
+  <div class="panel-card">
+    <h1>RESUME DOOM</h1>
+    <div class="sub">RIP AND SHIP · a first-person career</div>
+    <p>Michael Borck's résumé is a demon-infested facility. Put your boots on, clear the rooms, and collect every fact.</p>
+    <p><b>Barrels</b> hold skills — blast them. <b>Chests</b> hold education, projects and achievements — crack them. <b>Demons</b> are his jobs — put them down.</p>
+    <div class="keys">
+      <span><b>W A S D</b> move</span><span><b>Mouse</b> look</span>
+      <span><b>Click / Space</b> fire</span><span><b>M</b> map</span><span><b>Esc</b> pause</span>
+    </div>
+    <button class="big" id="startBtn">ENTER THE FACILITY</button>
+  </div>
+</div>
+
+<!-- Paused / help -->
+<div class="overlay hidden" id="paused">
+  <div class="panel-card">
+    <h1>PAUSED</h1>
+    <div class="sub">click to resume</div>
+    <div class="keys">
+      <span><b>W A S D</b> move</span><span><b>Mouse</b> look</span>
+      <span><b>Click / Space</b> fire</span><span><b>Esc</b> pause</span>
+    </div>
+    <button class="big" id="resumeBtn">RESUME</button>
+  </div>
+</div>
+
+<!-- Win -->
+<div class="overlay hidden" id="won">
+  <div class="panel-card win">
+    <h1>FACILITY CLEARED</h1>
+    <div class="sub">you collected every fact</div>
+    <p id="wonStats"></p>
+    <p class="contact" id="wonContact"></p>
+    <button class="big" id="againBtn">PLAY AGAIN</button>
+  </div>
+</div>
+
+<script src="assets/js/doom.js"></script>
+</body>
+</html>

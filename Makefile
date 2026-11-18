@@ -1,7 +1,7 @@
 # Makefile for CV Generation
 # Single source of truth CV system using Quarto
 
-.PHONY: all pdf pdf-latex html slides quest world world-data world-art world-pick terminal magazine api chatbot llms-txt clean install help watch serve validate edit preview commit push
+.PHONY: all pdf pdf-latex html slides quest world world-data world-art world-pick doom dungeon ink voxel creative-server terminal magazine api chatbot llms-txt clean install help watch serve validate edit preview commit push
 
 # Default target
 all: pdf html slides
@@ -100,6 +100,13 @@ world-art:
 world-pick:
 	@python3 scripts/resume_world_art.py pick $(NAME) $(CANDIDATE)
 	@python3 scripts/resume_world_art.py process
+
+# Generate Resume Doom - first-person raycaster resume
+doom:
+	@echo "Generating Resume Doom level..."
+	@python3 scripts/generate_doom_data.py
+	@echo "Resume Doom ready: creative/doom/index.html"
+	@echo "  serve: cd creative/doom && python3 -m http.server 8010"
 
 # Generate Terminal CV - Standalone Zork-like Text Adventure
 terminal:
