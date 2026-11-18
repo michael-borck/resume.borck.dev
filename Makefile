@@ -115,6 +115,14 @@ dungeon:
 	@echo "The Delve ready: creative/dungeon/index.html"
 	@echo "  serve: cd creative/dungeon && python3 -m http.server 8011"
 
+# Generate The Valley - Ink interactive fiction resume (needs inkjs: npm install)
+ink:
+	@echo "Generating Ink story and compiling..."
+	@python3 scripts/generate_ink_story.py
+	@node scripts/compile_ink.mjs
+	@echo "The Valley ready: creative/ink/index.html"
+	@echo "  serve from repo root: python3 -m http.server 8012 then /creative/ink/"
+
 # Generate Terminal CV - Standalone Zork-like Text Adventure
 terminal:
 	@echo "Generating Terminal CV - Standalone Version..."

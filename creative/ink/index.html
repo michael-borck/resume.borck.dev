@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Valley — an Ink story of a career</title>
+<meta name="description" content="A branching interactive-fiction resume, written in Ink. Walk eight places of a working life." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%2315120c'/%3E%3Ccircle cx='8' cy='8' r='4' fill='%23ffcf6b'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link href="assets/css/ink.css" rel="stylesheet" />
+</head>
+<body>
+<div class="stage">
+  <header class="top">
+    <span class="brand">THE VALLEY</span>
+    <span class="sub" id="progress">0 / 8 places</span>
+    <span class="spacer"></span>
+    <button class="btn" id="restart">Restart</button>
+  </header>
+
+  <main class="scene">
+    <figure class="art" id="art"><img id="artImg" alt="" /></figure>
+
+    <section class="text" aria-live="polite">
+      <div class="prose" id="prose"></div>
+      <div class="choices" id="choices"></div>
+    </section>
+  </main>
+
+  <footer class="foot">An Ink story · generated from one YAML file</footer>
+</div>
+<a class="portal-backlink" href="../../index.html">← CV Portal</a>
+<script type="module" src="assets/js/ink.js"></script>
+</body>
+</html>

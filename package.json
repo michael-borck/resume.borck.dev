@@ -16,6 +16,7 @@
     "tinyexec": "0.3.2"
   },
   "devDependencies": {
+    "inkjs": "^2.4.0",
     "playwright": "^1.59.1"
   }
 }
