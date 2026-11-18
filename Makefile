@@ -1,7 +1,7 @@
 # Makefile for CV Generation
 # Single source of truth CV system using Quarto
 
-.PHONY: all pdf pdf-latex html slides quest world world-data world-art world-pick doom dungeon ink voxel mario swipeverse knotebook data-exports slides-deck learn print-pages podcast video creative-server terminal magazine api chatbot llms-txt clean install help watch serve validate edit preview commit push
+.PHONY: all pdf pdf-latex html slides quest world world-data world-art world-pick doom dungeon ink voxel mario swipeverse knotebook data-exports slides-deck learn print-pages podcast podcast-audio video video-pptx creative-server terminal magazine api chatbot llms-txt clean install help watch serve validate edit preview commit push
 
 # Default target
 all: pdf html slides
@@ -213,13 +213,28 @@ podcast:
 	@echo "Generating podcast script and video source..."
 	@python3 scripts/generate_podcast.py
 
+# Synthesise the podcast to audio with Gemini TTS (opt-in; paid API)
+#   needs: pip install google-genai  and GEMINI_API_KEY / GOOGLE_API_KEY
+podcast-audio: podcast
+	@python3 scripts/generate_podcast_audio.py
+	@python3 scripts/generate_podcast.py
+	@echo "Podcast audio ready: creative/podcast/podcast.wav"
+
 # Render the narrated video with slide-stream (optional; needs install)
 video: podcast
 	@if command -v slide-stream >/dev/null 2>&1; then \
-		slide-stream create creative/videos/deck.md creative/videos/cv.mp4; \
+		slide-stream create creative/videos/deck.md creative/videos/cv.mp4 --no-avatar; \
 	else \
-		echo "slide-stream not installed. Run: pip install \"slide-stream[all]\""; \
-		echo "then: slide-stream create creative/videos/deck.md creative/videos/cv.mp4"; \
+		echo "slide-stream not installed. Run: pip install slide-stream"; \
+		echo "then: slide-stream create creative/videos/deck.md creative/videos/cv.mp4 --no-avatar"; \
+	fi
+
+# Quick editable PowerPoint (avatar-less; narration in speaker notes)
+video-pptx: podcast
+	@if command -v slide-stream >/dev/null 2>&1; then \
+		slide-stream create creative/videos/deck.md creative/videos/cv.pptx --no-avatar; \
+	else \
+		echo "slide-stream not installed. Run: pip install slide-stream"; \
 	fi
 
 # Generate Chatbot CV - Conversational Interface
@@ -307,7 +322,9 @@ help:
 	@echo "  make learn      - Generate quiz, flashcards, mindmap"
 	@echo "  make print-pages- Generate infographic + printable cards"
 	@echo "  make podcast    - Generate podcast script + slide-stream source"
-	@echo "  make video      - Render narrated MP4 via slide-stream (if installed)"
+	@echo "  make podcast-audio - Synthesise podcast audio via Gemini TTS (paid, opt-in)"
+	@echo "  make video      - Render narrated MP4 via slide-stream (avatar-less)"
+	@echo "  make video-pptx - Quick editable PowerPoint via slide-stream"
 	@echo "  make watch      - Watch for changes and auto-rebuild HTML"
 	@echo "  make serve      - Serve HTML version locally on port 8008"
 	@echo "  make clean      - Remove all generated files"

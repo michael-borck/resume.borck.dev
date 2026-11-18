@@ -68,6 +68,10 @@ git add -A && git commit && git push
 
 Fast vs slow: the generators are quick (`make regenerate`), while `make all` needs Quarto and `make world-art` calls limn (SwarmUI) — run those only when you need those outputs.
 
+**Audio & video (opt-in, never run by `make regenerate`):**
+- Podcast audio — `make podcast-audio` (Gemini TTS; `pip install google-genai` + API credits). NotebookLM Audio Overview is manual (no API).
+- Narrated video / PowerPoint — `make video` / `make video-pptx` (`pip install slide-stream`; offline voice, avatar-less).
+
 The live API and MCP server are deployed separately — see `api/VPS_DEPLOYMENT.md` and `mcp-server/README.md`.
 
 ## Resume World (Zelda-style pixel overworld)

@@ -24,9 +24,9 @@ a.btn{display:inline-block;font-weight:700;font-size:12px;color:var(--ink);backg
   <p>This is a <b>slide-stream</b> Markdown source. slide-stream writes narration, voices it offline (Kokoro — no API key), and assembles an MP4 or PowerPoint.</p>
   <p><a class="btn" href="deck.md" download>Download deck.md</a></p>
   <p>Render locally (Python 3.10+):</p>
-  <pre>pip install "slide-stream[all]"
-slide-stream create deck.md talk.mp4     # narrated video
-slide-stream create deck.md deck.pptx    # editable PowerPoint</pre>
-  <p>It works with no account and no keys; optional LLM/TTS providers (Ollama, OpenAI, Gemini, your cloned voice) can be switched on in <code>slidestream.yaml</code>.</p>
+  <pre>pip install slide-stream
+slide-stream create deck.md talk.mp4 --no-avatar    # narrated video
+slide-stream create deck.md deck.pptx --no-avatar   # editable PowerPoint</pre>
+  <p>It works with no account and no keys. <code>--no-avatar</code> skips the (slow) talking-head overlay; your <code>~/.slidestream.yaml</code> may still point images/TTS at local servers.</p>
 </div>
 </body></html>
