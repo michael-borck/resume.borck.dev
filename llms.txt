@@ -13,7 +13,7 @@ Source: https://resume.borck.dev
 - LinkedIn: https://linkedin.com/in/michaelborck
 - GitHub: https://github.com/michael-borck
 - Portfolio: https://borck.dev
-- Education: https://michaelborck.education
+- Education: https://borck.education
 
 ## Key Achievements
 

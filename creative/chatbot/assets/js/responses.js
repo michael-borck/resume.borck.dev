@@ -404,7 +404,7 @@ function getContactResponse(entities, analysis) {
             <p><strong>💼 Professional Websites:</strong></p>
             <ul>
                 <li><strong>Portfolio:</strong> <a href="https://borck.dev" target="_blank">borck.dev</a></li>
-                <li><strong>Education Platform:</strong> <a href="https://michaelborck.education" target="_blank">michaelborck.education</a></li>
+                <li><strong>Education Platform:</strong> <a href="https://borck.education" target="_blank">borck.education</a></li>
             </ul>
             
             <p><strong>📍 Location:</strong> Perth, Western Australia</p>
