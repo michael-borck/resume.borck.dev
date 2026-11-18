@@ -25,6 +25,7 @@ One YAML file, twelve ways to explore it. Everything on [resume.borck.dev](https
 | 🎴 Printable cards | `scripts/generate_print.py` | `creative/cards/` |
 | 📈 Gantt chart | `scripts/generate_charts.py` | `creative/gantt/` |
 | 📊 Dashboard | `scripts/generate_charts.py` | `creative/dashboard/` |
+| 🗂️ Trello board | `scripts/generate_trello.py` | `creative/trello/` |
 | 🎧 Podcast (script) | `scripts/generate_podcast.py` | `creative/podcast/` |
 | 🎬 Narrated video | `scripts/generate_podcast.py` + slide-stream | `creative/videos/` |
 | 🕯️ **The Delve** (text dungeon) | `scripts/generate_dungeon_data.py` | `creative/dungeon/` |

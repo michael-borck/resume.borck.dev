@@ -1,7 +1,7 @@
 # Makefile for CV Generation
 # Single source of truth CV system using Quarto
 
-.PHONY: all pdf pdf-latex html slides quest world world-data world-art world-pick doom dungeon ink voxel mario swipeverse knotebook data-exports slides-deck learn print-pages charts podcast podcast-audio video video-pptx creative-server terminal magazine api chatbot llms-txt clean install help watch serve validate edit preview commit push
+.PHONY: all pdf pdf-latex html slides quest world world-data world-art world-pick doom dungeon ink voxel mario swipeverse knotebook data-exports slides-deck learn print-pages charts trello podcast podcast-audio video video-pptx creative-server terminal magazine api chatbot llms-txt clean install help watch serve validate edit preview commit push
 
 # Default target
 all: pdf html slides
@@ -9,7 +9,7 @@ all: pdf html slides
 # Regenerate every data-driven format from data/cv-data.yml (fast: no Quarto,
 # no limn pixel-art pass). PDF/HTML/slides: `make all`. World art: `make world-art`.
 .PHONY: regenerate
-regenerate: quest terminal magazine api chatbot llms-txt data-exports slides-deck learn print-pages charts podcast world-data doom dungeon ink voxel mario swipeverse knotebook
+regenerate: quest terminal magazine api chatbot llms-txt data-exports slides-deck learn print-pages charts trello podcast world-data doom dungeon ink voxel mario swipeverse knotebook
 	@echo "✓ Regenerated all data-driven formats from data/cv-data.yml"
 	@echo "  Still separate: 'make all' (PDF/HTML/slides), 'make world-art' (limn pixel art)"
 
@@ -214,6 +214,12 @@ charts:
 	@python3 scripts/generate_charts.py
 	@echo "Charts ready: creative/{gantt,dashboard}/"
 
+# Generate the Trello/Kanban board CV
+trello:
+	@echo "Generating Trello board..."
+	@python3 scripts/generate_trello.py
+	@echo "Trello board ready: creative/trello/index.html"
+
 # Generate podcast script + slide-stream video source
 podcast:
 	@echo "Generating podcast script and video source..."
@@ -328,6 +334,7 @@ help:
 	@echo "  make learn      - Generate quiz, flashcards, mindmap"
 	@echo "  make print-pages- Generate infographic + printable cards"
 	@echo "  make charts     - Generate Gantt chart + dashboard (hover charts)"
+	@echo "  make trello     - Generate a Trello-style board CV"
 	@echo "  make podcast    - Generate podcast script + slide-stream source"
 	@echo "  make podcast-audio - Synthesise podcast audio via Gemini TTS (paid, opt-in)"
 	@echo "  make video      - Render narrated MP4 via slide-stream (avatar-less)"

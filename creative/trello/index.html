@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Michael Borck — Career Board</title>
+<meta name="description" content="Michael Borck's CV as a Trello-style board." />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0a0a0b;--bg1:#123047;--bg2:#0b1a26;--list:#161d24;--card:#212b34;--line:#2c3946;--text:#e8ecef;--muted:#9aa6b2;--gold:#ffcf6b;--mono:"JetBrains Mono",monospace;--pixel:"Press Start 2P",monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(ellipse at 50% 0%,var(--bg1),var(--bg2) 70%);color:var(--text);font-family:var(--mono);min-height:100vh}
+a.portal-link{position:static;font-size:11px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:5px 9px;border-radius:6px;background:rgba(10,10,11,.5);white-space:nowrap}
+a.portal-link:hover{color:var(--gold);border-color:var(--gold)}
+.top{display:flex;align-items:center;gap:14px;padding:16px 18px 8px;max-width:1400px;margin:0 auto}
+.brand{font-family:var(--pixel);font-size:13px;color:var(--gold);text-shadow:2px 2px 0 #000}
+.sub{color:var(--muted);font-size:11px}
+.spacer{flex:1}
+.btn{font-family:var(--mono);font-weight:700;font-size:11px;color:#161006;background:var(--gold);border:none;border-bottom:3px solid #b8863b;border-radius:6px;padding:8px 12px;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--text);border:2px solid var(--line);border-bottom-width:2px}
+.btn.ghost:hover{border-color:var(--gold);color:var(--gold)}
+.board{display:flex;gap:14px;align-items:flex-start;overflow-x:auto;padding:12px 18px 40px;max-width:1400px;margin:0 auto}
+.list{flex:0 0 290px;width:290px;background:var(--list);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;max-height:calc(100vh - 140px)}
+.list.over{outline:2px solid var(--gold);outline-offset:2px}
+.lhead{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 14px 10px;border-bottom:1px solid var(--line);border-top:4px solid var(--c);border-radius:12px 12px 0 0;font-weight:700;font-size:12px;color:#fff;letter-spacing:.5px}
+.lhead .lcount{font-size:10px;color:var(--muted);background:rgba(255,255,255,.06);padding:2px 7px;border-radius:999px}
+.cards{padding:10px;display:flex;flex-direction:column;gap:8px;overflow-y:auto;min-height:60px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:10px 11px;cursor:grab;transition:transform .08s,box-shadow .12s,border-color .12s}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.45);border-color:#3c4c5c}
+.card.dragging{opacity:.45}
+.labels{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:7px}
+.lbl{font-size:8px;letter-spacing:1px;font-weight:700;color:#0a0f14;background:var(--lc);padding:2px 6px;border-radius:999px}
+.ct{font-size:12px;line-height:1.4;color:#fff}
+.cm{font-size:10px;color:var(--muted);margin-top:4px;line-height:1.4}
+.tip{font-size:10px;color:var(--muted)}
+.overlay{position:fixed;inset:0;z-index:30;display:flex;align-items:center;justify-content:center;background:rgba(3,7,11,.82);backdrop-filter:blur(3px);padding:20px}
+.overlay.hidden{display:none}
+.modal{max-width:560px;width:100%;background:linear-gradient(180deg,#17212b,#0e161d);border:2px solid var(--line);border-radius:14px;padding:26px;box-shadow:0 24px 60px rgba(0,0,0,.7)}
+.modal h2{font-size:18px;color:#fff;line-height:1.4;margin:8px 0 6px}
+.modal .cm{margin-bottom:14px}
+.modal .body p{font-size:13px;line-height:1.6;color:#cfd8df;margin-bottom:8px}
+.modal .close{margin-top:16px}
+@media(max-width:640px){.list{flex-basis:82vw;width:82vw}}
+</style></head>
+<body>
+<div class="top">
+  <div><div class="brand">CAREER BOARD</div><div class="sub">Michael Borck · drag cards between lists · click a card for detail</div></div>
+  <div class="spacer"></div>
+  <a class="portal-link" href="../../index.html">← CV Portal</a>
+  <button class="btn ghost" id="reset">Reset board</button>
+</div>
+<div class="board" id="board"></div>
+
+<div class="overlay hidden" id="cardOv">
+  <div class="modal">
+    <div class="labels" id="mLabels"></div>
+    <h2 id="mTitle"></h2>
+    <div class="cm" id="mMeta"></div>
+    <div class="body" id="mBody"></div>
+    <button class="btn close" id="mClose">Close</button>
+  </div>
+</div>
+
+<script>
+const DATA = {"title": "Michael Borck — Career Board", "name": "Michael Borck", "lists": [{"id": "profile", "name": "Profile", "color": "#C084FC", "cards": [{"id": "profile-1", "title": "Michael Borck", "meta": "Perth, WA · michael.borck@curtin.edu.au", "body": ["AI Leader and Cyber Security expert with 25+ years spanning military → academia → industry consulting transition. Author of the Conversation, Not Delegation book series, creator of innovative educational AI tools, and pioneer in AI-enhanced pedagogy serving academics, education, agriculture and mining sectors. Founder of LocoLabo, an applied local-AI research lab, with a rare combination of technical depth and educational innovation expertise. Teaching philosophy grounded in three conceptual pillars - Caring, Competence, and Passion, with a core principle of \"Make Contact Count.\""], "labels": [{"t": "PROFILE", "c": "#C084FC"}]}]}, {"id": "experience", "name": "Experience", "color": "#E8B54D", "cards": [{"id": "exp-0", "title": "Lecturer — School of Marketing and Management", "meta": "Curtin University · Perth, WA · Feb 2016 – Present", "body": ["AI Program Leadership - AI Leader for the School, developing new AI programs within undergraduate and postgraduate curricula", "Research Leadership - Founder of LocoLabo, an applied local-AI research lab", "Core Teaching Areas - AI, Programming (Python), and Cyber Security", "Curriculum Development - Backbone developer for Python and Web development programs", "Cyber Security - Lead lecturer for cyber security programs with advanced digital forensics curriculum", "Educational Innovation - Pioneer in AI-enhanced pedagogy and interactive learning methodologies, with teaching philosophy grounded in Caring, Competence, and Passion", "Student Engagement - Achieved 100% student satisfaction scores through innovative assessment design including \"Cloud Core\" virtual company simulation", "Executive Education - Providing AI training to academics, education professionals, agriculture and mining industry executives"], "labels": [{"t": "ROLE", "c": "#E8B54D"}]}, {"id": "exp-1", "title": "Course Leadership & Development", "meta": "Curtin University · Perth, WA · Ongoing", "body": ["Course Lead for Information Systems undergraduate and postgraduate degree programs", "Unit coordination across multiple levels - postgraduate, undergraduate, core, non-core, and service units (domestic and international)", "Advanced Canvas LMS and Blackboard development and customization", "Creator of interactive educational tools and assessment frameworks"], "labels": [{"t": "ROLE", "c": "#E8B54D"}]}, {"id": "exp-2", "title": "Associate Lecturer", "meta": "Curtin University · Perth, WA · Jan 2001 – Dec 2007", "body": ["Academic Leadership - Provided departmental representation on institutional committees", "Program Development - Developed and delivered comprehensive course material for Software Engineering and Computer Science degrees", "International Coordination - Managed unit coordination across domestic and international campuses"], "labels": [{"t": "ROLE", "c": "#E8B54D"}]}, {"id": "exp-3", "title": "AI, IS & Educational Technology Consultant", "meta": "Self-Employed · Perth, WA · Jan 2016 – Present", "body": ["AI strategy and implementation consultation", "IS/IT consultation and analysis", "Educational technology consulting and training", "Executive education training in AI for academics, education professionals, agriculture and mining industries"], "labels": [{"t": "ROLE", "c": "#E8B54D"}]}, {"id": "exp-4", "title": "Researcher", "meta": "Curtin University · Perth, WA · Mar 2018 – 2019", "body": ["Advanced AI Research - Investigation and development of CNN models and their application to the maritime environment", "Applied Machine Learning - Focused research on computer vision applications for marine and coastal monitoring"], "labels": [{"t": "ROLE", "c": "#E8B54D"}]}, {"id": "exp-5", "title": "Software Contractor", "meta": "CRCSI & Landgate WA · Perth, WA · Mar 2015 – Jan 2016", "body": ["Computer Vision Innovation - Developed automated detection and recognition systems for street sign inventory", "Technical Expertise - Provided specialized skills in machine learning and image processing for government applications"], "labels": [{"t": "ROLE", "c": "#E8B54D"}]}, {"id": "exp-6", "title": "IT Consultant — Owner", "meta": "Bital IT Consulting Services · Perth, WA · Jan 2008 – Jan 2011", "body": ["Business Analysis - Provided comprehensive business and technical analysis to diverse client base", "Infrastructure Development - Developed and supported critical backup and monitoring solutions for servers and databases"], "labels": [{"t": "ROLE", "c": "#E8B54D"}]}, {"id": "exp-7", "title": "IT Manager", "meta": "Submarine Systems Centre, RAN · Perth, WA · Jul 1996 – Jan 2000", "body": ["Strategic IT Leadership - Managed comprehensive information technology infrastructure supporting submarine operations and maintenance", "Executive Advisory - Provided strategic IT guidance to senior military leadership and operational boards", "Organisational Impact - Delivered technology solutions that directly supported critical defence capabilities and mission readiness"], "labels": [{"t": "ROLE", "c": "#E8B54D"}]}, {"id": "exp-8", "title": "Project Manager — Command and Control", "meta": "HQADF · Canberra, ACT · Jul 1993 – Dec 1996", "body": ["Strategic Leadership - Managed development of critical military messaging systems for Australian Defence Force headquarters", "Project Excellence - Successfully controlled cost, schedule, and quality across multi-year defense communications project", "Cross-functional Coordination - Led technical teams and stakeholder management across multiple defence departments"], "labels": [{"t": "ROLE", "c": "#E8B54D"}]}, {"id": "exp-9", "title": "Analyst/Programmer — Manpower and Pay Project", "meta": "HQADF · Canberra, ACT · Aug 1991 – Jun 1993", "body": ["Systems Development - Designed and implemented large-scale personnel management systems for defence operations", "Technical Excellence - Conducted comprehensive code reviews and built sophisticated models using CASE tools", "Full-cycle Development - Led data modeling, process modeling, database design, program design, and interface design"], "labels": [{"t": "ROLE", "c": "#E8B54D"}]}, {"id": "exp-10", "title": "System Administrator — Manpower and Personnel", "meta": "RAN · Canberra, ACT · Mar 1989 – Aug 1993", "body": ["Infrastructure Management - Installed, configured, and maintained critical network and computer systems for Royal Australian Navy", "Crisis Management - Executed rapid recovery procedures during system failures, ensuring minimal operational disruption", "Security Operations - Maintained secure computing environments for sensitive military personnel data"], "labels": [{"t": "ROLE", "c": "#E8B54D"}]}]}, {"id": "teaching", "name": "Teaching", "color": "#4FC9A8", "cards": [{"id": "teach-phil", "title": "Built on three pillars - Caring, Competence, and Passion", "meta": "Make Contact Count - maximising impact through every student interaction", "body": ["Make Contact Count - maximising impact through every student interaction", "Grounded in Constructivist learning theory, Bloom's Taxonomy, and Universal Design for Learning (UDL)"], "labels": [{"t": "TEACHING", "c": "#4FC9A8"}]}, {"id": "teach-sat-0", "title": "100% Satisfaction Scores", "meta": "Student feedback", "body": ["Achieved across ISYS3015 Business Application Development, ISYS2001 Introduction to Business Programming, and ISYS6018 Information Security"], "labels": [{"t": "TEACHING", "c": "#4FC9A8"}]}, {"id": "teach-sat-1", "title": "100% 'Effective Teacher' Ratings", "meta": "Student feedback", "body": ["Across Enterprise Network Security, Business Systems Selection, and Introduction to Programming units"], "labels": [{"t": "TEACHING", "c": "#4FC9A8"}]}, {"id": "teach-inn-0", "title": "Cloud Core Simulation", "meta": "Innovation", "body": ["Created complete virtual company with IT infrastructure, policies, and staff chatbot for authentic audit experiences"], "labels": [{"t": "TEACHING", "c": "#4FC9A8"}]}, {"id": "teach-inn-1", "title": "Real-World Integration", "meta": "Innovation", "body": ["Students report assessments prepare them for 'workplace environment'"], "labels": [{"t": "TEACHING", "c": "#4FC9A8"}]}, {"id": "teach-inn-2", "title": "Student Impact", "meta": "Innovation", "body": ["The environment created while performing the assignment is nothing less than working in real-time"], "labels": [{"t": "TEACHING", "c": "#4FC9A8"}]}]}, {"id": "projects", "name": "Projects", "color": "#E5745A", "cards": [{"id": "proj-0", "title": "Reality Reigns", "meta": "", "body": ["Swipe-based decision game providing interactive fiction storytelling from fantasy adventures to educational simulations"], "labels": [{"t": "PROJECT", "c": "#E5745A"}]}, {"id": "proj-1", "title": "Talk Buddy", "meta": "", "body": ["AI-based audio interface tool for conversation practice (medical diagnoses, HR discussions, English conversation)"], "labels": [{"t": "PROJECT", "c": "#E5745A"}]}, {"id": "proj-2", "title": "Curriculum Curator", "meta": "", "body": ["AI-based tool for creating, managing and curating learning materials based on unique teaching philosophies"], "labels": [{"t": "PROJECT", "c": "#E5745A"}]}, {"id": "proj-3", "title": "Feed Forward System", "meta": "", "body": ["AI-based assessment feedback tool for various assessment types"], "labels": [{"t": "PROJECT", "c": "#E5745A"}]}, {"id": "proj-4", "title": "Student Feedback Analyzer", "meta": "", "body": ["AI tool that analyzes student feedback forms to suggest course improvements"], "labels": [{"t": "PROJECT", "c": "#E5745A"}]}, {"id": "proj-5", "title": "Image Processing for Orange", "meta": "Ongoing", "body": [], "labels": [{"t": "PROJECT", "c": "#E5745A"}]}, {"id": "proj-6", "title": "Graph Merging, Scikit Image", "meta": "2015", "body": [], "labels": [{"t": "PROJECT", "c": "#E5745A"}]}, {"id": "proj-7", "title": "User Guide, imgAnnotation Tool", "meta": "2014", "body": [], "labels": [{"t": "PROJECT", "c": "#E5745A"}]}]}, {"id": "education", "name": "Education", "color": "#7FA8F0", "cards": [{"id": "edu-0", "title": "Doctor of Philosophy (PhD)", "meta": "Curtin University · 2017", "body": ["Computer Science", "Feature Extraction from Multi-modal Data (GIS, Machine Learning & Computer Vision)"], "labels": [{"t": "DEGREE", "c": "#7FA8F0"}]}, {"id": "edu-1", "title": "Bachelor of Science (Computer Science) (Honours)", "meta": "Curtin University · 2001", "body": ["Computer Science", "A Bayesian Belief Network Approach to Predicting the Prices of Australian Commonwealth Government Interest Rate Securities"], "labels": [{"t": "DEGREE", "c": "#7FA8F0"}]}, {"id": "edu-2", "title": "Graduate Diploma in Business", "meta": "Curtin University · 2000", "body": ["Business"], "labels": [{"t": "DEGREE", "c": "#7FA8F0"}]}, {"id": "edu-3", "title": "Bachelor of Science (Computer Science)", "meta": "Australian National University · 1994", "body": ["Computer Science"], "labels": [{"t": "DEGREE", "c": "#7FA8F0"}]}, {"id": "edu-4", "title": "Bachelor of Applied Science (Mathematics)", "meta": "Queensland University of Technology · 1989", "body": ["Mathematics"], "labels": [{"t": "DEGREE", "c": "#7FA8F0"}]}]}, {"id": "skills", "name": "Skills", "color": "#9AE8A0", "cards": [{"id": "skill-1", "title": "Programming · Core", "meta": "12 items", "body": ["Python, C/C++, C#, Java, JavaScript, Matlab, PHP, CSS, HTML, LaTeX, SQL, Bash"], "labels": [{"t": "SKILL", "c": "#9AE8A0"}]}, {"id": "skill-2", "title": "Programming · Web", "meta": "6 items", "body": ["React, Flask, FastAPI, FastHTML, Vanilla JS, WordPress"], "labels": [{"t": "SKILL", "c": "#9AE8A0"}]}, {"id": "skill-3", "title": "Programming · Ai Ml", "meta": "4 items", "body": ["Langchain, TensorFlow, PyTorch, Scikit-learn"], "labels": [{"t": "SKILL", "c": "#9AE8A0"}]}, {"id": "skill-4", "title": "Programming · Educational", "meta": "3 items", "body": ["Blackboard LMS, Canvas LMS, Interactive Content Development"], "labels": [{"t": "SKILL", "c": "#9AE8A0"}]}]}, {"id": "contact", "name": "Contact", "color": "#6EE0D8", "cards": [{"id": "contact-1", "title": "Get in touch", "meta": "Perth, WA", "body": ["michael.borck@curtin.edu.au", "https://linkedin.com/in/michaelborck", "https://github.com/michael-borck", "https://borck.dev"], "labels": [{"t": "CONTACT", "c": "#6EE0D8"}]}]}]};
+const KEY = 'cv.trello.v1';
+const $ = id => document.getElementById(id);
+const esc = t => String(t==null?'':t).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+// card registry
+const byId = {};
+DATA.lists.forEach(l => l.cards.forEach(c => { byId[c.id] = c; }));
+
+// mutable placement: listId -> [cardIds]
+let lists = DATA.lists.map(l => ({ id:l.id, name:l.name, color:l.color, cardIds:l.cards.map(c=>c.id) }));
+
+function save(){ try{ const o={}; lists.forEach(l=>o[l.id]=l.cardIds); localStorage.setItem(KEY, JSON.stringify(o)); }catch(e){} }
+function load(){
+  let saved=null; try{ saved=JSON.parse(localStorage.getItem(KEY)||'null'); }catch(e){}
+  if(!saved) return;
+  const covered=new Set();
+  lists.forEach(l=>{ if(Array.isArray(saved[l.id])) l.cardIds=saved[l.id].filter(id=>byId[id]); l.cardIds.forEach(id=>covered.add(id)); });
+  // any card not in saved goes back to its original list
+  DATA.lists.forEach(dl=>dl.cards.forEach(c=>{ if(!covered.has(c.id)){ const l=lists.find(x=>x.id===dl.id); if(l){ l.cardIds.push(c.id); covered.add(c.id); } } }));
+}
+
+function cardEl(c){
+  const d=document.createElement('div'); d.className='card'; d.draggable=true; d.dataset.id=c.id;
+  d.innerHTML = `<div class="labels">${(c.labels||[]).map(L=>`<span class="lbl" style="--lc:${L.c}">${esc(L.t)}</span>`).join('')}</div>`
+    + `<div class="ct">${esc(c.title)}</div>` + (c.meta?`<div class="cm">${esc(c.meta)}</div>`:'');
+  d.addEventListener('dragstart',ev=>{ ev.dataTransfer.setData('text/plain', c.id); ev.dataTransfer.effectAllowed='move'; d.classList.add('dragging'); justDragged=true; });
+  d.addEventListener('dragend',()=>{ d.classList.remove('dragging'); setTimeout(()=>justDragged=false,60); });
+  d.addEventListener('click',()=>{ if(!justDragged) openCard(c.id); });
+  return d;
+}
+let justDragged=false;
+
+function render(){
+  const board=$('board'); board.innerHTML='';
+  lists.forEach(l=>{
+    const col=document.createElement('div'); col.className='list'; col.style.setProperty('--c',l.color);
+    col.innerHTML=`<div class="lhead"><span>${esc(l.name)}</span><span class="lcount">${l.cardIds.length}</span></div><div class="cards"></div>`;
+    const cont=col.querySelector('.cards');
+    l.cardIds.forEach(id=>{ const c=byId[id]; if(c) cont.appendChild(cardEl(c)); });
+    cont.addEventListener('dragover',ev=>{ ev.preventDefault(); col.classList.add('over'); });
+    cont.addEventListener('dragleave',()=>col.classList.remove('over'));
+    cont.addEventListener('drop',ev=>{
+      ev.preventDefault(); col.classList.remove('over');
+      const id=ev.dataTransfer.getData('text/plain');
+      if(id) moveCard(id,l.id);
+    });
+    board.appendChild(col);
+  });
+}
+
+function moveCard(id,toListId){
+  lists.forEach(l=>{ l.cardIds=l.cardIds.filter(x=>x!==id); });
+  const t=lists.find(l=>l.id===toListId); if(t) t.cardIds.push(id);
+  save(); render();
+}
+
+function openCard(id){
+  const c=byId[id]; if(!c) return;
+  $('mLabels').innerHTML=(c.labels||[]).map(L=>`<span class="lbl" style="--lc:${L.c}">${esc(L.t)}</span>`).join('');
+  $('mTitle').textContent=c.title; $('mMeta').textContent=c.meta||'';
+  $('mBody').innerHTML=(c.body&&c.body.length?c.body:['']).map(p=>`<p>${esc(p)}</p>`).join('');
+  $('cardOv').classList.remove('hidden');
+}
+$('mClose').onclick=()=>$('cardOv').classList.add('hidden');
+$('cardOv').addEventListener('click',ev=>{ if(ev.target===$('cardOv')) $('cardOv').classList.add('hidden'); });
+document.addEventListener('keydown',ev=>{ if(ev.key==='Escape') $('cardOv').classList.add('hidden'); });
+$('reset').onclick=()=>{ try{ localStorage.removeItem(KEY); }catch(e){} lists=DATA.lists.map(l=>({ id:l.id,name:l.name,color:l.color,cardIds:l.cards.map(c=>c.id) })); render(); };
+
+load();
+render();
+</script>
+</body></html>
