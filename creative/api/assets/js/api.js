@@ -53,7 +53,7 @@ async function loadApiData() {
                     "location": "Perth, WA",
                     "description": "Leading AI education and research initiatives",
                     "key_responsibilities": [
-                        "Technical Lead for Business AI Research Group",
+                        "Founder of LocoLabo, an applied local-AI research lab",
                         "Pioneer in AI-enhanced pedagogy",
                         "Creator of interactive educational tools",
                         "Development of assessment frameworks"
@@ -155,7 +155,7 @@ async function loadApiData() {
             achievements: [
                 "100% Student Satisfaction Rating",
                 "4 Published Technical Books",
-                "Technical Lead - Business AI Research Group",
+                "Founder of LocoLabo",
                 "Pioneer in AI-Enhanced Pedagogy",
                 "12 Years Military Service - Top Secret Clearance"
             ]
@@ -468,7 +468,7 @@ function downloadSpec() {
         },
         servers: [
             {
-                url: "https://api.michael-borck.dev/v1",
+                url: "https://api.resume.borck.dev/v1",
                 description: "Production API"
             }
         ],

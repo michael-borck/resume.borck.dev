@@ -7,9 +7,9 @@
     "location": "Perth, WA",
     "linkedin": "https://linkedin.com/in/michaelborck",
     "github": "https://github.com/michael-borck",
-    "portfolio": "https://michaelborck.dev",
+    "portfolio": "https://borck.dev",
     "education_platform": "https://michaelborck.education",
-    "summary": "AI Leader and Cyber Security expert with 25+ years spanning military → academia → industry consulting transition. Author of 4 technical books (Creative Commons licensed), creator of innovative educational AI tools, and pioneer in AI-enhanced pedagogy serving academics, education, agriculture and mining sectors. Technical Lead for Business AI Research Group with a rare combination of technical depth and educational innovation expertise. Teaching philosophy grounded in three conceptual pillars - Caring, Competence, and Passion, with a core principle of \"Make Contact Count.\"",
+    "summary": "AI Leader and Cyber Security expert with 25+ years spanning military → academia → industry consulting transition. Author of the Conversation, Not Delegation book series, creator of innovative educational AI tools, and pioneer in AI-enhanced pedagogy serving academics, education, agriculture and mining sectors. Founder of LocoLabo, an applied local-AI research lab, with a rare combination of technical depth and educational innovation expertise. Teaching philosophy grounded in three conceptual pillars - Caring, Competence, and Passion, with a core principle of \"Make Contact Count.\"",
     "tagline": "Make Contact Count - maximising impact through every student interaction"
   },
   "teaching_philosophy": {
@@ -56,7 +56,7 @@
       "period": "Feb 2016 – Present",
       "responsibilities": [
         "AI Program Leadership - AI Leader for the School, developing new AI programs within undergraduate and postgraduate curricula",
-        "Technical Leadership - Technical Lead for the Business AI Research Group",
+        "Research Leadership - Founder of LocoLabo, an applied local-AI research lab",
         "Core Teaching Areas - AI, Programming (Python), and Cyber Security",
         "Curriculum Development - Backbone developer for Python and Web development programs",
         "Cyber Security - Lead lecturer for cyber security programs with advanced digital forensics curriculum",
@@ -513,7 +513,7 @@
     "impact": "Cybersecurity assessment frameworks used by 5+ universities"
   },
   "metadata": {
-    "generated_at": "2025-08-14T13:43:21.738543",
+    "generated_at": "2026-10-31T19:32:01.849793",
     "version": "1.0.0",
     "source": "cv-data.yml"
   }

@@ -5,7 +5,7 @@
 
 ### 🏛️ Current Role
 **Lecturer & AI Leader** @ Curtin University  
-School of Marketing and Management | Technical Lead, Business AI Research Group
+School of Marketing and Management | Founder, LocoLabo
 
 ### 🚀 Impact & Achievements
 - 📚 **Author** of 4 technical books (Creative Commons licensed)
@@ -31,7 +31,7 @@ expertise = {
 - **[Curriculum Curator](https://github.com/michael-borck/curriculum-curator)** - AI-based learning material creator
 
 ### 📫 Connect With Me
-[📄 Full CV](https://michael-borck.github.io/cv) | [📚 Educational Platform](https://michaelborck.education) | [💼 Portfolio](https://michaelborck.dev) | [💌 Email](mailto:michael.borck@curtin.edu.au) | [🔗 LinkedIn](https://linkedin.com/in/michaelborck)
+[📄 Full CV](https://michael-borck.github.io/cv) | [📚 Educational Platform](https://michaelborck.education) | [💼 Portfolio](https://borck.dev) | [💌 Email](mailto:michael.borck@curtin.edu.au) | [🔗 LinkedIn](https://linkedin.com/in/michaelborck)
 
 ---
 

@@ -1,9 +1,9 @@
 # Michael Borck
 
-> AI Leader and Cyber Security expert with 25+ years spanning military → academia → industry consulting transition. Author of 4 technical books (Creative Commons licensed), creator of innovative educational AI tools, and pioneer in AI-enhanced pedagogy serving academics, education, agriculture and mining sectors. Technical Lead for Business AI Research Group with a rare combination of technical depth and educational innovation expertise. Teaching philosophy grounded in three conceptual pillars - Caring, Competence, and Passion, with a core principle of "Make Contact Count."
+> AI Leader and Cyber Security expert with 25+ years spanning military → academia → industry consulting transition. Author of the Conversation, Not Delegation book series, creator of innovative educational AI tools, and pioneer in AI-enhanced pedagogy serving academics, education, agriculture and mining sectors. Founder of LocoLabo, an applied local-AI research lab, with a rare combination of technical depth and educational innovation expertise. Teaching philosophy grounded in three conceptual pillars - Caring, Competence, and Passion, with a core principle of "Make Contact Count."
 
 This file contains structured resume/CV data for LLM consumption.
-Generated: 2026-03-20
+Generated: 2026-10-31
 Source: https://resume.borck.dev
 
 ## Contact
@@ -12,7 +12,7 @@ Source: https://resume.borck.dev
 - Email: michael.borck@curtin.edu.au
 - LinkedIn: https://linkedin.com/in/michaelborck
 - GitHub: https://github.com/michael-borck
-- Portfolio: https://michaelborck.dev
+- Portfolio: https://borck.dev
 - Education: https://michaelborck.education
 
 ## Key Achievements
@@ -32,7 +32,7 @@ Source: https://resume.borck.dev
 Curtin University | Perth, WA | Feb 2016 – Present
 
 - AI Program Leadership - AI Leader for the School, developing new AI programs within undergraduate and postgraduate curricula
-- Technical Leadership - Technical Lead for the Business AI Research Group
+- Research Leadership - Founder of LocoLabo, an applied local-AI research lab
 - Core Teaching Areas - AI, Programming (Python), and Cyber Security
 - Curriculum Development - Backbone developer for Python and Web development programs
 - Cyber Security - Lead lecturer for cyber security programs with advanced digital forensics curriculum
@@ -186,7 +186,6 @@ Educational: Blackboard LMS, Canvas LMS, Interactive Content Development
 ## Professional Memberships
 
 - Australian Computer Society (ACS), Certified Professional (2011) — (ongoing professional development required)
-- Institute of Electrical and Electronics Engineers (IEEE) UK, Member (Current)
 
 ## Interests
 

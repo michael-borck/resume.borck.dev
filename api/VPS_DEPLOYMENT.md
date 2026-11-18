@@ -8,14 +8,14 @@ This guide explains how to deploy the Resume API to your Hostinger VPS where Cad
 - **Firewall**: Only ports 80 and 443 open
 - **DNS**: 
   - `serveur.au` → Cloudflare
-  - `michaelborck.dev` → VentraIP
+  - `borck.dev` → VentraIP
 - **Network**: Tailscale configured
 
 ## Deployment Steps
 
 ### 1. DNS Setup (VentraIP)
 First, add an A record in your VentraIP control panel:
-- **Subdomain**: `api.resume` (creates api.resume.michaelborck.dev)
+- **Subdomain**: `api.resume` (creates api.resume.borck.dev)
 - **Type**: A
 - **Value**: Your Hostinger VPS IP address
 
@@ -27,7 +27,7 @@ ssh your-vps
 ### 3. Clone the Repository
 ```bash
 cd ~
-git clone https://github.com/michael-borck/resume.michaelborck.dev.git resume-api
+git clone https://github.com/michael-borck/resume.borck.dev.git resume-api
 cd resume-api
 ```
 
@@ -46,7 +46,7 @@ This script will:
 Add this to your existing Caddyfile (following the same pattern as n8n):
 
 ```caddy
-api.resume.michaelborck.dev {
+api.resume.borck.dev {
     reverse_proxy resume-api:8000
 }
 ```
@@ -74,7 +74,7 @@ docker logs resume-api
 
 ### Remote test (after DNS propagates):
 ```bash
-curl https://api.resume.michaelborck.dev/health
+curl https://api.resume.borck.dev/health
 ```
 
 ## Docker Network Note
@@ -109,7 +109,7 @@ docker network inspect [network-name]
 ### DNS not working
 - Check A record in VentraIP
 - Wait for DNS propagation (can take up to 48 hours)
-- Test with: `nslookup api.resume.michaelborck.dev`
+- Test with: `nslookup api.resume.borck.dev`
 
 ## Management Commands
 

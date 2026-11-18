@@ -18,7 +18,7 @@ One YAML file, twelve ways to explore it. Everything on [resume.borck.dev](https
 | 📰 TechLife Magazine | `scripts/generate_magazine_data.py` | `creative/magazine/` |
 | 🔌 API documentation (Swagger-style page) | `scripts/generate_api_data.py` | `creative/api/` |
 | 💬 Chatbot | `scripts/generate_chatbot_data.py` | `creative/chatbot/` |
-| ⚡ Live API (FastAPI, Dockerised) | `api/` | [api.resume.michaelborck.dev](https://api.resume.michaelborck.dev/docs) |
+| ⚡ Live API (FastAPI, Dockerised) | `api/` | [api.resume.borck.dev](https://api.resume.borck.dev/docs) |
 | 🤖 MCP server for AI assistants | `mcp-server/` | [npm package](https://www.npmjs.com/package/@michaelborck/resume-mcp-server) |
 | 📋 llms.txt (plain text for LLMs) | `scripts/generate_llms_txt.py` | `llms.txt` |
 | 🏠 Portal landing page | Astro (`src-astro/`) | [resume.borck.dev](https://resume.borck.dev) |

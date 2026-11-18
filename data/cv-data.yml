@@ -4,12 +4,12 @@ personal:
   phone: 0402 297 573
   linkedin: https://linkedin.com/in/michaelborck
   github: https://github.com/michael-borck
-  portfolio: https://michaelborck.dev
+  portfolio: https://borck.dev
   education_platform: https://michaelborck.education
   location: Perth, WA
 
 summary:
-  main: AI Leader and Cyber Security expert with 25+ years spanning military → academia → industry consulting transition. Author of 4 technical books (Creative Commons licensed), creator of innovative educational AI tools, and pioneer in AI-enhanced pedagogy serving academics, education, agriculture and mining sectors. Technical Lead for Business AI Research Group with a rare combination of technical depth and educational innovation expertise. Teaching philosophy grounded in three conceptual pillars - Caring, Competence, and Passion, with a core principle of "Make Contact Count."
+  main: AI Leader and Cyber Security expert with 25+ years spanning military → academia → industry consulting transition. Author of the Conversation, Not Delegation book series, creator of innovative educational AI tools, and pioneer in AI-enhanced pedagogy serving academics, education, agriculture and mining sectors. Founder of LocoLabo, an applied local-AI research lab, with a rare combination of technical depth and educational innovation expertise. Teaching philosophy grounded in three conceptual pillars - Caring, Competence, and Passion, with a core principle of "Make Contact Count."
 
 teaching:
   philosophy:
@@ -54,7 +54,7 @@ experience:
     period: Feb 2016 – Present
     responsibilities:
       - AI Program Leadership - AI Leader for the School, developing new AI programs within undergraduate and postgraduate curricula
-      - Technical Leadership - Technical Lead for the Business AI Research Group
+      - Research Leadership - Founder of LocoLabo, an applied local-AI research lab
       - Core Teaching Areas - AI, Programming (Python), and Cyber Security
       - Curriculum Development - Backbone developer for Python and Web development programs
       - Cyber Security - Lead lecturer for cyber security programs with advanced digital forensics curriculum
@@ -311,9 +311,6 @@ memberships:
     status: Certified Professional
     year: 2011
     note: (ongoing professional development required)
-  - organization: Institute of Electrical and Electronics Engineers (IEEE) UK
-    status: Member
-    year: Current
 
 interests: [Karate, Muay Thai, Krav Maga, Atari 2600 Programming, Astronomy, Photography]
 

@@ -6,7 +6,7 @@
 set -e  # Exit on error
 
 # Configuration
-REPO_URL="https://github.com/michael-borck/resume.michaelborck.dev.git"
+REPO_URL="https://github.com/michael-borck/resume.borck.dev.git"
 DEPLOY_DIR="/var/www/resume-api"
 CONTAINER_NAME="resume-api"
 IMAGE_NAME="resume-api"
@@ -98,7 +98,7 @@ if [ -f "api/Caddyfile" ]; then
     sudo cp /etc/caddy/Caddyfile /etc/caddy/Caddyfile.backup.$(date +%Y%m%d_%H%M%S)
     
     # Check if API config already exists
-    if ! grep -q "api.resume.michaelborck.dev" /etc/caddy/Caddyfile; then
+    if ! grep -q "api.resume.borck.dev" /etc/caddy/Caddyfile; then
         echo "Adding API configuration to Caddy..."
         echo "" | sudo tee -a /etc/caddy/Caddyfile
         sudo cat api/Caddyfile | sudo tee -a /etc/caddy/Caddyfile
@@ -118,7 +118,7 @@ echo -e "${YELLOW}Step 10: Cleaning up old images...${NC}"
 docker image prune -f
 
 echo -e "${GREEN}✅ Deployment Complete!${NC}"
-echo -e "${GREEN}API should be accessible at: https://api.resume.michaelborck.dev${NC}"
+echo -e "${GREEN}API should be accessible at: https://api.resume.borck.dev${NC}"
 echo ""
 echo "Useful commands:"
 echo "  View logs:        docker logs $CONTAINER_NAME"

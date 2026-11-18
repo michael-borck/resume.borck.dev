@@ -41,7 +41,7 @@ cat << EOF
       "command": "node",
       "args": ["$MCP_SERVER_PATH"],
       "env": {
-        "RESUME_API_URL": "https://api.resume.michaelborck.dev"
+        "RESUME_API_URL": "https://api.resume.borck.dev"
       }
     }
   }

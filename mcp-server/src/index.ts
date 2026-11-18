@@ -10,7 +10,7 @@ import {
 import axios from 'axios';
 
 // Configuration
-const API_BASE_URL = process.env.RESUME_API_URL || 'https://api.resume.michaelborck.dev';
+const API_BASE_URL = process.env.RESUME_API_URL || 'https://api.resume.borck.dev';
 const LOCAL_MODE = process.env.LOCAL_MODE === 'true';
 
 // If in local mode, read from local YAML file instead

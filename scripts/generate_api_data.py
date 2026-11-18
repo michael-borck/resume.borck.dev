@@ -210,11 +210,11 @@ def generate_openapi_spec(cv_data, api_data):
         },
         "servers": [
             {
-                "url": "https://api.michael-borck.dev/v1",
+                "url": "https://api.resume.borck.dev/v1",
                 "description": "Production API"
             },
             {
-                "url": "https://staging-api.michael-borck.dev/v1", 
+                "url": "https://staging-api.resume.borck.dev/v1", 
                 "description": "Staging environment"
             }
         ],

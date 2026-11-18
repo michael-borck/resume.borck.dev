@@ -49,7 +49,7 @@ Use the same configuration but in:
       "command": "node",
       "args": ["/path/to/cv/mcp-server/dist/index.js"],
       "env": {
-        "RESUME_API_URL": "https://api.resume.michaelborck.dev"
+        "RESUME_API_URL": "https://api.resume.borck.dev"
       }
     }
   }
@@ -91,7 +91,7 @@ Once configured, you can use the resume data in Claude Desktop:
 
 ## Environment Variables
 
-- `RESUME_API_URL`: URL of the resume API (default: https://api.resume.michaelborck.dev)
+- `RESUME_API_URL`: URL of the resume API (default: https://api.resume.borck.dev)
 - `LOCAL_MODE`: Set to "true" to read from local YAML file instead of API
 
 ## Development

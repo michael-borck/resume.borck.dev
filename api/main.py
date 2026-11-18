@@ -23,7 +23,7 @@ app = FastAPI(
     version="1.0.0",
     contact={
         "name": "Michael Borck",
-        "url": "https://michaelborck.dev",
+        "url": "https://borck.dev",
         "email": "michael.borck@curtin.edu.au",
     },
     license_info={
@@ -38,9 +38,8 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://michaelborck.dev",
-        "https://resume.michaelborck.dev",
-        "https://michaelborck.education",
+        "https://borck.dev",
+        "https://resume.borck.dev",
         "http://localhost:3000",  # For local development
         "http://localhost:8000",
     ],
@@ -96,7 +95,7 @@ async def root():
             "achievements": "/achievements - Key achievements",
             "contact": "/contact - Contact information",
         },
-        "source": "https://github.com/michael-borck/resume.michaelborck.dev",
+        "source": "https://github.com/michael-borck/resume.borck.dev",
         "timestamp": datetime.utcnow().isoformat()
     }
 

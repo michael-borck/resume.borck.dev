@@ -62,8 +62,8 @@ docker-compose up -d
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/michael-borck/resume.michaelborck.dev.git
-cd resume.michaelborck.dev
+git clone https://github.com/michael-borck/resume.borck.dev.git
+cd resume.borck.dev
 ```
 
 ### 2. Build and Run with Docker Compose
@@ -75,7 +75,7 @@ docker-compose up -d
 ### 3. Configure Nginx (Reverse Proxy)
 ```nginx
 server {
-    server_name api.resume.michaelborck.dev;
+    server_name api.resume.borck.dev;
     
     location / {
         proxy_pass http://localhost:8000;
@@ -93,7 +93,7 @@ server {
 
 ### 4. SSL with Let's Encrypt
 ```bash
-sudo certbot --nginx -d api.resume.michaelborck.dev
+sudo certbot --nginx -d api.resume.borck.dev
 ```
 
 ## Environment Variables
@@ -102,7 +102,7 @@ Create `.env` file for production:
 ```env
 ENV=production
 LOG_LEVEL=info
-CORS_ORIGINS=https://michaelborck.dev,https://resume.michaelborck.dev
+CORS_ORIGINS=https://borck.dev,https://resume.borck.dev
 ```
 
 ## Testing

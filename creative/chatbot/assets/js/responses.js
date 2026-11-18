@@ -98,7 +98,7 @@ function getExperienceResponse(entities, analysis) {
                 <p>I've been with Curtin University since 2016, currently serving as a <strong>Senior Lecturer</strong> in the School of Marketing and Management. Here are my key roles:</p>
                 <ul>
                     <li><strong>AI Leader:</strong> Leading AI program development for 500+ students across undergraduate and postgraduate programs</li>
-                    <li><strong>Technical Lead:</strong> Business AI Research Group</li>
+                    <li><strong>Research Leadership:</strong> Founder of LocoLabo, an applied local-AI research lab</li>
                     <li><strong>Core Teaching:</strong> AI, Python Programming, and Cybersecurity</li>
                     <li><strong>Student Success:</strong> Achieved 100% student satisfaction scores through innovative teaching methods</li>
                 </ul>
@@ -371,7 +371,7 @@ function getAchievementsResponse(entities, analysis) {
             <p><strong>💼 Industry Impact:</strong></p>
             <ul>
                 <li>Executive education for 100+ professionals across 15+ companies</li>
-                <li>Technical Lead - Business AI Research Group</li>
+                <li>Founder of LocoLabo, an applied local-AI research lab</li>
                 <li>Consulting across academics, education, agriculture, and mining</li>
             </ul>
             
@@ -403,7 +403,7 @@ function getContactResponse(entities, analysis) {
             
             <p><strong>💼 Professional Websites:</strong></p>
             <ul>
-                <li><strong>Portfolio:</strong> <a href="https://michaelborck.dev" target="_blank">michaelborck.dev</a></li>
+                <li><strong>Portfolio:</strong> <a href="https://borck.dev" target="_blank">borck.dev</a></li>
                 <li><strong>Education Platform:</strong> <a href="https://michaelborck.education" target="_blank">michaelborck.education</a></li>
             </ul>
             
@@ -474,7 +474,7 @@ function getAIResponse(entities, analysis) {
                 <li><strong>Educational AI:</strong> Using AI to enhance learning experiences</li>
                 <li><strong>Computer Vision:</strong> 6+ publications in mobile mapping systems</li>
                 <li><strong>AI Ethics:</strong> Responsible AI deployment and governance</li>
-                <li><strong>Business AI:</strong> Technical Lead for Business AI Research Group</li>
+                <li><strong>Business AI:</strong> Founder of LocoLabo, an applied local-AI research lab</li>
             </ul>
             
             <p><strong>🛠️ Technical Stack:</strong></p>

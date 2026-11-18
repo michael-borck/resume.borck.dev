@@ -17,7 +17,7 @@ const formats = [
   { id: 'magazine', url: `${BASE}/creative/magazine/`,            delay: 2000 },
   { id: 'api-docs', url: `${BASE}/creative/api/`,                 delay: 1500 },
   { id: 'slides',   url: `${BASE}/output/cv-michael-borck-slides.html`, delay: 2000 },
-  { id: 'live-api', url: 'https://api.resume.michaelborck.dev/docs',    delay: 3000 },
+  { id: 'live-api', url: 'https://api.resume.borck.dev/docs',    delay: 3000 },
   { id: 'mcp',      url: 'https://www.npmjs.com/package/@michaelborck/resume-mcp-server', delay: 2000 },
   { id: 'source',   url: 'https://github.com/michael-borck/resume.borck.dev/blob/main/data/cv-data.yml', delay: 2000 },
 ];

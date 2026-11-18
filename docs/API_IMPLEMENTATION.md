@@ -6,7 +6,7 @@ Creating a real FastAPI-based REST API for the resume data, using the existing `
 **Started**: 2025-08-14  
 **Status**: In Progress  
 **Deployment Target**: Hostinger VPS  
-**API URL**: (future) https://api.resume.michaelborck.dev
+**API URL**: (future) https://api.resume.borck.dev
 
 ## Architecture Decisions
 - **Data Source**: Read from existing `data/cv-data.yml` (single source of truth)
@@ -133,7 +133,7 @@ docker run -p 8100:8000 resume-api
 
 # VPS deployment (with Docker Caddy)
 ssh your-vps
-git clone https://github.com/michael-borck/resume.michaelborck.dev.git ~/resume-api
+git clone https://github.com/michael-borck/resume.borck.dev.git ~/resume-api
 cd ~/resume-api
 ./api/deploy-docker.sh
 # Then add snippet to Caddyfile and reload Caddy
