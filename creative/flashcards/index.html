@@ -36,7 +36,10 @@ a.portal-link:hover{color:var(--gold);border-color:var(--gold)}
 .back .txt{font-size:16px;line-height:1.6;color:var(--gold)}
 .hint{margin-bottom:12px;font-size:12px;color:var(--cyan);border-left:3px solid var(--cyan);padding:8px 10px;background:rgba(110,224,216,.08);border-radius:4px}
 .controls{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+/* Easter egg: while the card is flipped (back showing), mirror the CV Portal link. */
+.portal-link.mirror{transform:scaleX(-1)}
 </style></head><body>
+<!-- Easter egg: flipping the card mirrors this "CV Portal" link (see toggleFlip). -->
 <a class="portal-link" href="../../index.html">← CV Portal</a>
 <div class="wrap">
   <div class="head"><div><div class="brand">FLASHCARDS</div><div class="sub">click to flip · hint · shuffle · print</div></div>
@@ -75,15 +78,18 @@ let cards=CARDS.slice(), i=0;
 const $=id=>document.getElementById(id);
 function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
 function shuffle(a){for(let j=a.length-1;j>0;j--){const k=Math.floor(Math.random()*(j+1));[a[j],a[k]]=[a[k],a[j]];}return a;}
+function setMirror(on){ const l=document.querySelector('a.portal-link'); if(l) l.classList.toggle('mirror', !!on); }
 function render(){
   const c=cards[i];
   $('q').textContent=c.q; $('a').textContent=c.a;
   $('hint').hidden=true; $('hint').textContent=c.hint||'';
   $('fc').classList.remove('flip');
+  setMirror(false);
   $('meta').textContent=`Card ${i+1} / ${cards.length}`;
   $('pfill').style.width=`${((i+1)/cards.length)*100}%`;
 }
-function toggleFlip(){ $('fc').classList.toggle('flip'); }
+// Easter egg: flipping the card also mirrors the "CV Portal" link while the back shows.
+function toggleFlip(){ const fc=$('fc'); fc.classList.toggle('flip'); setMirror(fc.classList.contains('flip')); }
 $('fc').onclick=toggleFlip;
 $('flip').onclick=toggleFlip;
 $('hintBtn').onclick=()=>{ $('hint').hidden=false; };
