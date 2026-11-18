@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CV data — download</title>
+<meta name="description" content="Download Michael Borck's CV as Markdown, Quarto, LaTeX, JSON, XML, CSV, Python dict, or MySQL." />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{ --ink:#0a0a0b; --panel:#14161a; --line:#2a2d34; --text:#e8e6e3; --muted:#9a9aa8; --gold:#ffcf6b; --cyan:#6ee0d8; --mono:"JetBrains Mono",monospace; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--ink);color:var(--text);font-family:var(--mono);padding:32px 20px;min-height:100%}
+  .wrap{max-width:760px;margin:0 auto}
+  .eyebrow{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:8px}
+  h1{font-size:22px;margin-bottom:6px}
+  .sub{color:var(--muted);font-size:12px;margin-bottom:22px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:600px){.grid{grid-template-columns:1fr}}
+  a.file{display:flex;justify-content:space-between;gap:12px;align-items:center;text-decoration:none;color:var(--text);background:var(--panel);border:2px solid var(--line);border-radius:8px;padding:12px 14px;transition:border-color .12s,transform .08s}
+  a.file:hover{border-color:var(--gold);transform:translateY(-1px)}
+  .fname{font-weight:700;color:var(--gold)}
+  .fdesc{color:var(--muted);font-size:11px;margin-top:3px}
+  .fsize{color:#6f7278;font-size:10px;white-space:nowrap}
+  .api{margin-top:22px;font-size:12px;color:var(--muted);line-height:1.7}
+  .api a{color:var(--cyan);text-decoration:none}
+  .backlink{position:fixed;top:12px;right:14px;font-size:11px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:5px 9px;border-radius:6px;background:rgba(10,10,11,.7)}
+  .backlink:hover{color:var(--gold);border-color:var(--gold)}
+</style>
+</head>
+<body>
+<a class="backlink" href="../../index.html">← CV Portal</a>
+<div class="wrap">
+  <div class="eyebrow">Download · one YAML, many formats</div>
+  <h1>The CV as data</h1>
+  <div class="sub">Generated from <code>data/cv-data.yml</code>. Grab whatever your tool needs.</div>
+  <div class="grid">
+    <a class="file" href="cv.md" download>
+      <span><span class="fname">Markdown</span><span class="fdesc">Human-readable CV in Markdown.</span></span>
+      <span class="fsize">cv.md · 11.5 KB</span>
+    </a>
+    <a class="file" href="cv.qmd" download>
+      <span><span class="fname">Quarto</span><span class="fdesc">Quarto Markdown — render to PDF/HTML with Quarto.</span></span>
+      <span class="fsize">cv.qmd · 11.6 KB</span>
+    </a>
+    <a class="file" href="cv.tex" download>
+      <span><span class="fname">LaTeX</span><span class="fdesc">Standalone LaTeX document (compile with pdflatex).</span></span>
+      <span class="fsize">cv.tex · 9.9 KB</span>
+    </a>
+    <a class="file" href="cv.json" download>
+      <span><span class="fname">JSON</span><span class="fdesc">The full CV as nested JSON.</span></span>
+      <span class="fsize">cv.json · 20.3 KB</span>
+    </a>
+    <a class="file" href="cv.xml" download>
+      <span><span class="fname">XML</span><span class="fdesc">The full CV as XML.</span></span>
+      <span class="fsize">cv.xml · 23.4 KB</span>
+    </a>
+    <a class="file" href="cv.csv" download>
+      <span><span class="fname">CSV</span><span class="fdesc">Tidy long format: path,value — one row per leaf.</span></span>
+      <span class="fsize">cv.csv · 20.9 KB</span>
+    </a>
+    <a class="file" href="cv.py" download>
+      <span><span class="fname">Python dict</span><span class="fdesc">The CV as a Python dict literal (CV = {...}).</span></span>
+      <span class="fsize">cv.py · 27.6 KB</span>
+    </a>
+    <a class="file" href="cv.mysql.sql" download>
+      <span><span class="fname">MySQL (full)</span><span class="fdesc">CREATE DATABASE + tables + rows; import directly.</span></span>
+      <span class="fsize">cv.mysql.sql · 22.6 KB</span>
+    </a>
+    <a class="file" href="cv-dump.sql" download>
+      <span><span class="fname">SQL dump</span><span class="fdesc">INSERT-only data dump (assumes schema).</span></span>
+      <span class="fsize">cv-dump.sql · 19.0 KB</span>
+    </a>
+  </div>
+  <div class="api">
+    Prefer the live JSON API? <a href="https://api.resume.borck.dev/docs">api.resume.borck.dev/docs</a>
+    — endpoints: <code>/profile</code> <code>/experience</code> <code>/skills</code> <code>/education</code>
+    <code>/projects</code> <code>/publications</code> <code>/achievements</code> <code>/contact</code> <code>/export</code>.
+  </div>
+</div>
+</body>
+</html>

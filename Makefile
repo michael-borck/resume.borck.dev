@@ -1,7 +1,7 @@
 # Makefile for CV Generation
 # Single source of truth CV system using Quarto
 
-.PHONY: all pdf pdf-latex html slides quest world world-data world-art world-pick doom dungeon ink voxel mario swipeverse knotebook creative-server terminal magazine api chatbot llms-txt clean install help watch serve validate edit preview commit push
+.PHONY: all pdf pdf-latex html slides quest world world-data world-art world-pick doom dungeon ink voxel mario swipeverse knotebook data-exports creative-server terminal magazine api chatbot llms-txt clean install help watch serve validate edit preview commit push
 
 # Default target
 all: pdf html slides
@@ -9,7 +9,7 @@ all: pdf html slides
 # Regenerate every data-driven format from data/cv-data.yml (fast: no Quarto,
 # no limn pixel-art pass). PDF/HTML/slides: `make all`. World art: `make world-art`.
 .PHONY: regenerate
-regenerate: quest terminal magazine api chatbot llms-txt world-data doom dungeon ink voxel mario swipeverse knotebook
+regenerate: quest terminal magazine api chatbot llms-txt data-exports world-data doom dungeon ink voxel mario swipeverse knotebook
 	@echo "✓ Regenerated all data-driven formats from data/cv-data.yml"
 	@echo "  Still separate: 'make all' (PDF/HTML/slides), 'make world-art' (limn pixel art)"
 
@@ -186,6 +186,12 @@ llms-txt:
 	@python3 scripts/generate_llms_txt.py
 	@echo "llms.txt ready at: public-astro/llms.txt, output/llms.txt, and project root"
 
+# Export the CV as downloadable data formats (md, qmd, tex, json, xml, csv, py, sql)
+data-exports:
+	@echo "Generating data exports (Markdown, Quarto, LaTeX, JSON, XML, CSV, Python, MySQL)..."
+	@python3 scripts/generate_data_exports.py
+	@echo "Downloads ready: creative/data/"
+
 # Generate Chatbot CV - Conversational Interface
 chatbot:
 	@echo "Generating Chatbot CV - Standalone Version..."
@@ -266,6 +272,7 @@ help:
 	@echo "  make magazine   - Generate Magazine CV - standalone professional publication"
 	@echo "  make api        - Generate API CV - Swagger-style documentation interface"
 	@echo "  make chatbot    - Generate Chatbot CV - conversational interface"
+	@echo "  make data-exports - Export CV as Markdown/Quarto/LaTeX/JSON/XML/CSV/Python/MySQL"
 	@echo "  make watch      - Watch for changes and auto-rebuild HTML"
 	@echo "  make serve      - Serve HTML version locally on port 8008"
 	@echo "  make clean      - Remove all generated files"

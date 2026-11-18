@@ -1,0 +1,339 @@
+path,value
+personal.name,Michael Borck
+personal.email,michael.borck@curtin.edu.au
+personal.phone,0402 297 573
+personal.linkedin,https://linkedin.com/in/michaelborck
+personal.github,https://github.com/michael-borck
+personal.portfolio,https://borck.dev
+personal.education_platform,https://borck.education
+personal.location,"Perth, WA"
+world.spawn.x,50
+world.spawn.y,50
+world.regions[0].id,experience
+world.regions[0].name,The Keep
+world.regions[0].subtitle,"A career across military, academia, and industry"
+world.regions[0].map.x,50
+world.regions[0].map.y,15
+world.regions[0].icon,keep
+world.regions[0].sources[0],experience
+world.regions[0].spawns,8
+world.regions[1].id,education
+world.regions[1].name,The Observatory
+world.regions[1].subtitle,Five degrees and a doctorate
+world.regions[1].map.x,78
+world.regions[1].map.y,78
+world.regions[1].icon,tower
+world.regions[1].sources[0],education
+world.regions[1].spawns,5
+world.regions[2].id,skills
+world.regions[2].name,The Dojo
+world.regions[2].subtitle,"Languages, frameworks, and tools of the trade"
+world.regions[2].map.x,80
+world.regions[2].map.y,35
+world.regions[2].icon,dojo
+world.regions[2].sources[0],skills
+world.regions[2].spawns,5
+world.regions[3].id,projects
+world.regions[3].name,Treasure Vault
+world.regions[3].subtitle,Tools and open-source creations
+world.regions[3].map.x,72
+world.regions[3].map.y,88
+world.regions[3].icon,chest
+world.regions[3].sources[0],projects
+world.regions[3].spawns,6
+world.regions[4].id,achievements
+world.regions[4].name,Hall of Legends
+world.regions[4].subtitle,Achievements and recognition
+world.regions[4].map.x,28
+world.regions[4].map.y,82
+world.regions[4].icon,scroll
+world.regions[4].sources[0],achievements
+world.regions[4].sources[1],publications
+world.regions[4].spawns,6
+world.regions[5].id,teaching
+world.regions[5].name,The Training Grounds
+world.regions[5].subtitle,Teaching philosophy and student impact
+world.regions[5].map.x,24
+world.regions[5].map.y,30
+world.regions[5].icon,dojo
+world.regions[5].sources[0],teaching
+world.regions[5].spawns,4
+world.regions[6].id,service
+world.regions[6].name,The Old Ruins
+world.regions[6].subtitle,Professional service and community
+world.regions[6].map.x,50
+world.regions[6].map.y,86
+world.regions[6].icon,ruins
+world.regions[6].sources[0],service
+world.regions[6].sources[1],memberships
+world.regions[6].spawns,4
+world.regions[7].id,interests
+world.regions[7].name,The Far Shore
+world.regions[7].subtitle,Life beyond work
+world.regions[7].map.x,18
+world.regions[7].map.y,80
+world.regions[7].icon,beach
+world.regions[7].sources[0],interests
+world.regions[7].spawns,6
+summary.main,"AI Leader and Cyber Security expert with 25+ years spanning military → academia → industry consulting transition. Author of the Conversation, Not Delegation book series, creator of innovative educational AI tools, and pioneer in AI-enhanced pedagogy serving academics, education, agriculture and mining sectors. Founder of LocoLabo, an applied local-AI research lab, with a rare combination of technical depth and educational innovation expertise. Teaching philosophy grounded in three conceptual pillars - Caring, Competence, and Passion, with a core principle of ""Make Contact Count."""
+teaching.philosophy.core,Make Contact Count - maximising impact through every student interaction
+teaching.philosophy.framework,"Built on three pillars - Caring, Competence, and Passion"
+teaching.philosophy.approach,"Grounded in Constructivist learning theory, Bloom's Taxonomy, and Universal Design for Learning (UDL)"
+teaching.satisfaction[0].metric,100% Satisfaction Scores
+teaching.satisfaction[0].details,"Achieved across ISYS3015 Business Application Development, ISYS2001 Introduction to Business Programming, and ISYS6018 Information Security"
+teaching.satisfaction[1].metric,100% 'Effective Teacher' Ratings
+teaching.satisfaction[1].details,"Across Enterprise Network Security, Business Systems Selection, and Introduction to Programming units"
+teaching.feedback[0],"Michael is an absolute legend, I love his teaching style"
+teaching.feedback[1],He really did feel like he cared about my learning
+teaching.feedback[2],"The unit was hard, but fun, because he clearly cared about our learning"
+teaching.feedback[3],Michael made it easy for me to gain information
+teaching.innovations[0].name,Cloud Core Simulation
+teaching.innovations[0].description,"Created complete virtual company with IT infrastructure, policies, and staff chatbot for authentic audit experiences"
+teaching.innovations[1].name,Real-World Integration
+teaching.innovations[1].description,Students report assessments prepare them for 'workplace environment'
+teaching.innovations[2].name,Student Impact
+teaching.innovations[2].description,The environment created while performing the assignment is nothing less than working in real-time
+achievements[0],"Educational Leadership - AI Leader for School of Marketing and Management, led development of AI curriculum serving 500+ students across undergraduate and postgraduate programs"
+achievements[1],"Teaching Excellence - Achieved 100% student satisfaction scores across multiple units (ISYS3015, ISYS2001, ISYS6018) with consistent ""effective teacher"" ratings"
+achievements[2],"Technical Innovation - Creator of multiple AI-powered educational tools including Reality Reigns, Talk Buddy, and Curriculum Curator with 290+ downloads"
+achievements[3],"Industry Impact - Executive education training delivered to 100+ professionals across 15+ companies in academics, education, agriculture and mining sectors"
+achievements[4],"Assessment Innovation - Developed award-winning ""Cloud Core"" virtual company simulation providing authentic industry experience"
+achievements[5],Research Excellence - 6+ peer-reviewed publications in computer vision and machine learning with focus on mobile mapping systems
+achievements[6],"Open Source Contribution - Lead developer for Image Processing for Orange, serving the broader scientific community"
+achievements[7],Military Leadership - Managed critical defence projects including military messaging systems and submarine IT infrastructure
+experience[0].title,Lecturer — School of Marketing and Management
+experience[0].organization,Curtin University
+experience[0].location,"Perth, WA"
+experience[0].period,Feb 2016 – Present
+experience[0].responsibilities[0],"AI Program Leadership - AI Leader for the School, developing new AI programs within undergraduate and postgraduate curricula"
+experience[0].responsibilities[1],"Research Leadership - Founder of LocoLabo, an applied local-AI research lab"
+experience[0].responsibilities[2],"Core Teaching Areas - AI, Programming (Python), and Cyber Security"
+experience[0].responsibilities[3],Curriculum Development - Backbone developer for Python and Web development programs
+experience[0].responsibilities[4],Cyber Security - Lead lecturer for cyber security programs with advanced digital forensics curriculum
+experience[0].responsibilities[5],"Educational Innovation - Pioneer in AI-enhanced pedagogy and interactive learning methodologies, with teaching philosophy grounded in Caring, Competence, and Passion"
+experience[0].responsibilities[6],"Student Engagement - Achieved 100% student satisfaction scores through innovative assessment design including ""Cloud Core"" virtual company simulation"
+experience[0].responsibilities[7],"Executive Education - Providing AI training to academics, education professionals, agriculture and mining industry executives"
+experience[1].title,Course Leadership & Development
+experience[1].organization,Curtin University
+experience[1].location,"Perth, WA"
+experience[1].period,Ongoing
+experience[1].responsibilities[0],Course Lead for Information Systems undergraduate and postgraduate degree programs
+experience[1].responsibilities[1],"Unit coordination across multiple levels - postgraduate, undergraduate, core, non-core, and service units (domestic and international)"
+experience[1].responsibilities[2],Advanced Canvas LMS and Blackboard development and customization
+experience[1].responsibilities[3],Creator of interactive educational tools and assessment frameworks
+experience[2].title,Associate Lecturer
+experience[2].organization,Curtin University
+experience[2].location,"Perth, WA"
+experience[2].period,Jan 2001 – Dec 2007
+experience[2].responsibilities[0],Academic Leadership - Provided departmental representation on institutional committees
+experience[2].responsibilities[1],Program Development - Developed and delivered comprehensive course material for Software Engineering and Computer Science degrees
+experience[2].responsibilities[2],International Coordination - Managed unit coordination across domestic and international campuses
+experience[3].title,"AI, IS & Educational Technology Consultant"
+experience[3].organization,Self-Employed
+experience[3].location,"Perth, WA"
+experience[3].period,Jan 2016 – Present
+experience[3].responsibilities[0],AI strategy and implementation consultation
+experience[3].responsibilities[1],IS/IT consultation and analysis
+experience[3].responsibilities[2],Educational technology consulting and training
+experience[3].responsibilities[3],"Executive education training in AI for academics, education professionals, agriculture and mining industries"
+experience[3].projects[0],"Stanley College, IT Consultant (2019)"
+experience[3].projects[1],"Web Agency Projects: Progressive Changes Psychology Services, Mindarie Mind and Body, Coastal Warriors Martial Arts, Yanchep Martial Arts (2017-2019)"
+experience[4].title,Researcher
+experience[4].organization,Curtin University
+experience[4].location,"Perth, WA"
+experience[4].period,Mar 2018 – 2019
+experience[4].responsibilities[0],Advanced AI Research - Investigation and development of CNN models and their application to the maritime environment
+experience[4].responsibilities[1],Applied Machine Learning - Focused research on computer vision applications for marine and coastal monitoring
+experience[5].title,Software Contractor
+experience[5].organization,CRCSI & Landgate WA
+experience[5].location,"Perth, WA"
+experience[5].period,Mar 2015 – Jan 2016
+experience[5].responsibilities[0],Computer Vision Innovation - Developed automated detection and recognition systems for street sign inventory
+experience[5].responsibilities[1],Technical Expertise - Provided specialized skills in machine learning and image processing for government applications
+experience[6].title,IT Consultant — Owner
+experience[6].organization,Bital IT Consulting Services
+experience[6].location,"Perth, WA"
+experience[6].period,Jan 2008 – Jan 2011
+experience[6].responsibilities[0],Business Analysis - Provided comprehensive business and technical analysis to diverse client base
+experience[6].responsibilities[1],Infrastructure Development - Developed and supported critical backup and monitoring solutions for servers and databases
+experience[7].title,IT Manager
+experience[7].organization,"Submarine Systems Centre, RAN"
+experience[7].location,"Perth, WA"
+experience[7].period,Jul 1996 – Jan 2000
+experience[7].responsibilities[0],Strategic IT Leadership - Managed comprehensive information technology infrastructure supporting submarine operations and maintenance
+experience[7].responsibilities[1],Executive Advisory - Provided strategic IT guidance to senior military leadership and operational boards
+experience[7].responsibilities[2],Organisational Impact - Delivered technology solutions that directly supported critical defence capabilities and mission readiness
+experience[8].title,Project Manager — Command and Control
+experience[8].organization,HQADF
+experience[8].location,"Canberra, ACT"
+experience[8].period,Jul 1993 – Dec 1996
+experience[8].responsibilities[0],Strategic Leadership - Managed development of critical military messaging systems for Australian Defence Force headquarters
+experience[8].responsibilities[1],"Project Excellence - Successfully controlled cost, schedule, and quality across multi-year defense communications project"
+experience[8].responsibilities[2],Cross-functional Coordination - Led technical teams and stakeholder management across multiple defence departments
+experience[9].title,Analyst/Programmer — Manpower and Pay Project
+experience[9].organization,HQADF
+experience[9].location,"Canberra, ACT"
+experience[9].period,Aug 1991 – Jun 1993
+experience[9].responsibilities[0],Systems Development - Designed and implemented large-scale personnel management systems for defence operations
+experience[9].responsibilities[1],Technical Excellence - Conducted comprehensive code reviews and built sophisticated models using CASE tools
+experience[9].responsibilities[2],"Full-cycle Development - Led data modeling, process modeling, database design, program design, and interface design"
+experience[10].title,System Administrator — Manpower and Personnel
+experience[10].organization,RAN
+experience[10].location,"Canberra, ACT"
+experience[10].period,Mar 1989 – Aug 1993
+experience[10].responsibilities[0],"Infrastructure Management - Installed, configured, and maintained critical network and computer systems for Royal Australian Navy"
+experience[10].responsibilities[1],"Crisis Management - Executed rapid recovery procedures during system failures, ensuring minimal operational disruption"
+experience[10].responsibilities[2],Security Operations - Maintained secure computing environments for sensitive military personnel data
+education[0].degree,Doctor of Philosophy (PhD)
+education[0].field,Computer Science
+education[0].institution,Curtin University
+education[0].year,2017
+education[0].thesis,"Feature Extraction from Multi-modal Data (GIS, Machine Learning & Computer Vision)"
+education[1].degree,Bachelor of Science (Computer Science) (Honours)
+education[1].field,Computer Science
+education[1].institution,Curtin University
+education[1].year,2001
+education[1].thesis,A Bayesian Belief Network Approach to Predicting the Prices of Australian Commonwealth Government Interest Rate Securities
+education[2].degree,Graduate Diploma in Business
+education[2].field,Business
+education[2].institution,Curtin University
+education[2].year,2000
+education[3].degree,Bachelor of Science (Computer Science)
+education[3].field,Computer Science
+education[3].institution,Australian National University
+education[3].year,1994
+education[4].degree,Bachelor of Applied Science (Mathematics)
+education[4].field,Mathematics
+education[4].institution,Queensland University of Technology
+education[4].year,1989
+publications.books[0].title,Python Step By Step in an AI World
+publications.books[0].description,Comprehensive guide to Python programming in the context of artificial intelligence
+publications.books[0].license,Creative Commons
+publications.books[1].title,JumpStart Python in the AI Era
+publications.books[1].description,Accelerated learning approach for Python in AI applications
+publications.books[1].license,Creative Commons
+publications.books[2].title,Intentional Prompting: Blending AI and Human Oversight
+publications.books[2].description,Strategic guide to effective AI interaction and governance
+publications.books[2].license,Creative Commons
+publications.books[3].title,Python Dev Book: From Zero to Production
+publications.books[3].description,Complete development lifecycle guide for Python applications
+publications.books[3].license,Creative Commons
+publications.thesis[0].title,Feature Extraction from Multi-modal Data
+publications.thesis[0].year,2017
+publications.thesis[0].type,Doctor of Philosophy (PhD)
+publications.thesis[0].fields,"GIS, Machine Learning & Computer Vision"
+publications.thesis[0].description,Investigates feature extraction methods for imagery and depth data of urban transport corridors from vehicle-based mobile mapping systems
+publications.conferences[0].authors,"Borck, M., G. West, and T. Tan"
+publications.conferences[0].year,2014
+publications.conferences[0].title,Use of multiple low level features to find interesting regions
+publications.conferences[0].venue,ICPRAM 2014
+publications.conferences[0].location,"Angers, Loire Valley, France"
+publications.conferences[0].publisher,SCITEPRESS
+publications.conferences[1].authors,"Borck, M., R. Palmer, G. West, and T. Tan"
+publications.conferences[1].year,2014
+publications.conferences[1].title,Using depth maps to find interesting regions
+publications.conferences[1].venue,2014 IEEE Region 10 Symposium (TENSYMP 2014)
+publications.conferences[1].location,"Kuala Lumpur, Malaysia"
+publications.conferences[1].publisher,IEEE
+publications.conferences[2].authors,"Borck, M., G. West, and T. Tan"
+publications.conferences[2].year,2014
+publications.conferences[2].title,An image engineering approach to analysing mobile mapping data
+publications.conferences[2].venue,Research at Locate'14
+publications.conferences[2].location,"Canberra, Australia"
+publications.conferences[2].publisher,CEUR Workshop Proceedings
+publications.conferences[3].authors,"Palmer, R., M. Borck, G. West, and T. Tan"
+publications.conferences[3].year,2012
+publications.conferences[3].title,Intensity and Range Based Features for Object Detection in Mobile Mapping Data
+publications.conferences[3].venue,"XXII ISPRS Congress, ISPRS 2012"
+publications.conferences[3].location,"Melbourne, Australia"
+publications.conferences[3].publisher,Copernicus GmbH
+publications.conferences[4].authors,"Borck, M."
+publications.conferences[4].year,2000
+publications.conferences[4].title,Industrial Application of Sensor Nets
+publications.conferences[4].venue,Computer
+publications.conferences[4].volume,33(9)
+publications.conferences[4].pages,18-26
+publications.honours[0].title,A Bayesian Belief Network Approach to Predicting the Prices of Australian Commonwealth Government Interest Rate Securities
+publications.honours[0].year,2001
+publications.honours[0].type,Honours
+publications.honours[0].institution,"School of Computing, Curtin University"
+projects[0].name,Reality Reigns
+projects[0].description,Swipe-based decision game providing interactive fiction storytelling from fantasy adventures to educational simulations
+projects[1].name,Talk Buddy
+projects[1].description,"AI-based audio interface tool for conversation practice (medical diagnoses, HR discussions, English conversation)"
+projects[2].name,Curriculum Curator
+projects[2].description,"AI-based tool for creating, managing and curating learning materials based on unique teaching philosophies"
+projects[3].name,Feed Forward System
+projects[3].description,AI-based assessment feedback tool for various assessment types
+projects[4].name,Student Feedback Analyzer
+projects[4].description,AI tool that analyzes student feedback forms to suggest course improvements
+projects[5].name,Image Processing for Orange
+projects[5].year,Ongoing
+projects[6].name,"Graph Merging, Scikit Image"
+projects[6].year,2015
+projects[7].name,"User Guide, imgAnnotation Tool"
+projects[7].year,2014
+skills.programming.core[0],Python
+skills.programming.core[1],C/C++
+skills.programming.core[2],C#
+skills.programming.core[3],Java
+skills.programming.core[4],JavaScript
+skills.programming.core[5],Matlab
+skills.programming.core[6],PHP
+skills.programming.core[7],CSS
+skills.programming.core[8],HTML
+skills.programming.core[9],LaTeX
+skills.programming.core[10],SQL
+skills.programming.core[11],Bash
+skills.programming.web[0],React
+skills.programming.web[1],Flask
+skills.programming.web[2],FastAPI
+skills.programming.web[3],FastHTML
+skills.programming.web[4],Vanilla JS
+skills.programming.web[5],WordPress
+skills.programming.ai_ml[0],Langchain
+skills.programming.ai_ml[1],TensorFlow
+skills.programming.ai_ml[2],PyTorch
+skills.programming.ai_ml[3],Scikit-learn
+skills.programming.educational[0],Blackboard LMS
+skills.programming.educational[1],Canvas LMS
+skills.programming.educational[2],Interactive Content Development
+certifications[0].name,Google AI Course
+certifications[0].year,2024
+certifications[1].name,Microsoft AI Course
+certifications[1].year,2024
+certifications[2].name,Cyber Security Training
+certifications[2].year,2021
+certifications[3].name,Ethics Reviewer Training
+certifications[3].year,2021
+certifications[4].name,Equal Opportunity Work Essentials
+certifications[4].year,2021
+certifications[5].name,HDR Supervisors Update
+certifications[5].year,2020
+certifications[6].name,Curtin Research Integrity
+certifications[6].year,2020
+certifications[7].name,Provide Advanced First Aid
+certifications[7].year,2012–2019
+service.profession[0].role,Conference Paper Reviewer
+service.profession[0].organization,Australian Conference on Information Systems (International)
+service.profession[0].year,2019
+service.community[0].role,Lead Developer
+service.community[0].project,Image Processing for Orange
+service.community[0].period,2015-2019
+service.community[1].role,User Contribution
+service.community[1].project,Graph Merging for Scikit Image
+service.community[1].year,2015
+service.community[2].role,User Contribution
+service.community[2].project,"User Guide, Image Annotation Tool"
+service.community[2].year,2014
+memberships[0].organization,Australian Computer Society (ACS)
+memberships[0].status,Certified Professional
+memberships[0].year,2011
+memberships[0].note,(ongoing professional development required)
+interests[0],Karate
+interests[1],Muay Thai
+interests[2],Krav Maga
+interests[3],Atari 2600 Programming
+interests[4],Astronomy
+interests[5],Photography
+references,Available upon request

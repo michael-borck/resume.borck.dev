@@ -16,6 +16,7 @@ One YAML file, twelve ways to explore it. Everything on [resume.borck.dev](https
 | 📤 **Resume World** | `scripts/generate_resume_world.py` + limn pixel art | `creative/world/` |
 | 💀 **Resume Doom** (FPS raycaster) | `scripts/generate_doom_data.py` | `creative/doom/` |
 | 🍄 **Michael Borck's World** (Mario-style level select) | `scripts/generate_mario_data.py` | `creative/mario/` |
+| 🗄️ **Data exports** (md, qmd, tex, json, xml, csv, py, mysql) | `scripts/generate_data_exports.py` | `creative/data/` |
 | 🕯️ **The Delve** (text dungeon) | `scripts/generate_dungeon_data.py` | `creative/dungeon/` |
 | 📖 **The Valley** (Ink interactive fiction) | `scripts/generate_ink_story.py` + `scripts/compile_ink.mjs` | `creative/ink/` |
 | ⛏️ **MineBorck** (isometric voxel dig/build) | `scripts/generate_voxel_data.py` | `creative/voxel/` |
