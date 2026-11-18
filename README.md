@@ -14,6 +14,10 @@ One YAML file, twelve ways to explore it. Everything on [resume.borck.dev](https
 | 🌐 Traditional HTML (with chat widget) | Quarto + `scripts/inject_chatbot.py` | `output/cv-michael-borck.html` |
 | 🎤 Presentation slides | Quarto (Reveal.js) | `output/cv-michael-borck-slides.html` |
 | 📤 **Resume World** | `scripts/generate_resume_world.py` + limn pixel art | `creative/world/` |
+| 💀 **Resume Doom** (FPS raycaster) | `scripts/generate_doom_data.py` | `creative/doom/` |
+| 🕯️ **The Delve** (text dungeon) | `scripts/generate_dungeon_data.py` | `creative/dungeon/` |
+| 📖 **The Valley** (Ink interactive fiction) | `scripts/generate_ink_story.py` + `scripts/compile_ink.mjs` | `creative/ink/` |
+| ⛏️ **MineBorck** (isometric voxel dig/build) | `scripts/generate_voxel_data.py` | `creative/voxel/` |
 | 🎮 CV Quest (swipe-card game) | `scripts/generate_cv_cards.py` | `creative/quest/` |
 | 🖥️ Terminal adventure (Zork-style) | `scripts/generate_terminal_data.py` | `creative/terminal/` |
 | 📰 TechLife Magazine | `scripts/generate_magazine_data.py` | `creative/magazine/` |
