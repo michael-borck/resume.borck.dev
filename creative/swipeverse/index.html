@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Candidate — a SwipeVerse deck</title>
+<meta name="description" content="Michael Borck's career as a playable SwipeVerse deck. Open it straight in the SwipeVerse app." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230a0a0b'/%3E%3Crect x='2' y='5' width='12' height='7' rx='1' fill='%236ee0d8'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{ --ink:#0a0a0b; --panel:#14161a; --line:#2a2d34; --text:#e8e6e3; --muted:#9a9aa8; --cyan:#6ee0d8; --gold:#ffcf6b; --mono:"JetBrains Mono",monospace; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{min-height:100%}
+  body{background:radial-gradient(ellipse at 50% 0%,#0f2a2c,#0a0a0b 60%);color:var(--text);font-family:var(--mono);display:flex;align-items:center;justify-content:center;padding:24px}
+  .card{max-width:600px;width:100%;background:linear-gradient(180deg,#151a1e,#0d1013);border:2px solid var(--line);border-radius:12px;padding:30px;box-shadow:0 24px 60px rgba(0,0,0,.6)}
+  .eyebrow{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:8px}
+  h1{font-size:24px;line-height:1.25;color:#fff;margin-bottom:6px}
+  .sub{color:var(--muted);font-size:12px;margin-bottom:18px}
+  p{font-size:13px;line-height:1.65;color:#cfd2d6;margin-bottom:14px}
+  .b{color:var(--gold)}
+  .stats{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+  .stat{font-size:11px;border:1px solid var(--line);border-radius:999px;padding:5px 10px;color:#cfd2d6}
+  .stat b{color:var(--cyan)}
+  .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  a.btn{font-size:12px;font-weight:700;text-decoration:none;border-radius:8px;padding:12px 16px;letter-spacing:.4px}
+  a.solid{background:var(--cyan);color:#04201e;border-bottom:3px solid #3aa79f}
+  a.ghost{background:transparent;color:var(--text);border:2px solid var(--line)}
+  a.ghost:hover{border-color:var(--gold);color:var(--gold)}
+  .hint{font-size:10px;color:#6f7278;margin-top:14px;line-height:1.5}
+  .backlink{position:fixed;top:12px;right:14px;font-size:11px;color:#9a9aa8;text-decoration:none;border:1px solid var(--line);padding:5px 9px;border-radius:6px;background:rgba(10,10,11,.7)}
+  .backlink:hover{color:var(--gold);border-color:var(--gold)}
+</style>
+</head>
+<body>
+<a class="backlink" href="../../index.html">← CV Portal</a>
+<div class="card">
+  <div class="eyebrow">Cross-app · SwipeVerse deck</div>
+  <h1>The Candidate — Michael Borck</h1>
+  <div class="sub">A 30-year career as a series of choices</div>
+  <p>This is my résumé exported as a portable <b>SwipeVerse</b> deck: a Reality JSON with an embedded card story. Swipe left or right at each turning point — the navy, the lecture hall, the research lab, the local-AI workshop.</p>
+  <p>Four resources replace the usual stats: <b>Impact</b>, <b>Delivery</b>, <b>Trust</b> and <b>Expertise</b>. Keep them all alive.</p>
+  <div class="stats">
+    <span class="stat">Impact <b>⚡</b></span><span class="stat">Delivery <b>📦</b></span>
+    <span class="stat">Trust <b>🤝</b></span><span class="stat">Expertise <b>🧠</b></span>
+  </div>
+  <div class="actions">
+    <a class="btn solid" id="play" href="#" rel="noopener">Play in SwipeVerse →</a>
+    <a class="btn ghost" href="cv-deck.json" download>Download deck JSON</a>
+  </div>
+  <div class="hint">Opens whether or not you have an AI key — it's a fixed deck. The link uses SwipeVerse's <code>?play=</code> deep link.</div>
+</div>
+<script>
+  // Build the ?play= deep link from wherever this page is hosted.
+  (function () {
+    var deckUrl = new URL("cv-deck.json", location.href).href;
+    var play = "https://swipeverse.app/app/?play=" + encodeURIComponent(deckUrl);
+    document.getElementById("play").href = play;
+  })();
+</script>
+</body>
+</html>

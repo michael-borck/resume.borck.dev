@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Valley — a Knotebook pack</title>
+<meta name="description" content="The Valley Ink story packaged as a Knotebook .knotebook.json pack, artwork embedded, ready to import and play offline." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%2315120c'/%3E%3Ccircle cx='8' cy='8' r='4' fill='%23ffcf6b'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{ --ink:#241a10; --parch:#e9dcc0; --night:#12100b; --gold:#b8863b; --gold-hi:#e0b25f; --line:#c9b78f; --mono:"JetBrains Mono",monospace; --serif:"IM Fell English",Georgia,serif; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{min-height:100%}
+  body{background:radial-gradient(ellipse at 50% 0%,#2a2016,#0f0b07 70%);color:var(--parch);font-family:var(--serif);display:flex;align-items:center;justify-content:center;padding:24px}
+  .card{max-width:620px;width:100%;background:linear-gradient(180deg,#efe3c9,#e2d2ae);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:32px;box-shadow:0 24px 60px rgba(0,0,0,.6), inset 0 0 60px rgba(120,90,50,.12)}
+  .eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+  h1{font-size:30px;line-height:1.15;color:var(--ink);margin-bottom:6px}
+  .sub{font-family:var(--mono);font-size:11px;color:#6b5535;margin-bottom:18px;letter-spacing:.5px}
+  p{font-size:17px;line-height:1.6;margin-bottom:14px}
+  .b{color:var(--gold);font-style:italic}
+  ol{margin:0 0 16px 20px;font-size:15px;line-height:1.7}
+  .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  a.btn{font-family:var(--mono);font-size:12px;font-weight:700;text-decoration:none;border-radius:6px;padding:12px 16px}
+  a.solid{background:var(--gold);color:#1a1206;border-bottom:3px solid #8f6528}
+  a.ghost{border:1px solid var(--gold);color:#5a4626}
+  a.ghost:hover{background:rgba(184,134,59,.15)}
+  .hint{font-family:var(--mono);font-size:10px;color:#7a6644;margin-top:14px;line-height:1.6}
+  code{font-family:var(--mono);background:rgba(120,90,50,.14);padding:1px 5px;border-radius:3px;font-size:12px}
+  .backlink{position:fixed;top:12px;right:14px;font-family:var(--mono);font-size:11px;color:#cdbb95;text-decoration:none;border:1px solid #4a3a24;padding:5px 9px;border-radius:4px;background:rgba(20,15,8,.8)}
+  .backlink:hover{color:var(--gold-hi);border-color:var(--gold-hi)}
+</style>
+</head>
+<body>
+<a class="backlink" href="../../index.html">← CV Portal</a>
+<div class="card">
+  <div class="eyebrow">Cross-app · Knotebook pack</div>
+  <h1>The Valley</h1>
+  <div class="sub">An Ink story of a working life</div>
+  <p>The same branching story from <code>/creative/ink/</code>, packaged as a <b class="b">Knotebook pack</b> — a single <code>.knotebook.json</code> file with the compiled Ink story and all its artwork embedded.</p>
+  <p>Import it into the Knotebook player to read offline, keep progress, and switch themes.</p>
+  <ol>
+    <li>Download the pack below.</li>
+    <li>Open the Knotebook player and choose <em>Import pack</em>.</li>
+    <li>Pick <code>the-valley.knotebook.json</code>. It installs to your library.</li>
+  </ol>
+  <div class="actions">
+    <a class="btn solid" href="the-valley.knotebook.json" download>Download pack (.knotebook.json)</a>
+    <a class="btn ghost" href="https://knotebook.borck.education/app/?player=1" rel="noopener">Open Knotebook player →</a>
+    <a class="btn ghost" href="../ink/">Read it in the browser</a>
+  </div>
+  <div class="hint">Pack format <code>knotebook-pack</code> v1 · artwork embedded as data URLs · CC BY 4.0.</div>
+</div>
+</body>
+</html>

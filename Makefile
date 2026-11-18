@@ -1,7 +1,7 @@
 # Makefile for CV Generation
 # Single source of truth CV system using Quarto
 
-.PHONY: all pdf pdf-latex html slides quest world world-data world-art world-pick doom dungeon ink voxel creative-server terminal magazine api chatbot llms-txt clean install help watch serve validate edit preview commit push
+.PHONY: all pdf pdf-latex html slides quest world world-data world-art world-pick doom dungeon ink voxel swipeverse knotebook creative-server terminal magazine api chatbot llms-txt clean install help watch serve validate edit preview commit push
 
 # Default target
 all: pdf html slides
@@ -130,6 +130,18 @@ voxel:
 	@echo "MineBorck ready: creative/voxel/index.html"
 	@echo "  serve: cd creative/voxel && python3 -m http.server 8013"
 
+# Export a SwipeVerse deck (cross-app) from the CV
+swipeverse:
+	@echo "Generating SwipeVerse deck..."
+	@python3 scripts/generate_swipeverse_deck.py
+	@echo "SwipeVerse deck ready: creative/swipeverse/cv-deck.json"
+
+# Build a Knotebook pack (cross-app) from the compiled Ink story
+knotebook: ink
+	@echo "Building Knotebook pack..."
+	@python3 scripts/build_knotebook_pack.py
+	@echo "Knotebook pack ready: creative/knotebook/the-valley.knotebook.json"
+
 # Generate Terminal CV - Standalone Zork-like Text Adventure
 terminal:
 	@echo "Generating Terminal CV - Standalone Version..."
@@ -228,6 +240,12 @@ help:
 	@echo "  make quest      - Generate CV Quest - standalone swipe card adventure game"
 	@echo "  make world      - Generate Resume World - Zelda-style pixel overworld (data + limn art)"
 	@echo "  make world-data - Regenerate Resume World data only (fast, no images)"
+	@echo "  make doom       - Generate Resume Doom - first-person raycaster"
+	@echo "  make dungeon    - Generate The Delve - roguelike text dungeon"
+	@echo "  make ink        - Generate + compile The Valley - Ink interactive fiction"
+	@echo "  make voxel      - Generate MineBorck - isometric voxel dig/build"
+	@echo "  make swipeverse - Export a SwipeVerse deck (cross-app)"
+	@echo "  make knotebook  - Build a Knotebook pack from the Ink story (cross-app)"
 	@echo "  make terminal   - Generate Terminal CV - standalone Zork-like text adventure"
 	@echo "  make magazine   - Generate Magazine CV - standalone professional publication"
 	@echo "  make api        - Generate API CV - Swagger-style documentation interface"

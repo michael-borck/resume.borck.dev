@@ -18,6 +18,8 @@ One YAML file, twelve ways to explore it. Everything on [resume.borck.dev](https
 | 🕯️ **The Delve** (text dungeon) | `scripts/generate_dungeon_data.py` | `creative/dungeon/` |
 | 📖 **The Valley** (Ink interactive fiction) | `scripts/generate_ink_story.py` + `scripts/compile_ink.mjs` | `creative/ink/` |
 | ⛏️ **MineBorck** (isometric voxel dig/build) | `scripts/generate_voxel_data.py` | `creative/voxel/` |
+| 🔗 **SwipeVerse deck** (cross-app export) | `scripts/generate_swipeverse_deck.py` | `creative/swipeverse/` |
+| 📚 **Knotebook pack** (cross-app export) | `scripts/build_knotebook_pack.py` | `creative/knotebook/` |
 | 🎮 CV Quest (swipe-card game) | `scripts/generate_cv_cards.py` | `creative/quest/` |
 | 🖥️ Terminal adventure (Zork-style) | `scripts/generate_terminal_data.py` | `creative/terminal/` |
 | 📰 TechLife Magazine | `scripts/generate_magazine_data.py` | `creative/magazine/` |

@@ -1,0 +1,243 @@
+{
+  "id": "cv-michael-borck",
+  "name": "The Candidate \u2014 Michael Borck",
+  "description": "A career in choices: military, academia, and a local-AI lab. Every decision trades impact, delivery, trust and expertise.",
+  "font": "font-exo",
+  "systemInstruction": "You are a storyteller for an interactive-fiction career game about Michael Borck. Each card is a real turning point; choices trade Impact, Delivery, Trust and Expertise.",
+  "statNames": {
+    "Power": "Impact",
+    "Wealth": "Delivery",
+    "People": "Trust",
+    "Knowledge": "Expertise"
+  },
+  "imageSet": [],
+  "colors": {
+    "primary": "text-cyan-400",
+    "secondary": "text-amber-300",
+    "background": "bg-gradient-to-br from-slate-950 via-cyan-950 to-zinc-950",
+    "accent": "border-cyan-400"
+  },
+  "category": "education",
+  "deck": {
+    "name": "The Candidate \u2014 Michael Borck",
+    "description": "Play through a 30-year career as a series of decisions. Study, teach, build, and choose what to ship.",
+    "intro": "You are Michael Borck at the crossroads of a long working life: a navy systems administrator who became a university lecturer, a computer-vision researcher, and the founder of a self-funded local-AI lab. Every meeting is a trade-off. Swipe to decide; keep all four resources alive.",
+    "category": "education",
+    "cards": [
+      {
+        "prompt": "1989. Michael Borck enlists as a systems administrator in the Royal Australian Navy. The mainframes are older than the manuals.",
+        "archetype": "opportunity",
+        "imageUrl": "https://store.swipeverse.app/art/business/opportunity.webp",
+        "leftChoice": {
+          "text": "Get your hands dirty on the hardware.",
+          "effects": {
+            "Knowledge": 4,
+            "People": 2
+          },
+          "nextCardIndex": 1
+        },
+        "rightChoice": {
+          "text": "Learn the chain of command first.",
+          "effects": {
+            "Power": 4,
+            "People": 2
+          },
+          "nextCardIndex": 1
+        }
+      },
+      {
+        "prompt": "A submarine systems centre needs an IT manager to keep critical systems running through the night.",
+        "archetype": "crisis",
+        "imageUrl": "https://store.swipeverse.app/art/business/crisis.webp",
+        "leftChoice": {
+          "text": "Own the uptime, however long it takes.",
+          "effects": {
+            "Wealth": 4,
+            "Knowledge": 2,
+            "People": -2
+          },
+          "nextCardIndex": 2
+        },
+        "rightChoice": {
+          "text": "Build a team you can trust.",
+          "effects": {
+            "People": 4,
+            "Power": 2
+          },
+          "nextCardIndex": 2
+        }
+      },
+      {
+        "prompt": "HQADF wants a project manager for a defence messaging system \u2014 accountable for cost, schedule and quality.",
+        "archetype": "faction",
+        "imageUrl": "https://store.swipeverse.app/art/business/faction.webp",
+        "leftChoice": {
+          "text": "Hold the line on scope.",
+          "effects": {
+            "Power": 4,
+            "People": -2
+          },
+          "nextCardIndex": 3
+        },
+        "rightChoice": {
+          "text": "Bring every stakeholder in early.",
+          "effects": {
+            "People": 4,
+            "Knowledge": 2
+          },
+          "nextCardIndex": 3
+        }
+      },
+      {
+        "prompt": "2001. A lecturing post opens at Curtin University. Uniforms for whiteboards?",
+        "archetype": "opportunity",
+        "imageUrl": "https://store.swipeverse.app/art/business/opportunity.webp",
+        "leftChoice": {
+          "text": "Take the leap into teaching.",
+          "effects": {
+            "People": 4,
+            "Knowledge": 3,
+            "Wealth": -2
+          },
+          "nextCardIndex": 4
+        },
+        "rightChoice": {
+          "text": "Keep consulting on the side to stay sharp.",
+          "effects": {
+            "Wealth": 4,
+            "Knowledge": 2
+          },
+          "nextCardIndex": 4
+        }
+      },
+      {
+        "prompt": "Students respond to one idea above all: make contact count. How do you teach?",
+        "archetype": "advisor",
+        "imageUrl": "https://store.swipeverse.app/art/business/advisor.webp",
+        "leftChoice": {
+          "text": "Be relentlessly present and personal.",
+          "effects": {
+            "People": 4,
+            "Power": 1
+          },
+          "nextCardIndex": 5
+        },
+        "rightChoice": {
+          "text": "Design tools that scale the lesson.",
+          "effects": {
+            "Knowledge": 3,
+            "Wealth": 2
+          },
+          "nextCardIndex": 5
+        }
+      },
+      {
+        "prompt": "2015. Landgate wants automated street-sign detection from mobile mapping data.",
+        "archetype": "judgement",
+        "imageUrl": "https://store.swipeverse.app/art/business/judgement.webp",
+        "leftChoice": {
+          "text": "Go deep on computer vision.",
+          "effects": {
+            "Knowledge": 4,
+            "Wealth": -2
+          },
+          "nextCardIndex": 6
+        },
+        "rightChoice": {
+          "text": "Ship something practical, fast.",
+          "effects": {
+            "Wealth": 4,
+            "Power": 2
+          },
+          "nextCardIndex": 6
+        }
+      },
+      {
+        "prompt": "2017. Finish the PhD on multi-modal feature extraction \u2014 or keep delivering client work?",
+        "archetype": "gamble",
+        "imageUrl": "https://store.swipeverse.app/art/business/gamble.webp",
+        "leftChoice": {
+          "text": "Finish the doctorate.",
+          "effects": {
+            "Knowledge": 3,
+            "Wealth": -3,
+            "Power": 2
+          },
+          "nextCardIndex": 7
+        },
+        "rightChoice": {
+          "text": "Take on more consulting.",
+          "effects": {
+            "Wealth": 5,
+            "Knowledge": 2
+          },
+          "nextCardIndex": 7
+        }
+      },
+      {
+        "prompt": "AI arrives in the classroom, and the School names you AI Leader.",
+        "archetype": "faction",
+        "imageUrl": "https://store.swipeverse.app/art/business/faction.webp",
+        "leftChoice": {
+          "text": "Redesign the curriculum around it.",
+          "effects": {
+            "Power": 4,
+            "Knowledge": 3,
+            "People": -2
+          },
+          "nextCardIndex": 8
+        },
+        "rightChoice": {
+          "text": "Keep humans firmly in the loop.",
+          "effects": {
+            "People": 4,
+            "Knowledge": 2
+          },
+          "nextCardIndex": 8
+        }
+      },
+      {
+        "prompt": "You build Cloud Core \u2014 a whole virtual company for authentic audit experiences.",
+        "archetype": "opportunity",
+        "imageUrl": "https://store.swipeverse.app/art/business/opportunity.webp",
+        "leftChoice": {
+          "text": "Make it ambitious and complete.",
+          "effects": {
+            "Knowledge": 3,
+            "Power": 3,
+            "Wealth": -2
+          },
+          "nextCardIndex": 9
+        },
+        "rightChoice": {
+          "text": "Keep it simple and reusable.",
+          "effects": {
+            "Wealth": 4,
+            "People": 3
+          },
+          "nextCardIndex": 9
+        }
+      },
+      {
+        "prompt": "Years of teaching, building and research later \u2014 what is the lesson worth passing on?",
+        "archetype": "terminal",
+        "imageUrl": "https://store.swipeverse.app/art/business/terminal.webp",
+        "leftChoice": {
+          "text": "Caring, competence, and passion.",
+          "effects": {
+            "People": 4,
+            "Knowledge": 2
+          }
+        },
+        "rightChoice": {
+          "text": "Keep making and shipping.",
+          "effects": {
+            "Knowledge": 3,
+            "Wealth": 3,
+            "Power": 2
+          }
+        }
+      }
+    ]
+  }
+}
