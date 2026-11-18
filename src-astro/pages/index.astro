@@ -7,6 +7,8 @@ const formats = [
   { icon: '🌐', title: 'Traditional HTML', desc: 'Responsive web version with clean styling, table of contents, and an embedded chat widget.', href: '/output/cv-michael-borck.html', badges: ['Web', 'Responsive'], group: 'read' },
   { icon: '📃', title: 'Plain text', desc: 'The CV as plain text (llms.txt) — no styling, just the words, for reading or pasting anywhere.', href: '/llms.txt', badges: ['Plain Text'], group: 'read' },
   { icon: '📰', title: 'TechLife Magazine', desc: 'Magazine-style layout with pull quotes and editorial design. My career as feature articles.', href: '/creative/magazine/', badges: ['Visual', 'Editorial'], group: 'read' },
+  { icon: '📈', title: 'Gantt chart', desc: 'Roles over time as a Gantt chart — hover any bar or label for the role, dates and responsibilities.', href: '/creative/gantt/', badges: ['Timeline', 'Hover'], group: 'read' },
+  { icon: '📊', title: 'Dashboard', desc: 'A dashboard of charts — time by role, skills, roles active per year, publications — with hover detail.', href: '/creative/dashboard/', badges: ['Charts', 'Hover'], group: 'read' },
 
   // ---------- PLAY ----------
   { icon: '🗺️', title: 'Resume World', desc: 'Zelda-style pixel-art overworld. Explore regions of a career — the Keep, the Dojo, the Observatory — and discover the story behind every place.', href: '/creative/world/', badges: ['Interactive', 'Pixel Art'], group: 'play' },
@@ -36,7 +38,7 @@ const formats = [
   { icon: '🗄️', title: 'Data exports', desc: 'Download the CV as Markdown, Quarto, LaTeX, JSON, XML, CSV, a Python dict, or MySQL (schema + dump).', href: '/creative/data/', badges: ['Data', 'Downloads'], group: 'use' },
   { icon: '🔗', title: 'SwipeVerse deck', desc: 'The career exported as a portable SwipeVerse Reality — open it straight in swipeverse.app with a deep link.', href: '/creative/swipeverse/', badges: ['Cross-app', 'Deck'], group: 'use' },
   { icon: '📚', title: 'Knotebook pack', desc: 'The Valley Ink story as a self-contained .knotebook.json pack, artwork embedded — import and play offline.', href: '/creative/knotebook/', badges: ['Cross-app', 'Ink'], group: 'use' },
-  { icon: '🔌', title: 'API Documentation', desc: 'Swagger-style REST interface to browse experience and skills as structured endpoints.', href: '/creative/api/', badges: ['Developer', 'REST'], group: 'use' },
+  { icon: '🔌', title: 'API Documentation', desc: 'A mock Swagger-style REST interface — browse the CV as if it were API endpoints.', href: '/creative/api/', badges: ['Mock API', 'Read'], group: 'read' },
   { icon: '📦', title: 'The Source', desc: 'One YAML file generates everything above. One edit, every format updated.', href: 'https://github.com/michael-borck/resume.borck.dev/blob/main/data/cv-data.yml', badges: ['YAML', 'Source'], group: 'use' },
   { icon: '⚙️', title: 'How It Works', desc: 'Quarto → PDF/HTML/Slides · Python → every creative format · FastAPI → Live API · MCP → AI', href: 'https://github.com/michael-borck/resume.borck.dev', badges: ['Pipeline', 'Make'], group: 'use' },
 ];
