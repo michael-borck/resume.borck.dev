@@ -316,7 +316,7 @@
   function emitIntro() {
     hr();
     emit(`DEPTH ${depth} OF ${maxDepth} · seed ${seed}`, "room");
-    emit("Move with n/s/e/w (or h/j/k/l). Walk into a foe to strike it. Type 'help'.", "dim");
+    emit("Arrows / WASD / HJKL to move. Walk into a foe to strike it. Enter or / to type a command.", "dim");
     const here = items.filter((i) => Math.abs(i.x - pos.x) <= 3 && Math.abs(i.y - pos.y) <= 3);
     const foes = enemies.filter((e) => cheb(e, pos) <= 3);
     if (foes.length) emit("Something stirs nearby: " + foes.map((e) => e.name).join(", "), "err");
@@ -370,16 +370,16 @@
   }
 
   function emitHelp() {
-    emit("Commands", "hdr");
-    emit("  n s e w / h j k l      move one tile (walk into a foe to attack)");
-    emit("  attack <dir>           strike without moving");
-    emit("  wait / .               hold position (foes take a turn)");
-    emit("  potion / p             drink a potion to heal");
-    emit("  look / l               survey your surroundings");
-    emit("  map / m                show the explored map");
-    emit("  descend / d            take the stairs down");
-    emit("  inventory / i          potions, attack, relics");
-    emit("  stats · seed · clear");
+    emit("Keys (no typing needed)", "hdr");
+    emit("  Arrows / WASD / HJKL   move one tile (walk into a foe to attack)");
+    emit("  >                      take the stairs down");
+    emit("  p                      drink a potion");
+    emit("  i · m · ?              inventory · map · help");
+    emit("  space / .              wait (foes take a turn)");
+    emit("  Enter or /             type a command (Esc to leave the box)");
+    emit("", "dim");
+    emit("Commands (after Enter / /)", "hdr");
+    emit("  attack <dir> · look · descend · inventory · map · stats · seed · clear");
     emit("Goal: descend three depths, reach the Archive, and gather relics.", "dim");
   }
 
@@ -389,11 +389,49 @@
     const v = input.value; input.value = "";
     exec(v);
     updateHud();
+    // hand control back to direct-key movement after a typed command
+    input.blur();
   });
   document.getElementById("helpBtn").addEventListener("click", () => { emitHelp(); });
   document.getElementById("mapBtn").addEventListener("click", () => { drawMap(); });
   document.getElementById("restartBtn").addEventListener("click", () => newRun());
   document.getElementById("againBtn").addEventListener("click", () => newRun());
+
+  // Click anywhere that isn't the command box to return to movement mode.
+  document.addEventListener("mousedown", (e) => {
+    if (document.activeElement === input && e.target !== input) input.blur();
+  });
+
+  // ---- direct keyboard control (nethack-style) ----
+  const KEYMOVE = {
+    ArrowUp: "n", ArrowDown: "s", ArrowLeft: "w", ArrowRight: "e",
+    w: "n", s: "s", a: "w", d: "e",          // WASD
+    k: "n", j: "s", h: "w", l: "e",          // hjkl (nethack)
+    "8": "n", "2": "s", "4": "w", "6": "e",  // numpad
+  };
+  function typingCommand() { return document.activeElement === input; }
+
+  document.addEventListener("keydown", (e) => {
+    // Escape leaves the command box; while typing, let the box have the keys.
+    if (e.key === "Escape") {
+      if (typingCommand()) { input.blur(); e.preventDefault(); }
+      return;
+    }
+    if (typingCommand()) return;
+    if (state.over) {
+      if (e.key === "Enter") { e.preventDefault(); newRun(); }
+      return;
+    }
+    const k = e.key;
+    if (KEYMOVE[k]) { e.preventDefault(); move(...DIRS[KEYMOVE[k]]); updateHud(); return; }
+    if (k === "Enter" || k === "/" || k === ":") { e.preventDefault(); input.focus(); return; }
+    if (k === ">" ) { e.preventDefault(); descend(); updateHud(); return; }
+    if (k === " " || k === ".") { e.preventDefault(); exec("wait"); updateHud(); return; }
+    if (k === "i") { e.preventDefault(); exec("inventory"); return; }
+    if (k === "m") { e.preventDefault(); drawMap(); return; }
+    if (k === "p") { e.preventDefault(); potion(); updateHud(); return; }
+    if (k === "?") { e.preventDefault(); emitHelp(); return; }
+  });
 
   // ---- run lifecycle ----
   function newRun(forceSeed) {
@@ -409,7 +447,8 @@
     genDepth(1);
     emitIntro();
     updateHud();
-    input.focus();
+    // Movement is direct-key; don't trap the user in the text box.
+    if (document.activeElement) document.activeElement.blur();
   }
 
   // ---- boot ----
