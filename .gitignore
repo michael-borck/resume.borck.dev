@@ -68,6 +68,9 @@ Thumbs.db
 *.cb2
 .*.lb
 
+# Resume World — generated art candidates & picks (intermediate, not shipped)
+art/
+
 # Astro
 dist/
 .astro/

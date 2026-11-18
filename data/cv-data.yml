@@ -8,6 +8,71 @@ personal:
   education_platform: https://borck.education
   location: Perth, WA
 
+# Map layout for the Zelda-style Resume World (creative/world/).
+# Regions are the overworld areas; each lists the CV keys it draws from and
+# where it sits on the pixel-art map (x,y are % of the map image).
+# `spawns` caps how many markers are drawn per region, so dense sections
+# (e.g. experience) stay readable on the map.
+world:
+  spawn: { x: 50, y: 50 }
+  regions:
+    - id: experience
+      name: "The Keep"
+      subtitle: "A career across military, academia, and industry"
+      map: { x: 50, y: 15 }
+      icon: keep
+      sources: [experience]
+      spawns: 8
+    - id: education
+      name: "The Observatory"
+      subtitle: "Five degrees and a doctorate"
+      map: { x: 78, y: 78 }
+      icon: tower
+      sources: [education]
+      spawns: 5
+    - id: skills
+      name: "The Dojo"
+      subtitle: "Languages, frameworks, and tools of the trade"
+      map: { x: 80, y: 35 }
+      icon: dojo
+      sources: [skills]
+      spawns: 5
+    - id: projects
+      name: "Treasure Vault"
+      subtitle: "Tools and open-source creations"
+      map: { x: 72, y: 88 }
+      icon: chest
+      sources: [projects]
+      spawns: 6
+    - id: achievements
+      name: "Hall of Legends"
+      subtitle: "Achievements and recognition"
+      map: { x: 28, y: 82 }
+      icon: scroll
+      sources: [achievements, publications]
+      spawns: 6
+    - id: teaching
+      name: "The Training Grounds"
+      subtitle: "Teaching philosophy and student impact"
+      map: { x: 24, y: 30 }
+      icon: dojo
+      sources: [teaching]
+      spawns: 4
+    - id: service
+      name: "The Old Ruins"
+      subtitle: "Professional service and community"
+      map: { x: 50, y: 86 }
+      icon: ruins
+      sources: [service, memberships]
+      spawns: 4
+    - id: interests
+      name: "The Far Shore"
+      subtitle: "Life beyond work"
+      map: { x: 18, y: 80 }
+      icon: beach
+      sources: [interests]
+      spawns: 6
+
 summary:
   main: AI Leader and Cyber Security expert with 25+ years spanning military → academia → industry consulting transition. Author of the Conversation, Not Delegation book series, creator of innovative educational AI tools, and pioneer in AI-enhanced pedagogy serving academics, education, agriculture and mining sectors. Founder of LocoLabo, an applied local-AI research lab, with a rare combination of technical depth and educational innovation expertise. Teaching philosophy grounded in three conceptual pillars - Caring, Competence, and Passion, with a core principle of "Make Contact Count."
 

@@ -1,0 +1,540 @@
+{
+  "title": "Michael Borck's World",
+  "subtitle": "An interactive map of a career",
+  "spawn": {
+    "x": 50,
+    "y": 50
+  },
+  "summary": "AI Leader and Cyber Security expert with 25+ years spanning military \u2192 academia \u2192 industry consulting transition. Author of the Conversation, Not Delegation book series, creator of innovative educational AI tools, and pioneer in AI-enhanced pedagogy serving academics, education, agriculture and mining sectors. Founder of LocoLabo, an applied local-AI research lab, with a rare combination of technical depth and educational innovation expertise. Teaching philosophy grounded in three conceptual pillars - Caring, Competence, and Passion, with a core principle of \"Make Contact Count.\"",
+  "contact": {
+    "id": "contact",
+    "name": "Michael Borck",
+    "subtitle": "Start / get in touch",
+    "icon": "camp",
+    "x": 50,
+    "y": 50,
+    "kind": "contact",
+    "body": [
+      "Michael Borck \u2014 Perth, WA",
+      "michael.borck@curtin.edu.au",
+      "0402 297 573",
+      "https://linkedin.com/in/michaelborck",
+      "https://github.com/michael-borck",
+      "https://borck.dev"
+    ],
+    "links": {
+      "email": "michael.borck@curtin.edu.au",
+      "linkedin": "https://linkedin.com/in/michaelborck",
+      "github": "https://github.com/michael-borck",
+      "portfolio": "https://borck.dev"
+    }
+  },
+  "regions": [
+    {
+      "id": "experience",
+      "name": "The Keep",
+      "subtitle": "A career across military, academia, and industry",
+      "icon": "keep",
+      "x": 50,
+      "y": 15,
+      "markers": [
+        {
+          "name": "Lecturer \u2014 School of Marketing and Management",
+          "subtitle": "Curtin University \u00b7 Perth, WA \u00b7 Feb 2016 \u2013 Present",
+          "icon": "keep",
+          "kind": "experience",
+          "body": [
+            "Lecturer \u2014 School of Marketing and Management \u2014 Curtin University (Feb 2016 \u2013 Present)",
+            "AI Program Leadership - AI Leader for the School, developing new AI programs within undergraduate and postgraduate curricula",
+            "Research Leadership - Founder of LocoLabo, an applied local-AI research lab",
+            "Core Teaching Areas - AI, Programming (Python), and Cyber Security",
+            "Curriculum Development - Backbone developer for Python and Web development programs",
+            "Cyber Security - Lead lecturer for cyber security programs with advanced digital forensics curriculum",
+            "Educational Innovation - Pioneer in AI-enhanced pedagogy and interactive learning methodologies, with teaching philosophy grounded in Caring, Competence, and Passion",
+            "Student Engagement - Achieved 100% student satisfaction scores through innovative assessment design including \"Cloud Core\" virtual company simulation",
+            "Executive Education - Providing AI training to academics, education professionals, agriculture and mining industry executives"
+          ]
+        },
+        {
+          "name": "Course Leadership & Development",
+          "subtitle": "Curtin University \u00b7 Perth, WA \u00b7 Ongoing",
+          "icon": "keep",
+          "kind": "experience",
+          "body": [
+            "Course Leadership & Development \u2014 Curtin University (Ongoing)",
+            "Course Lead for Information Systems undergraduate and postgraduate degree programs",
+            "Unit coordination across multiple levels - postgraduate, undergraduate, core, non-core, and service units (domestic and international)",
+            "Advanced Canvas LMS and Blackboard development and customization",
+            "Creator of interactive educational tools and assessment frameworks"
+          ]
+        },
+        {
+          "name": "Associate Lecturer",
+          "subtitle": "Curtin University \u00b7 Perth, WA \u00b7 Jan 2001 \u2013 Dec 2007",
+          "icon": "keep",
+          "kind": "experience",
+          "body": [
+            "Associate Lecturer \u2014 Curtin University (Jan 2001 \u2013 Dec 2007)",
+            "Academic Leadership - Provided departmental representation on institutional committees",
+            "Program Development - Developed and delivered comprehensive course material for Software Engineering and Computer Science degrees",
+            "International Coordination - Managed unit coordination across domestic and international campuses"
+          ]
+        },
+        {
+          "name": "AI, IS & Educational Technology Consultant",
+          "subtitle": "Self-Employed \u00b7 Perth, WA \u00b7 Jan 2016 \u2013 Present",
+          "icon": "keep",
+          "kind": "experience",
+          "body": [
+            "AI, IS & Educational Technology Consultant \u2014 Self-Employed (Jan 2016 \u2013 Present)",
+            "AI strategy and implementation consultation",
+            "IS/IT consultation and analysis",
+            "Educational technology consulting and training",
+            "Executive education training in AI for academics, education professionals, agriculture and mining industries"
+          ]
+        },
+        {
+          "name": "Researcher",
+          "subtitle": "Curtin University \u00b7 Perth, WA \u00b7 Mar 2018 \u2013 2019",
+          "icon": "keep",
+          "kind": "experience",
+          "body": [
+            "Researcher \u2014 Curtin University (Mar 2018 \u2013 2019)",
+            "Advanced AI Research - Investigation and development of CNN models and their application to the maritime environment",
+            "Applied Machine Learning - Focused research on computer vision applications for marine and coastal monitoring"
+          ]
+        },
+        {
+          "name": "Software Contractor",
+          "subtitle": "CRCSI & Landgate WA \u00b7 Perth, WA \u00b7 Mar 2015 \u2013 Jan 2016",
+          "icon": "keep",
+          "kind": "experience",
+          "body": [
+            "Software Contractor \u2014 CRCSI & Landgate WA (Mar 2015 \u2013 Jan 2016)",
+            "Computer Vision Innovation - Developed automated detection and recognition systems for street sign inventory",
+            "Technical Expertise - Provided specialized skills in machine learning and image processing for government applications"
+          ]
+        },
+        {
+          "name": "IT Consultant \u2014 Owner",
+          "subtitle": "Bital IT Consulting Services \u00b7 Perth, WA \u00b7 Jan 2008 \u2013 Jan 2011",
+          "icon": "keep",
+          "kind": "experience",
+          "body": [
+            "IT Consultant \u2014 Owner \u2014 Bital IT Consulting Services (Jan 2008 \u2013 Jan 2011)",
+            "Business Analysis - Provided comprehensive business and technical analysis to diverse client base",
+            "Infrastructure Development - Developed and supported critical backup and monitoring solutions for servers and databases"
+          ]
+        },
+        {
+          "name": "IT Manager",
+          "subtitle": "Submarine Systems Centre, RAN \u00b7 Perth, WA \u00b7 Jul 1996 \u2013 Jan 2000",
+          "icon": "keep",
+          "kind": "experience",
+          "body": [
+            "IT Manager \u2014 Submarine Systems Centre, RAN (Jul 1996 \u2013 Jan 2000)",
+            "Strategic IT Leadership - Managed comprehensive information technology infrastructure supporting submarine operations and maintenance",
+            "Executive Advisory - Provided strategic IT guidance to senior military leadership and operational boards",
+            "Organisational Impact - Delivered technology solutions that directly supported critical defence capabilities and mission readiness"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "education",
+      "name": "The Observatory",
+      "subtitle": "Five degrees and a doctorate",
+      "icon": "tower",
+      "x": 78,
+      "y": 78,
+      "markers": [
+        {
+          "name": "Doctor of Philosophy (PhD) (Computer Science)",
+          "subtitle": "Curtin University \u00b7 2017",
+          "icon": "tower",
+          "kind": "education",
+          "body": [
+            "Doctor of Philosophy (PhD) (Computer Science) \u2014 Curtin University, 2017",
+            "Thesis: Feature Extraction from Multi-modal Data (GIS, Machine Learning & Computer Vision)"
+          ]
+        },
+        {
+          "name": "Bachelor of Science (Computer Science) (Honours)",
+          "subtitle": "Curtin University \u00b7 2001",
+          "icon": "tower",
+          "kind": "education",
+          "body": [
+            "Bachelor of Science (Computer Science) (Honours) \u2014 Curtin University, 2001",
+            "Thesis: A Bayesian Belief Network Approach to Predicting the Prices of Australian Commonwealth Government Interest Rate Securities"
+          ]
+        },
+        {
+          "name": "Graduate Diploma in Business",
+          "subtitle": "Curtin University \u00b7 2000",
+          "icon": "tower",
+          "kind": "education",
+          "body": [
+            "Graduate Diploma in Business \u2014 Curtin University, 2000"
+          ]
+        },
+        {
+          "name": "Bachelor of Science (Computer Science)",
+          "subtitle": "Australian National University \u00b7 1994",
+          "icon": "tower",
+          "kind": "education",
+          "body": [
+            "Bachelor of Science (Computer Science) \u2014 Australian National University, 1994"
+          ]
+        },
+        {
+          "name": "Bachelor of Applied Science (Mathematics)",
+          "subtitle": "Queensland University of Technology \u00b7 1989",
+          "icon": "tower",
+          "kind": "education",
+          "body": [
+            "Bachelor of Applied Science (Mathematics) \u2014 Queensland University of Technology, 1989"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "name": "The Dojo",
+      "subtitle": "Languages, frameworks, and tools of the trade",
+      "icon": "dojo",
+      "x": 80,
+      "y": 35,
+      "markers": [
+        {
+          "name": "Programming \u00b7 Core",
+          "subtitle": "Python, C/C++, C#, Java, JavaScript, Matlab, PHP, CSS, HTML, LaTeX, SQL, Bash",
+          "icon": "dojo",
+          "kind": "skill",
+          "body": [
+            "Programming \u2014 Core: Python, C/C++, C#, Java, JavaScript, Matlab, PHP, CSS, HTML, LaTeX, SQL, Bash"
+          ]
+        },
+        {
+          "name": "Programming \u00b7 Web",
+          "subtitle": "React, Flask, FastAPI, FastHTML, Vanilla JS, WordPress",
+          "icon": "dojo",
+          "kind": "skill",
+          "body": [
+            "Programming \u2014 Web: React, Flask, FastAPI, FastHTML, Vanilla JS, WordPress"
+          ]
+        },
+        {
+          "name": "Programming \u00b7 Ai_Ml",
+          "subtitle": "Langchain, TensorFlow, PyTorch, Scikit-learn",
+          "icon": "dojo",
+          "kind": "skill",
+          "body": [
+            "Programming \u2014 Ai_Ml: Langchain, TensorFlow, PyTorch, Scikit-learn"
+          ]
+        },
+        {
+          "name": "Programming \u00b7 Educational",
+          "subtitle": "Blackboard LMS, Canvas LMS, Interactive Content Development",
+          "icon": "dojo",
+          "kind": "skill",
+          "body": [
+            "Programming \u2014 Educational: Blackboard LMS, Canvas LMS, Interactive Content Development"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "projects",
+      "name": "Treasure Vault",
+      "subtitle": "Tools and open-source creations",
+      "icon": "chest",
+      "x": 72,
+      "y": 88,
+      "markers": [
+        {
+          "name": "Reality Reigns",
+          "subtitle": "Swipe-based decision game providing interactive fiction storytelling from fantasy adventures to educational simulations",
+          "icon": "chest",
+          "kind": "project",
+          "body": [
+            "Reality Reigns",
+            "Swipe-based decision game providing interactive fiction storytelling from fantasy adventures to educational simulations"
+          ]
+        },
+        {
+          "name": "Talk Buddy",
+          "subtitle": "AI-based audio interface tool for conversation practice (medical diagnoses, HR discussions, English conversation)",
+          "icon": "chest",
+          "kind": "project",
+          "body": [
+            "Talk Buddy",
+            "AI-based audio interface tool for conversation practice (medical diagnoses, HR discussions, English conversation)"
+          ]
+        },
+        {
+          "name": "Curriculum Curator",
+          "subtitle": "AI-based tool for creating, managing and curating learning materials based on unique teaching philosophies",
+          "icon": "chest",
+          "kind": "project",
+          "body": [
+            "Curriculum Curator",
+            "AI-based tool for creating, managing and curating learning materials based on unique teaching philosophies"
+          ]
+        },
+        {
+          "name": "Feed Forward System",
+          "subtitle": "AI-based assessment feedback tool for various assessment types",
+          "icon": "chest",
+          "kind": "project",
+          "body": [
+            "Feed Forward System",
+            "AI-based assessment feedback tool for various assessment types"
+          ]
+        },
+        {
+          "name": "Student Feedback Analyzer",
+          "subtitle": "AI tool that analyzes student feedback forms to suggest course improvements",
+          "icon": "chest",
+          "kind": "project",
+          "body": [
+            "Student Feedback Analyzer",
+            "AI tool that analyzes student feedback forms to suggest course improvements"
+          ]
+        },
+        {
+          "name": "Image Processing for Orange",
+          "subtitle": "Ongoing",
+          "icon": "chest",
+          "kind": "project",
+          "body": [
+            "Image Processing for Orange (Ongoing)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "achievements",
+      "name": "Hall of Legends",
+      "subtitle": "Achievements and recognition",
+      "icon": "scroll",
+      "x": 28,
+      "y": 82,
+      "markers": [
+        {
+          "name": "Educational Leadership",
+          "subtitle": "AI Leader for School of Marketing and Management, led development of AI curriculum serving 500+ students across undergraduate and postgraduate programs",
+          "icon": "scroll",
+          "kind": "achievement",
+          "body": [
+            "Educational Leadership - AI Leader for School of Marketing and Management, led development of AI curriculum serving 500+ students across undergraduate and postgraduate programs"
+          ]
+        },
+        {
+          "name": "Teaching Excellence",
+          "subtitle": "Achieved 100% student satisfaction scores across multiple units (ISYS3015, ISYS2001, ISYS6018) with consistent \"effective teacher\" ratings",
+          "icon": "scroll",
+          "kind": "achievement",
+          "body": [
+            "Teaching Excellence - Achieved 100% student satisfaction scores across multiple units (ISYS3015, ISYS2001, ISYS6018) with consistent \"effective teacher\" ratings"
+          ]
+        },
+        {
+          "name": "Technical Innovation",
+          "subtitle": "Creator of multiple AI-powered educational tools including Reality Reigns, Talk Buddy, and Curriculum Curator with 290+ downloads",
+          "icon": "scroll",
+          "kind": "achievement",
+          "body": [
+            "Technical Innovation - Creator of multiple AI-powered educational tools including Reality Reigns, Talk Buddy, and Curriculum Curator with 290+ downloads"
+          ]
+        },
+        {
+          "name": "Industry Impact",
+          "subtitle": "Executive education training delivered to 100+ professionals across 15+ companies in academics, education, agriculture and mining sectors",
+          "icon": "scroll",
+          "kind": "achievement",
+          "body": [
+            "Industry Impact - Executive education training delivered to 100+ professionals across 15+ companies in academics, education, agriculture and mining sectors"
+          ]
+        },
+        {
+          "name": "Assessment Innovation",
+          "subtitle": "Developed award-winning \"Cloud Core\" virtual company simulation providing authentic industry experience",
+          "icon": "scroll",
+          "kind": "achievement",
+          "body": [
+            "Assessment Innovation - Developed award-winning \"Cloud Core\" virtual company simulation providing authentic industry experience"
+          ]
+        },
+        {
+          "name": "Research Excellence",
+          "subtitle": "6+ peer-reviewed publications in computer vision and machine learning with focus on mobile mapping systems",
+          "icon": "scroll",
+          "kind": "achievement",
+          "body": [
+            "Research Excellence - 6+ peer-reviewed publications in computer vision and machine learning with focus on mobile mapping systems"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "teaching",
+      "name": "The Training Grounds",
+      "subtitle": "Teaching philosophy and student impact",
+      "icon": "dojo",
+      "x": 24,
+      "y": 30,
+      "markers": [
+        {
+          "name": "Built on three pillars - Caring, Competence, and Passion",
+          "subtitle": "Make Contact Count - maximising impact through every student interaction",
+          "icon": "dojo",
+          "kind": "teaching",
+          "body": [
+            "Make Contact Count - maximising impact through every student interaction",
+            "Grounded in Constructivist learning theory, Bloom's Taxonomy, and Universal Design for Learning (UDL)"
+          ]
+        },
+        {
+          "name": "100% Satisfaction Scores",
+          "subtitle": "Achieved across ISYS3015 Business Application Development, ISYS2001 Introduction to Business Programming, and ISYS6018 Information Security",
+          "icon": "dojo",
+          "kind": "teaching",
+          "body": [
+            "100% Satisfaction Scores",
+            "Achieved across ISYS3015 Business Application Development, ISYS2001 Introduction to Business Programming, and ISYS6018 Information Security"
+          ]
+        },
+        {
+          "name": "100% 'Effective Teacher' Ratings",
+          "subtitle": "Across Enterprise Network Security, Business Systems Selection, and Introduction to Programming units",
+          "icon": "dojo",
+          "kind": "teaching",
+          "body": [
+            "100% 'Effective Teacher' Ratings",
+            "Across Enterprise Network Security, Business Systems Selection, and Introduction to Programming units"
+          ]
+        },
+        {
+          "name": "Cloud Core Simulation",
+          "subtitle": "Created complete virtual company with IT infrastructure, policies, and staff chatbot for authentic audit experiences",
+          "icon": "signpost",
+          "kind": "innovation",
+          "body": [
+            "Cloud Core Simulation",
+            "Created complete virtual company with IT infrastructure, policies, and staff chatbot for authentic audit experiences"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "service",
+      "name": "The Old Ruins",
+      "subtitle": "Professional service and community",
+      "icon": "ruins",
+      "x": 50,
+      "y": 86,
+      "markers": [
+        {
+          "name": "Conference Paper Reviewer",
+          "subtitle": "Australian Conference on Information Systems (International) \u00b7 2019",
+          "icon": "ruins",
+          "kind": "service",
+          "body": [
+            "Conference Paper Reviewer \u2014 Australian Conference on Information Systems (International) (2019)"
+          ]
+        },
+        {
+          "name": "Lead Developer",
+          "subtitle": "Image Processing for Orange \u00b7 2015-2019",
+          "icon": "ruins",
+          "kind": "service",
+          "body": [
+            "Lead Developer \u2014 Image Processing for Orange (2015-2019)"
+          ]
+        },
+        {
+          "name": "User Contribution",
+          "subtitle": "Graph Merging for Scikit Image \u00b7 2015",
+          "icon": "ruins",
+          "kind": "service",
+          "body": [
+            "User Contribution \u2014 Graph Merging for Scikit Image (2015)"
+          ]
+        },
+        {
+          "name": "Australian Computer Society (ACS)",
+          "subtitle": "Certified Professional \u00b7 2011",
+          "icon": "ruins",
+          "kind": "membership",
+          "body": [
+            "Australian Computer Society (ACS) \u2014 Certified Professional (2011)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "interests",
+      "name": "The Far Shore",
+      "subtitle": "Life beyond work",
+      "icon": "beach",
+      "x": 18,
+      "y": 80,
+      "markers": [
+        {
+          "name": "Karate",
+          "subtitle": "A life beyond work",
+          "icon": "beach",
+          "kind": "interest",
+          "body": [
+            "Enjoys Karate"
+          ]
+        },
+        {
+          "name": "Muay Thai",
+          "subtitle": "A life beyond work",
+          "icon": "beach",
+          "kind": "interest",
+          "body": [
+            "Enjoys Muay Thai"
+          ]
+        },
+        {
+          "name": "Krav Maga",
+          "subtitle": "A life beyond work",
+          "icon": "beach",
+          "kind": "interest",
+          "body": [
+            "Enjoys Krav Maga"
+          ]
+        },
+        {
+          "name": "Atari 2600 Programming",
+          "subtitle": "A life beyond work",
+          "icon": "beach",
+          "kind": "interest",
+          "body": [
+            "Enjoys Atari 2600 Programming"
+          ]
+        },
+        {
+          "name": "Astronomy",
+          "subtitle": "A life beyond work",
+          "icon": "beach",
+          "kind": "interest",
+          "body": [
+            "Enjoys Astronomy"
+          ]
+        },
+        {
+          "name": "Photography",
+          "subtitle": "A life beyond work",
+          "icon": "beach",
+          "kind": "interest",
+          "body": [
+            "Enjoys Photography"
+          ]
+        }
+      ]
+    }
+  ]
+}

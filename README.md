@@ -13,6 +13,7 @@ One YAML file, twelve ways to explore it. Everything on [resume.borck.dev](https
 | 📄 Traditional PDF | Quarto + HTML-to-PDF | `output/cv-michael-borck.pdf` |
 | 🌐 Traditional HTML (with chat widget) | Quarto + `scripts/inject_chatbot.py` | `output/cv-michael-borck.html` |
 | 🎤 Presentation slides | Quarto (Reveal.js) | `output/cv-michael-borck-slides.html` |
+| 📤 **Resume World** | `scripts/generate_resume_world.py` + limn pixel art | `creative/world/` |
 | 🎮 CV Quest (swipe-card game) | `scripts/generate_cv_cards.py` | `creative/quest/` |
 | 🖥️ Terminal adventure (Zork-style) | `scripts/generate_terminal_data.py` | `creative/terminal/` |
 | 📰 TechLife Magazine | `scripts/generate_magazine_data.py` | `creative/magazine/` |
@@ -29,7 +30,7 @@ One YAML file, twelve ways to explore it. Everything on [resume.borck.dev](https
 data/cv-data.yml  ← ⭐ the single source of truth (EDIT THIS!)
     │
     ├─ Quarto (src/cv-template-python.qmd) → PDF, HTML, Reveal.js slides
-    ├─ Python scripts (scripts/)           → quest, terminal, magazine, api page, chatbot, llms.txt
+    ├─ Python scripts (scripts/)           → quest, terminal, magazine, api page, chatbot, llms.txt, world
     ├─ FastAPI (api/)                      → live JSON API on a VPS
     └─ MCP server (mcp-server/)            → resume queries from Claude / MCP clients
                                               │
@@ -41,11 +42,35 @@ Astro portal (src-astro/ + public-astro/) ────┘ links them all togethe
 GitHub Actions (`.github/workflows/deploy-pages.yml`) runs `astro build` and deploys `dist/` to GitHub Pages on every push to main. The Astro build **does not** run Quarto or the Python generators — instead, `public-astro/output` and `public-astro/creative` are symlinks into the repo, so the generated files in `output/` and `creative/` are **committed on purpose**. After editing `data/cv-data.yml`, regenerate locally and commit the outputs:
 
 ```bash
-make all quest terminal magazine api chatbot llms-txt
+make all quest terminal magazine api chatbot llms-txt world-data
 git add -A && git commit
 ```
 
 The live API and MCP server are deployed separately — see `api/VPS_DEPLOYMENT.md` and `mcp-server/README.md`.
+
+## Resume World (Zelda-style pixel overworld)
+
+A playable top-down map where the whole career is a world to explore. Each CV
+section is a **region** with a landmark (the Keep, the Dojo, the Observatory…),
+and every job, degree, tool, and achievement is a **place** inside it. Walk with
+the arrow keys, press **E** at a landmark to read its story.
+
+- **Data:** `scripts/generate_resume_world.py` flattens `data/cv-data.yml` into
+  `creative/world/data/world-data.json` (regions + markers + contact camp).
+  Region layout lives in the `world:` block of `cv-data.yml`.
+- **Art:** `scripts/resume_world_art.py` drives `limn` (juggernautXL_v9 +
+  `pixel-art-xl` LoRA) to paint the overworld map and 32px landmark sprites.
+  Follow the locolab/LoreKeeper pixel recipe: generate candidates, pick the best,
+  then process into `creative/world/assets/img/`.
+- **Engine:** `creative/world/assets/js/world.js` — a dependency-free Canvas 2D
+  tile engine (player movement, collision, follow camera, region discovery,
+  landmark interaction panels, chiptune WebAudio blips).
+
+```bash
+make world-data        # regenerate JSON only (fast)
+make world             # regenerate JSON + pixel art (slow; needs limn/SwarmUI)
+make world-pick NAME=world-map CANDIDATE=2   # pick a candidate, then process
+```
 
 ## Project structure
 

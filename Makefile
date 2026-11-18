@@ -1,7 +1,7 @@
 # Makefile for CV Generation
 # Single source of truth CV system using Quarto
 
-.PHONY: all pdf pdf-latex html slides quest terminal magazine api chatbot llms-txt clean install help watch serve validate edit preview commit push
+.PHONY: all pdf pdf-latex html slides quest world world-data world-art world-pick terminal magazine api chatbot llms-txt clean install help watch serve validate edit preview commit push
 
 # Default target
 all: pdf html slides
@@ -78,6 +78,28 @@ quest:
 	@echo "CV Quest Standalone ready: creative/quest/index.html"
 	@echo "  - Open creative/quest/index.html in a browser to play"
 	@echo "  - Or serve with: cd creative/quest && python3 -m http.server 8000"
+
+# Generate Resume World - Zelda-style pixel overworld (data + art)
+world: world-data world-art
+	@echo "Resume World ready: creative/world/index.html"
+	@echo "  - Open creative/world/index.html in a browser to explore"
+	@echo "  - Or serve with: cd creative/world && python3 -m http.server 8005"
+
+# World data only (fast; no image generation)
+world-data:
+	@echo "Generating Resume World data..."
+	@python3 scripts/generate_resume_world.py
+
+# World pixel art (slow; calls limn/SwarmUI). Generate then process.
+world-art:
+	@echo "Generating Resume World pixel art (limn)..."
+	@python3 scripts/resume_world_art.py generate
+	@python3 scripts/resume_world_art.py process
+
+# Resume World art helpers (pick a candidate, then process)
+world-pick:
+	@python3 scripts/resume_world_art.py pick $(NAME) $(CANDIDATE)
+	@python3 scripts/resume_world_art.py process
 
 # Generate Terminal CV - Standalone Zork-like Text Adventure
 terminal:
@@ -175,6 +197,8 @@ help:
 	@echo "  make html       - Generate HTML version only"
 	@echo "  make slides     - Generate Reveal.js presentation only"
 	@echo "  make quest      - Generate CV Quest - standalone swipe card adventure game"
+	@echo "  make world      - Generate Resume World - Zelda-style pixel overworld (data + limn art)"
+	@echo "  make world-data - Regenerate Resume World data only (fast, no images)"
 	@echo "  make terminal   - Generate Terminal CV - standalone Zork-like text adventure"
 	@echo "  make magazine   - Generate Magazine CV - standalone professional publication"
 	@echo "  make api        - Generate API CV - Swagger-style documentation interface"

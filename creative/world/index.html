@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="permissions-policy" content="interest-cohort=()" />
+<title>Resume World — Michael Borck</title>
+<meta name="description" content="An interactive pixel-art overworld of Michael Borck's career. Explore regions, discover landmarks, and read the story behind each place." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230a0a0b'/%3E%3Crect x='3' y='6' width='10' height='7' fill='%23ffcf6b'/%3E%3Crect x='5' y='3' width='6' height='3' fill='%23ffe6a8'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
+<link href="assets/css/world.css" rel="stylesheet" />
+<style>
+  .portal-backlink {
+    position: fixed; top: 14px; left: 50%; transform: translateX(-50%);
+    z-index: 60; display: flex; align-items: center; gap: 6px;
+    background: rgba(18,20,34,0.9); border: 2px solid var(--line, #2a2a3a);
+    color: #e8e6e3; padding: 7px 12px; border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700;
+    text-decoration: none; letter-spacing: 0.5px;
+  }
+  .portal-backlink:hover { border-color: #ffcf6b; }
+  @media (max-width: 640px) {
+    .portal-backlink { top: 56px; }
+  }
+</style>
+</head>
+<body class="crt">
+
+<canvas id="game" aria-label="Overworld map of Michael Borck's career"></canvas>
+
+<!-- Loading screen -->
+<div class="loading" id="loading">
+  <div>GENERATING WORLD…</div>
+  <div class="bar"><div id="loadingBar"></div></div>
+</div>
+
+<!-- HUD -->
+<div class="hud">
+  <div class="hud-top">
+    <div class="brand">
+      <div class="t"><span class="dot">.</span><span id="brandTitle">RESUME WORLD</span></div>
+      <div class="s" id="brandSub">An interactive map of a career</div>
+    </div>
+    <div class="hud-actions">
+      <button class="btn ghost" id="muteBtn" aria-pressed="false" title="Toggle sound">♪ off</button>
+      <button class="btn ghost" id="helpBtn" title="How to play">?</button>
+    </div>
+  </div>
+
+  <!-- Tracker -->
+  <div class="tracker">
+    <div class="tracker-title" id="trackerTitle">Regions · 0/8</div>
+    <div class="tracker-list" id="trackerList"></div>
+  </div>
+
+  <!-- Interaction prompt -->
+  <div class="prompt" id="prompt"><span id="promptText"></span></div>
+
+  <!-- Region title card -->
+  <div class="titlecard" id="titlecard">
+    <div class="tc-region" id="tcRegion"></div>
+    <div class="tc-sub" id="tcSub"></div>
+  </div>
+
+  <!-- Touch D-pad -->
+  <div class="dpad" aria-hidden="true">
+    <button class="up" data-dir="up" aria-label="Up">▲</button>
+    <button class="left" data-dir="left" aria-label="Left">◀</button>
+    <button class="act" data-dir="action" aria-label="Interact">E</button>
+    <button class="right" data-dir="right" aria-label="Right">▶</button>
+    <button class="down" data-dir="down" aria-label="Down">▼</button>
+  </div>
+</div>
+
+<!-- Back link to the portal -->
+<a class="portal-backlink" href="../../index.html" title="Return to CV Portal">← CV Portal</a>
+
+<!-- Detail panel -->
+<aside class="panel" id="panel" aria-hidden="true" aria-label="Details">
+  <div class="panel-head">
+    <img class="panel-icon" id="panelIcon" alt="" />
+    <div class="panel-titles">
+      <div class="panel-eyebrow" id="panelEyebrow"></div>
+      <div class="panel-title" id="panelTitle"></div>
+      <div class="panel-sub" id="panelSub"></div>
+    </div>
+    <button class="panel-close" id="panelClose" aria-label="Close">✕</button>
+  </div>
+  <div class="panel-body" id="panelBody"></div>
+</aside>
+
+<!-- Welcome overlay -->
+<div class="overlay" id="overlay">
+  <div class="card">
+    <h1 id="welcomeTitle">RESUME WORLD</h1>
+    <div class="card-sub">A pixel-art overworld of a career</div>
+    <p>Welcome, traveller. This map holds the whole of Michael Borck's working life: every role, degree, tool, and triumph is a place to discover.</p>
+    <p>Explore with the arrow keys. When you reach a glowing landmark, press <strong>E</strong> to read its story. Clear all eight regions to complete the journey.</p>
+    <div class="keys">
+      <span class="k">↑ ↓ ← → / WASD</span><span class="d">move</span>
+      <span class="k">E / Enter</span><span class="d">interact</span>
+      <span class="k">Esc</span><span class="d">close panel</span>
+    </div>
+    <div class="card-actions">
+      <button class="btn solid" id="startBtn">BEGIN EXPLORING →</button>
+    </div>
+  </div>
+</div>
+
+<!-- Help overlay -->
+<div class="overlay hidden" id="helpOverlay">
+  <div class="card">
+    <h1>HOW TO PLAY</h1>
+    <div class="card-sub">A field guide</div>
+    <p>Move with the <strong>arrow keys</strong> or <strong>WASD</strong>. Walk close to a landmark and press <strong>E</strong> (or <strong>Enter</strong>) to open it. Press <strong>Esc</strong> to close a panel.</p>
+    <p>Regions light up on the tracker as you discover them. Click any region chip to jump straight to its story. On a phone, use the on-screen D-pad and the <strong>E</strong> button.</p>
+    <div class="keys">
+      <span class="k">↑ ↓ ← → / WASD</span><span class="d">move</span>
+      <span class="k">E / Enter</span><span class="d">interact</span>
+      <span class="k">Esc</span><span class="d">close panel</span>
+    </div>
+    <div class="card-actions">
+      <button class="btn solid" id="helpStart">BACK TO THE MAP</button>
+      <button class="btn ghost" id="helpClose">Close</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/world.js"></script>
+</body>
+</html>
