@@ -70,7 +70,7 @@ def create_card_decks(cv_data):
             'title': 'Personal Journey',
             'text': f'Beyond the professional achievements, discover the person behind the CV. {cv_data["personal"]["name"]} has diverse interests and creative projects.',
             'icon': '🧩',
-            'imagePath': 'assets/img/personal/creativity.png',
+            'imagePath': 'assets/img/projects/ai-project.png',
             'leftChoice': 'Projects & Innovation',
             'rightChoice': 'Skills & Interests',
             'leftResult': 'switchDeckFn("projects")',
@@ -344,7 +344,7 @@ def create_card_decks(cv_data):
             'title': 'Path Complete!',
             'text': f'You\'ve explored one path through {cv_data["personal"]["name"]}\'s journey. There are many more stories to discover! Try different choices to uncover all experiences.',
             'icon': '🎉',
-            'imagePath': 'assets/img/personal/teamwork.png',
+            'imagePath': 'assets/img/professional/leadership.png',
             'leftChoice': 'Contact Michael',
             'rightChoice': 'Explore More Paths',
             'leftResult': 'showNotificationFn("Thank you for playing! Contact: michael.borck@curtin.edu.au")',
@@ -391,7 +391,7 @@ def create_card_decks(cv_data):
             'title': f'Personal Interest: {interest}',
             'text': f'Outside of work, {cv_data["personal"]["name"]} enjoys {interest}.',
             'icon': '🎯',
-            'imagePath': 'assets/img/personal/creativity.png'
+            'imagePath': 'assets/img/projects/ai-project.png'
         })
     
     return {

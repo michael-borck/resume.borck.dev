@@ -50,14 +50,18 @@ async function initGame() {
   
   // Start button event listener
   startBtn.addEventListener('click', () => {
-      storyScreen.style.opacity = '0';
-      // Use CSS transition end event instead of setTimeout
-      storyScreen.addEventListener('transitionend', function handler() {
+      let begun = false;
+      const begin = () => {
+          if (begun) return;
+          begun = true;
           storyScreen.style.display = 'none';
           createCard(0);
-          // Remove the event listener to prevent multiple calls
-          storyScreen.removeEventListener('transitionend', handler);
-      });
+      };
+      storyScreen.style.opacity = '0';
+      // Prefer the transition, but fall back to a timer so the game always
+      // starts even if transitionend never fires (e.g. reduced motion).
+      storyScreen.addEventListener('transitionend', begin, { once: true });
+      setTimeout(begin, 1200);
   });
 
   // Restart button event listener
@@ -135,12 +139,9 @@ function setupCardDragHandlers(card, cardData) {
         cleanupEventListeners();
         card.remove();
         
-        // Increment index before executing
-        if (gameState.getCurrentCardIndex() < cardDecks[gameState.getCurrentDeck()].length - 1) {
-            gameState.setCurrentCardIndex(gameState.getCurrentCardIndex() + 1);
-        }
-        
-        // Execute the card's leftResult function - this is where the path is defined
+        // Execute the card's leftResult function - this is where the path is defined.
+        // NOTE: do NOT pre-increment the index here; nextCard()/switchDeck() own
+        // advancing. Pre-incrementing made cards that end in nextCard() skip one.
         cardData.leftResult();
         
         // Update game state
@@ -153,12 +154,12 @@ function setupCardDragHandlers(card, cardData) {
             return;
         }
         
-        // If no transition happened, create next card
-        if (document.querySelectorAll('.card').length === 0 && 
+        // If the result neither created a card nor opened a mini-game, advance one.
+        const miniOpen = miniGame && miniGame.classList.contains('show');
+        if (!miniOpen &&
+            document.querySelectorAll('.card').length === 0 && 
             document.querySelectorAll('.temp-card').length === 0) {
-            if (gameState.getCurrentCardIndex() < cardDecks[gameState.getCurrentDeck()].length) {
-                createCard(gameState.getCurrentCardIndex());
-            }
+            nextCard();
         }
     }
     
@@ -169,12 +170,8 @@ function setupCardDragHandlers(card, cardData) {
         cleanupEventListeners();
         card.remove();
         
-        // Increment index before executing
-        if (gameState.getCurrentCardIndex() < cardDecks[gameState.getCurrentDeck()].length - 1) {
-            gameState.setCurrentCardIndex(gameState.getCurrentCardIndex() + 1);
-        }
-        
-        // Execute the card's rightResult function - this is where the path is defined
+        // Execute the card's rightResult function - this is where the path is defined.
+        // (No pre-increment; see handleLeftAction.)
         cardData.rightResult();
         
         // Update game state
@@ -187,12 +184,12 @@ function setupCardDragHandlers(card, cardData) {
             return;
         }
         
-        // If no transition happened, create next card
-        if (document.querySelectorAll('.card').length === 0 && 
+        // If the result neither created a card nor opened a mini-game, advance one.
+        const miniOpen = miniGame && miniGame.classList.contains('show');
+        if (!miniOpen &&
+            document.querySelectorAll('.card').length === 0 && 
             document.querySelectorAll('.temp-card').length === 0) {
-            if (gameState.getCurrentCardIndex() < cardDecks[gameState.getCurrentDeck()].length) {
-                createCard(gameState.getCurrentCardIndex());
-            }
+            nextCard();
         }
     }
     
@@ -409,7 +406,7 @@ function createCard(index) {
         <div class="card-header">${cardData.title}</div>
         <div class="card-content">
             <div class="card-icon">
-                <img src="${imagePath}" alt="${cardData.title}" onerror="this.onerror=null; this.src='assets/img/${gameState.getCurrentDeck()}/developer.png';">
+                <img src="${imagePath}" alt="${cardData.title}" onerror="this.onerror=null; this.src='assets/img/professional/developer.png';">
             </div>
             <div class="card-text">${cardData.text}</div>
             <div class="card-choices">
@@ -719,8 +716,8 @@ function showMiniGame(gameId) {
     }
   }
 
-  // Create game buttons
-  game.options.forEach(option => {
+  // Create game buttons (data uses `buttons`; fall back to `options` for safety)
+  (game.buttons || game.options || []).forEach(option => {
       const button = document.createElement('button');
       button.classList.add('game-btn');
       button.textContent = option.text;
@@ -739,11 +736,23 @@ function showMiniGame(gameId) {
           
           hideMiniGame();
           
-          // Return to previous deck immediately
+          // Return to the deck and ADVANCE past the card that opened the
+          // mini-game (previously it reset to index 0 and replayed the card,
+          // causing a mini-game loop).
           if (gameState.getPreviousDeck()) {
               const prevDeck = gameState.getPreviousDeck();
               gameState.setPreviousDeck(null);
-              switchDeck(prevDeck);
+              const deck = cardDecks[prevDeck];
+              const nextIndex = gameState.getCurrentCardIndex() + 1;
+              if (deck && nextIndex < deck.length) {
+                  gameState.setCurrentDeck(prevDeck);
+                  gameState.setCurrentCardIndex(nextIndex);
+                  createCard(nextIndex);
+              } else if (prevDeck !== 'main') {
+                  switchDeck('main');
+              } else {
+                  showGameOver();
+              }
           }
       };
 
@@ -781,7 +790,7 @@ function showPersonalCard(valueType) {
         <div class="card-header">${cardData.title}</div>
         <div class="card-content">
             <div class="card-icon">
-                <img src="${imagePath}" alt="${cardData.title}" onerror="this.onerror=null; this.src='assets/img/personal/creativity.png';">
+                <img src="${imagePath}" alt="${cardData.title}" onerror="this.onerror=null; this.src='assets/img/professional/developer.png';">
             </div>
             <div class="card-text">${cardData.text}</div>
             <div class="card-choices">

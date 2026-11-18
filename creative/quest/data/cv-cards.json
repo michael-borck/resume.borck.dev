@@ -32,7 +32,7 @@
         "title": "Personal Journey",
         "text": "Beyond the professional achievements, discover the person behind the CV. Michael Borck has diverse interests and creative projects.",
         "icon": "\ud83e\udde9",
-        "imagePath": "assets/img/personal/creativity.png",
+        "imagePath": "assets/img/projects/ai-project.png",
         "leftChoice": "Projects & Innovation",
         "rightChoice": "Skills & Interests",
         "leftResult": "switchDeckFn(\"projects\")",
@@ -378,7 +378,7 @@
         "title": "Path Complete!",
         "text": "You've explored one path through Michael Borck's journey. There are many more stories to discover! Try different choices to uncover all experiences.",
         "icon": "\ud83c\udf89",
-        "imagePath": "assets/img/personal/teamwork.png",
+        "imagePath": "assets/img/professional/leadership.png",
         "leftChoice": "Contact Michael",
         "rightChoice": "Explore More Paths",
         "leftResult": "showNotificationFn(\"Thank you for playing! Contact: michael.borck@curtin.edu.au\")",
@@ -448,42 +448,42 @@
       "title": "Personal Interest: Karate",
       "text": "Outside of work, Michael Borck enjoys Karate.",
       "icon": "\ud83c\udfaf",
-      "imagePath": "assets/img/personal/creativity.png"
+      "imagePath": "assets/img/projects/ai-project.png"
     },
     {
       "type": "personal",
       "title": "Personal Interest: Muay Thai",
       "text": "Outside of work, Michael Borck enjoys Muay Thai.",
       "icon": "\ud83c\udfaf",
-      "imagePath": "assets/img/personal/creativity.png"
+      "imagePath": "assets/img/projects/ai-project.png"
     },
     {
       "type": "personal",
       "title": "Personal Interest: Krav Maga",
       "text": "Outside of work, Michael Borck enjoys Krav Maga.",
       "icon": "\ud83c\udfaf",
-      "imagePath": "assets/img/personal/creativity.png"
+      "imagePath": "assets/img/projects/ai-project.png"
     },
     {
       "type": "personal",
       "title": "Personal Interest: Atari 2600 Programming",
       "text": "Outside of work, Michael Borck enjoys Atari 2600 Programming.",
       "icon": "\ud83c\udfaf",
-      "imagePath": "assets/img/personal/creativity.png"
+      "imagePath": "assets/img/projects/ai-project.png"
     },
     {
       "type": "personal",
       "title": "Personal Interest: Astronomy",
       "text": "Outside of work, Michael Borck enjoys Astronomy.",
       "icon": "\ud83c\udfaf",
-      "imagePath": "assets/img/personal/creativity.png"
+      "imagePath": "assets/img/projects/ai-project.png"
     },
     {
       "type": "personal",
       "title": "Personal Interest: Photography",
       "text": "Outside of work, Michael Borck enjoys Photography.",
       "icon": "\ud83c\udfaf",
-      "imagePath": "assets/img/personal/creativity.png"
+      "imagePath": "assets/img/projects/ai-project.png"
     }
   ]
 }
