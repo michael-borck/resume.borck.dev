@@ -21,6 +21,8 @@ Candidates and picks live in art/ (gitignored). Only processed files ship.
 from __future__ import annotations
 
 import argparse
+import colorsys
+import json
 import shutil
 import subprocess
 import sys
@@ -163,6 +165,158 @@ def _downscale(img, px: int):
     return small
 
 
+# ---- Collision map -------------------------------------------------------
+# Classify the map art into walkable / blocked per cell. Water, deep forest,
+# dark rock and very dark shadows block; grass, paths, sand and light ground
+# walk. Tuned to the twilight palette in PALETTE above.
+COLLISION_NX = 96           # collision grid resolution (cells across)
+# HSV thresholds (hue in degrees, sat/val 0..1)
+WATER_HUE = (170, 260)
+WATER_SAT = 0.35
+FOREST_HUE = (70, 170)
+FOREST_VAL = 0.42
+PATH_HUE = (40, 70)
+PATH_SAT = 0.38
+PATH_VAL = 0.50
+GREY_SAT = 0.12
+DARK_VAL = 0.30
+
+
+def _classify(r: int, g: int, b: int) -> bool:
+    """Return True if a pixel is walkable.
+
+    Top-down overworld rule: only water and cliffs/deep shadow block. Forest
+    canopy, grass, paths and sand are all walkable (you walk *under* trees, as
+    in Zelda) so the world stays open and navigable instead of a maze.
+    """
+    h, s, v = colorsys.rgb_to_hsv(r / 255, g / 255, b / 255)
+    hue = h * 360
+    # Water / deep blue.
+    if WATER_HUE[0] <= hue <= WATER_HUE[1] and s >= WATER_SAT:
+        return False
+    # Very dark (cliffs, deep shadow, cave mouths).
+    if v < DARK_VAL:
+        return False
+    # Near-black grey rock.
+    if s < GREY_SAT and v < 0.30:
+        return False
+    return True
+
+
+def _build_collision(grid: list[list[bool]]) -> dict:
+    """RLE-encode a walkable grid and compute the reachable landmass.
+
+    Returns a dict the JS engine consumes:
+      { cols, rows, cell, rle: [...], spawn: [x,y], regions: {...} }
+    `rle` is row-major runs of blocked cells: [count, count, ...] where a run
+    alternates blocked(0)/walkable(1) starting with blocked at index 0.
+    A cell value is True = walkable.
+    """
+    rows = len(grid)
+    cols = len(grid[0]) if rows else 0
+    # Flat RLE of walkability (1 = walkable), always starting with a 0-run so
+    # the decoder can alternate 0,1,0,1,... deterministically.
+    walk_flat = [1 if grid[y][x] else 0 for y in range(rows) for x in range(cols)]
+    rle = _rle_encode(walk_flat)
+    # Reachability flood fill from the most-walkable central area.
+    spawn = _find_spawn(grid)
+    seen = [[False] * cols for _ in range(rows)]
+    from collections import deque
+    q = deque([spawn])
+    seen[spawn[1]][spawn[0]] = True
+    reach = 0
+    while q:
+        x, y = q.popleft()
+        reach += 1
+        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            nx, ny = x + dx, y + dy
+            if 0 <= nx < cols and 0 <= ny < rows and grid[ny][nx] and not seen[ny][nx]:
+                seen[ny][nx] = True
+                q.append((nx, ny))
+    walkable = sum(1 for y in range(rows) for x in range(cols) if grid[y][x])
+    # Reachable mask as an RLE stream (1 = in the main landmass from spawn).
+    reach_flat = [1 if seen[y][x] else 0 for y in range(rows) for x in range(cols)]
+    return {
+        "cols": cols,
+        "rows": rows,
+        "rle": rle,
+        "reach": _rle_encode(reach_flat),
+        "spawn": [spawn[0] / cols, spawn[1] / rows],   # 0..1
+        "reachable": [reach, walkable],
+    }
+
+
+def _rle_encode(flat: list[int]) -> list[int]:
+    """RLE a flat 0/1 list, always beginning with a run of 0.
+
+    Decoders alternate 0,1,0,1,... so the first element must be the length of
+    the leading 0-run (possibly 0).
+    """
+    rle: list[int] = []
+    prev = 0
+    run = 0
+    for v in flat:
+        if v == prev:
+            run += 1
+        else:
+            rle.append(run)
+            prev = v
+            run = 1
+    rle.append(run)
+    return rle
+
+
+def _find_spawn(grid: list[list[bool]]) -> tuple[int, int]:
+    """Pick the walkable cell nearest the centre (where the contact camp sits)."""
+    rows = len(grid)
+    cols = len(grid[0]) if rows else 0
+    cx, cy = cols / 2, rows / 2
+    best = None
+    best_d = 1e9
+    for y in range(rows):
+        for x in range(cols):
+            if grid[y][x]:
+                d = (x - cx) ** 2 + (y - cy) ** 2
+                if d < best_d:
+                    best_d = d
+                    best = (x, y)
+    return best or (cols // 2, rows // 2)
+
+
+def _write_collision(map_path: Path) -> dict | None:
+    from PIL import Image
+
+    if not map_path.exists():
+        return None
+    img = Image.open(map_path).convert("RGB")
+    w, h = img.size
+    px = img.load()
+    rows = max(1, round(COLLISION_NX * h / w))
+    cols = COLLISION_NX
+    cw, ch = w / cols, h / rows
+    grid = [[False] * cols for _ in range(rows)]
+    # Majority vote over a 3x3 sample per cell: a cell is walkable if most of its
+    # area is walkable. This widens corridors and removes 1-cell dead-end
+    # pockets that make walking feel maze-like.
+    for gy in range(rows):
+        for gx in range(cols):
+            votes = 0
+            for sy in (0.2, 0.5, 0.8):
+                for sx in (0.2, 0.5, 0.8):
+                    x = min(w - 1, max(0, int((gx + sx) * cw)))
+                    y = min(h - 1, max(0, int((gy + sy) * ch)))
+                    if _classify(*px[x, y]):
+                        votes += 1
+            grid[gy][gx] = votes >= 5
+    data = _build_collision(grid)
+    out = map_path.parent / "collision.json"
+    out.write_text(json.dumps(data, separators=(",", ":")))
+    reach, walk = data["reachable"]
+    print(f"  collision: {reach}/{walk} cells reachable from spawn "
+          f"({100 * reach / max(walk, 1):.0f}%) -> {out.name}")
+    return data
+
+
 def cmd_process(_: argparse.Namespace) -> int:
     from PIL import Image
 
@@ -182,6 +336,8 @@ def cmd_process(_: argparse.Namespace) -> int:
             _downscale(img, width).save(OUT / f"{name}.png")
         done += 1
         print(f"  {OUT / (name + ('.webp' if name == 'world-map' else '.png'))}")
+    # Derive the collision grid from the freshly written map.
+    _write_collision(OUT / "world-map.webp")
     print(f"processed {done} file(s)")
     return 0
 

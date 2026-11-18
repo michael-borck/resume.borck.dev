@@ -37,6 +37,18 @@ world/
    player movement with collision, a smooth follow camera, region discovery,
    landmark interaction panels, and tiny WebAudio chiptune sound effects.
 
+### Collision & reachability
+
+`scripts/resume_world_art.py` derives a collision grid (`assets/img/collision.json`)
+from the map's own colours: **water and cliffs block; grass, paths, forest canopy
+and sand are walkable** (you walk under trees, as in Zelda). A flood-fill marks the
+main landmass from spawn, and every region/marker is snapped onto reachable ground,
+so no landmark can end up on an island. If you regenerate the map art and a region
+becomes unreachable, `make world` prints the reachable-cell count so you can spot it.
+
+Walking is free-form exploration; the region chips (bottom-left) are also
+clickable for instant travel to any region's story.
+
 ## Running locally
 
 ```bash
