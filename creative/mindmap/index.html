@@ -1,131 +1,135 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CV Mindmap — Michael Borck</title><meta name="description" content="An SVG mindmap of Michael Borck's career.">
+<title>CV Mindmap — Michael Borck</title><meta name="description" content="An interactive click-to-expand mindmap of Michael Borck's career.">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
-:root{{--ink:#0a0a0b;--panel:#14171c;--line:#2a3038;--text:#e8ecef;--muted:#9aa6b2;--gold:#ffcf6b;--cyan:#6ee0d8;--green:#7ddc7d;--red:#ff7a6b;--mono:"JetBrains Mono",monospace;--pixel:"Press Start 2P",monospace}}
-*{{box-sizing:border-box;margin:0;padding:0}}
-body{{background:radial-gradient(ellipse at 50% 0%,#16202a,#0a0d11 70%);color:var(--text);font-family:var(--mono);min-height:100vh}}
-.wrap{{max-width:920px;margin:0 auto;padding:28px 18px 60px}}
-.head{{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}}
-.brand{{font-family:var(--pixel);font-size:12px;color:var(--gold);letter-spacing:1px;text-shadow:2px 2px 0 #000}}
-.sub{{color:var(--muted);font-size:11px}}
-.btn{{font-family:var(--mono);font-weight:700;font-size:12px;color:var(--ink);background:var(--gold);border:none;border-bottom:3px solid #b8863b;border-radius:6px;padding:9px 14px;cursor:pointer}}
-.btn:hover{{filter:brightness(1.08)}}
-.ghost{{background:transparent;color:var(--text);border:2px solid var(--line);border-bottom-width:2px}}
-.ghost:hover{{border-color:var(--gold);color:var(--gold)}}
-a.back{{position:fixed;top:12px;right:14px;font-size:11px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:5px 9px;border-radius:6px;background:rgba(10,10,11,.7)}}
-a.back:hover{{color:var(--gold);border-color:var(--gold)}}
-@media print{{ .head,.btn,a.back{{display:none!important}} body{{background:#fff!important;color:#000!important}} }}
+:root{--ink:#0a0a0b;--panel:#14171c;--line:#2a3038;--text:#e8ecef;--muted:#9aa6b2;--gold:#ffcf6b;--cyan:#6ee0d8;--green:#7ddc7d;--red:#ff7a6b;--violet:#c084fc;--mono:"JetBrains Mono",monospace;--pixel:"Press Start 2P",monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(ellipse at 50% 0%,#16202a,#0a0d11 70%);color:var(--text);font-family:var(--mono);min-height:100vh}
+.wrap{max-width:900px;margin:0 auto;padding:28px 18px 60px}
+.head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.brand{font-family:var(--pixel);font-size:12px;color:var(--gold);letter-spacing:1px;text-shadow:2px 2px 0 #000}
+.sub{color:var(--muted);font-size:11px;margin-top:4px}
+.btn{font-family:var(--mono);font-weight:700;font-size:12px;color:var(--ink);background:var(--gold);border:none;border-bottom:3px solid #b8863b;border-radius:6px;padding:9px 14px;cursor:pointer}
+.btn:hover{filter:brightness(1.08)} .btn:active{transform:translateY(2px);border-bottom-width:1px}
+.ghost{background:transparent;color:var(--text);border:2px solid var(--line);border-bottom-width:2px}
+.ghost:hover{border-color:var(--gold);color:var(--gold)}
+a.back{position:fixed;top:12px;right:14px;z-index:8;font-size:11px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:5px 9px;border-radius:6px;background:rgba(10,10,11,.7)}
+a.back:hover{color:var(--gold);border-color:var(--gold)}
+.overlay{position:fixed;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;background:rgba(4,8,11,.82);backdrop-filter:blur(3px);padding:20px}
+.overlay.hidden{display:none}
+.modal{max-width:480px;width:100%;background:linear-gradient(180deg,#141d26,#0d1319);border:2px solid var(--line);border-radius:14px;padding:28px;box-shadow:0 24px 60px rgba(0,0,0,.7)}
+.modal h1{font-size:20px;line-height:1.35;margin-bottom:10px;color:#fff}
+.modal p{font-size:13px;line-height:1.6;color:#cfd8df;margin-bottom:16px}
+@media print{body{background:#fff!important;color:#000!important}.head,.btn,a.back,.overlay{display:none!important}}
 
-.mm{background:#0d1117;border:2px solid var(--line);border-radius:12px;overflow:auto}
-.mm svg{display:block;width:100%;height:auto;min-width:760px}
+.mm{background:#0d1117;border:2px solid var(--line);border-radius:12px;overflow:auto;min-height:560px;display:flex;align-items:center;justify-content:center}
+.mm svg{display:block;width:100%;height:auto;min-width:720px}
+.mm .node{cursor:default}
+.mm .node.expandable{cursor:pointer}
+.mm .node.expandable:hover circle.hit{fill:rgba(255,207,107,.07)}
+.mm .node .badge-txt{pointer-events:none}
+.mm .node:hover .lbl{fill:#fff}
+.mm .lbl{font-family:var(--mono);transition:fill .12s}
+.mm .pulse{animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.35}50%{opacity:.9}}
+.mm .hintbar{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);font-size:11px;color:var(--muted);background:rgba(10,15,22,.8);padding:5px 10px;border-radius:6px}
 </style></head><body>
 <a class="back" href="../../index.html">← CV Portal</a>
 <div class="wrap">
-  <div class="head"><div><div class="brand">CV MINDMAP</div><div class="sub">the whole career on one page</div></div></div>
-  <div class="mm"><svg viewBox="0 0 1400 940" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mindmap of Michael Borck">
-<rect width="1400" height="940" fill="#0d1117"/>
-<circle cx="700.0" cy="470.0" r="70" fill="#141c26" stroke="#ffcf6b" stroke-width="2"/>
-<text x="700.0" y="475.0" fill="#ffcf6b" font-family="monospace" font-size="20" font-weight="700" text-anchor="middle">Michael Borck</text>
-<path d="M 700.0 470.0 Q 700.0 375.0 700.0 280.0" fill="none" stroke="#E8B54D" stroke-width="2.5" opacity="0.7"/>
-<circle cx="700.0" cy="280.0" r="10" fill="#E8B54D"/>
-<text x="700.0" y="228.0" fill="#E8B54D" font-family="monospace" font-size="20" font-weight="700" text-anchor="start">Experience</text>
-<path d="M 700.0 280.0 Q 610.8320655071977 190.40834401770124 521.6641310143956 100.81668803540248" fill="none" stroke="#E8B54D" stroke-width="1.2" opacity="0.45"/>
-<circle cx="521.6641310143956" cy="100.81668803540248" r="3.5" fill="#E8B54D" opacity="0.8"/>
-<text x="511.6641310143956" y="104.81668803540248" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="end">Lecturer — School of Mark…</text>
-<path d="M 700.0 280.0 Q 654.2631957629922 175.16720805086663 608.5263915259843 70.33441610173327" fill="none" stroke="#E8B54D" stroke-width="1.2" opacity="0.45"/>
-<circle cx="608.5263915259843" cy="70.33441610173327" r="3.5" fill="#E8B54D" opacity="0.8"/>
-<text x="598.5263915259843" y="74.33441610173327" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="end">Course Leadership &amp; Devel…</text>
-<path d="M 700.0 280.0 Q 700.0 170.0 700.0 60.0" fill="none" stroke="#E8B54D" stroke-width="1.2" opacity="0.45"/>
-<circle cx="700.0" cy="60.0" r="3.5" fill="#E8B54D" opacity="0.8"/>
-<text x="710.0" y="64.0" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="start">Associate Lecturer</text>
-<path d="M 700.0 280.0 Q 745.7368042370078 175.16720805086663 791.4736084740157 70.33441610173327" fill="none" stroke="#E8B54D" stroke-width="1.2" opacity="0.45"/>
-<circle cx="791.4736084740157" cy="70.33441610173327" r="3.5" fill="#E8B54D" opacity="0.8"/>
-<text x="801.4736084740157" y="74.33441610173327" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="start">AI, IS &amp; Educational Tech…</text>
-<path d="M 700.0 280.0 Q 789.1679344928023 190.40834401770124 878.3358689856044 100.81668803540248" fill="none" stroke="#E8B54D" stroke-width="1.2" opacity="0.45"/>
-<circle cx="878.3358689856044" cy="100.81668803540248" r="3.5" fill="#E8B54D" opacity="0.8"/>
-<text x="888.3358689856044" y="104.81668803540248" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="start">Researcher</text>
-<path d="M 700.0 470.0 Q 782.2724133595217 422.5 864.5448267190434 375.0" fill="none" stroke="#7FA8F0" stroke-width="2.5" opacity="0.7"/>
-<circle cx="864.5448267190434" cy="375.0" r="10" fill="#7FA8F0"/>
-<text x="909.5781477158341" y="349.0" fill="#7FA8F0" font-family="monospace" font-size="20" font-weight="700" text-anchor="start">Education</text>
-<path d="M 864.5448267190434 375.0 Q 897.5495095204291 252.98247553509722 930.5541923218148 130.96495107019445" fill="none" stroke="#7FA8F0" stroke-width="1.2" opacity="0.45"/>
-<circle cx="930.5541923218148" cy="130.96495107019445" r="3.5" fill="#7FA8F0" opacity="0.8"/>
-<text x="940.5541923218148" y="134.96495107019445" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="start">Doctor of Philosophy (PhD)</text>
-<path d="M 864.5448267190434 375.0 Q 932.4642855781377 282.97436966826876 1000.383744437232 190.94873933653759" fill="none" stroke="#7FA8F0" stroke-width="1.2" opacity="0.45"/>
-<circle cx="1000.383744437232" cy="190.94873933653759" r="3.5" fill="#7FA8F0" opacity="0.8"/>
-<text x="1010.383744437232" y="194.94873933653759" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="start">Bachelor of Science (Comp…</text>
-<path d="M 864.5448267190434 375.0 Q 959.8076211353316 320.0 1055.0704155516198 265.0" fill="none" stroke="#7FA8F0" stroke-width="1.2" opacity="0.45"/>
-<circle cx="1055.0704155516198" cy="265.0" r="3.5" fill="#7FA8F0" opacity="0.8"/>
-<text x="1065.0704155516198" y="269.0" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="start">Graduate Diploma in Busin…</text>
-<path d="M 864.5448267190434 375.0 Q 978.2010898151456 362.1928383825978 1091.8573529112477 349.3856767651956" fill="none" stroke="#7FA8F0" stroke-width="1.2" opacity="0.45"/>
-<circle cx="1091.8573529112477" cy="349.3856767651956" r="3.5" fill="#7FA8F0" opacity="0.8"/>
-<text x="1101.8573529112477" y="353.3856767651956" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="start">Bachelor of Science (Comp…</text>
-<path d="M 864.5448267190434 375.0 Q 986.7174440132313 407.42586848260396 1108.8900613074193 439.851736965208" fill="none" stroke="#7FA8F0" stroke-width="1.2" opacity="0.45"/>
-<circle cx="1108.8900613074193" cy="439.851736965208" r="3.5" fill="#7FA8F0" opacity="0.8"/>
-<text x="1118.8900613074193" y="443.851736965208" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="start">Bachelor of Applied Scien…</text>
-<path d="M 700.0 470.0 Q 782.2724133595217 517.5 864.5448267190434 565.0" fill="none" stroke="#4FC9A8" stroke-width="2.5" opacity="0.7"/>
-<circle cx="864.5448267190434" cy="565.0" r="10" fill="#4FC9A8"/>
-<text x="909.5781477158341" y="591.0" fill="#4FC9A8" font-family="monospace" font-size="20" font-weight="700" text-anchor="start">Skills</text>
-<path d="M 864.5448267190434 565.0 Q 984.5351593186011 550.888345228431 1104.5254919181589 536.7766904568621" fill="none" stroke="#4FC9A8" stroke-width="1.2" opacity="0.45"/>
-<circle cx="1104.5254919181589" cy="536.7766904568621" r="3.5" fill="#4FC9A8" opacity="0.8"/>
-<text x="1114.5254919181589" y="540.7766904568621" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="start">Core: Python, C/C++, C#, …</text>
-<path d="M 864.5448267190434 565.0 Q 970.8014020545705 598.0097535806822 1077.0579773900977 631.0195071613642" fill="none" stroke="#4FC9A8" stroke-width="1.2" opacity="0.45"/>
-<circle cx="1077.0579773900977" cy="631.0195071613642" r="3.5" fill="#4FC9A8" opacity="0.8"/>
-<text x="1087.0579773900977" y="635.0195071613642" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="start">Web: React, Flask, FastAP…</text>
-<path d="M 864.5448267190434 565.0 Q 946.2603995603421 640.5160167693604 1027.9759724016408 716.0320335387207" fill="none" stroke="#4FC9A8" stroke-width="1.2" opacity="0.45"/>
-<circle cx="1027.9759724016408" cy="716.0320335387207" r="3.5" fill="#4FC9A8" opacity="0.8"/>
-<text x="1037.9759724016408" y="720.0320335387207" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="start">Ai Ml: Langchain, TensorF…</text>
-<path d="M 864.5448267190434 565.0 Q 912.3189414972077 675.9705036255455 960.093056275372 786.941007251091" fill="none" stroke="#4FC9A8" stroke-width="1.2" opacity="0.45"/>
-<circle cx="960.093056275372" cy="786.941007251091" r="3.5" fill="#4FC9A8" opacity="0.8"/>
-<text x="970.093056275372" y="790.941007251091" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="start">Educational: Blackboard L…</text>
-<path d="M 700.0 470.0 Q 700.0 565.0 700.0 660.0" fill="none" stroke="#E5745A" stroke-width="2.5" opacity="0.7"/>
-<circle cx="700.0" cy="660.0" r="10" fill="#E5745A"/>
-<text x="700.0" y="712.0" fill="#E5745A" font-family="monospace" font-size="20" font-weight="700" text-anchor="start">Projects</text>
-<path d="M 700.0 660.0 Q 789.1679344928023 749.5916559822988 878.3358689856044 839.1833119645976" fill="none" stroke="#E5745A" stroke-width="1.2" opacity="0.45"/>
-<circle cx="878.3358689856044" cy="839.1833119645976" r="3.5" fill="#E5745A" opacity="0.8"/>
-<text x="888.3358689856044" y="843.1833119645976" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="start">Reality Reigns</text>
-<path d="M 700.0 660.0 Q 745.7368042370078 764.8327919491334 791.4736084740157 869.6655838982667" fill="none" stroke="#E5745A" stroke-width="1.2" opacity="0.45"/>
-<circle cx="791.4736084740157" cy="869.6655838982667" r="3.5" fill="#E5745A" opacity="0.8"/>
-<text x="801.4736084740157" y="873.6655838982667" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="start">Talk Buddy</text>
-<path d="M 700.0 660.0 Q 700.0 770.0 700.0 880.0" fill="none" stroke="#E5745A" stroke-width="1.2" opacity="0.45"/>
-<circle cx="700.0" cy="880.0" r="3.5" fill="#E5745A" opacity="0.8"/>
-<text x="710.0" y="884.0" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="start">Curriculum Curator</text>
-<path d="M 700.0 660.0 Q 654.2631957629922 764.8327919491334 608.5263915259843 869.6655838982667" fill="none" stroke="#E5745A" stroke-width="1.2" opacity="0.45"/>
-<circle cx="608.5263915259843" cy="869.6655838982667" r="3.5" fill="#E5745A" opacity="0.8"/>
-<text x="598.5263915259843" y="873.6655838982667" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="end">Feed Forward System</text>
-<path d="M 700.0 660.0 Q 610.8320655071977 749.5916559822988 521.6641310143956 839.1833119645976" fill="none" stroke="#E5745A" stroke-width="1.2" opacity="0.45"/>
-<circle cx="521.6641310143956" cy="839.1833119645976" r="3.5" fill="#E5745A" opacity="0.8"/>
-<text x="511.6641310143956" y="843.1833119645976" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="end">Student Feedback Analyzer</text>
-<path d="M 700.0 470.0 Q 617.7275866404783 517.5 535.4551732809567 565.0" fill="none" stroke="#C084FC" stroke-width="2.5" opacity="0.7"/>
-<circle cx="535.4551732809567" cy="565.0" r="10" fill="#C084FC"/>
-<text x="490.4218522841659" y="591.0000000000001" fill="#C084FC" font-family="monospace" font-size="20" font-weight="700" text-anchor="end">Teaching</text>
-<path d="M 535.4551732809567 565.0 Q 473.9642925664867 663.6407379103957 412.4734118520166 762.2814758207915" fill="none" stroke="#C084FC" stroke-width="1.2" opacity="0.45"/>
-<circle cx="412.4734118520166" cy="762.2814758207915" r="3.5" fill="#C084FC" opacity="0.8"/>
-<text x="402.4734118520166" y="766.2814758207915" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="end">Make Contact Count - maxi…</text>
-<path d="M 535.4551732809567 565.0 Q 440.1923788646685 620.0 344.92958444838024 675.0000000000001" fill="none" stroke="#C084FC" stroke-width="1.2" opacity="0.45"/>
-<circle cx="344.92958444838024" cy="675.0000000000001" r="3.5" fill="#C084FC" opacity="0.8"/>
-<text x="334.92958444838024" y="679.0000000000001" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="end">100% Satisfaction Scores</text>
-<path d="M 535.4551732809567 565.0 Q 419.28434804527626 568.9322958446119 303.1135228095958 572.8645916892239" fill="none" stroke="#C084FC" stroke-width="1.2" opacity="0.45"/>
-<circle cx="303.1135228095958" cy="572.8645916892239" r="3.5" fill="#C084FC" opacity="0.8"/>
-<text x="293.1135228095958" y="576.8645916892239" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="end">100% &#x27;Effective Teacher&#x27; …</text>
-<path d="M 700.0 470.0 Q 617.7275866404783 422.5 535.4551732809566 375.0" fill="none" stroke="#F0A8C0" stroke-width="2.5" opacity="0.7"/>
-<circle cx="535.4551732809566" cy="375.0" r="10" fill="#F0A8C0"/>
-<text x="490.4218522841659" y="349.0" fill="#F0A8C0" font-family="monospace" font-size="20" font-weight="700" text-anchor="end">Interests</text>
-<path d="M 535.4551732809566 375.0 Q 413.2825559867687 407.425868482604 291.10993869258084 439.85173696520803" fill="none" stroke="#F0A8C0" stroke-width="1.2" opacity="0.45"/>
-<circle cx="291.10993869258084" cy="439.85173696520803" r="3.5" fill="#F0A8C0" opacity="0.8"/>
-<text x="281.10993869258084" y="443.85173696520803" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="end">Karate</text>
-<path d="M 535.4551732809566 375.0 Q 421.79891018485444 362.1928383825978 308.1426470887523 349.3856767651956" fill="none" stroke="#F0A8C0" stroke-width="1.2" opacity="0.45"/>
-<circle cx="308.1426470887523" cy="349.3856767651956" r="3.5" fill="#F0A8C0" opacity="0.8"/>
-<text x="298.1426470887523" y="353.3856767651956" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="end">Muay Thai</text>
-<path d="M 535.4551732809566 375.0 Q 440.1923788646684 320.0 344.9295844483802 264.99999999999994" fill="none" stroke="#F0A8C0" stroke-width="1.2" opacity="0.45"/>
-<circle cx="344.9295844483802" cy="264.99999999999994" r="3.5" fill="#F0A8C0" opacity="0.8"/>
-<text x="334.9295844483802" y="268.99999999999994" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="end">Krav Maga</text>
-<path d="M 535.4551732809566 375.0 Q 467.5357144218623 282.97436966826876 399.616255562768 190.94873933653753" fill="none" stroke="#F0A8C0" stroke-width="1.2" opacity="0.45"/>
-<circle cx="399.616255562768" cy="190.94873933653753" r="3.5" fill="#F0A8C0" opacity="0.8"/>
-<text x="389.616255562768" y="194.94873933653753" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="end">Atari 2600 Programming</text>
-<path d="M 535.4551732809566 375.0 Q 502.450490479571 252.9824755350972 469.44580767818536 130.9649510701944" fill="none" stroke="#F0A8C0" stroke-width="1.2" opacity="0.45"/>
-<circle cx="469.44580767818536" cy="130.9649510701944" r="3.5" fill="#F0A8C0" opacity="0.8"/>
-<text x="459.44580767818536" y="134.9649510701944" fill="#c9d4de" font-family="monospace" font-size="13" text-anchor="end">Astronomy</text>
-</svg></div>
-</div></body></html>
+  <div class="head"><div><div class="brand">CV MINDMAP</div><div class="sub">Click the name to expand · click a branch to open it · click again to close</div></div>
+    <button class="btn ghost" id="resetBtn">Reset</button></div>
+  <div class="mm" id="mm"></div>
+</div><script>
+const DATA = {"root": "Michael Borck", "sub": "Perth, WA · michael.borck@curtin.edu.au", "branches": [{"label": "Experience", "color": "#E8B54D", "leaves": ["Lecturer — School of Marketin…", "Course Leadership & Developme…", "Associate Lecturer", "AI, IS & Educational Technolo…", "Researcher", "Software Contractor"]}, {"label": "Education", "color": "#7FA8F0", "leaves": ["Doctor of Philosophy (PhD)", "Bachelor of Science (Computer…", "Graduate Diploma in Business", "Bachelor of Science (Computer…", "Bachelor of Applied Science (…"]}, {"label": "Skills", "color": "#4FC9A8", "leaves": ["Core: Python, C/C++, C#, Java", "Web: React, Flask, FastAPI, F…", "Ai Ml: Langchain, TensorFlow,…", "Educational: Blackboard LMS, …"]}, {"label": "Projects", "color": "#E5745A", "leaves": ["Reality Reigns", "Talk Buddy", "Curriculum Curator", "Feed Forward System", "Student Feedback Analyzer", "Image Processing for Orange"]}, {"label": "Teaching", "color": "#C084FC", "leaves": ["Make Contact Count - maximisi…", "100% Satisfaction Scores", "100% 'Effective Teacher' Rati…"]}, {"label": "Interests", "color": "#F0A8C0", "leaves": ["Karate", "Muay Thai", "Krav Maga", "Atari 2600 Programming", "Astronomy", "Photography"]}]};
+
+const W=1000,H=680,cx=500,cy=340,R1=175,R2=340;
+const state={root:false, open:new Set()};
+const mm=document.getElementById('mm');
+function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function pt(a,r){return [cx+Math.cos(a)*r, cy+Math.sin(a)*r];}
+function curve(x1,y1,x2,y2,color,op){
+  const mx=(x1+x2)/2, my=(y1+y2)/2;
+  return `<path d="M ${x1} ${y1} Q ${mx} ${my} ${x2} ${y2}" fill="none" stroke="${color}" stroke-width="1.6" opacity="${op||0.5}"/>`;
+}
+function badge(x,y,text,color){
+  return `<g class="badge-txt"><circle cx="${x}" cy="${y}" r="9" fill="#0a1018" stroke="${color}" stroke-width="1.5"/><text x="${x}" y="${y+4}" text-anchor="middle" font-size="13" font-family="monospace" fill="${color}">${text}</text></g>`;
+}
+function rootNode(x,y,label){
+  const open=state.root;
+  let g=`<g class="node expandable" data-click="root">`;
+  g+=`<circle class="hit" cx="${x}" cy="${y}" r="72" fill="transparent"/>`;
+  g+=`<circle cx="${x}" cy="${y}" r="${open?46:52}" fill="#141c26" stroke="#ffcf6b" stroke-width="2.5"/>`;
+  // wrapping label (name may be long) — split into words lines
+  const words=label.split(' '); const lines=[]; let cur='';
+  for(const w of words){ if((cur+' '+w).trim().length>12 && cur){lines.push(cur);cur=w;} else cur=(cur+' '+w).trim(); }
+  if(cur) lines.push(cur);
+  const lh=18; const startY=y-(lines.length-1)*lh/2+5;
+  lines.forEach((ln,idx)=>{ g+=`<text class="lbl" x="${x}" y="${startY+idx*lh}" text-anchor="middle" font-family="monospace" font-size="16" font-weight="700" fill="#ffcf6b">${esc(ln)}</text>`; });
+  g+=badge(x+ (open?42:48), y-(open?42:48), open?'−':'+', '#ffcf6b');
+  g+=`</g>`;
+  return g;
+}
+function branchNode(x,y,label,color,open){
+  let g=`<g class="node expandable" data-click="branch:${label.i}">`;
+  g+=`<circle class="hit" cx="${x}" cy="${y}" r="14" fill="transparent"/>`;
+  g+=`<circle cx="${x}" cy="${y}" r="9" fill="${color}"/>`;
+  const anchor = x>=cx ? 'start' : 'end';
+  const lx = x + (x>=cx?18:-18);
+  g+=`<text class="lbl" x="${lx}" y="${y+5}" text-anchor="${anchor}" font-family="monospace" font-size="17" font-weight="700" fill="${color}">${esc(label.label)}</text>`;
+  g+=badge(x + (x>=cx?10:-10), y-14, open?'−':'+', color);
+  g+=`</g>`;
+  return g;
+}
+function leafNode(x,y,label,color){
+  const anchor = x>=cx ? 'start':'end';
+  const lx = x + (x>=cx?10:-10);
+  return `<g class="node"><circle cx="${x}" cy="${y}" r="3.5" fill="${color}"/>`
+    +`<text class="lbl" x="${lx}" y="${y+4}" text-anchor="${anchor}" font-family="monospace" font-size="13" fill="#c9d4de">${esc(label)}</text></g>`;
+}
+function render(){
+  const s=[`<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mindmap">`];
+  s.push(`<rect width="${W}" height="${H}" fill="#0d1117"/>`);
+  const n=DATA.branches.length;
+  if(state.root){
+    DATA.branches.forEach((b,i)=>{
+      const ang=-Math.PI/2 + i*(2*Math.PI/n);
+      const [bx,by]=pt(ang,R1);
+      s.push(curve(cx,cy,bx,by,b.color,0.6));
+      const open=state.open.has(i);
+      const bi={i,label:b.label};
+      s.push(branchNode(bx,by,bi,b.color,open));
+      if(open){
+        const m=b.leaves.length||1;
+        const spread=Math.min(1.05, 0.2*m);
+        b.leaves.forEach((leaf,j)=>{
+          const la=ang + (j-(m-1)/2)*(spread/Math.max(m-1,1));
+          const [lx,ly]=pt(la,R2);
+          s.push(curve(bx,by,lx,ly,b.color,0.35));
+          s.push(leafNode(lx,ly,leaf,b.color));
+        });
+      }
+    });
+  } else {
+    // hint the click affordance
+    s.push(`<circle cx="${cx}" cy="${cy}" r="70" fill="none" stroke="#ffcf6b" stroke-width="1.5" opacity="0.4" class="pulse"/>`);
+  }
+  s.push(rootNode(cx,cy,DATA.root));
+  if(state.root && DATA.sub){
+    s.push(`<text x="${cx}" y="${H-22}" text-anchor="middle" font-family="monospace" font-size="12" fill="#6f7d8a">${esc(DATA.sub)}</text>`);
+  }
+  s.push(`</svg>`);
+  mm.innerHTML=s.join('');
+}
+mm.addEventListener('click',ev=>{
+  const g=ev.target.closest('[data-click]');
+  if(!g) return;
+  const v=g.getAttribute('data-click');
+  if(v==='root'){ state.root=!state.root; if(!state.root) state.open.clear(); }
+  else if(v.startsWith('branch:')){ const i=+v.split(':')[1]; if(state.open.has(i)) state.open.delete(i); else state.open.add(i); }
+  render();
+});
+document.getElementById('resetBtn').onclick=()=>{ state.root=false; state.open.clear(); render(); };
+render();
+
+</script></body></html>

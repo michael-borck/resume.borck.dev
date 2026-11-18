@@ -1,79 +1,130 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CV Quiz — Michael Borck</title><meta name="description" content="A replayable multiple-choice quiz about Michael Borck's career.">
+<title>CV Quiz — Michael Borck</title><meta name="description" content="A replayable multiple-choice quiz about Michael Borck's career, with hints.">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
-:root{{--ink:#0a0a0b;--panel:#14171c;--line:#2a3038;--text:#e8ecef;--muted:#9aa6b2;--gold:#ffcf6b;--cyan:#6ee0d8;--green:#7ddc7d;--red:#ff7a6b;--mono:"JetBrains Mono",monospace;--pixel:"Press Start 2P",monospace}}
-*{{box-sizing:border-box;margin:0;padding:0}}
-body{{background:radial-gradient(ellipse at 50% 0%,#16202a,#0a0d11 70%);color:var(--text);font-family:var(--mono);min-height:100vh}}
-.wrap{{max-width:920px;margin:0 auto;padding:28px 18px 60px}}
-.head{{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}}
-.brand{{font-family:var(--pixel);font-size:12px;color:var(--gold);letter-spacing:1px;text-shadow:2px 2px 0 #000}}
-.sub{{color:var(--muted);font-size:11px}}
-.btn{{font-family:var(--mono);font-weight:700;font-size:12px;color:var(--ink);background:var(--gold);border:none;border-bottom:3px solid #b8863b;border-radius:6px;padding:9px 14px;cursor:pointer}}
-.btn:hover{{filter:brightness(1.08)}}
-.ghost{{background:transparent;color:var(--text);border:2px solid var(--line);border-bottom-width:2px}}
-.ghost:hover{{border-color:var(--gold);color:var(--gold)}}
-a.back{{position:fixed;top:12px;right:14px;font-size:11px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:5px 9px;border-radius:6px;background:rgba(10,10,11,.7)}}
-a.back:hover{{color:var(--gold);border-color:var(--gold)}}
-@media print{{ .head,.btn,a.back{{display:none!important}} body{{background:#fff!important;color:#000!important}} }}
+:root{--ink:#0a0a0b;--panel:#14171c;--line:#2a3038;--text:#e8ecef;--muted:#9aa6b2;--gold:#ffcf6b;--cyan:#6ee0d8;--green:#7ddc7d;--red:#ff7a6b;--violet:#c084fc;--mono:"JetBrains Mono",monospace;--pixel:"Press Start 2P",monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(ellipse at 50% 0%,#16202a,#0a0d11 70%);color:var(--text);font-family:var(--mono);min-height:100vh}
+.wrap{max-width:900px;margin:0 auto;padding:28px 18px 60px}
+.head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.brand{font-family:var(--pixel);font-size:12px;color:var(--gold);letter-spacing:1px;text-shadow:2px 2px 0 #000}
+.sub{color:var(--muted);font-size:11px;margin-top:4px}
+.btn{font-family:var(--mono);font-weight:700;font-size:12px;color:var(--ink);background:var(--gold);border:none;border-bottom:3px solid #b8863b;border-radius:6px;padding:9px 14px;cursor:pointer}
+.btn:hover{filter:brightness(1.08)} .btn:active{transform:translateY(2px);border-bottom-width:1px}
+.ghost{background:transparent;color:var(--text);border:2px solid var(--line);border-bottom-width:2px}
+.ghost:hover{border-color:var(--gold);color:var(--gold)}
+a.back{position:fixed;top:12px;right:14px;z-index:8;font-size:11px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:5px 9px;border-radius:6px;background:rgba(10,10,11,.7)}
+a.back:hover{color:var(--gold);border-color:var(--gold)}
+.overlay{position:fixed;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;background:rgba(4,8,11,.82);backdrop-filter:blur(3px);padding:20px}
+.overlay.hidden{display:none}
+.modal{max-width:480px;width:100%;background:linear-gradient(180deg,#141d26,#0d1319);border:2px solid var(--line);border-radius:14px;padding:28px;box-shadow:0 24px 60px rgba(0,0,0,.7)}
+.modal h1{font-size:20px;line-height:1.35;margin-bottom:10px;color:#fff}
+.modal p{font-size:13px;line-height:1.6;color:#cfd8df;margin-bottom:16px}
+@media print{body{background:#fff!important;color:#000!important}.head,.btn,a.back,.overlay{display:none!important}}
 
-.q{{background:var(--panel);border:2px solid var(--line);border-radius:10px;padding:22px}}
-.q .progress{{font-size:11px;color:var(--muted);margin-bottom:10px;letter-spacing:1px}}
-.q h2{{font-size:17px;line-height:1.5;margin-bottom:16px;color:#fff}}
-.opt{{display:block;width:100%;text-align:left;font-family:var(--mono);font-size:13px;color:var(--text);background:#0f1318;border:2px solid var(--line);border-radius:8px;padding:12px 14px;margin-bottom:8px;cursor:pointer}}
-.opt:hover{{border-color:var(--gold)}}
-.opt.correct{{border-color:var(--green);background:rgba(125,220,125,.12)}}
-.opt.wrong{{border-color:var(--red);background:rgba(255,122,107,.12)}}
-.opt:disabled{{cursor:default;opacity:.9}}
-.score{{font-size:13px;margin-top:12px;color:var(--gold)}}
-.center{{text-align:center;padding:30px}}
-.big{{font-family:var(--pixel);font-size:18px;color:var(--gold);margin-bottom:10px}}
+.qcard{background:var(--panel);border:2px solid var(--line);border-radius:12px;padding:22px}
+.qtop{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);letter-spacing:.5px;margin-bottom:10px}
+.scorepill{color:var(--gold);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+.pbar{height:8px;background:#0f1318;border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:16px}
+.pbar span{display:block;height:100%;width:0;background:linear-gradient(90deg,#4fc9a8,#6ee0d8);transition:width .3s}
+.qcard h2{font-size:17px;line-height:1.5;margin-bottom:16px;color:#fff;min-height:52px}
+.opt{display:block;width:100%;text-align:left;font-family:var(--mono);font-size:13px;color:var(--text);background:#0f1318;border:2px solid var(--line);border-radius:8px;padding:12px 14px;margin-bottom:8px;cursor:pointer;transition:border-color .1s,transform .06s}
+.opt:hover{border-color:var(--gold);transform:translateX(2px)}
+.opt.correct{border-color:var(--green);background:rgba(125,220,125,.12)}
+.opt.wrong{border-color:var(--red);background:rgba(255,122,107,.12)}
+.opt:disabled{cursor:default;opacity:.95;transform:none}
+.hint{margin-top:6px;font-size:12px;color:var(--cyan);border-left:3px solid var(--cyan);padding:8px 10px;background:rgba(110,224,216,.08);border-radius:4px}
+.feedback{font-size:12px;margin-top:10px;min-height:18px;color:var(--muted)}
+.feedback.ok{color:var(--green)} .feedback.bad{color:var(--red)}
+.qfoot{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+.bigscore{font-family:var(--pixel);font-size:34px;color:var(--gold);margin:14px 0;text-shadow:3px 3px 0 #000}
 </style></head><body>
 <a class="back" href="../../index.html">← CV Portal</a>
 <div class="wrap">
-  <div class="head"><div><div class="brand">CV QUIZ</div><div class="sub">10 random questions · replay for a new set</div></div></div>
-  <div id="app"></div>
-</div><script>
-const BANK = [{"q": "Which university awarded Michael's PhD?", "options": ["Curtin University", "Australian National University", "University of Western Australia", "Queensland University of Technology"], "answer": 0}, {"q": "In what year did Michael complete his PhD?", "options": ["2017", "2001", "2010", "2020"], "answer": 0}, {"q": "What is the core of Michael's teaching philosophy?", "options": ["Make Contact Count - maximising impact through every student interaction", "Move fast and break things", "Publish or perish", "Grades first, people second"], "answer": 0}, {"q": "What was Michael's first career (from 1989)?", "options": ["The Royal Australian Navy", "A university lecturer", "A web agency owner", "A data-science startup"], "answer": 0}, {"q": "Which of these is a book by Michael Borck?", "options": ["Python Step By Step in an AI World", "The Pragmatic Programmer", "Clean Code", "Designing Data-Intensive Applications"], "answer": 0}, {"q": "What satisfaction score does Michael report across units?", "options": ["100%", "72%", "85%", "93%"], "answer": 0}, {"q": "Where is Michael based?", "options": ["Perth, WA", "Sydney, NSW", "Melbourne, VIC", "Canberra, ACT"], "answer": 0}, {"q": "What area did Michael's PhD research focus on?", "options": ["Computer vision and feature extraction from mobile mapping data", "Macroeconomics", "Medieval literature", "Marine biology"], "answer": 0}, {"q": "Which of these is one of Michael's interests?", "options": ["Karate", "Competitive baking", "Origami architecture", "Professional gaming"], "answer": 0}, {"q": "What is Reality Reigns?", "options": ["Swipe-based decision game providing interactive fiction storytelling from fantasy adventures to educational simulations", "A payroll system", "A stock-trading bot", "A 3D game engine"], "answer": 0}, {"q": "How many books has Michael published (Creative Commons)?", "options": ["4", "1", "2", "7"], "answer": 0}];
+  <div class="head"><div><div class="brand">CV QUIZ</div><div class="sub">10 questions · hints allowed · replay for a fresh set</div></div>
+    <button class="btn ghost" id="restartBtn">Restart</button></div>
 
-const N = 10;
-let deck = [], idx = 0, score = 0, answered = false;
-const app = document.getElementById('app');
-function shuffle(a){ for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
+  <div class="qcard">
+    <div class="qtop"><span id="progress">Question 1 / 10</span><span id="score" class="scorepill">Score 0</span></div>
+    <div class="pbar"><span id="pfill"></span></div>
+    <h2 id="qtext">—</h2>
+    <div class="opts" id="opts"></div>
+    <div class="hint" id="hint" hidden></div>
+    <div class="feedback" id="feedback"></div>
+    <div class="qfoot">
+      <button class="btn ghost" id="hintBtn">Hint</button>
+      <button class="btn" id="nextBtn" hidden>Next →</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="startOv">
+  <div class="modal">
+    <div class="brand">CV QUIZ</div>
+    <h1>How well do you know the CV?</h1>
+    <p>Ten random questions from Michael's career. You can use a hint on any question. Replay for a new set.</p>
+    <button class="btn" id="startBtn">START QUIZ</button>
+  </div>
+</div>
+
+<div class="overlay hidden" id="endOv">
+  <div class="modal" style="text-align:center">
+    <div class="brand">RESULT</div>
+    <div class="bigscore" id="endScore">0 / 10</div>
+    <p id="endMsg"></p>
+    <button class="btn" id="againBtn">PLAY AGAIN</button>
+  </div>
+</div><script>
+const BANK = [{"q": "Which university awarded Michael's PhD?", "options": ["Curtin University", "Australian National University", "University of Western Australia", "Queensland University of Technology"], "answer": 0, "hint": "It's the same university where he lectures."}, {"q": "In what year did Michael complete his PhD?", "options": ["2017", "2001", "2010", "2020"], "answer": 0, "hint": "Between 2015 and 2019."}, {"q": "What is the core of Michael's teaching philosophy?", "options": ["Make Contact Count - maximising impact through every student interaction", "Move fast and break things", "Publish or perish", "Grades first, people second"], "answer": 0, "hint": "Three words: Make ___ Count."}, {"q": "What was Michael's first career (from 1989)?", "options": ["The Royal Australian Navy", "A university lecturer", "A web agency owner", "A data-science startup"], "answer": 0, "hint": "Think submarines and defence systems."}, {"q": "Which of these is a book by Michael Borck?", "options": ["Python Step By Step in an AI World", "The Pragmatic Programmer", "Clean Code", "Designing Data-Intensive Applications"], "answer": 0, "hint": "One of his own Creative-Commons titles."}, {"q": "What satisfaction score does Michael report across units?", "options": ["100%", "72%", "85%", "93%"], "answer": 0, "hint": "It's perfect."}, {"q": "Where is Michael based?", "options": ["Perth, WA", "Sydney, NSW", "Melbourne, VIC", "Canberra, ACT"], "answer": 0, "hint": "Western Australia."}, {"q": "What area did Michael's PhD research focus on?", "options": ["Computer vision and feature extraction from mobile mapping data", "Macroeconomics", "Medieval literature", "Marine biology"], "answer": 0, "hint": "Cameras plus maps."}, {"q": "Which of these is one of Michael's interests?", "options": ["Karate", "Competitive baking", "Origami architecture", "Professional gaming"], "answer": 0, "hint": "Martial arts, space, and old computers."}, {"q": "What is Reality Reigns?", "options": ["Swipe-based decision game providing interactive fiction storytelling from fantasy adventures to educational simulations", "A payroll system", "A stock-trading bot", "A 3D game engine"], "answer": 0, "hint": "It's a swipe-based decision game."}, {"q": "How many books has Michael published (Creative Commons)?", "options": ["4", "1", "2", "7"], "answer": 0, "hint": "Count his Python titles."}];
+
+const N=10;
+let deck=[], i=0, score=0, answered=false;
+const $=id=>document.getElementById(id);
+function shuffle(a){for(let j=a.length-1;j>0;j--){const k=Math.floor(Math.random()*(j+1));[a[j],a[k]]=[a[k],a[j]];}return a;}
 function start(){
-  deck = shuffle(BANK.slice()).slice(0, Math.min(N, BANK.length)).map(q=>{
-    const opts = q.options.map((t,i)=>({t, ok:i===q.answer}));
-    shuffle(opts); return {q:q.q, opts};
+  deck=shuffle(BANK.slice()).slice(0,Math.min(N,BANK.length)).map(q=>{
+    const opts=q.options.map((t,ix)=>({t,ok:ix===q.answer}));
+    shuffle(opts); return {q:q.q,hint:q.hint,opts};
   });
-  idx=0; score=0; render();
+  i=0; score=0;
+  $('startOv').classList.add('hidden'); $('endOv').classList.add('hidden');
+  render();
 }
 function render(){
-  if(idx>=deck.length) return finish();
-  const item = deck[idx]; answered=false;
-  app.innerHTML = `<div class="q"><div class="progress">QUESTION ${idx+1} / ${deck.length} · score ${score}</div>
-    <h2>${esc(item.q)}</h2><div id="opts"></div><div class="score" id="msg"></div></div>`;
-  const box = document.getElementById('opts');
-  item.opts.forEach(o=>{
-    const b=document.createElement('button'); b.className='opt'; b.textContent=o.t;
-    b.onclick=()=>choose(b,o); box.appendChild(b);
-  });
+  answered=false; const q=deck[i];
+  $('progress').textContent=`Question ${i+1} / ${deck.length}`;
+  $('score').textContent=`Score ${score}`;
+  $('pfill').style.width=`${(i/deck.length)*100}%`;
+  $('qtext').textContent=q.q;
+  $('hint').hidden=true; $('hint').textContent=q.hint||'';
+  $('feedback').textContent=''; $('feedback').className='feedback';
+  $('nextBtn').hidden=true; $('hintBtn').disabled=false;
+  const opts=$('opts'); opts.innerHTML='';
+  q.opts.forEach(o=>{const b=document.createElement('button'); b.className='opt'; b.textContent=o.t; b.onclick=()=>choose(b,o); opts.appendChild(b);});
 }
 function choose(btn,o){
   if(answered) return; answered=true;
-  const btns=[...document.querySelectorAll('.opt')];
-  btns.forEach((b,i)=>{ b.disabled=true; if(deck[idx].opts[i].ok) b.classList.add('correct'); });
-  if(o.ok){ score++; } else { btn.classList.add('wrong'); }
-  document.getElementById('msg').textContent = o.ok ? "Correct." : "Not quite — the highlighted answer is right.";
-  setTimeout(()=>{ idx++; render(); }, 900);
+  $('hintBtn').disabled=true;
+  [...$('opts').children].forEach((b,ix)=>{b.disabled=true; if(deck[i].opts[ix].ok) b.classList.add('correct');});
+  if(o.ok){score++; $('feedback').textContent='Correct.'; $('feedback').classList.add('ok');}
+  else {btn.classList.add('wrong'); $('feedback').textContent='Not quite — the highlighted answer is right.'; $('feedback').classList.add('bad');}
+  $('score').textContent=`Score ${score}`;
+  const last = i+1>=deck.length;
+  $('nextBtn').hidden=false; $('nextBtn').textContent = last ? 'See result' : 'Next →';
 }
+function next(){ if(i+1>=deck.length) return finish(); i++; render(); }
 function finish(){
-  app.innerHTML = `<div class="q center"><div class="big">${score} / ${deck.length}</div>
-    <p class="sub" style="margin-bottom:16px">${score===deck.length?"Perfect run.":"Try again for a fresh set of questions."}</p>
-    <button class="btn" id="again">PLAY AGAIN</button></div>`;
-  document.getElementById('again').onclick=start;
+  const pct=Math.round(score/deck.length*100);
+  $('pfill').style.width='100%';
+  $('endScore').textContent=`${score} / ${deck.length}`;
+  $('endMsg').textContent = pct===100?'Perfect run.':pct>=70?'Strong. Replay for a fresh set.':'Keep going — replay for a new set.';
+  $('endOv').classList.remove('hidden');
 }
-function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
-start();
+$('hintBtn').onclick=()=>{ $('hint').hidden=false; };
+$('nextBtn').onclick=next;
+$('startBtn').onclick=start;
+$('againBtn').onclick=start;
+$('restartBtn').onclick=start;
 
 </script></body></html>
