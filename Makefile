@@ -108,6 +108,13 @@ doom:
 	@echo "Resume Doom ready: creative/doom/index.html"
 	@echo "  serve: cd creative/doom && python3 -m http.server 8010"
 
+# Generate The Delve - text dungeon crawler resume
+dungeon:
+	@echo "Generating The Delve dungeon..."
+	@python3 scripts/generate_dungeon_data.py
+	@echo "The Delve ready: creative/dungeon/index.html"
+	@echo "  serve: cd creative/dungeon && python3 -m http.server 8011"
+
 # Generate Terminal CV - Standalone Zork-like Text Adventure
 terminal:
 	@echo "Generating Terminal CV - Standalone Version..."

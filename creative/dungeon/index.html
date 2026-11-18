@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Delve — a text dungeon CV</title>
+<meta name="description" content="A text-based dungeon crawler through Michael Borck's career. Explore rooms, take items, learn the resume." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23070d08'/%3E%3Ctext x='3' y='13' font-size='12' fill='%237dff9e'%3E%3E%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link href="assets/css/dungeon.css" rel="stylesheet" />
+</head>
+<body>
+<div class="crt">
+  <header class="bar">
+    <span class="title">THE DELVE</span>
+    <span class="sub">a text dungeon of a career</span>
+    <span class="spacer"></span>
+    <span class="stat" id="found">loot 0/0</span>
+    <button class="mini" id="helpBtn">help</button>
+    <button class="mini" id="mapBtn">map</button>
+  </header>
+
+  <pre class="out" id="out" aria-live="polite"></pre>
+
+  <form class="prompt" id="form" autocomplete="off">
+    <span class="caret">&gt;</span>
+    <input id="cmd" type="text" spellcheck="false" autocomplete="off" autocapitalize="off" aria-label="command" />
+  </form>
+</div>
+<a class="portal-backlink" href="../../index.html">← CV Portal</a>
+<div class="overlay hidden" id="won">
+  <div class="card">
+    <h1>THE DELVE IS SPENT</h1>
+    <p id="wonText"></p>
+    <button id="againBtn">DELVE AGAIN</button>
+  </div>
+</div>
+<script src="assets/js/dungeon.js"></script>
+</body>
+</html>

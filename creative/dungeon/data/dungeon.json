@@ -1,0 +1,434 @@
+{
+ "title": "THE DELVE OF MICHAEL BORCK",
+ "start": "entrance",
+ "rooms": {
+  "entrance": {
+   "id": "entrance",
+   "name": "The Threshold",
+   "desc": "Torchlight flickers on wet stone. A sign reads: 'BORCK \u2014 DELVE AT OWN RISK.' A campfire crackles where someone made base.",
+   "exits": {
+    "n": "experience",
+    "e": "education",
+    "w": "skills"
+   },
+   "items": [],
+   "x": 1,
+   "y": 2
+  },
+  "experience": {
+   "id": "experience",
+   "name": "Hall of Tenure",
+   "desc": "Portraits of long-service line the walls, each a chapter of a working life. Armoured figures stand guard.",
+   "exits": {
+    "n": "teaching",
+    "s": "entrance",
+    "e": "achievements",
+    "w": "projects"
+   },
+   "items": [
+    {
+     "title": "Lecturer \u2014 School of Marketing and Management",
+     "body": [
+      "Curtin University",
+      "Feb 2016 \u2013 Present",
+      "AI Program Leadership - AI Leader for the School, developing new AI programs within undergraduate and postgraduate curricula",
+      "Research Leadership - Founder of LocoLabo, an applied local-AI research lab"
+     ],
+     "id": "experience-0"
+    },
+    {
+     "title": "Course Leadership & Development",
+     "body": [
+      "Curtin University",
+      "Ongoing",
+      "Course Lead for Information Systems undergraduate and postgraduate degree programs",
+      "Unit coordination across multiple levels - postgraduate, undergraduate, core, non-core, and service units (domestic and international)"
+     ],
+     "id": "experience-1"
+    },
+    {
+     "title": "Associate Lecturer",
+     "body": [
+      "Curtin University",
+      "Jan 2001 \u2013 Dec 2007",
+      "Academic Leadership - Provided departmental representation on institutional committees",
+      "Program Development - Developed and delivered comprehensive course material for Software Engineering and Computer Science degrees"
+     ],
+     "id": "experience-2"
+    },
+    {
+     "title": "AI, IS & Educational Technology Consultant",
+     "body": [
+      "Self-Employed",
+      "Jan 2016 \u2013 Present",
+      "AI strategy and implementation consultation",
+      "IS/IT consultation and analysis"
+     ],
+     "id": "experience-3"
+    },
+    {
+     "title": "Researcher",
+     "body": [
+      "Curtin University",
+      "Mar 2018 \u2013 2019",
+      "Advanced AI Research - Investigation and development of CNN models and their application to the maritime environment",
+      "Applied Machine Learning - Focused research on computer vision applications for marine and coastal monitoring"
+     ],
+     "id": "experience-4"
+    }
+   ],
+   "x": 1,
+   "y": 1
+  },
+  "skills": {
+   "id": "skills",
+   "name": "The Armory",
+   "desc": "Racks of gleaming tools \u2014 languages, frameworks, blades of every kind. Choose what you can carry.",
+   "exits": {
+    "n": "projects",
+    "e": "entrance"
+   },
+   "items": [
+    {
+     "title": "Programming \u00b7 Core",
+     "body": [
+      "Python, C/C++, C#, Java, JavaScript, Matlab, PHP, CSS, HTML, LaTeX, SQL, Bash"
+     ],
+     "id": "skills-0"
+    },
+    {
+     "title": "Programming \u00b7 Web",
+     "body": [
+      "React, Flask, FastAPI, FastHTML, Vanilla JS, WordPress"
+     ],
+     "id": "skills-1"
+    },
+    {
+     "title": "Programming \u00b7 Ai_Ml",
+     "body": [
+      "Langchain, TensorFlow, PyTorch, Scikit-learn"
+     ],
+     "id": "skills-2"
+    },
+    {
+     "title": "Programming \u00b7 Educational",
+     "body": [
+      "Blackboard LMS, Canvas LMS, Interactive Content Development"
+     ],
+     "id": "skills-3"
+    }
+   ],
+   "x": 0,
+   "y": 2
+  },
+  "education": {
+   "id": "education",
+   "name": "The Library",
+   "desc": "Dusty shelves climb into darkness. Degrees are chained like grimoires to the reading desks.",
+   "exits": {
+    "n": "achievements",
+    "w": "entrance"
+   },
+   "items": [
+    {
+     "title": "Doctor of Philosophy (PhD)",
+     "body": [
+      "Curtin University",
+      "2017",
+      "Feature Extraction from Multi-modal Data (GIS, Machine Learning & Computer Vision)"
+     ],
+     "id": "education-0"
+    },
+    {
+     "title": "Bachelor of Science (Computer Science) (Honours)",
+     "body": [
+      "Curtin University",
+      "2001",
+      "A Bayesian Belief Network Approach to Predicting the Prices of Australian Commonwealth Government Interest Rate Securities"
+     ],
+     "id": "education-1"
+    },
+    {
+     "title": "Graduate Diploma in Business",
+     "body": [
+      "Curtin University",
+      "2000"
+     ],
+     "id": "education-2"
+    },
+    {
+     "title": "Bachelor of Science (Computer Science)",
+     "body": [
+      "Australian National University",
+      "1994"
+     ],
+     "id": "education-3"
+    },
+    {
+     "title": "Bachelor of Applied Science (Mathematics)",
+     "body": [
+      "Queensland University of Technology",
+      "1989"
+     ],
+     "id": "education-4"
+    }
+   ],
+   "x": 2,
+   "y": 2
+  },
+  "projects": {
+   "id": "projects",
+   "name": "The Workshop",
+   "desc": "Half-built machines hum on benches. Prototypes tick and glow; each one wants to be finished.",
+   "exits": {
+    "n": "service",
+    "s": "skills",
+    "e": "experience"
+   },
+   "items": [
+    {
+     "title": "Reality Reigns",
+     "body": [
+      "Swipe-based decision game providing interactive fiction storytelling from fantasy adventures to educational simulations"
+     ],
+     "id": "projects-0"
+    },
+    {
+     "title": "Talk Buddy",
+     "body": [
+      "AI-based audio interface tool for conversation practice (medical diagnoses, HR discussions, English conversation)"
+     ],
+     "id": "projects-1"
+    },
+    {
+     "title": "Curriculum Curator",
+     "body": [
+      "AI-based tool for creating, managing and curating learning materials based on unique teaching philosophies"
+     ],
+     "id": "projects-2"
+    },
+    {
+     "title": "Feed Forward System",
+     "body": [
+      "AI-based assessment feedback tool for various assessment types"
+     ],
+     "id": "projects-3"
+    },
+    {
+     "title": "Student Feedback Analyzer",
+     "body": [
+      "AI tool that analyzes student feedback forms to suggest course improvements"
+     ],
+     "id": "projects-4"
+    }
+   ],
+   "x": 0,
+   "y": 1
+  },
+  "achievements": {
+   "id": "achievements",
+   "name": "The Vault",
+   "desc": "A vault of trophies and published tomes, sealed behind old iron. Fortune favours the thorough.",
+   "exits": {
+    "n": "interests",
+    "s": "education",
+    "w": "experience"
+   },
+   "items": [
+    {
+     "title": "Educational Leadership",
+     "body": [
+      "AI Leader for School of Marketing and Management, led development of AI curriculum serving 500+ students across undergraduate and postgraduate programs"
+     ],
+     "id": "achievements-0"
+    },
+    {
+     "title": "Teaching Excellence",
+     "body": [
+      "Achieved 100% student satisfaction scores across multiple units (ISYS3015, ISYS2001, ISYS6018) with consistent \"effective teacher\" ratings"
+     ],
+     "id": "achievements-1"
+    },
+    {
+     "title": "Technical Innovation",
+     "body": [
+      "Creator of multiple AI-powered educational tools including Reality Reigns, Talk Buddy, and Curriculum Curator with 290+ downloads"
+     ],
+     "id": "achievements-2"
+    },
+    {
+     "title": "Industry Impact",
+     "body": [
+      "Executive education training delivered to 100+ professionals across 15+ companies in academics, education, agriculture and mining sectors"
+     ],
+     "id": "achievements-3"
+    },
+    {
+     "title": "Assessment Innovation",
+     "body": [
+      "Developed award-winning \"Cloud Core\" virtual company simulation providing authentic industry experience"
+     ],
+     "id": "achievements-4"
+    }
+   ],
+   "x": 2,
+   "y": 1
+  },
+  "teaching": {
+   "id": "teaching",
+   "name": "The Dojo",
+   "desc": "Chalk and candlelight. Students' voices echo off the walls; a lesson is always in session here.",
+   "exits": {
+    "s": "experience",
+    "e": "interests",
+    "w": "service"
+   },
+   "items": [
+    {
+     "title": "Built on three pillars - Caring, Competence, and Passion",
+     "body": [
+      "Make Contact Count - maximising impact through every student interaction",
+      "Grounded in Constructivist learning theory, Bloom's Taxonomy, and Universal Design for Learning (UDL)"
+     ],
+     "id": "teaching-0"
+    },
+    {
+     "title": "100% Satisfaction Scores",
+     "body": [
+      "Achieved across ISYS3015 Business Application Development, ISYS2001 Introduction to Business Programming, and ISYS6018 Information Security"
+     ],
+     "id": "teaching-1"
+    },
+    {
+     "title": "100% 'Effective Teacher' Ratings",
+     "body": [
+      "Across Enterprise Network Security, Business Systems Selection, and Introduction to Programming units"
+     ],
+     "id": "teaching-2"
+    },
+    {
+     "title": "Cloud Core Simulation",
+     "body": [
+      "Created complete virtual company with IT infrastructure, policies, and staff chatbot for authentic audit experiences"
+     ],
+     "id": "teaching-3"
+    },
+    {
+     "title": "Real-World Integration",
+     "body": [
+      "Students report assessments prepare them for 'workplace environment'"
+     ],
+     "id": "teaching-4"
+    }
+   ],
+   "x": 1,
+   "y": 0
+  },
+  "service": {
+   "id": "service",
+   "name": "The Ruins",
+   "desc": "Broken pillars of committee service. Old banners name the guilds and the rolls of honour.",
+   "exits": {
+    "s": "projects",
+    "e": "teaching"
+   },
+   "items": [
+    {
+     "title": "Conference Paper Reviewer",
+     "body": [
+      "Australian Conference on Information Systems (International)",
+      "2019"
+     ],
+     "id": "service-0"
+    },
+    {
+     "title": "Lead Developer",
+     "body": [
+      "Image Processing for Orange",
+      "2015-2019"
+     ],
+     "id": "service-1"
+    },
+    {
+     "title": "User Contribution",
+     "body": [
+      "Graph Merging for Scikit Image",
+      "2015"
+     ],
+     "id": "service-2"
+    },
+    {
+     "title": "Australian Computer Society (ACS)",
+     "body": [
+      "Certified Professional",
+      "2011"
+     ],
+     "id": "service-3"
+    },
+    {
+     "title": "Google AI Course",
+     "body": [
+      "2024"
+     ],
+     "id": "service-4"
+    }
+   ],
+   "x": 0,
+   "y": 0
+  },
+  "interests": {
+   "id": "interests",
+   "name": "The Far Shore",
+   "desc": "Beyond the last door: salt air, a telescope, and the sound of a kata at dawn. The life outside work.",
+   "exits": {
+    "s": "achievements",
+    "w": "teaching"
+   },
+   "items": [
+    {
+     "title": "Karate",
+     "body": [
+      "A life beyond work"
+     ],
+     "id": "interests-0"
+    },
+    {
+     "title": "Muay Thai",
+     "body": [
+      "A life beyond work"
+     ],
+     "id": "interests-1"
+    },
+    {
+     "title": "Krav Maga",
+     "body": [
+      "A life beyond work"
+     ],
+     "id": "interests-2"
+    },
+    {
+     "title": "Atari 2600 Programming",
+     "body": [
+      "A life beyond work"
+     ],
+     "id": "interests-3"
+    },
+    {
+     "title": "Astronomy",
+     "body": [
+      "A life beyond work"
+     ],
+     "id": "interests-4"
+    }
+   ],
+   "x": 2,
+   "y": 0
+  }
+ },
+ "total": 39,
+ "contact": {
+  "name": "Michael Borck",
+  "email": "michael.borck@curtin.edu.au",
+  "location": "Perth, WA"
+ }
+}
