@@ -52,6 +52,43 @@ const use = formats.filter((f) => f.group === 'use');
 const meta = new Set(['The Source', 'How It Works']);
 const exploreCount = formats.filter((f) => !meta.has(f.title)).length;
 const ext = (href) => href.startsWith('http');
+
+// Footer "Elsewhere" band — sites I run (grouped) + external profiles I don't.
+const hubGroups = [
+  { name: 'Education', links: [
+    { label: 'borck.education', url: 'https://borck.education' },
+    { label: 'tools', url: 'https://tools.borck.education' },
+    { label: 'simulations', url: 'https://simulations.borck.education' },
+    { label: 'books', url: 'https://books.borck.education' },
+    { label: 'teach', url: 'https://teach.borck.education' },
+    { label: 'research', url: 'https://research.borck.dev' },
+  ]},
+  { name: 'Build', links: [
+    { label: 'borck.dev', url: 'https://borck.dev' },
+    { label: 'Lesson Loom', url: 'https://lessonloom.borck.education' },
+    { label: 'SlideStream', url: 'https://slidestream.borck.education' },
+    { label: 'Knotebook', url: 'https://knotebook.borck.education' },
+    { label: 'deck-engine', url: 'https://deck-engine.borck.dev' },
+  ]},
+  { name: 'Practice', links: [
+    { label: 'borck.consulting', url: 'https://borck.consulting' },
+    { label: '8020workshop', url: 'https://8020workshop.com' },
+    { label: 'retroverse.studio', url: 'https://retroverse.studio' },
+    { label: 'LocoLabo', url: 'https://locolabo.org' },
+  ]},
+];
+const elsewhere = [
+  { label: 'LinkedIn', url: 'https://linkedin.com/in/michaelborck' },
+  { label: 'GitHub', url: 'https://github.com/michael-borck' },
+  { label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=fwNMowoAAAAJ&hl=en' },
+  { label: 'ORCID', url: 'https://orcid.org/0000-0002-0950-6396' },
+  { label: 'ResearchGate', url: 'https://www.researchgate.net/profile/Michael-Borck' },
+  { label: 'Academia', url: 'https://curtin.academia.edu/MichaelBorck' },
+  { label: 'about.me', url: 'https://about.me/michaelborck' },
+  { label: 'X', url: 'https://x.com/Michael_Borck' },
+  { label: 'YouTube', url: 'https://www.youtube.com/@8020workshop' },
+  { label: 'Facebook', url: 'https://www.facebook.com/michael.borck/' },
+];
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -67,6 +104,16 @@ const ext = (href) => href.startsWith('http');
     .builtwith a { font-family: var(--mono); font-size: 0.72rem; color: var(--text); border: 1px solid var(--gray-3); border-radius: 999px; padding: 4px 10px; text-decoration: none; }
     .builtwith a:hover { border-color: var(--accent); color: var(--accent-high); }
     .builtwith .bw-credits { border-color: var(--accent); color: var(--accent-high); }
+    .elsewhere { border-top: 1px solid var(--gray-3); margin-top: 8px; padding: 26px 2rem 8px; }
+    .ex-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; }
+    @media (max-width: 820px) { .ex-inner { grid-template-columns: 1fr; } }
+    .ex-title { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gray-1); margin-bottom: 10px; }
+    .ex-group { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 8px; }
+    .ex-label { font-family: var(--mono); font-size: 0.66rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px; min-width: 74px; padding-top: 5px; }
+    .ex-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .ex-pill { font-family: var(--mono); font-size: 0.72rem; color: var(--text); border: 1px solid var(--gray-3); border-radius: 999px; padding: 4px 10px; text-decoration: none; }
+    .ex-pill:hover { border-color: var(--accent); color: var(--accent-high); }
+    .ex-note { font-family: var(--mono); font-size: 0.65rem; color: var(--gray-2); margin-top: 8px; }
   </style>
 </head>
 <body>
@@ -173,6 +220,29 @@ const ext = (href) => href.startsWith('http');
   </section>
 
 </main>
+
+<section class="elsewhere" aria-labelledby="elsewhere-title">
+  <div class="ex-inner">
+    <div class="ex-col">
+      <h2 id="elsewhere-title" class="ex-title">Hubs I run</h2>
+      {hubGroups.map((g) => (
+        <div class="ex-group">
+          <span class="ex-label">{g.name}</span>
+          <span class="ex-pills">
+            {g.links.map((l) => <a class="ex-pill" href={l.url} target="_blank" rel="noopener">{l.label}</a>)}
+          </span>
+        </div>
+      ))}
+    </div>
+    <div class="ex-col">
+      <h2 class="ex-title">Elsewhere on the web</h2>
+      <div class="ex-pills">
+        {elsewhere.map((l) => <a class="ex-pill" href={l.url} target="_blank" rel="noopener">{l.label}</a>)}
+      </div>
+      <p class="ex-note">External profiles — sites I don't run.</p>
+    </div>
+  </div>
+</section>
 
 <footer class="site-footer">
   <div class="footer-links">
