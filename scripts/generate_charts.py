@@ -13,6 +13,7 @@ tooltip script.
 from __future__ import annotations
 
 import html
+import json
 import datetime as _dt
 import os
 import re
@@ -146,7 +147,7 @@ def write(path, content):
         f.write(content)
 
 
-def page(title, desc, body, extra_css=""):
+def page(title, desc, body, extra_css="", extra_js=""):
     return f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{e(title)}</title><meta name="description" content="{e(desc)}">
@@ -154,7 +155,7 @@ def page(title, desc, body, extra_css=""):
 <a class="portal-link" href="../../index.html">← CV Portal</a>
 <div id="tip"></div>
 {body}
-<script>{TIP_JS}</script>
+<script>{TIP_JS}{extra_js}</script>
 </body></html>"""
 
 
@@ -269,7 +270,7 @@ def gen_dashboard(cv):
         dur = r["end"] - r["start"]
         body = [r["org"], r["period"], f"~{dur:.1f} years"] + r["resp"][:2]
         role_bars.append(
-            f'<div class="hbar"><span class="hl" data-title="{e(r["title"])}" data-body="{e("|".join(body))}">{e(r["title"])}</span>'
+            f'<div class="hbar" data-kind="role" data-key="{e(r["title"])}"><span class="hl" data-title="{e(r["title"])}" data-body="{e("|".join(body))}">{e(r["title"])}</span>'
             f'<span class="ht"><span class="hf" style="width:{max(w,2):.1f}%;--c:{r["color"]}" '
             f'data-title="{e(r["title"])}" data-body="{e("|".join(body))}"></span></span>'
             f'<span class="hv">{dur:.1f}y</span></div>'
@@ -288,7 +289,7 @@ def gen_dashboard(cv):
     sk.sort(key=lambda x: -len(x[1]))
     maxsk = max([len(x[1]) for x in sk] + [1])
     skill_bars = "".join(
-        f'<div class="hbar"><span class="hl" data-title="{e(name)}" data-body="{e(str(len(items))+" items")}">{e(name)}</span>'
+        f'<div class="hbar" data-kind="skill" data-key="{e(name)}"><span class="hl" data-title="{e(name)}" data-body="{e(str(len(items))+" items")}">{e(name)}</span>'
         f'<span class="ht"><span class="hf" style="width:{len(items)/maxsk*100:.1f}%;--c:#4FC9A8" '
         f'data-title="{e(name)}" data-body="{e("|".join(items[:12]))}"></span></span>'
         f'<span class="hv">{len(items)}</span></div>'
@@ -307,7 +308,7 @@ def gen_dashboard(cv):
     for yr, active in counts:
         h = (len(active) / maxc) * 100 if maxc else 0
         cols.append(
-            f'<div class="col" data-title="{yr}" data-body="{e(str(len(active))+" active role(s)") + ("|" + e("|".join(active)) if active else "")}">'
+            f'<div class="col" data-kind="year" data-key="{yr}" data-title="{yr}" data-body="{e(str(len(active))+" active role(s)") + ("|" + e("|".join(active)) if active else "")}">'
             f'<span class="cf" style="height:{max(h,2):.1f}%"></span><span class="cx">{(str(yr)[2:] if (yr % 5 == 0 or yr in (y0, y1)) else "")}</span></div>'
         )
 
@@ -320,7 +321,7 @@ def gen_dashboard(cv):
     ]
     maxt = max([len(t[1]) for t in types] + [1])
     pub_bars = "".join(
-        f'<div class="hbar"><span class="hl" data-title="{e(name)}" data-body="{e(str(len(items))+" item(s)")}">{e(name)}</span>'
+        f'<div class="hbar" data-kind="pub" data-key="{e(name)}"><span class="hl" data-title="{e(name)}" data-body="{e(str(len(items))+" item(s)")}">{e(name)}</span>'
         f'<span class="ht"><span class="hf" style="width:{len(items)/maxt*100:.1f}%;--c:#E5745A" '
         f'data-title="{e(name)}" data-body="{e("|".join(items[:8]))}"></span></span>'
         f'<span class="hv">{len(items)}</span></div>'
@@ -330,7 +331,8 @@ def gen_dashboard(cv):
     body = f"""
 <div class="wrap">
   <div class="head"><div><div class="brand">CAREER DASHBOARD</div>
-    <div class="sub">A few views of a working life · hover anything for detail</div></div></div>
+    <div class="sub">A few views of a working life · hover for detail · click a bar to filter</div></div></div>
+  <div id="filterbar" class="filterbar" hidden><span id="filtertext"></span><button id="clearFilter">✕ clear</button></div>
 
   <div class="kpis">
     {''.join(f'<div class="kpi"><div class="n">{e(n)}</div><div class="d">{e(d)}</div></div>' for n,d in kpis)}
@@ -381,11 +383,58 @@ def gen_dashboard(cv):
 .cf{width:70%;background:linear-gradient(180deg,#6ee0d8,#4fc9a8);border-radius:3px 3px 0 0;transition:filter .1s}
 .col:hover .cf{filter:brightness(1.25)}
 .cx{font-size:8px;color:var(--muted);margin-top:4px}
+.hbar,.col{cursor:pointer}
+.dim{opacity:.22;filter:grayscale(.5)}
+.sel{outline:2px solid var(--gold);outline-offset:2px;border-radius:6px}
+.filterbar{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:12px;color:var(--gold);background:rgba(255,207,107,.08);border:1px solid var(--gold);border-radius:8px;padding:8px 12px;width:fit-content}
+.filterbar[hidden]{display:none}
+.filterbar button{font-family:var(--mono);font-size:11px;color:var(--ink);background:var(--gold);border:none;border-radius:5px;padding:4px 9px;cursor:pointer}
 """
+    rows_meta = [{"title": r["title"], "start": round(r["start"], 3), "end": round(r["end"], 3)} for r in rows]
+    extra_js = FILTER_JS.replace("__ROWS__", json.dumps(rows_meta, ensure_ascii=False))
     write("dashboard/index.html", page("Career Dashboard — Michael Borck",
                                        "A dashboard of charts about Michael Borck's career, with hover details.",
-                                       body, css))
+                                       body, css, extra_js))
     print(f"  dashboard: {len(rows)} roles, {len(sk)} skill groups, {len(types)} publication types")
+
+
+FILTER_JS = r"""
+(function(){
+  const ROWS = __ROWS__;
+  let sel = null;
+  const bar = document.getElementById('filterbar');
+  const txt = document.getElementById('filtertext');
+  function activeYears(title,y){ const r=ROWS.find(x=>x.title===title); return r && r.start<=y+0.5 && r.end>y+0.5; }
+  function apply(){
+    document.querySelectorAll('[data-kind]').forEach(el=>el.classList.remove('dim','sel'));
+    if(!sel){ bar.hidden=true; return; }
+    bar.hidden=false; txt.textContent='Filter: '+sel.kind+' · '+sel.key;
+    if(sel.kind==='role' || sel.kind==='year'){
+      document.querySelectorAll('[data-kind="role"]').forEach(el=>{
+        const on = sel.kind==='role' ? (el.dataset.key===sel.key) : activeYears(el.dataset.key, +sel.key);
+        el.classList.add(on?'sel':'dim');
+      });
+      document.querySelectorAll('[data-kind="year"]').forEach(el=>{
+        const y=+el.dataset.key;
+        const on = sel.kind==='year' ? (y===+sel.key) : activeYears(sel.key, y);
+        el.classList.add(on?'sel':'dim');
+      });
+    } else {
+      document.querySelectorAll('[data-kind="'+sel.kind+'"]').forEach(el=>{
+        el.classList.add(el.dataset.key===sel.key?'sel':'dim');
+      });
+    }
+  }
+  document.addEventListener('click', e=>{
+    if(e.target.closest('button,a')) return;
+    const el=e.target.closest('[data-kind]'); if(!el) return;
+    const kind=el.dataset.kind, key=el.dataset.key;
+    sel = (sel && sel.kind===kind && sel.key===key) ? null : {kind,key};
+    apply();
+  });
+  document.getElementById('clearFilter').onclick=()=>{ sel=null; apply(); };
+})();
+"""
 
 
 def main():
