@@ -1,0 +1,151 @@
+---
+import '../styles/global.css';
+
+const groups = [
+  {
+    name: 'Actually used here',
+    rows: [
+      ['Astro', 'Portal and static site build', 'MIT', 'https://astro.build'],
+      ['Quarto', 'PDF, HTML and Reveal.js slides', 'MIT (quarto-cli)', 'https://quarto.org'],
+      ['Reveal.js', 'HTML slide decks', 'MIT', 'https://revealjs.com'],
+      ['inkjs', 'Ink runtime + JS compiler (The Valley)', 'MIT', 'https://github.com/inkle/inkjs'],
+      ['deck-engine', 'Deck-engine slide deck (engine vendored)', 'MIT', 'https://github.com/michael-borck/deck-engine'],
+      ['pandoc', 'Markdown → HTML for deck authoring', 'GPL-2.0-or-later', 'https://pandoc.org'],
+      ['FastAPI', 'Live JSON API', 'MIT', 'https://fastapi.tiangolo.com'],
+      ['Python + PyYAML', 'Generators and data parsing', 'PSF-2.0 / MIT', 'https://www.python.org'],
+      ['Playwright', 'Automated tests', 'Apache-2.0', 'https://playwright.dev'],
+      ['limn + SwarmUI', 'Pixel-art generation (Resume World)', 'own tool', '—'],
+    ],
+  },
+  {
+    name: 'Referenced / exported to',
+    rows: [
+      ['Lesson Loom', 'Lesson-plan structure (this plan)', 'see project', 'https://lessonloom.borck.education'],
+      ['SlideStream', 'Narrated video / PowerPoint source', 'MIT', 'https://slidestream.borck.education'],
+      ['playable-lessons', 'Ink authoring reference', 'MIT', 'https://github.com/michael-borck/playable-lessons'],
+      ['Knotebook', 'Ink pack format (.knotebook.json)', 'see project', 'https://knotebook.borck.education'],
+      ['SwipeVerse', 'Deck format (portable Reality)', 'see project', 'https://swipeverse.app'],
+    ],
+  },
+];
+
+const bespoke = ['Resume World', 'Mario World', 'Resume Doom', 'The Delve', 'MineBorck', 'Quiz', 'Flashcards', 'Mindmap', 'Infographic', 'Printable cards', 'Gantt chart', 'Dashboard', 'Trello board', 'Data exports'];
+const toolBuilt = ['PDF / HTML / Reveal slides (Quarto)', 'deck-engine slides', 'The Valley (inkjs)', 'Knotebook pack', 'SwipeVerse deck', 'Lesson plan (Lesson Loom format)', 'Video source (SlideStream)'];
+
+const sw = [
+  ['Astro', 'https://astro.build'], ['Quarto', 'https://quarto.org'], ['Reveal.js', 'https://revealjs.com'],
+  ['inkjs', 'https://github.com/inkle/inkjs'], ['deck-engine', 'https://github.com/michael-borck/deck-engine'],
+  ['SlideStream', 'https://slidestream.borck.education'], ['Lesson Loom', 'https://lessonloom.borck.education'],
+  ['playable-lessons', 'https://github.com/michael-borck/playable-lessons'], ['Knotebook', 'https://knotebook.borck.education'],
+  ['SwipeVerse', 'https://swipeverse.app'], ['FastAPI', 'https://fastapi.tiangolo.com'],
+];
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Credits, how it works, and licences — resume.borck.dev</title>
+  <meta name="description" content="How this résumé site is built, the software it uses, licences, and future work." />
+  <link rel="icon" href="/favicon.svg" />
+  <style>
+    .doc { max-width: 900px; margin: 0 auto; padding: 40px 22px 80px; }
+    .doc h1 { font-size: clamp(1.6rem, 3.4vw, 2.4rem); letter-spacing: -0.02em; margin-bottom: 8px; }
+    .doc .lede { color: var(--gray-1); font-family: var(--mono); font-size: 0.85rem; margin-bottom: 28px; }
+    .doc h2 { font-size: 1.05rem; margin: 34px 0 12px; color: var(--text); }
+    .doc p, .doc li { font-size: 0.95rem; line-height: 1.7; color: var(--text); }
+    .doc ul { margin: 8px 0 8px 20px; }
+    .doc a { color: var(--accent-high); text-decoration: none; }
+    .doc a:hover { text-decoration: underline; }
+    .doc code { font-family: var(--mono); font-size: 0.82em; background: var(--gray-5); border: 1px solid var(--gray-3); padding: 1px 5px; border-radius: 4px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0 6px; font-size: 0.85rem; }
+    th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--gray-3); vertical-align: top; }
+    th { font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-1); }
+    td.tool { color: var(--text); font-weight: 600; white-space: nowrap; }
+    td.lic { color: var(--gray-1); white-space: nowrap; }
+    .group-title { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin: 22px 0 4px; }
+    .pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .pills a, .pills span { font-family: var(--mono); font-size: 0.72rem; color: var(--text); border: 1px solid var(--gray-3); border-radius: 999px; padding: 4px 10px; text-decoration: none; }
+    .pills a:hover { border-color: var(--accent); color: var(--accent-high); }
+    .note { border-left: 3px solid var(--accent); background: var(--accent-glow); padding: 10px 14px; border-radius: 4px; margin: 14px 0; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="topbar-logo" href="/">resume<span class="dot">.</span><span class="sub">borck.dev</span></a>
+  <div class="topbar-spacer"></div>
+  <nav class="topbar-links">
+    <a href="https://borck.education">Education</a>
+    <a href="https://research.borck.dev">Research</a>
+    <a href="https://borck.dev">borck.dev</a>
+  </nav>
+</div>
+
+<main class="doc">
+  <h1>Credits, how it works, and licences</h1>
+  <p class="lede">One YAML file → every format · built with open tools · some formats are “show, don’t tell” prototypes.</p>
+
+  <h2>How it works</h2>
+  <p>Everything on this site is generated from one source of truth: <a href="https://github.com/michael-borck/resume.borck.dev/blob/main/data/cv-data.yml"><code>data/cv-data.yml</code></a>.</p>
+  <ul>
+    <li><b>Quarto</b> builds the PDF, HTML and Reveal.js slides.</li>
+    <li><b>Python generators</b> (in <code>scripts/</code>) build the creative formats and the data exports.</li>
+    <li><b>inkjs</b> compiles and runs the Ink story; <b>deck-engine</b> powers one slide deck; <b>SlideStream</b> consumes the video source.</li>
+    <li><b>Astro</b> builds this portal; GitHub Pages serves it. Nothing reads the YAML live — run <code>make regenerate</code>, commit, and push.</li>
+  </ul>
+  <div class="note">The traditional résumé is still the boring-but-necessary artifact. The other formats are deliberately “show, don’t tell”: a systems-architecture foundation, an AI-forward view, and interactive-education demonstrations.</div>
+
+  <h2>Software</h2>
+  {groups.map((g) => (
+    <>
+      <div class="group-title">{g.name}</div>
+      <table>
+        <thead><tr><th>Tool</th><th>Used for</th><th>Licence</th></tr></thead>
+        <tbody>
+          {g.rows.map((r) => (
+            <tr>
+              <td class="tool">{r[3] !== '—' ? <a href={r[3]}>{r[0]}</a> : r[0]}</td>
+              <td>{r[1]}</td>
+              <td class="lic">{r[2]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
+  ))}
+  <p class="lede" style="margin-top:10px">Licences are as published by each project; check the linked repo for the authoritative text.</p>
+
+  <h2>Bespoke vs tool-built</h2>
+  <p><b>Tool-built:</b> {toolBuilt.join(' · ')}.</p>
+  <p><b>Bespoke (for now):</b> {bespoke.join(' · ')}. These are intentionally lightweight, dependency-free demonstrations.</p>
+
+  <h2>Future work</h2>
+  <ul>
+    <li><b>Lesson Loom</b> — generate and refine lesson plans with AI (the <a href="/creative/lesson-plan/">lesson plan</a> here uses its structure, deterministically).</li>
+    <li><b>SlideStream</b> — render the narrated MP4 / PowerPoint from <code>creative/videos/deck.md</code>.</li>
+    <li><b>playable-lessons / Knotebook</b> — author the Ink story and packs with those tools rather than bespoke glue.</li>
+    <li><b>deck-engine</b> — use its Markdown authoring front end for the slides rather than generating the HTML directly.</li>
+    <li><b>Gemini TTS</b> — synthesise the podcast when the API key has credits (the script and <code>make podcast-audio</code> are ready).</li>
+    <li><b>limn / SwarmUI</b> — dedicated sprite and scene art for Doom, the voxel island and the Ink scenes.</li>
+  </ul>
+
+  <h2>Licence &amp; content</h2>
+  <p>This project’s code is <b>MIT</b> (see <a href="https://github.com/michael-borck/resume.borck.dev/blob/main/LICENSE">LICENSE</a>). The CV content is © Michael Borck. Third-party components remain under their own licences above.</p>
+
+  <h2>Built with</h2>
+  <div class="pills">
+    {sw.map((t) => <a href={t[1]}>{t[0]}</a>)}
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-links">
+    <a href="https://linkedin.com/in/michaelborck">LinkedIn</a>
+    <a href="https://borck.dev">borck.dev</a>
+  </div>
+  <p>Michael Borck · Perth, WA · <a href="mailto:hello@borck.dev">hello@borck.dev</a></p>
+</footer>
+
+</body>
+</html>

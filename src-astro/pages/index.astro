@@ -27,6 +27,7 @@ const formats = [
   { icon: '❓', title: 'Quiz', desc: 'A replayable multiple-choice quiz — ten random questions from the CV, marked instantly.', href: '/creative/quiz/', badges: ['Quiz', 'Replayable'], group: 'learn' },
   { icon: '🃏', title: 'Flashcards', desc: 'Flip-card flashcards for study. Shuffle, flip, and print.', href: '/creative/flashcards/', badges: ['Study', 'Print'], group: 'learn' },
   { icon: '🕸️', title: 'Mindmap', desc: 'The whole career on one page as an SVG mindmap — experience, education, skills, projects, teaching, interests.', href: '/creative/mindmap/', badges: ['Mindmap', 'Visual'], group: 'learn' },
+  { icon: '🧑‍🏫', title: 'Lesson plan', desc: 'A 60-minute BOPPPS workshop using this site as the case study — objectives, timed activities, checks, UDL and a GenAI statement.', href: '/creative/lesson-plan/', badges: ['Teaching', 'BOPPPS'], group: 'learn' },
   { icon: '📊', title: 'Infographic', desc: 'A one-page visual CV: headline stats, skills by volume, timeline, education and projects. Printable.', href: '/creative/infographic/', badges: ['Visual', 'Print'], group: 'learn' },
   { icon: '🎴', title: 'Printable cards', desc: 'A deck of 24 career cards — roles, degrees, projects, books — laid out for A4 printing with cut lines.', href: '/creative/cards/', badges: ['Cards', 'Print'], group: 'learn' },
   { icon: '🎧', title: 'Podcast', desc: 'A two-host podcast script of the career, ready to record or generate as audio via NotebookLM.', href: '/creative/podcast/', badges: ['Audio', 'Script'], group: 'learn' },
@@ -41,7 +42,7 @@ const formats = [
   { icon: '📚', title: 'Knotebook pack', desc: 'The Valley Ink story as a self-contained .knotebook.json pack, artwork embedded — import and play offline.', href: '/creative/knotebook/', badges: ['Cross-app', 'Ink'], group: 'use' },
   { icon: '🔌', title: 'API Documentation', desc: 'A mock Swagger-style REST interface — browse the CV as if it were API endpoints.', href: '/creative/api/', badges: ['Mock API', 'Read'], group: 'read' },
   { icon: '📦', title: 'The Source', desc: 'One YAML file generates everything above. One edit, every format updated.', href: 'https://github.com/michael-borck/resume.borck.dev/blob/main/data/cv-data.yml', badges: ['YAML', 'Source'], group: 'use' },
-  { icon: '⚙️', title: 'How It Works', desc: 'Quarto → PDF/HTML/Slides · Python → every creative format · FastAPI → Live API · MCP → AI', href: 'https://github.com/michael-borck/resume.borck.dev', badges: ['Pipeline', 'Make'], group: 'use' },
+  { icon: '⚙️', title: 'How It Works', desc: 'How it works: YAML → generators → build. Software, licences, acknowledgements and future work.', href: '/credits', badges: ['Pipeline', 'Licences'], group: 'use' },
 ];
 
 const read = formats.filter((f) => f.group === 'read');
@@ -60,6 +61,13 @@ const ext = (href) => href.startsWith('http');
   <title>resume.borck.dev</title>
   <meta name="description" content={`One YAML file, ${exploreCount} ways to explore it — Michael Borck's interactive resume.`} />
   <link rel="icon" href="/favicon.svg" />
+  <style>
+    .builtwith { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; align-items: center; margin: 18px 0 10px; }
+    .builtwith .bw-label { font-family: var(--mono); font-size: 0.7rem; color: var(--gray-1); letter-spacing: 1px; text-transform: uppercase; margin-right: 4px; }
+    .builtwith a { font-family: var(--mono); font-size: 0.72rem; color: var(--text); border: 1px solid var(--gray-3); border-radius: 999px; padding: 4px 10px; text-decoration: none; }
+    .builtwith a:hover { border-color: var(--accent); color: var(--accent-high); }
+    .builtwith .bw-credits { border-color: var(--accent); color: var(--accent-high); }
+  </style>
 </head>
 <body>
 
@@ -170,6 +178,21 @@ const ext = (href) => href.startsWith('http');
   <div class="footer-links">
     <a href="https://linkedin.com/in/michaelborck">LinkedIn</a>
     <a href="https://borck.dev">borck.dev</a>
+    <a href="/credits">Credits &amp; how it works</a>
+  </div>
+  <div class="builtwith">
+    <span class="bw-label">Built with</span>
+    <a href="https://astro.build">Astro</a>
+    <a href="https://quarto.org">Quarto</a>
+    <a href="https://revealjs.com">Reveal.js</a>
+    <a href="https://github.com/inkle/inkjs">inkjs</a>
+    <a href="https://github.com/michael-borck/deck-engine">deck-engine</a>
+    <a href="https://slidestream.borck.education">SlideStream</a>
+    <a href="https://lessonloom.borck.education">Lesson Loom</a>
+    <a href="https://github.com/michael-borck/playable-lessons">playable-lessons</a>
+    <a href="https://knotebook.borck.education">Knotebook</a>
+    <a href="https://swipeverse.app">SwipeVerse</a>
+    <a href="/credits" class="bw-credits">Credits &amp; licences →</a>
   </div>
   <p>Michael Borck · Perth, WA · <a href="mailto:hello@borck.dev">hello@borck.dev</a></p>
 </footer>

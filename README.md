@@ -21,6 +21,7 @@ One YAML file, twelve ways to explore it. Everything on [resume.borck.dev](https
 | ❓ Quiz (replayable MCQ) | `scripts/generate_learn.py` | `creative/quiz/` |
 | 🃏 Flashcards | `scripts/generate_learn.py` | `creative/flashcards/` |
 | 🕸️ Mindmap | `scripts/generate_learn.py` | `creative/mindmap/` |
+| 🧑‍🏫 Lesson plan (BOPPPS) | `scripts/generate_lesson_plan.py` | `creative/lesson-plan/` |
 | 📊 Infographic | `scripts/generate_print.py` | `creative/infographic/` |
 | 🎴 Printable cards | `scripts/generate_print.py` | `creative/cards/` |
 | 📈 Gantt chart | `scripts/generate_charts.py` | `creative/gantt/` |
