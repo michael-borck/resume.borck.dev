@@ -9,7 +9,7 @@
 
 # Teaching
 - "Make Contact Count - maximising impact through every student interaction"
-- 100% satisfaction across several units
+- 85% avg rating across 38 deliveries
 - Caring, competence, passion
 
 # Research
@@ -24,10 +24,59 @@
 - Feed Forward System
 
 # Books
-- Python Step By Step in an AI World
-- JumpStart Python in the AI Era
-- Intentional Prompting: Blending AI and Human Oversight
-- Python Dev Book: From Zero to Production
+- L
+- e
+- a
+- r
+- n
+- i
+- n
+- g
+-  
+- w
+- i
+- t
+- h
+-  
+- A
+- I
+-  
+- s
+- e
+- r
+- i
+- e
+- s
+-  
+- (
+- s
+- e
+- l
+- f
+- -
+- p
+- u
+- b
+- l
+- i
+- s
+- h
+- e
+- d
+- ,
+-  
+- f
+- r
+- e
+- e
+-  
+- o
+- n
+- l
+- i
+- n
+- e
+- )
 
 # LocoLabo
 - Applied local-AI research lab

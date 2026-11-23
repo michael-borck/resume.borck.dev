@@ -16,7 +16,7 @@
     "Curtin University",
     "Feb 2016 \u2013 Present",
     "AI Program Leadership - AI Leader for the School, developing new AI programs within undergraduate and postgraduate curricula",
-    "Research Leadership - Founder of LocoLabo, an applied local-AI research lab"
+    "Research Leadership - Founder of LocoLabo, a self-funded applied-AI research lab (12 projects, 52 GPUs, $0 sponsorship) mapping what small local models can do on hardware people already own; umbrella for the Spanish-named project family (LocoLLM, LocoBanco, LocoEnsayo, LocoPuente, LocoAgente, LocoConvoy)"
    ]
   },
   {
@@ -44,9 +44,9 @@
   },
   {
    "category": "achievements",
-   "title": "Educational Leadership",
+   "title": "Teaching Excellence",
    "body": [
-    "AI Leader for School of Marketing and Management, led development of AI curriculum serving 500+ students across undergraduate and postgraduate programs"
+    "85.0% average student rating across 38 unit deliveries since 2019, with 16 deliveries scoring 100% and all six survey dimensions at or above 80%"
    ]
   },
   {
@@ -74,12 +74,12 @@
   },
   {
    "category": "experience",
-   "title": "Course Leadership & Development",
+   "title": "Course Lead \u2014 Information Systems",
    "body": [
     "Curtin University",
-    "Ongoing",
+    "2020 \u2013 2023",
     "Course Lead for Information Systems undergraduate and postgraduate degree programs",
-    "Unit coordination across multiple levels - postgraduate, undergraduate, core, non-core, and service units (domestic and international)"
+    "Led the repositioning of the Master of Information Systems and Technology into a standalone degree"
    ]
   },
   {
@@ -107,16 +107,16 @@
   },
   {
    "category": "achievements",
-   "title": "Teaching Excellence",
+   "title": "Research Funding",
    "body": [
-    "Achieved 100% student satisfaction scores across multiple units (ISYS3015, ISYS2001, ISYS6018) with consistent \"effective teacher\" ratings"
+    "Lead Investigator on the AUD $20,000 Curtin Needs-Based Funding (Learning & Teaching) Grant 2026, awarded on an evidence base of 14,973 logged student-AI interactions; technical co-lead on the Assessment 2030 Future Fund (AUD $10,560, 2025)"
    ]
   },
   {
    "category": "teaching",
-   "title": "100% Satisfaction Scores",
+   "title": "85.0% average student rating",
    "body": [
-    "Achieved across ISYS3015 Business Application Development, ISYS2001 Introduction to Business Programming, and ISYS6018 Information Security"
+    "Across 38 unit deliveries since 2019 (eVALUate to 2022, Insight from 2023); all six survey dimensions at or above 80% - Assessments 89.2%, Engagement 86.8%, Expectations 85.5%, Resources 84.9%, Support 81.2%"
    ]
   },
   {
@@ -168,16 +168,16 @@
   },
   {
    "category": "achievements",
-   "title": "Technical Innovation",
+   "title": "Research Outputs",
    "body": [
-    "Creator of multiple AI-powered educational tools including Reality Reigns, Talk Buddy, and Curriculum Curator with 290+ downloads"
+    "Accepted ACIS 2026 (solo) and ASCILITE 2026 (contributing) papers, with a sustained program of AI-in-education scholarship and invited research seminars"
    ]
   },
   {
    "category": "teaching",
-   "title": "100% 'Effective Teacher' Ratings",
+   "title": "16 deliveries at 100%",
    "body": [
-    "Across Enterprise Network Security, Business Systems Selection, and Introduction to Programming units"
+    "Top results sustained across 8 units, alongside a 12% average pass-rate uplift in AI-redesigned units and a return to 100% in Semester 2 2025 after the 2024 AI transition"
    ]
   },
   {
@@ -229,16 +229,16 @@
   },
   {
    "category": "achievements",
-   "title": "Industry Impact",
+   "title": "Course Leadership",
    "body": [
-    "Executive education training delivered to 100+ professionals across 15+ companies in academics, education, agriculture and mining sectors"
+    "Led the repositioning of the Master of Information Systems and Technology into a standalone degree, growing it ~6x to 110 EFTSL (2025) and 148 EFTSL year-to-date (2026); secured Australian Computer Society accreditation"
    ]
   },
   {
-   "category": "interests",
-   "title": "Atari 2600 Programming",
+   "category": "teaching",
+   "title": "Full-span teaching reach",
    "body": [
-    "A life beyond work"
+    "Undergraduate, postgraduate and executive education - a range few academics deliver across - online and on-campus, domestic and international (China), from small specialist classes to cohorts of 300"
    ]
   }
  ],

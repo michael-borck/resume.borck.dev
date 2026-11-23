@@ -55,7 +55,7 @@ def create_terminal_world(cv_data):
                           "Whiteboards covered with AI algorithms and system designs.",
             'ascii': """
     🎓 ACADEMIC EXCELLENCE 🎓
-    100% Student Satisfaction
+    85% Avg Student Rating
             """,
             'exits': {
                 'west': 'lobby',
@@ -149,7 +149,7 @@ def create_terminal_world(cv_data):
             'points': 10
         },
         'teaching_award': {
-            'description': "Certificate of Excellence: 100% Student Satisfaction Score - ISYS3015, ISYS2001, ISYS6018",
+            'description': "Certificate of Excellence: 85% average student rating across 38 unit deliveries since 2019",
             'takeable': True,
             'points': 20
         },
@@ -159,7 +159,7 @@ def create_terminal_world(cv_data):
             'points': 0
         },
         'reality_reigns': {
-            'description': "Swipe-based decision game providing interactive fiction storytelling. 290+ downloads and growing!",
+            'description': "Swipe-based decision game providing interactive fiction storytelling. Part of a suite of 30+ free apps (1,400+ monthly downloads).",
             'takeable': False,
             'points': 0
         },
@@ -179,17 +179,18 @@ def create_terminal_world(cv_data):
             'points': 15
         },
         'books': {
-            'description': "Four published books (Creative Commons):\n" +
-                         "- Python Step By Step in an AI World\n" +
-                         "- JumpStart Python in the AI Era\n" +
-                         "- Intentional Prompting: Blending AI and Human Oversight\n" +
-                         "- Python Dev Book: From Zero to Production",
+            'description': "'Learning with AI' open-textbook series (self-published, free online):\n" +
+                         "- Conversation, Not Delegation\n" +
+                         "- The Human Edge\n" +
+                         "- Speak Software\n" +
+                         "- Model Data, Verify AI\n" +
+                         "+ domain companions",
             'takeable': False,
             'points': 0
         },
         'publications': {
             'description': "Academic publications:\n" +
-                         "- 6+ peer-reviewed papers on computer vision and machine learning\n" +
+                         "- 7 peer-reviewed papers across computer vision, machine learning, and AI in education\n" +
                          "- Conference presentations on AI in education\n" +
                          "- Research on automated feature extraction",
             'takeable': True,

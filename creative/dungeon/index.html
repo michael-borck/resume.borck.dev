@@ -17,16 +17,21 @@
     <span class="sub" id="hud">HP 24/24 · ATK 3 · depth 1/3 · relics 0</span>
     <span class="spacer"></span>
     <button class="mini" id="helpBtn">help</button>
-    <button class="mini" id="mapBtn">map</button>
     <button class="mini" id="restartBtn">restart</button>
   </header>
 
-  <pre class="out" id="out" aria-live="polite"></pre>
+  <main class="stage">
+    <div class="mapwrap">
+      <pre class="map" id="map" tabindex="0" aria-label="dungeon map — use arrow keys or WASD to move"></pre>
+    </div>
+    <div class="logwrap">
+      <div class="log" id="log" aria-live="polite"></div>
+    </div>
+  </main>
 
   <form class="prompt" id="form" autocomplete="off">
     <span class="caret">&gt;</span>
-    <input id="cmd" type="text" spellcheck="false" autocomplete="off" autocapitalize="off" aria-label="command" placeholder="press Enter or / to type a command…" />
-    <span class="khint">arrows / WASD move · p potion · &gt; descend</span>
+    <input id="cmd" type="text" spellcheck="false" autocomplete="off" autocapitalize="off" aria-label="command" placeholder="arrows / WASD move · p potion · &gt; descend · ? help · / command" />
   </form>
 </div>
 <a class="portal-backlink" href="../../index.html">← CV Portal</a>

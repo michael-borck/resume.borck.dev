@@ -30,7 +30,7 @@
     "academic": {
       "name": "University Lecture Hall",
       "description": "Curtin University. The hall echoes with the sound of engaged students. Whiteboards covered with AI algorithms and system designs.",
-      "ascii": "\n    \ud83c\udf93 ACADEMIC EXCELLENCE \ud83c\udf93\n    100% Student Satisfaction\n            ",
+      "ascii": "\n    \ud83c\udf93 ACADEMIC EXCELLENCE \ud83c\udf93\n    85% Avg Student Rating\n            ",
       "exits": {
         "west": "lobby",
         "north": "research_lab"
@@ -119,7 +119,7 @@
       "points": 10
     },
     "teaching_award": {
-      "description": "Certificate of Excellence: 100% Student Satisfaction Score - ISYS3015, ISYS2001, ISYS6018",
+      "description": "Certificate of Excellence: 85% average student rating across 38 unit deliveries since 2019",
       "takeable": true,
       "points": 20
     },
@@ -129,7 +129,7 @@
       "points": 0
     },
     "reality_reigns": {
-      "description": "Swipe-based decision game providing interactive fiction storytelling. 290+ downloads and growing!",
+      "description": "Swipe-based decision game providing interactive fiction storytelling. Part of a suite of 30+ free apps (1,400+ monthly downloads).",
       "takeable": false,
       "points": 0
     },
@@ -149,12 +149,12 @@
       "points": 15
     },
     "books": {
-      "description": "Four published books (Creative Commons):\n- Python Step By Step in an AI World\n- JumpStart Python in the AI Era\n- Intentional Prompting: Blending AI and Human Oversight\n- Python Dev Book: From Zero to Production",
+      "description": "'Learning with AI' open-textbook series (self-published, free online):\n- Conversation, Not Delegation\n- The Human Edge\n- Speak Software\n- Model Data, Verify AI\n+ domain companions",
       "takeable": false,
       "points": 0
     },
     "publications": {
-      "description": "Academic publications:\n- 6+ peer-reviewed papers on computer vision and machine learning\n- Conference presentations on AI in education\n- Research on automated feature extraction",
+      "description": "Academic publications:\n- 7 peer-reviewed papers across computer vision, machine learning, and AI in education\n- Conference presentations on AI in education\n- Research on automated feature extraction",
       "takeable": true,
       "points": 10
     },
@@ -277,6 +277,9 @@
     "github": "https://github.com/michael-borck",
     "portfolio": "https://borck.dev",
     "education_platform": "https://borck.education",
+    "orcid": "https://orcid.org/0000-0002-0950-6396",
+    "scholar": "https://scholar.google.com/citations?user=fwNMowoAAAAJ",
+    "research": "https://research.borck.dev",
     "location": "Perth, WA"
   },
   "experience": [
@@ -286,9 +289,9 @@
       "period": "Feb 2016 \u2013 Present"
     },
     {
-      "title": "Course Leadership & Development",
+      "title": "Course Lead \u2014 Information Systems",
       "organization": "Curtin University",
-      "period": "Ongoing"
+      "period": "2020 \u2013 2023"
     },
     {
       "title": "Associate Lecturer",

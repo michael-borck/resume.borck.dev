@@ -54,9 +54,9 @@ def gen_infographic(cv):
     skills = cv.get("skills", {}) or {}
 
     stats = [
-        ("25+", "years across military, academia & consulting"),
-        ("100%", "student satisfaction across several units"),
-        (str(len(books)), "books (Creative Commons)"),
+        ("35+", "years across military, academia & consulting"),
+        ("85%", "avg student rating across 38 deliveries"),
+        ("4 +", "core books & companions (self-published)"),
         (f"{len(confs)}+", "peer-reviewed papers"),
         ("500+", "students taught"),
         ("100+", "executives trained"),

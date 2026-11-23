@@ -49,6 +49,12 @@ def generate_llms_txt(cv):
     lines.append(f"- Portfolio: {p['portfolio']}")
     if p.get('education_platform'):
         lines.append(f"- Education: {p['education_platform']}")
+    if p.get('scholar'):
+        lines.append(f"- Google Scholar: {p['scholar']}")
+    if p.get('orcid'):
+        lines.append(f"- ORCID: {p['orcid']}")
+    if p.get('research'):
+        lines.append(f"- Research: {p['research']}")
     lines.append("")
 
     # Key Achievements
@@ -142,8 +148,21 @@ def generate_llms_txt(cv):
         if pubs.get('conferences'):
             lines.append("### Conference Papers")
             for c in pubs['conferences']:
-                lines.append(f"- {c['authors']} ({c['year']}). {c['title']}. {c['venue']}, {c.get('location', '')}.")
+                loc = f", {c['location']}" if c.get('location') else ""
+                lines.append(f"- {c['authors']} ({c['year']}). {c['title']}. {c['venue']}{loc}.")
             lines.append("")
+
+    # Grants & Research Funding
+    if cv.get('grants'):
+        lines.append("## Grants & Research Funding")
+        lines.append("")
+        for g in cv['grants']:
+            meta = ", ".join(x for x in [g.get('role'), g.get('amount')] if x)
+            tail = f" — {meta}" if meta else ""
+            lines.append(f"- {g.get('title', '')} — {g.get('scheme', '')}, {g.get('funder', '')} ({g.get('year', '')}){tail}")
+            if g.get('summary'):
+                lines.append(f"  {g['summary']}")
+        lines.append("")
 
     # Projects
     if cv.get('projects'):

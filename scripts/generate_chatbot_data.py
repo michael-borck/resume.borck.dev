@@ -197,7 +197,7 @@ def generate_knowledge_base(cv_data):
             "Talk Buddy - Conversational AI for engagement", 
             "Curriculum Curator - AI content organization tool"
         ],
-        "downloads": "290+"
+        "downloads": "1,400+"
     }
     
     # Cybersecurity expertise
@@ -206,7 +206,7 @@ def generate_knowledge_base(cv_data):
             "Lead lecturer for cybersecurity programs",
             "Advanced digital forensics curriculum",
             "Information Security unit coordination",
-            "100% student satisfaction in security courses"
+            "85% average student rating across 38 deliveries since 2019"
         ],
         "military_foundation": [
             "12 years Royal Australian Navy",
@@ -283,11 +283,11 @@ def generate_intents_data(cv_data):
         },
         
         "quick_facts": {
-            "years_experience": 25,
-            "books_published": 4,
-            "student_satisfaction": "100%",
-            "tools_created": 3,
-            "downloads": "290+",
+            "years_experience": 35,
+            "books_published": 7,
+            "student_satisfaction": "85%",
+            "tools_created": "30+",
+            "downloads": "1,400+",
             "universities_served": "5+",
             "companies_trained": "15+"
         }

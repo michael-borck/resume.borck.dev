@@ -11,7 +11,7 @@
 
 **Alex:** There's a line he keeps coming back to in his teaching.
 
-**Sam:** "Make Contact Count - maximising impact through every student interaction." It's not a slogan; it shows up in 100% satisfaction scores across several units. The person is the point, not the platform.
+**Sam:** "Make Contact Count - maximising impact through every student interaction." It's not a slogan; it shows up in an 85% average student rating across 38 unit deliveries since 2019. The person is the point, not the platform.
 
 **Alex:** And there's research underneath it.
 
@@ -23,7 +23,7 @@
 
 **Alex:** And the books?
 
-**Sam:** 4 of them, released Creative Commons. Wanting the work to travel matters more than owning it.
+**Sam:** Four core books and a set of companions, self-published and free to read online. Wanting the work to travel matters more than owning it.
 
 **Alex:** Which brings us to LocoLabo.
 

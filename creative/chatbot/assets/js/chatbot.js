@@ -30,7 +30,7 @@ async function loadKnowledgeBase() {
             profile: {
                 name: "Michael Borck",
                 title: "AI Leader & Cyber Security Expert",
-                summary: "AI Leader and Cyber Security expert with 25+ years spanning military → academia → industry consulting transition."
+                summary: "AI Leader and Cyber Security expert with 35+ years spanning military → academia → industry consulting."
             },
             experience: [],
             skills: {},

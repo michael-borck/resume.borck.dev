@@ -882,7 +882,7 @@ class FloatingChatWidget {
         }
         
         if (lowerMessage.includes('experience') || lowerMessage.includes('work')) {
-            return "I have 25+ years of experience spanning military service, academia, and industry consulting. Currently, I'm a Senior Lecturer at Curtin University leading AI education initiatives. Would you like to know more about any specific area?";
+            return "I have 35+ years of experience spanning military service, academia, and industry consulting. Currently, I'm a Senior Lecturer at Curtin University leading AI education initiatives. Would you like to know more about any specific area?";
         }
         
         if (lowerMessage.includes('skill') || lowerMessage.includes('programming')) {

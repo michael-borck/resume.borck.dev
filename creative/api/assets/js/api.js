@@ -35,9 +35,9 @@ async function loadApiData() {
                 "location": "Perth, WA, Australia",
                 "linkedin": "https://linkedin.com/in/michael-borck",
                 "github": "https://github.com/michael-borck",
-                "summary": "AI Leader and Cyber Security expert with 25+ years spanning military → academia → industry consulting transition. Author of 4 technical books, creator of innovative educational AI tools, and pioneer in AI-enhanced pedagogy.",
+                "summary": "AI Leader and Cyber Security expert with 35+ years spanning military → academia → industry consulting. Author of the 'Learning with AI' open-textbook series, creator of innovative educational AI tools, and a leader in AI-enhanced pedagogy.",
                 "tagline": "Make Contact Count",
-                "years_experience": 25,
+                "years_experience": 35,
                 "books_published": 4,
                 "teaching_philosophy": ["Caring", "Competence", "Passion"]
             },
@@ -53,14 +53,14 @@ async function loadApiData() {
                     "location": "Perth, WA",
                     "description": "Leading AI education and research initiatives",
                     "key_responsibilities": [
-                        "Founder of LocoLabo, an applied local-AI research lab",
-                        "Pioneer in AI-enhanced pedagogy",
+                        "Founder of LocoLabo, a self-funded applied-AI research lab",
+                        "Leader in AI-enhanced pedagogy",
                         "Creator of interactive educational tools",
                         "Development of assessment frameworks"
                     ],
                     "achievements": [
-                        "100% student satisfaction rating",
-                        "Published 4 technical books",
+                        "85% average student rating across 38 deliveries",
+                        "Author of the 'Learning with AI' open-textbook series",
                         "Created innovative AI teaching tools",
                         "Led research in educational technology"
                     ]
@@ -126,38 +126,52 @@ async function loadApiData() {
                     "description": "Interactive educational platform using AI for personalized learning",
                     "technologies": ["Python", "Flask", "TensorFlow", "React"],
                     "status": "active",
-                    "impact": "Improved student engagement by 40%"
+                    "impact": "Part of a suite of 30+ free apps with 1,400+ monthly downloads"
                 },
                 {
                     "name": "Cybersecurity Assessment Framework",
                     "description": "Automated security assessment tool for educational institutions",
                     "technologies": ["Python", "FastAPI", "PostgreSQL"],
                     "status": "deployed",
-                    "impact": "Used by 5+ universities"
+                    "impact": "CloudCore simulation, selected as Curtin's Assessment 2030 Lane 2 exemplar"
                 }
             ],
             publications: [
                 {
-                    "title": "AI in Education: A Practical Guide",
+                    "title": "Conversation, Not Delegation: How to Think With AI, Not Just Use It",
                     "type": "Book",
-                    "year": "2023",
-                    "publisher": "Creative Commons",
-                    "description": "Comprehensive guide to implementing AI in educational settings"
+                    "year": "2026",
+                    "publisher": "Self-published (KDP/ISBN)",
+                    "description": "Foundational methodology for thinking with AI (Learning with AI, Book 1)"
                 },
                 {
-                    "title": "Cybersecurity Fundamentals",
-                    "type": "Book", 
-                    "year": "2022",
-                    "publisher": "Creative Commons",
-                    "description": "Essential cybersecurity concepts for modern organizations"
+                    "title": "The Human Edge: Using AI with Judgement",
+                    "type": "Book",
+                    "year": "2026",
+                    "publisher": "Self-published (KDP/ISBN)",
+                    "description": "Professional judgement for everyday work (Learning with AI, Book 2)"
+                },
+                {
+                    "title": "Speak Software: Programming at the Natural-Language Layer",
+                    "type": "Book",
+                    "year": "2026",
+                    "publisher": "Self-published",
+                    "description": "Specification, guardrails, and verification (Learning with AI, Book 3)"
+                },
+                {
+                    "title": "Model Data, Verify AI: Relational Design and SQL in the AI Era",
+                    "type": "Book",
+                    "year": "2026",
+                    "publisher": "Self-published",
+                    "description": "The data layer when AI writes the SQL (Learning with AI, Book 4)"
                 }
             ],
             achievements: [
-                "100% Student Satisfaction Rating",
-                "4 Published Technical Books",
+                "85% Average Student Rating (38 deliveries)",
+                "4 Core Books + Companions (self-published)",
                 "Founder of LocoLabo",
-                "Pioneer in AI-Enhanced Pedagogy",
-                "12 Years Military Service - Top Secret Clearance"
+                "Leader in AI-Enhanced Pedagogy",
+                "35+ Years across Military, Academia & Consulting"
             ]
         };
     }

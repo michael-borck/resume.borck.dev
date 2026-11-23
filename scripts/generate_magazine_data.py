@@ -37,10 +37,10 @@ def create_magazine_content(cv_data):
             'lead': 'A journey through technology, education, and innovation spanning over two decades',
             'image': 'https://source.unsplash.com/1600x900/?technology,innovation',
             'stats': [
-                {'value': '11+', 'label': 'Years Experience'},
-                {'value': '100%', 'label': 'Student Satisfaction'},
-                {'value': '4', 'label': 'Published Books'},
-                {'value': '290+', 'label': 'App Downloads'}
+                {'value': '35+', 'label': 'Years Experience'},
+                {'value': '85%', 'label': 'Avg Student Rating'},
+                {'value': '7', 'label': 'Open Textbooks'},
+                {'value': '1,400+', 'label': 'Monthly Downloads'}
             ]
         },
         
@@ -62,7 +62,7 @@ def create_magazine_content(cv_data):
                 {
                     'type': 'chapter',
                     'title': 'Academic Excellence',
-                    'text': 'Transitioning to academia, Michael became a beloved educator at Curtin University, achieving the rare feat of 100% student satisfaction across multiple units.',
+                    'text': 'Transitioning to academia, Michael became a dedicated educator at Curtin University, earning an 85% average student rating across 38 unit deliveries since 2019.',
                     'highlight': 'AI Leader for School of Marketing and Management'
                 },
                 {
@@ -107,9 +107,9 @@ def create_magazine_content(cv_data):
                 'title': 'Transforming Education with AI',
                 'subtitle': 'Making Learning Engaging',
                 'image': 'https://source.unsplash.com/800x600/?classroom,teaching',
-                'content': 'Pioneering AI integration in education while maintaining the highest student satisfaction scores.',
+                'content': 'Leading AI integration in education while maintaining an 85% average student rating across 38 unit deliveries.',
                 'highlights': [
-                    '100% Student Satisfaction',
+                    '85% Avg Student Rating',
                     'AI Curriculum Development',
                     'Interactive Learning Tools'
                 ]
@@ -239,7 +239,7 @@ def create_magazine_content(cv_data):
                     'image': 'https://source.unsplash.com/300x450/?coding,development,book'
                 }
             ],
-            'research': '6+ peer-reviewed publications in computer vision and machine learning'
+            'research': '7 peer-reviewed publications across computer vision, machine learning, and AI in education'
         },
         
         'contact': {
@@ -258,14 +258,14 @@ def create_magazine_content(cv_data):
                 {'label': 'Current Role', 'value': 'Lecturer & AI Leader'},
                 {'label': 'Location', 'value': cv_data['personal']['location']},
                 {'label': 'Specialization', 'value': 'AI, Education, Innovation'},
-                {'label': 'Years Experience', 'value': '11+'}
+                {'label': 'Years Experience', 'value': '35+'}
             ],
             'achievements': [
-                '🏆 100% Student Satisfaction',
-                '📚 4 Published Books',
+                '🏆 85% Student Satisfaction (38 deliveries)',
+                '📚 4 Core Books + Companions',
                 '🤖 AI Program Leader',
-                '🎯 290+ App Downloads',
-                '🔬 6+ Research Publications',
+                '🎯 1,400+ Monthly Downloads',
+                '🔬 7 Research Publications',
                 '💡 Multiple Innovation Projects'
             ],
             'certifications': [cert['name'] for cert in cv_data.get('certifications', [])[:5]]

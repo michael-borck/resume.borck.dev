@@ -71,15 +71,14 @@ def podcast_md(cv) -> str:
     turn("Alex", "And then the turn — from the uniform to the whiteboard?")
     turn("Sam", f"Exactly. A lecturer's post at {f['lecturer_org']}. Same instinct, different audience: explain the system so other people can use it.")
     turn("Alex", "There's a line he keeps coming back to in his teaching.")
-    turn("Sam", f"\"{f['core']}.\" It's not a slogan; it shows up in 100% satisfaction scores across several units. The person is the point, not the platform.")
+    turn("Sam", f"\"{f['core']}.\" It's not a slogan; it shows up in an 85% average student rating across 38 unit deliveries since 2019. The person is the point, not the platform.")
     turn("Alex", "And there's research underneath it.")
     turn("Sam", f"A PhD in {f['phd_year']} from {f['phd_inst']}, on computer vision and feature extraction from mobile mapping data. That depth feeds the teaching.")
     turn("Alex", "Then the building — the tools.")
     if f["projects"]:
         turn("Sam", f"Yes: {', '.join(f['projects'])}. Swipe-based story games, AI conversation practice, curriculum tools, feedback systems. All aimed at keeping the human thinking.")
     turn("Alex", "And the books?")
-    if f["books"]:
-        turn("Sam", f"{len(f['books'])} of them, released Creative Commons. Wanting the work to travel matters more than owning it.")
+    turn("Sam", "Four core books and a set of companions, self-published and free to read online. Wanting the work to travel matters more than owning it.")
     turn("Alex", "Which brings us to LocoLabo.")
     turn("Sam", "An applied local-AI lab: small models on modest hardware, keeping data on-premises. The thesis is conversation, not delegation.")
     turn("Alex", f"Off the clock? I'm told {', '.join(f['interests']) or 'karate and astronomy'}.")
@@ -153,10 +152,10 @@ def slide_stream_md(cv) -> str:
     slides = [
         ("Michael Borck", [f"A career across military, academia and industry.", f"{f['loc']} · {f['email']}"]),
         ("The path", [f"{f['first_period'] or '1989'} — {f['first_title']}, {f['first_org']}", f"Lecturer at {f['lecturer_org']} from 2001", "PhD in computer vision"]),
-        ("Teaching", [f"\"{f['core']}\"", "100% satisfaction across several units", "Caring, competence, passion"]),
+        ("Teaching", [f"\"{f['core']}\"", "85% avg rating across 38 deliveries", "Caring, competence, passion"]),
         ("Research", [f"PhD {f['phd_year']}, {f['phd_inst']}", "Feature extraction from mobile mapping data", "Computer vision & machine learning"]),
         ("Building", (f["projects"] or ["Tools for teaching", "AI conversation practice"])),
-        ("Books", f["books"] or ["Creative Commons technical books"]),
+        ("Books", "Learning with AI series (self-published, free online)"),
         ("LocoLabo", ["Applied local-AI research lab", "Small models on modest hardware", "Conversation, not delegation"]),
         ("Beyond work", f["interests"] or ["Karate", "Astronomy"]),
         ("Get in touch", [f["email"], f["loc"]]),

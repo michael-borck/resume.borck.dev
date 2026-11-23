@@ -22,7 +22,8 @@ with open("../data/cv-data.yml", 'r') as f:
 ## Contact Information
 
 {{< meta personal.email >}} | {{< meta personal.phone >}}  
-[LinkedIn]({{< meta personal.linkedin >}}) | [GitHub]({{< meta personal.github >}}) | [Portfolio]({{< meta personal.portfolio >}}) | [Education Platform]({{< meta personal.education_platform >}})
+[LinkedIn]({{< meta personal.linkedin >}}) | [GitHub]({{< meta personal.github >}}) | [Portfolio]({{< meta personal.portfolio >}}) | [Education Platform]({{< meta personal.education_platform >}})  
+[Google Scholar]({{< meta personal.scholar >}}) | [ORCID]({{< meta personal.orcid >}}) | [Research]({{< meta personal.research >}})
 :::
 
 ::: {.content-visible when-format="revealjs"}
@@ -33,6 +34,7 @@ with open("../data/cv-data.yml", 'r') as f:
 - 🔗 [LinkedIn]({{< meta personal.linkedin >}})
 - 💻 [GitHub]({{< meta personal.github >}})
 - 🌐 [Portfolio]({{< meta personal.portfolio >}})
+- 🎓 [Google Scholar]({{< meta personal.scholar >}}) · [ORCID]({{< meta personal.orcid >}}) · [Research]({{< meta personal.research >}})
 :::
 
 ## Teaching Excellence & Innovation {.content-visible when-format="html"}
@@ -95,7 +97,7 @@ for job in cv_data['experience']:
 ## Publications
 
 ::: {.content-visible unless-format="revealjs"}
-### Books (Self-Published, Creative Commons Licensed)
+### Books (Self-Published, Open Access)
 
 ```{python}
 #| output: asis
@@ -133,9 +135,9 @@ for conf in cv_data['publications']['conferences']:
 ::: {.content-visible when-format="revealjs"}
 ### Selected Publications
 
-- **4 Technical Books** (Creative Commons Licensed)
+- **4 core books + domain companions** (self-published, free online; KDP print/ISBN)
 - **PhD Thesis:** Feature Extraction from Multi-modal Data (2017)
-- **6+ Peer-reviewed Conference Papers** in Computer Vision & ML
+- **7 Peer-reviewed Conference Papers** — Computer Vision & ML; AI in Education (ACIS 2026, ASCILITE 2026)
 :::
 
 ## Open Source Projects & Educational Tools
@@ -149,6 +151,22 @@ for project in cv_data['projects']:
     if 'year' in project and project['year']:
         output += f" – {project['year']}"
     print(output)
+```
+
+## Grants & Research Funding {.content-visible unless-format="revealjs"}
+
+```{python}
+#| output: asis
+for g in cv_data.get('grants', []) or []:
+    line = f"- **{g.get('title', '')}** — {g.get('scheme', '')}, {g.get('funder', '')} ({g.get('year', '')})"
+    role = g.get('role')
+    amount = g.get('amount')
+    meta = ", ".join(x for x in [role, amount] if x)
+    if meta:
+        line += f" — {meta}"
+    print(line)
+    if g.get('summary'):
+        print(f"  \n  {g['summary']}")
 ```
 
 ## Education

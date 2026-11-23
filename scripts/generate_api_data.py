@@ -38,9 +38,12 @@ def generate_api_responses(cv_data):
         "github": cv_data['personal']['github'],
         "portfolio": cv_data['personal'].get('portfolio', ''),
         "education_platform": cv_data['personal'].get('education_platform', ''),
+        "scholar": cv_data['personal'].get('scholar', ''),
+        "orcid": cv_data['personal'].get('orcid', ''),
+        "research": cv_data['personal'].get('research', ''),
         "summary": cv_data['summary']['main'],
         "tagline": cv_data['teaching']['philosophy']['core'],
-        "years_experience": 25,  # From summary: "25+ years"
+        "years_experience": 35,  # From summary: "35+ years"
         "books_published": len(cv_data.get('publications', {}).get('books', [])),
         "teaching_philosophy": {
             "core": cv_data['teaching']['philosophy']['core'],
@@ -137,6 +140,19 @@ def generate_api_responses(cv_data):
     # Achievements endpoint response
     achievements = cv_data.get('achievements', [])
     
+    # Grants & research funding
+    grants_list = []
+    for g in cv_data.get('grants', []) or []:
+        grants_list.append({
+            "title": g.get('title', ''),
+            "scheme": g.get('scheme', ''),
+            "funder": g.get('funder', ''),
+            "role": g.get('role', ''),
+            "amount": g.get('amount', ''),
+            "year": g.get('year', ''),
+            "summary": g.get('summary', '')
+        })
+    
     # Create API specification structure
     api_spec = {
         "profile": profile,
@@ -145,6 +161,7 @@ def generate_api_responses(cv_data):
         "education": education_list,
         "projects": projects_list,
         "publications": publications_list,
+        "grants": grants_list,
         "achievements": achievements,
         "metadata": {
             "generated_at": datetime.now().isoformat(),
@@ -170,7 +187,7 @@ def calculate_years_experience(cv_data):
                 if match:
                     experience_years += int(match.group(1))
     
-    return max(experience_years, 25)  # Minimum 25 years based on summary
+    return max(experience_years, 35)  # Minimum 35 years based on summary
 
 def save_api_data(api_data, output_dir):
     """Save API data to JSON file"""

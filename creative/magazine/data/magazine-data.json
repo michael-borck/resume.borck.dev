@@ -2,8 +2,8 @@
   "metadata": {
     "title": "TechLife Magazine",
     "subtitle": "Michael Borck Special Edition",
-    "issue": "Issue #202508",
-    "date": "August 2025",
+    "issue": "Issue #202611",
+    "date": "November 2026",
     "author": "Michael Borck",
     "tagline": "Innovation \u2022 Leadership \u2022 Technology"
   },
@@ -14,20 +14,20 @@
     "image": "https://source.unsplash.com/1600x900/?technology,innovation",
     "stats": [
       {
-        "value": "11+",
+        "value": "35+",
         "label": "Years Experience"
       },
       {
-        "value": "100%",
-        "label": "Student Satisfaction"
+        "value": "85%",
+        "label": "Avg Student Rating"
       },
       {
-        "value": "4",
-        "label": "Published Books"
+        "value": "7",
+        "label": "Open Textbooks"
       },
       {
-        "value": "290+",
-        "label": "App Downloads"
+        "value": "1,400+",
+        "label": "Monthly Downloads"
       }
     ]
   },
@@ -49,7 +49,7 @@
       {
         "type": "chapter",
         "title": "Academic Excellence",
-        "text": "Transitioning to academia, Michael became a beloved educator at Curtin University, achieving the rare feat of 100% student satisfaction across multiple units.",
+        "text": "Transitioning to academia, Michael became a dedicated educator at Curtin University, earning an 85% average student rating across 38 unit deliveries since 2019.",
         "highlight": "AI Leader for School of Marketing and Management"
       },
       {
@@ -93,9 +93,9 @@
       "title": "Transforming Education with AI",
       "subtitle": "Making Learning Engaging",
       "image": "https://source.unsplash.com/800x600/?classroom,teaching",
-      "content": "Pioneering AI integration in education while maintaining the highest student satisfaction scores.",
+      "content": "Leading AI integration in education while maintaining an 85% average student rating across 38 unit deliveries.",
       "highlights": [
-        "100% Student Satisfaction",
+        "85% Avg Student Rating",
         "AI Curriculum Development",
         "Interactive Learning Tools"
       ]
@@ -214,8 +214,8 @@
         "type": "academic"
       },
       {
-        "year": "Ongoing",
-        "title": "Course Leadership & Development",
+        "year": "2020",
+        "title": "Course Lead \u2014 Information Systems",
         "organization": "Curtin University",
         "description": "Course Lead for Information Systems undergraduate and postgraduate degree programs",
         "type": "academic"
@@ -317,7 +317,7 @@
         "image": "https://source.unsplash.com/300x450/?coding,development,book"
       }
     ],
-    "research": "6+ peer-reviewed publications in computer vision and machine learning"
+    "research": "7 peer-reviewed publications across computer vision, machine learning, and AI in education"
   },
   "contact": {
     "title": "Get In Touch",
@@ -345,15 +345,15 @@
       },
       {
         "label": "Years Experience",
-        "value": "11+"
+        "value": "35+"
       }
     ],
     "achievements": [
-      "\ud83c\udfc6 100% Student Satisfaction",
-      "\ud83d\udcda 4 Published Books",
+      "\ud83c\udfc6 85% Student Satisfaction (38 deliveries)",
+      "\ud83d\udcda 4 Core Books + Companions",
       "\ud83e\udd16 AI Program Leader",
-      "\ud83c\udfaf 290+ App Downloads",
-      "\ud83d\udd2c 6+ Research Publications",
+      "\ud83c\udfaf 1,400+ Monthly Downloads",
+      "\ud83d\udd2c 7 Research Publications",
       "\ud83d\udca1 Multiple Innovation Projects"
     ],
     "certifications": [

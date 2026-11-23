@@ -65,7 +65,7 @@
     "Curtin University",
     "Feb 2016 \u2013 Present",
     "AI Program Leadership - AI Leader for the School, developing new AI programs within undergraduate and postgraduate curricula",
-    "Research Leadership - Founder of LocoLabo, an applied local-AI research lab",
+    "Research Leadership - Founder of LocoLabo, a self-funded applied-AI research lab (12 projects, 52 GPUs, $0 sponsorship) mapping what small local models can do on hardware people already own; umbrella for the Spanish-named project family (LocoLLM, LocoBanco, LocoEnsayo, LocoPuente, LocoAgente, LocoConvoy)",
     "Core Teaching Areas - AI, Programming (Python), and Cyber Security"
    ],
    "icon": "demon"
@@ -74,13 +74,13 @@
    "type": "demon",
    "x": 24.5,
    "y": 2.5,
-   "title": "Course Leadership & Development",
+   "title": "Course Lead \u2014 Information Systems",
    "body": [
     "Curtin University",
-    "Ongoing",
+    "2020 \u2013 2023",
     "Course Lead for Information Systems undergraduate and postgraduate degree programs",
-    "Unit coordination across multiple levels - postgraduate, undergraduate, core, non-core, and service units (domestic and international)",
-    "Advanced Canvas LMS and Blackboard development and customization"
+    "Led the repositioning of the Master of Information Systems and Technology into a standalone degree",
+    "Unit coordination across multiple levels - postgraduate, undergraduate, core, non-core, and service units (domestic and international)"
    ],
    "icon": "demon"
   },
@@ -358,9 +358,9 @@
    "type": "chest",
    "x": 24.5,
    "y": 4.5,
-   "title": "Image Processing for Orange",
+   "title": "Teaching Excellence",
    "body": [
-    "Ongoing"
+    "85.0% average student rating across 38 unit deliveries since 2019, with 16 deliveries scoring 100% and all six survey dimensions at or above 80%"
    ],
    "icon": "chest"
   },
@@ -368,9 +368,9 @@
    "type": "chest",
    "x": 3.5,
    "y": 9.5,
-   "title": "Graph Merging, Scikit Image",
+   "title": "Research Funding",
    "body": [
-    "2015"
+    "Lead Investigator on the AUD $20,000 Curtin Needs-Based Funding (Learning & Teaching) Grant 2026, awarded on an evidence base of 14,973 logged student-AI interactions; technical co-lead on the Assessment 2030 Future Fund (AUD $10,560, 2025)"
    ],
    "icon": "chest"
   },
@@ -378,9 +378,9 @@
    "type": "chest",
    "x": 9.5,
    "y": 10.5,
-   "title": "User Guide, imgAnnotation Tool",
+   "title": "Research Outputs",
    "body": [
-    "2014"
+    "Accepted ACIS 2026 (solo) and ASCILITE 2026 (contributing) papers, with a sustained program of AI-in-education scholarship and invited research seminars"
    ],
    "icon": "chest"
   },
@@ -388,9 +388,9 @@
    "type": "chest",
    "x": 35.5,
    "y": 23.5,
-   "title": "Educational Leadership",
+   "title": "Course Leadership",
    "body": [
-    "AI Leader for School of Marketing and Management, led development of AI curriculum serving 500+ students across undergraduate and postgraduate programs"
+    "Led the repositioning of the Master of Information Systems and Technology into a standalone degree, growing it ~6x to 110 EFTSL (2025) and 148 EFTSL year-to-date (2026); secured Australian Computer Society accreditation"
    ],
    "icon": "chest"
   },
@@ -398,9 +398,9 @@
    "type": "chest",
    "x": 23.5,
    "y": 36.5,
-   "title": "Teaching Excellence",
+   "title": "Curriculum Innovation",
    "body": [
-    "Achieved 100% student satisfaction scores across multiple units (ISYS3015, ISYS2001, ISYS6018) with consistent \"effective teacher\" ratings"
+    "Redesigned 8 units for the AI era and built 2 new postgraduate units from scratch, delivering a 12% average pass-rate uplift"
    ],
    "icon": "chest"
   },
@@ -408,9 +408,9 @@
    "type": "chest",
    "x": 35.5,
    "y": 27.5,
-   "title": "Technical Innovation",
+   "title": "Assessment Innovation",
    "body": [
-    "Creator of multiple AI-powered educational tools including Reality Reigns, Talk Buddy, and Curriculum Curator with 290+ downloads"
+    "Created CloudCore Networks, selected by Curtin's Assessment 2030 as a Lane 2 (AI-robust) exemplar, and the foundation for WorkReady under the $735,000 WIL-Ignite project"
    ],
    "icon": "chest"
   },
@@ -418,9 +418,9 @@
    "type": "chest",
    "x": 3.5,
    "y": 19.5,
-   "title": "Industry Impact",
+   "title": "Executive Education",
    "body": [
-    "Executive education training delivered to 100+ professionals across 15+ companies in academics, education, agriculture and mining sectors"
+    "Designed and delivered 5 AI courses to ~190 participants across 6 sessions (4.3/5 satisfaction), profiled in the Australian Financial Review alongside Bond and Melbourne"
    ],
    "icon": "chest"
   },
@@ -428,9 +428,9 @@
    "type": "chest",
    "x": 12.5,
    "y": 18.5,
-   "title": "Assessment Innovation",
+   "title": "Open Educational Resources",
    "body": [
-    "Developed award-winning \"Cloud Core\" virtual company simulation providing authentic industry experience"
+    "30+ free apps and the 'Learning with AI' open-textbook series (4 core books + domain companions, 1,400+ monthly downloads); 2 titles adopted as e-readings by Kaplan Business School, and the Curriculum Curator tool adopted as the foundation of FLUX"
    ],
    "icon": "chest"
   },
@@ -438,9 +438,9 @@
    "type": "chest",
    "x": 8.5,
    "y": 10.5,
-   "title": "Research Excellence",
+   "title": "Discipline Recognition",
    "body": [
-    "6+ peer-reviewed publications in computer vision and machine learning with focus on mobile mapping systems"
+    "Invited to the FBL Advisory Board, the Curtin Future of Work Institute, and the Curtin Festival of AI; peer-reviewer for ACIS since 2023"
    ],
    "icon": "chest"
   },
@@ -448,9 +448,9 @@
    "type": "chest",
    "x": 5.5,
    "y": 38.5,
-   "title": "Open Source Contribution",
+   "title": "Professional Standing",
    "body": [
-    "Lead developer for Image Processing for Orange, serving the broader scientific community"
+    "Certified Professional Member of the Australian Computer Society (ACS); led the discipline's accreditation and international articulation (SCNU) agenda"
    ],
    "icon": "chest"
   },
@@ -458,9 +458,9 @@
    "type": "chest",
    "x": 13.5,
    "y": 22.5,
-   "title": "Military Leadership",
+   "title": "Conversation, Not Delegation: How to Think With AI, Not Just Use It",
    "body": [
-    "Managed critical defence projects including military messaging systems and submarine IT infrastructure"
+    "Book 1 (the method). Foundational methodology: the Conversation Loop, VET, cognitive traps, and AI Last. Two titles in the series adopted as e-readings by Kaplan Business School"
    ],
    "icon": "chest"
   },
@@ -468,9 +468,9 @@
    "type": "chest",
    "x": 5.5,
    "y": 36.5,
-   "title": "Python Step By Step in an AI World",
+   "title": "The Human Edge: Using AI with Judgement",
    "body": [
-    "Comprehensive guide to Python programming in the context of artificial intelligence"
+    "Book 2 (the practice). Trust, brief, check, deliver - professional judgement for everyday work when everyone has the same tools"
    ],
    "icon": "chest"
   },
@@ -478,9 +478,9 @@
    "type": "chest",
    "x": 25.5,
    "y": 19.5,
-   "title": "JumpStart Python in the AI Era",
+   "title": "Speak Software: Programming at the Natural-Language Layer",
    "body": [
-    "Accelerated learning approach for Python in AI applications"
+    "Book 3 (the build). You describe, an agent builds, and you decide whether it is true - specification, guardrails, and verification"
    ],
    "icon": "chest"
   },
@@ -488,9 +488,9 @@
    "type": "chest",
    "x": 5.5,
    "y": 6.5,
-   "title": "Intentional Prompting: Blending AI and Human Oversight",
+   "title": "Model Data, Verify AI: Relational Design and SQL in the AI Era",
    "body": [
-    "Strategic guide to effective AI interaction and governance"
+    "Book 4 (the data). Model the data, prove the queries, change the schema without gambling - the data layer when AI writes the SQL"
    ],
    "icon": "chest"
   },
@@ -498,9 +498,9 @@
    "type": "chest",
    "x": 5.5,
    "y": 33.5,
-   "title": "Python Dev Book: From Zero to Production",
+   "title": "The 'Learning with AI' series (companions)",
    "body": [
-    "Complete development lifecycle guide for Python applications"
+    "Companion volumes apply the core method across programming (Think/Code/Converse/Ship Python, Build Web), security and networking, and education - 20+ open textbooks in total, all free to read online"
    ],
    "icon": "chest"
   }

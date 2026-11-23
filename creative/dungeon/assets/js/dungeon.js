@@ -1,10 +1,12 @@
 /* The Delve — a roguelike text dungeon over the CV.
    Procedural dungeon each run, turn-based tile movement, HP/combat, loot,
-   permadeath, and three depths to descend. No dependencies. */
+   permadeath, three depths. Renders a persistent ASCII map that redraws every
+   turn, with a bounded message log beside it. No dependencies. */
 (() => {
   "use strict";
 
-  const out = document.getElementById("out");
+  const mapEl = document.getElementById("map");
+  const logEl = document.getElementById("log");
   const form = document.getElementById("form");
   const input = document.getElementById("cmd");
   const hudEl = document.getElementById("hud");
@@ -18,7 +20,6 @@
     north: [0, -1], south: [0, 1], east: [1, 0], west: [-1, 0],
     up: [0, -1], down: [0, 1], right: [1, 0], left: [-1, 0],
   };
-  const DNAME = { "0,-1": "north", "0,1": "south", "1,0": "east", "-1,0": "west" };
 
   // ---- state ----
   let data = null;
@@ -26,7 +27,7 @@
   let rng = Math.random;
   let depth = 1, maxDepth = 3;
   let grid, rooms, pos, stairsPos, archivePos;
-  let enemies = [], items = [], seen;
+  let enemies = [], items = [], seen, visible;
   let relicIndex = 0;
   let turn = 0;
   const state = { maxhp: 24, hp: 24, atk: 3, potions: 0, relics: [], won: false, dead: false, over: false };
@@ -43,17 +44,16 @@
   const ri = (n) => Math.floor(rng() * n);
   const pick = (a) => a[ri(a.length)];
 
-  // ---- output ----
+  // ---- output (bounded message log) ----
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c])); }
-  function emit(html, cls) {
+  function log(html, cls) {
     const d = document.createElement("div");
     d.innerHTML = cls ? `<span class="${cls}">${html}</span>` : html;
-    out.appendChild(d);
-    // keep terminal bounded
-    while (out.children.length > 400) out.removeChild(out.firstChild);
-    out.scrollTop = out.scrollHeight;
+    logEl.appendChild(d);
+    while (logEl.children.length > 300) logEl.removeChild(logEl.firstChild);
+    logEl.scrollTop = logEl.scrollHeight;
   }
-  function hr() { emit('<span class="dim">────────────────────────────────────────</span>'); }
+  function hr() { log('<span class="dim">────────────────────────────────────────</span>'); }
 
   // ---- generation ----
   function genDepth(d) {
@@ -113,21 +113,19 @@
       return null;
     };
 
-    // enemies scale with depth
     const nEnemies = 2 + d * 2;
     for (let i = 0; i < nEnemies; i++) {
       const c = take(); if (!c) break;
       const name = pick(data.monsters);
       const hp = 3 + d * 2 + ri(3);
-      enemies.push({ x: c.x, y: c.y, name, hp, maxhp: hp, atk: 1 + Math.floor(d / 2), glyph: name[0].toUpperCase() });
+      enemies.push({ x: c.x, y: c.y, name, hp, maxhp: hp, atk: 1 + Math.floor(d / 2) });
     }
-    // items
-    for (let i = 0; i < 3; i++) { const c = take(); if (c) items.push({ x: c.x, y: c.y, type: "relic", glyph: "*", relic: nextRelic() }); }
-    for (let i = 0; i < 2; i++) { const c = take(); if (c) items.push({ x: c.x, y: c.y, type: "potion", glyph: "!" }); }
-    { const c = take(); if (c) items.push({ x: c.x, y: c.y, type: "weapon", glyph: ")" }); }
+    for (let i = 0; i < 3; i++) { const c = take(); if (c) items.push({ x: c.x, y: c.y, type: "relic", relic: nextRelic() }); }
+    for (let i = 0; i < 2; i++) { const c = take(); if (c) items.push({ x: c.x, y: c.y, type: "potion" }); }
+    { const c = take(); if (c) items.push({ x: c.x, y: c.y, type: "weapon" }); }
 
     seen = new Set();
-    reveal();
+    computeFOV();
   }
 
   function nextRelic() {
@@ -147,6 +145,36 @@
 
   function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = ri(i + 1); [a[i], a[j]] = [a[j], a[i]]; } }
 
+  // ---- field of view (radius + simple raycast for walls) ----
+  function computeFOV() {
+    visible = new Set();
+    const R = 5;
+    for (let dy = -R; dy <= R; dy++) for (let dx = -R; dx <= R; dx++) {
+      if (dx * dx + dy * dy > R * R + 1) continue;
+      const x = pos.x + dx, y = pos.y + dy;
+      if (!inb(x, y)) continue;
+      if (los(pos.x, pos.y, x, y)) { visible.add(x + "," + y); seen.add(x + "," + y); }
+    }
+    visible.add(pos.x + "," + pos.y);
+    seen.add(pos.x + "," + pos.y);
+  }
+
+  // Bresenham line-of-sight: walls block sight beyond them.
+  function los(x0, y0, x1, y1) {
+    let dx = Math.abs(x1 - x0), dy = Math.abs(y1 - y0);
+    let sx = x0 < x1 ? 1 : -1, sy = y0 < y1 ? 1 : -1;
+    let err = dx - dy, x = x0, y = y0;
+    while (!(x === x1 && y === y1)) {
+      const e2 = 2 * err;
+      if (e2 > -dy) { err -= dy; x += sx; }
+      if (e2 < dx) { err += dx; y += sy; }
+      if (x === x1 && y === y1) break;
+      if (!inb(x, y)) return false;
+      if (grid[y][x] === "#") return false; // wall blocks sight past it
+    }
+    return true;
+  }
+
   // ---- helpers ----
   const inb = (x, y) => x >= 0 && y >= 0 && x < W && y < H;
   const passable = (x, y) => inb(x, y) && grid[y][x] !== "#";
@@ -154,11 +182,35 @@
   const itemAt = (x, y) => items.find((i) => i.x === x && i.y === y);
   const cheb = (a, b) => Math.max(Math.abs(a.x - b.x), Math.abs(a.y - b.y));
 
-  function reveal() {
-    for (let dy = -3; dy <= 3; dy++) for (let dx = -3; dx <= 3; dx++) {
-      const x = pos.x + dx, y = pos.y + dy;
-      if (inb(x, y)) seen.add(x + "," + y);
+  // ---- map rendering ----
+  function render() {
+    const rows = [];
+    for (let y = 0; y < H; y++) {
+      let row = "";
+      for (let x = 0; x < W; x++) {
+        const k = x + "," + y;
+        if (x === pos.x && y === pos.y) { row += '<span class="you">@</span>'; continue; }
+        if (!seen.has(k)) { row += " "; continue; }
+        const vis = visible.has(k);
+        const e = vis ? enemyAt(x, y) : null;
+        if (e) { row += `<span class="foe">${e.name[0].toUpperCase()}</span>`; continue; }
+        if (vis) {
+          const it = itemAt(x, y);
+          if (it) {
+            const g = it.type === "relic" ? "*" : it.type === "potion" ? "!" : ")";
+            row += `<span class="item">${g}</span>`;
+            continue;
+          }
+        }
+        const cell = grid[y][x];
+        if (cell === "#") { row += '<span class="w">#</span>'; continue; }
+        if (cell === ">") { row += '<span class="stairs">&gt;</span>'; continue; }
+        if (cell === "A") { row += '<span class="archive">A</span>'; continue; }
+        row += `<span class="${vis ? "f" : "seen"}">${cell === "." ? "·" : cell}</span>`;
+      }
+      rows.push(row);
     }
+    mapEl.innerHTML = rows.join("\n");
   }
 
   // ---- hud ----
@@ -170,14 +222,15 @@
   function move(dx, dy) {
     if (state.over) return { ok: false };
     const nx = pos.x + dx, ny = pos.y + dy;
-    if (!inb(nx, ny) || grid[ny][nx] === "#") { emit("A damp stone wall blocks the way.", "err"); return { ok: false }; }
+    if (!inb(nx, ny) || grid[ny][nx] === "#") { return { ok: false }; }
     const e = enemyAt(nx, ny);
     if (e) { attack(e); endTurn(); return { ok: true }; }
     pos = { x: nx, y: ny };
-    reveal();
+    computeFOV();
     autoPick();
+    render();
     if (grid[ny][nx] === "A") { win(); return { ok: true }; }
-    if (grid[ny][nx] === ">") emit("A stairway spirals down into the dark. (descend)", "take");
+    if (grid[ny][nx] === ">" ) log("A stairway spirals down into the dark. <b>(descend)</b>", "take");
     endTurn();
     return { ok: true };
   }
@@ -185,32 +238,34 @@
   function attack(e) {
     const dmg = state.atk;
     e.hp -= dmg;
-    emit(`You strike the ${esc(e.name)} for ${dmg}.`, "hi");
+    log(`You strike the ${esc(e.name)} for ${dmg}.`, "hi");
     if (e.hp <= 0) {
       enemies = enemies.filter((x) => x !== e);
-      emit(`The ${esc(e.name)} falls.`, "hi");
+      log(`The ${esc(e.name)} falls.`, "hi");
     }
+    computeFOV();
+    render();
   }
 
   function autoPick() {
     const it = itemAt(pos.x, pos.y);
     if (!it) return;
     items = items.filter((x) => x !== it);
-    if (it.type === "potion") { state.potions++; emit("You pocket a flask of healing. (use potion)", "take"); }
-    else if (it.type === "weapon") { state.atk += data.weaponBonus; emit(`You find a keener edge. ATK +${data.weaponBonus} → ${state.atk}.`, "take"); }
+    if (it.type === "potion") { state.potions++; log("You pocket a flask of healing. <b>(use potion)</b>", "take"); }
+    else if (it.type === "weapon") { state.atk += data.weaponBonus; log(`You find a keener edge. ATK +${data.weaponBonus} → ${state.atk}.`, "take"); }
     else if (it.type === "relic") {
       state.relics.push(it.relic);
-      emit(`✦ RELIC: ${esc(it.relic.title)}`, "take");
-      for (const b of (it.relic.body || []).slice(0, 2)) if (b) emit(`    ${esc(b)}`, "dim");
+      log(`✦ RELIC: ${esc(it.relic.title)}`, "take");
+      for (const b of (it.relic.body || []).slice(0, 2)) if (b) log(`&nbsp;&nbsp;&nbsp;&nbsp;${esc(b)}`, "dim");
     }
   }
 
   function potion() {
     if (state.over) return;
-    if (!state.potions) { emit("You have no potions.", "err"); return; }
+    if (!state.potions) { log("You have no potions.", "err"); return; }
     state.potions--;
     state.hp = Math.min(state.maxhp, state.hp + data.potionHeal);
-    emit(`You drink a potion. (+${data.potionHeal} HP → ${state.hp}/${state.maxhp})`, "hi");
+    log(`You drink a potion. (+${data.potionHeal} HP → ${state.hp}/${state.maxhp})`, "hi");
     endTurn();
   }
 
@@ -219,19 +274,20 @@
     turn++;
     enemiesAct();
     if (state.hp <= 0) { die(); return; }
+    computeFOV();
+    render();
     updateHud();
-    // ambient warning
     const adj = enemies.filter((e) => cheb(e, pos) === 1);
-    if (adj.length) emit(`⚠ ${adj.map((e) => e.name).join(", ")} ${adj.length > 1 ? "are" : "is"} right next to you.`, "err");
+    if (adj.length) log(`⚠ ${adj.map((e) => e.name).join(", ")} ${adj.length > 1 ? "are" : "is"} right next to you.`, "err");
   }
 
   function enemiesAct() {
     for (const e of enemies.slice()) {
+      if (state.hp <= 0) return;
       const d = cheb(e, pos);
       if (d === 1) {
         state.hp -= e.atk;
-        emit(`The ${esc(e.name)} hits you for ${e.atk}. (HP ${Math.max(0, state.hp)})`, "err");
-        if (state.hp <= 0) return;
+        log(`The ${esc(e.name)} hits you for ${e.atk}. (HP ${Math.max(0, state.hp)})`, "err");
       } else if (d <= 6) {
         stepToward(e);
       }
@@ -243,6 +299,7 @@
     const opts = Math.abs(pos.x - e.x) > Math.abs(pos.y - e.y)
       ? [[dx, 0], [0, dy]] : [[0, dy], [dx, 0]];
     for (const [mx, my] of opts) {
+      if (mx === 0 && my === 0) continue;
       const nx = e.x + mx, ny = e.y + my;
       if (!passable(nx, ny)) continue;
       if (nx === pos.x && ny === pos.y) continue;
@@ -253,7 +310,7 @@
 
   function die() {
     state.hp = 0; state.dead = true; state.over = true;
-    updateHud();
+    render(); updateHud();
     overlayTitle.textContent = "YOU DIED";
     overlayText.innerHTML = `The dark takes you on depth ${depth} after ${state.relics.length} relic${state.relics.length === 1 ? "" : "s"}.<br>Every delver dies; only the seed remembers. Run again.`;
     overlay.classList.remove("hidden");
@@ -262,6 +319,7 @@
   function win() {
     state.won = true; state.over = true;
     const c = data.contact || {};
+    render(); updateHud();
     overlayTitle.textContent = "THE ARCHIVE IS YOURS";
     overlayText.innerHTML = `You reach the Archive with ${state.relics.length} relic${state.relics.length === 1 ? "" : "s"} of a working life.<br><br>${esc(c.name)} · ${esc(c.location)}<br>${esc(c.email)}`;
     overlay.classList.remove("hidden");
@@ -269,13 +327,13 @@
 
   function descend() {
     if (state.over) return;
-    if (!stairsPos || pos.x !== stairsPos.x || pos.y !== stairsPos.y) { emit("There are no stairs here.", "err"); return; }
+    if (!stairsPos || pos.x !== stairsPos.x || pos.y !== stairsPos.y) { log("There are no stairs here.", "err"); return; }
     depth++;
     if (depth > maxDepth) { win(); return; }
-    emit(`You descend to depth ${depth}…`, "hdr");
+    log(`You descend to depth ${depth}…`, "hdr");
     genDepth(depth);
     emitIntro();
-    updateHud();
+    render(); updateHud();
   }
 
   // ---- info ----
@@ -284,55 +342,36 @@
     for (const [k, [dx, dy]] of Object.entries({ n: [0, -1], s: [0, 1], e: [1, 0], w: [-1, 0] })) {
       if (passable(pos.x + dx, pos.y + dy)) dirs.push(k);
     }
-    emit(`You are on depth ${depth}. Open directions: ${dirs.join(" ") || "none"}.`, "dim");
+    log(`You are on depth ${depth}. Open directions: ${dirs.join(" ") || "none"}.`, "dim");
     const here = itemAt(pos.x, pos.y);
-    if (here) emit(`Underfoot: ${here.type}.`, "dim");
+    if (here) log(`Underfoot: ${here.type}.`, "dim");
     const adj = enemies.filter((e) => cheb(e, pos) <= 1);
-    if (adj.length) emit("Beside you: " + adj.map((e) => `${e.name} (${e.hp}hp)`).join(", "), "err");
+    if (adj.length) log("Beside you: " + adj.map((e) => `${e.name} (${e.hp}hp)`).join(", "), "err");
     const near = enemies.filter((e) => cheb(e, pos) > 1 && cheb(e, pos) <= 3);
-    if (near.length) emit("Nearby: " + near.map((e) => e.name).join(", "), "dim");
-    if (stairsPos && pos.x === stairsPos.x && pos.y === stairsPos.y) emit("A stairway down. (descend)", "take");
-    if (grid[pos.y][pos.x] === "A") emit("The Archive glows here.", "take");
-  }
-
-  function drawMap() {
-    const lines = [];
-    for (let y = 0; y < H; y++) {
-      let row = "";
-      for (let x = 0; x < W; x++) {
-        if (x === pos.x && y === pos.y) { row += "@"; continue; }
-        if (!seen.has(x + "," + y)) { row += " "; continue; }
-        const e = enemyAt(x, y);
-        if (e && cheb(e, pos) <= 3) { row += e.glyph; continue; }
-        row += grid[y][x];
-      }
-      lines.push(row);
-    }
-    emit("Map — @ you, > stairs, A archive, letters = foes, blank = unseen", "dim");
-    for (const ln of lines) emit(esc(ln), "hdr");
+    if (near.length) log("Nearby: " + near.map((e) => e.name).join(", "), "dim");
+    if (stairsPos && pos.x === stairsPos.x && pos.y === stairsPos.y) log("A stairway down. (descend)", "take");
+    if (grid[pos.y][pos.x] === "A") log("The Archive glows here.", "take");
   }
 
   // ---- intro ----
   function emitIntro() {
     hr();
-    emit(`DEPTH ${depth} OF ${maxDepth} · seed ${seed}`, "room");
-    emit("Arrows / WASD / HJKL to move. Walk into a foe to strike it. Enter or / to type a command.", "dim");
-    const here = items.filter((i) => Math.abs(i.x - pos.x) <= 3 && Math.abs(i.y - pos.y) <= 3);
-    const foes = enemies.filter((e) => cheb(e, pos) <= 3);
-    if (foes.length) emit("Something stirs nearby: " + foes.map((e) => e.name).join(", "), "err");
-    if (here.length) emit("You sense " + here.length + " thing(s) of interest close by.", "dim");
-    emit("", "dim");
+    log(`DEPTH ${depth} OF ${maxDepth} · seed ${seed}`, "room");
+    log("Arrows / WASD / HJKL to move. Walk into a foe to strike it.", "dim");
+    const foes = enemies.filter((e) => cheb(e, pos) <= 4);
+    if (foes.length) log("Something stirs nearby: " + foes.map((e) => e.name).join(", "), "err");
+    log("Legend: @ you · · floor · # wall · letters foes · * relic · ! potion · ) blade · > stairs · A archive", "dim");
   }
 
   // ---- command interpreter ----
   function exec(raw) {
     const text = String(raw || "").trim();
     if (!text) return { ok: false };
-    emit(`<span class="dim">&gt; ${esc(text)}</span>`);
+    log(`<span class="dim">&gt; ${esc(text)}</span>`);
     const [verb, ...rest] = text.toLowerCase().split(/\s+/);
     const arg = rest.join(" ");
 
-    if (DIRS[verb]) { const r = move(...DIRS[verb]); return r; }
+    if (DIRS[verb]) { const r = move(...DIRS[verb]); updateHud(); return r; }
 
     switch (verb) {
       case "help": case "?":
@@ -340,47 +379,47 @@
       case "look": case "l":
         look(); return { ok: true };
       case "map": case "m":
-        drawMap(); return { ok: true };
+        log("The map is always visible on the left.", "dim"); render(); return { ok: true };
       case "wait": case ".": case "rest":
-        emit("You wait a beat…", "dim"); endTurn(); return { ok: true };
+        log("You wait a beat…", "dim"); endTurn(); return { ok: true };
       case "attack": case "a": case "hit":
         const dir = DIRS[arg];
-        if (!dir) { emit("Attack which way? (attack n)", "err"); return { ok: false }; }
+        if (!dir) { log("Attack which way? (attack n)", "err"); return { ok: false }; }
         const e = enemyAt(pos.x + dir[0], pos.y + dir[1]);
-        if (!e) { emit("There is nothing to strike there.", "err"); return { ok: false }; }
+        if (!e) { log("There is nothing to strike there.", "err"); return { ok: false }; }
         attack(e); endTurn(); return { ok: true };
       case "potion": case "use": case "drink": case "p":
-        potion(); return { ok: true };
+        potion(); updateHud(); return { ok: true };
       case "inventory": case "i": case "inv":
-        emit(`Potions: ${state.potions} · ATK: ${state.atk} · Relics: ${state.relics.length}`, "hdr");
-        for (const r of state.relics) emit(`  ✦ ${esc(r.title)}`, "dim");
+        log(`Potions: ${state.potions} · ATK: ${state.atk} · Relics: ${state.relics.length}`, "hdr");
+        for (const r of state.relics) log(`&nbsp;&nbsp;✦ ${esc(r.title)}`, "dim");
         return { ok: true };
       case "descend": case "d": case "down":
         descend(); return { ok: true };
       case "stats":
-        updateHud(); emit(hudEl.textContent, "hdr"); return { ok: true };
+        updateHud(); log(hudEl.textContent, "hdr"); return { ok: true };
       case "seed":
-        emit(`seed ${seed}`, "hdr"); return { ok: true };
+        log(`seed ${seed}`, "hdr"); return { ok: true };
       case "clear": case "cls":
-        out.innerHTML = ""; return { ok: true };
+        logEl.innerHTML = ""; return { ok: true };
       default:
-        emit(`I don't know '${esc(verb)}'. Type 'help'.`, "err");
+        log(`I don't know '${esc(verb)}'. Type 'help'.`, "err");
         return { ok: false };
     }
   }
 
   function emitHelp() {
-    emit("Keys (no typing needed)", "hdr");
-    emit("  Arrows / WASD / HJKL   move one tile (walk into a foe to attack)");
-    emit("  >                      take the stairs down");
-    emit("  p                      drink a potion");
-    emit("  i · m · ?              inventory · map · help");
-    emit("  space / .              wait (foes take a turn)");
-    emit("  Enter or /             type a command (Esc to leave the box)");
-    emit("", "dim");
-    emit("Commands (after Enter / /)", "hdr");
-    emit("  attack <dir> · look · descend · inventory · map · stats · seed · clear");
-    emit("Goal: descend three depths, reach the Archive, and gather relics.", "dim");
+    log("Keys (no typing needed)", "hdr");
+    log("  Arrows / WASD / HJKL   move one tile (walk into a foe to attack)");
+    log("  &gt;                      take the stairs down");
+    log("  p                      drink a potion");
+    log("  i · ?                  inventory · help");
+    log("  space / .              wait (foes take a turn)");
+    log("  / or Enter             type a command (Esc to leave the box)");
+    log("", "dim");
+    log("Commands (after / or Enter)", "hdr");
+    log("  attack <dir> · look · descend · inventory · stats · seed · clear");
+    log("Goal: descend three depths, reach the Archive, and gather relics.", "dim");
   }
 
   // ---- ui ----
@@ -389,18 +428,15 @@
     const v = input.value; input.value = "";
     exec(v);
     updateHud();
-    // hand control back to direct-key movement after a typed command
     input.blur();
+    mapEl.focus();
   });
-  document.getElementById("helpBtn").addEventListener("click", () => { emitHelp(); });
-  document.getElementById("mapBtn").addEventListener("click", () => { drawMap(); });
+  document.getElementById("helpBtn").addEventListener("click", () => { emitHelp(); mapEl.focus(); });
   document.getElementById("restartBtn").addEventListener("click", () => newRun());
   document.getElementById("againBtn").addEventListener("click", () => newRun());
 
-  // Click anywhere that isn't the command box to return to movement mode.
-  document.addEventListener("mousedown", (e) => {
-    if (document.activeElement === input && e.target !== input) input.blur();
-  });
+  // Click on the map returns focus to movement mode.
+  mapEl.addEventListener("mousedown", () => { if (document.activeElement === input) input.blur(); mapEl.focus(); });
 
   // ---- direct keyboard control (nethack-style) ----
   const KEYMOVE = {
@@ -409,12 +445,11 @@
     k: "n", j: "s", h: "w", l: "e",          // hjkl (nethack)
     "8": "n", "2": "s", "4": "w", "6": "e",  // numpad
   };
-  function typingCommand() { return document.activeElement === input; }
+  const typingCommand = () => document.activeElement === input;
 
   document.addEventListener("keydown", (e) => {
-    // Escape leaves the command box; while typing, let the box have the keys.
     if (e.key === "Escape") {
-      if (typingCommand()) { input.blur(); e.preventDefault(); }
+      if (typingCommand()) { input.blur(); mapEl.focus(); e.preventDefault(); }
       return;
     }
     if (typingCommand()) return;
@@ -425,10 +460,9 @@
     const k = e.key;
     if (KEYMOVE[k]) { e.preventDefault(); move(...DIRS[KEYMOVE[k]]); updateHud(); return; }
     if (k === "Enter" || k === "/" || k === ":") { e.preventDefault(); input.focus(); return; }
-    if (k === ">" ) { e.preventDefault(); descend(); updateHud(); return; }
-    if (k === " " || k === ".") { e.preventDefault(); exec("wait"); updateHud(); return; }
+    if (k === ">") { e.preventDefault(); descend(); return; }
+    if (k === " " || k === ".") { e.preventDefault(); log("You wait a beat…", "dim"); endTurn(); updateHud(); return; }
     if (k === "i") { e.preventDefault(); exec("inventory"); return; }
-    if (k === "m") { e.preventDefault(); drawMap(); return; }
     if (k === "p") { e.preventDefault(); potion(); updateHud(); return; }
     if (k === "?") { e.preventDefault(); emitHelp(); return; }
   });
@@ -441,14 +475,14 @@
     state.maxhp = data.player.hp; state.hp = data.player.hp; state.atk = data.player.atk;
     state.potions = 0; state.relics = []; state.won = false; state.dead = false; state.over = false;
     overlay.classList.add("hidden");
-    out.innerHTML = "";
-    emit(data.title + " — " + data.subtitle, "room");
-    emit("A roguelike of a working life. Three depths, a handful of relics, and the things that stand in the way.", "dim");
+    logEl.innerHTML = "";
+    log(data.title + " — " + data.subtitle, "room");
+    log("A roguelike of a working life. Three depths, a handful of relics, and the things that stand in the way.", "dim");
     genDepth(1);
     emitIntro();
+    render();
     updateHud();
-    // Movement is direct-key; don't trap the user in the text box.
-    if (document.activeElement) document.activeElement.blur();
+    mapEl.focus();
   }
 
   // ---- boot ----
@@ -457,7 +491,7 @@
       const res = await fetch("data/dungeon.json", { cache: "no-store" });
       data = await res.json();
     } catch (e) {
-      emit("Failed to load dungeon.json — run 'make dungeon'.", "err");
+      log("Failed to load dungeon.json — run 'make dungeon'.", "err");
       return;
     }
     maxDepth = data.depths || 3;
@@ -473,9 +507,9 @@
     window.__DUNGEON_TEST__ = {
       cmd: (s) => { const r = exec(s); updateHud(); return r; },
       state: () => window.__DUNGEON_DEBUG__(),
-      toStairs: () => { if (stairsPos) { pos = { ...stairsPos }; reveal(); return true; } return false; },
-      toArchive: () => { if (archivePos) { pos = { ...archivePos }; reveal(); if (grid[pos.y][pos.x] === "A") win(); return true; } return false; },
-      teleport: (x, y) => { if (passable(x, y)) { pos = { x, y }; reveal(); return true; } return false; },
+      toStairs: () => { if (stairsPos) { pos = { ...stairsPos }; computeFOV(); render(); return true; } return false; },
+      toArchive: () => { if (archivePos) { pos = { ...archivePos }; computeFOV(); render(); if (grid[pos.y][pos.x] === "A") win(); return true; } return false; },
+      teleport: (x, y) => { if (passable(x, y)) { pos = { x, y }; computeFOV(); render(); return true; } return false; },
       nearestEnemy: () => {
         if (!enemies.length) return null;
         const e = enemies.slice().sort((a, b) => cheb(a, pos) - cheb(b, pos))[0];
@@ -485,7 +519,6 @@
       setHp: (n) => { state.hp = n; updateHud(); },
       killEnemies: () => { const n = enemies.length; enemies = []; return n; },
       heal: () => { state.hp = state.maxhp; },
-      // connectivity of the current depth (all floor cells reachable from pos)
       generation: () => {
         const seen2 = new Set([pos.x + "," + pos.y]);
         const q = [[pos.x, pos.y]];
@@ -503,6 +536,7 @@
         return { W, H, rooms: rooms.length, floors, reachable: seen2.size, fullyConnected: seen2.size === floors };
       },
       newRun: (s) => newRun(s),
+      render,
     };
   }
 

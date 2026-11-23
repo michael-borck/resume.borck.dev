@@ -72,8 +72,8 @@ def build_quiz(cv: dict) -> list[dict]:
                 ["The Pragmatic Programmer", "Clean Code", "Designing Data-Intensive Applications"],
                 "One of his own Creative-Commons titles.")
 
-    add("What satisfaction score does Michael report across units?", "100%", ["72%", "85%", "93%"],
-        "It's perfect.")
+    add("What average student rating does Michael report across 38 deliveries?", "85%", ["62%", "71%", "94%"],
+        "85.0% across 38 unit deliveries since 2019; 16 of those scored 100%.")
     add("Where is Michael based?", s(p.get("location")) or "Perth, WA",
         ["Sydney, NSW", "Melbourne, VIC", "Canberra, ACT"], "Western Australia.")
     add("What area did Michael's PhD research focus on?",
@@ -93,8 +93,8 @@ def build_quiz(cv: dict) -> list[dict]:
             "It's a swipe-based decision game.")
 
     if pubs:
-        add("How many books has Michael published (Creative Commons)?", str(len(pubs)),
-            ["1", "2", str(max(5, len(pubs) + 3))], "Count his Python titles.")
+        add("How many core books are in Michael's 'Learning with AI' series?", "4",
+            ["1", "2", "9"], "Four core books plus domain companions.")
 
     return Q
 

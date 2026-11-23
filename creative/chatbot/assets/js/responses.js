@@ -114,7 +114,7 @@ function getExperienceResponse(entities, analysis) {
     return `
         <div>
             <p><strong>💼 My Professional Journey</strong></p>
-            <p>I have <strong>25+ years</strong> of experience spanning military → academia → industry consulting. Here's my career progression:</p>
+            <p>I have <strong>35+ years</strong> of experience spanning military → academia → industry consulting. Here's my career progression:</p>
             
             <p><strong>🎓 Current Role (2016-Present):</strong><br>
             Senior Lecturer at Curtin University, leading AI education and research initiatives.</p>
@@ -309,7 +309,7 @@ function getProjectsResponse(entities, analysis) {
             <p><strong>📊 Business AI Research:</strong><br>
             Leading research initiatives in AI applications for business and education.</p>
             
-            <p><strong>📈 Impact:</strong> 290+ downloads of educational tools, improved student engagement by 40%</p>
+            <p><strong>📈 Impact:</strong> 30+ free educational tools (1,400+ monthly downloads), an 85% average student rating across 38 unit deliveries.</p>
             
             <p>Each project focuses on making technology more accessible and education more engaging. Want details about any specific project?</p>
         </div>
@@ -322,25 +322,25 @@ function getPublicationsResponse(entities, analysis) {
         <div>
             <p><strong>📚 Publications & Writings</strong></p>
             
-            <p>I've authored <strong>4 technical books</strong> (Creative Commons licensed) to make knowledge freely accessible:</p>
+            <p>I've authored the <strong>"Learning with AI" open-textbook series</strong> — 4 core books plus domain companions, self-published and free to read online:</p>
             
             <p><strong>Recent Books:</strong></p>
             <ul>
-                <li><strong>"AI in Education: A Practical Guide" (2023)</strong><br>
-                Comprehensive guide to implementing AI in educational settings</li>
-                <li><strong>"Cybersecurity Fundamentals" (2022)</strong><br>
-                Essential cybersecurity concepts for modern organizations</li>
-                <li><strong>"Programming for Business Applications" (2021)</strong><br>
-                Practical coding approaches for business solutions</li>
-                <li><strong>"Educational Technology Innovation" (2020)</strong><br>
-                Strategies for integrating technology in learning environments</li>
+                <li><strong>Conversation, Not Delegation</strong><br>
+                How to think with AI, not just use it — the foundational methodology</li>
+                <li><strong>The Human Edge</strong><br>
+                Using AI with judgement — professional judgement for everyday work</li>
+                <li><strong>Speak Software</strong><br>
+                Programming at the natural-language layer — specification, guardrails, verification</li>
+                <li><strong>Model Data, Verify AI</strong><br>
+                Relational design and SQL in the AI era</li>
             </ul>
             
             <p><strong>📝 Research Publications:</strong><br>
-            6+ peer-reviewed publications in computer vision and machine learning, focusing on mobile mapping systems and educational applications.</p>
+            7 peer-reviewed publications across computer vision, machine learning, and AI in education (ACIS 2026, ASCILITE 2026), focusing on mobile mapping systems and AI-enhanced learning.</p>
             
             <p><strong>🌍 Open Source Contribution:</strong><br>
-            Lead developer for "Image Processing for Orange" - serving the broader scientific community.</p>
+            Lead developer for "Image Processing for Orange" and a suite of 30+ free educational tools.</p>
             
             <p>All my publications emphasize practical applications and real-world impact. Would you like to know more about any specific topic?</p>
         </div>
@@ -363,8 +363,8 @@ function getAchievementsResponse(entities, analysis) {
             
             <p><strong>📚 Publishing & Research:</strong></p>
             <ul>
-                <li>4 published technical books (Creative Commons)</li>
-                <li>6+ peer-reviewed research publications</li>
+                <li>4 core books + domain companions (self-published, free online)</li>
+                <li>7 peer-reviewed publications (computer vision, ML, AI in education)</li>
                 <li>Lead developer for open-source scientific tools</li>
             </ul>
             
@@ -485,7 +485,7 @@ function getAIResponse(entities, analysis) {
             </ul>
             
             <p><strong>📚 AI in Education:</strong><br>
-            I've created AI-powered educational tools (Reality Reigns, Talk Buddy, Curriculum Curator) that have been downloaded 290+ times!</p>
+            I've created AI-powered educational tools (Reality Reigns, Talk Buddy, Curriculum Curator) — part of a suite of 30+ free apps with 1,400+ monthly downloads!</p>
             
             <p><strong>🔬 Research Focus:</strong><br>
             My research investigates CNN models and their application to maritime environments, advancing computer vision for marine monitoring.</p>

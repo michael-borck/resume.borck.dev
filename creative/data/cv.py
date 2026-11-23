@@ -7,6 +7,9 @@ CV = {'personal': {'name': 'Michael Borck',
               'github': 'https://github.com/michael-borck',
               'portfolio': 'https://borck.dev',
               'education_platform': 'https://borck.education',
+              'orcid': 'https://orcid.org/0000-0002-0950-6396',
+              'scholar': 'https://scholar.google.com/citations?user=fwNMowoAAAAJ',
+              'research': 'https://research.borck.dev',
               'location': 'Perth, WA'},
  'world': {'spawn': {'x': 50, 'y': 50},
            'regions': [{'id': 'experience',
@@ -65,28 +68,39 @@ CV = {'personal': {'name': 'Michael Borck',
                         'icon': 'beach',
                         'sources': ['interests'],
                         'spawns': 6}]},
- 'summary': {'main': 'AI Leader and Cyber Security expert with 25+ years spanning military → '
-                     'academia → industry consulting transition. Author of the Conversation, Not '
-                     'Delegation book series, creator of innovative educational AI tools, and '
-                     'pioneer in AI-enhanced pedagogy serving academics, education, agriculture '
-                     'and mining sectors. Founder of LocoLabo, an applied local-AI research lab, '
-                     'with a rare combination of technical depth and educational innovation '
-                     'expertise. Teaching philosophy grounded in three conceptual pillars - '
-                     'Caring, Competence, and Passion, with a core principle of "Make Contact '
-                     'Count."'},
+ 'summary': {'main': 'AI Leader and Cyber Security expert with 35+ years spanning military → '
+                     'academia → industry consulting. Author of the "Learning with AI" '
+                     'open-textbook series (Conversation, Not Delegation; The Human Edge; Speak '
+                     'Software; Model Data, Verify AI, plus domain companions), creator of '
+                     'innovative educational AI tools, and a leader in AI-enhanced pedagogy '
+                     'serving academics, education, agriculture and mining sectors. Founder of '
+                     'LocoLabo, a self-funded applied-AI research lab (12 projects, 52 GPUs, $0 '
+                     'sponsorship) mapping what small local models can do on hardware people '
+                     'already own, with a rare combination of technical depth and educational '
+                     'innovation expertise. Teaching philosophy grounded in three conceptual '
+                     'pillars - Caring, Competence, and Passion, with a core principle of "Make '
+                     'Contact Count."'},
  'teaching': {'philosophy': {'core': 'Make Contact Count - maximising impact through every student '
                                      'interaction',
                              'framework': 'Built on three pillars - Caring, Competence, and '
                                           'Passion',
                              'approach': "Grounded in Constructivist learning theory, Bloom's "
                                          'Taxonomy, and Universal Design for Learning (UDL)'},
-              'satisfaction': [{'metric': '100% Satisfaction Scores',
-                                'details': 'Achieved across ISYS3015 Business Application '
-                                           'Development, ISYS2001 Introduction to Business '
-                                           'Programming, and ISYS6018 Information Security'},
-                               {'metric': "100% 'Effective Teacher' Ratings",
-                                'details': 'Across Enterprise Network Security, Business Systems '
-                                           'Selection, and Introduction to Programming units'}],
+              'satisfaction': [{'metric': '85.0% average student rating',
+                                'details': 'Across 38 unit deliveries since 2019 (eVALUate to '
+                                           '2022, Insight from 2023); all six survey dimensions at '
+                                           'or above 80% - Assessments 89.2%, Engagement 86.8%, '
+                                           'Expectations 85.5%, Resources 84.9%, Support 81.2%'},
+                               {'metric': '16 deliveries at 100%',
+                                'details': 'Top results sustained across 8 units, alongside a 12% '
+                                           'average pass-rate uplift in AI-redesigned units and a '
+                                           'return to 100% in Semester 2 2025 after the 2024 AI '
+                                           'transition'},
+                               {'metric': 'Full-span teaching reach',
+                                'details': 'Undergraduate, postgraduate and executive education - '
+                                           'a range few academics deliver across - online and '
+                                           'on-campus, domestic and international (China), from '
+                                           'small specialist classes to cohorts of 300'}],
               'feedback': ['Michael is an absolute legend, I love his teaching style',
                            'He really did feel like he cared about my learning',
                            'The unit was hard, but fun, because he clearly cared about our '
@@ -103,25 +117,38 @@ CV = {'personal': {'name': 'Michael Borck',
                                'description': 'The environment created while performing the '
                                               'assignment is nothing less than working in '
                                               'real-time'}]},
- 'achievements': ['Educational Leadership - AI Leader for School of Marketing and Management, led '
-                  'development of AI curriculum serving 500+ students across undergraduate and '
-                  'postgraduate programs',
-                  'Teaching Excellence - Achieved 100% student satisfaction scores across multiple '
-                  'units (ISYS3015, ISYS2001, ISYS6018) with consistent "effective teacher" '
-                  'ratings',
-                  'Technical Innovation - Creator of multiple AI-powered educational tools '
-                  'including Reality Reigns, Talk Buddy, and Curriculum Curator with 290+ '
-                  'downloads',
-                  'Industry Impact - Executive education training delivered to 100+ professionals '
-                  'across 15+ companies in academics, education, agriculture and mining sectors',
-                  'Assessment Innovation - Developed award-winning "Cloud Core" virtual company '
-                  'simulation providing authentic industry experience',
-                  'Research Excellence - 6+ peer-reviewed publications in computer vision and '
-                  'machine learning with focus on mobile mapping systems',
-                  'Open Source Contribution - Lead developer for Image Processing for Orange, '
-                  'serving the broader scientific community',
-                  'Military Leadership - Managed critical defence projects including military '
-                  'messaging systems and submarine IT infrastructure'],
+ 'achievements': ['Teaching Excellence - 85.0% average student rating across 38 unit deliveries '
+                  'since 2019, with 16 deliveries scoring 100% and all six survey dimensions at or '
+                  'above 80%',
+                  'Research Funding - Lead Investigator on the AUD $20,000 Curtin Needs-Based '
+                  'Funding (Learning & Teaching) Grant 2026, awarded on an evidence base of 14,973 '
+                  'logged student-AI interactions; technical co-lead on the Assessment 2030 Future '
+                  'Fund (AUD $10,560, 2025)',
+                  'Research Outputs - Accepted ACIS 2026 (solo) and ASCILITE 2026 (contributing) '
+                  'papers, with a sustained program of AI-in-education scholarship and invited '
+                  'research seminars',
+                  'Course Leadership - Led the repositioning of the Master of Information Systems '
+                  'and Technology into a standalone degree, growing it ~6x to 110 EFTSL (2025) and '
+                  '148 EFTSL year-to-date (2026); secured Australian Computer Society '
+                  'accreditation',
+                  'Curriculum Innovation - Redesigned 8 units for the AI era and built 2 new '
+                  'postgraduate units from scratch, delivering a 12% average pass-rate uplift',
+                  "Assessment Innovation - Created CloudCore Networks, selected by Curtin's "
+                  'Assessment 2030 as a Lane 2 (AI-robust) exemplar, and the foundation for '
+                  'WorkReady under the $735,000 WIL-Ignite project',
+                  'Executive Education - Designed and delivered 5 AI courses to ~190 participants '
+                  'across 6 sessions (4.3/5 satisfaction), profiled in the Australian Financial '
+                  'Review alongside Bond and Melbourne',
+                  "Open Educational Resources - 30+ free apps and the 'Learning with AI' "
+                  'open-textbook series (4 core books + domain companions, 1,400+ monthly '
+                  'downloads); 2 titles adopted as e-readings by Kaplan Business School, and the '
+                  'Curriculum Curator tool adopted as the foundation of FLUX',
+                  'Discipline Recognition - Invited to the FBL Advisory Board, the Curtin Future '
+                  'of Work Institute, and the Curtin Festival of AI; peer-reviewer for ACIS since '
+                  '2023',
+                  'Professional Standing - Certified Professional Member of the Australian '
+                  "Computer Society (ACS); led the discipline's accreditation and international "
+                  'articulation (SCNU) agenda'],
  'experience': [{'title': 'Lecturer — School of Marketing and Management',
                  'organization': 'Curtin University',
                  'location': 'Perth, WA',
@@ -129,8 +156,12 @@ CV = {'personal': {'name': 'Michael Borck',
                  'responsibilities': ['AI Program Leadership - AI Leader for the School, '
                                       'developing new AI programs within undergraduate and '
                                       'postgraduate curricula',
-                                      'Research Leadership - Founder of LocoLabo, an applied '
-                                      'local-AI research lab',
+                                      'Research Leadership - Founder of LocoLabo, a self-funded '
+                                      'applied-AI research lab (12 projects, 52 GPUs, $0 '
+                                      'sponsorship) mapping what small local models can do on '
+                                      'hardware people already own; umbrella for the Spanish-named '
+                                      'project family (LocoLLM, LocoBanco, LocoEnsayo, LocoPuente, '
+                                      'LocoAgente, LocoConvoy)',
                                       'Core Teaching Areas - AI, Programming (Python), and Cyber '
                                       'Security',
                                       'Curriculum Development - Backbone developer for Python and '
@@ -140,18 +171,21 @@ CV = {'personal': {'name': 'Michael Borck',
                                       'Educational Innovation - Pioneer in AI-enhanced pedagogy '
                                       'and interactive learning methodologies, with teaching '
                                       'philosophy grounded in Caring, Competence, and Passion',
-                                      'Student Engagement - Achieved 100% student satisfaction '
-                                      'scores through innovative assessment design including '
-                                      '"Cloud Core" virtual company simulation',
+                                      'Student Engagement - Achieved an 85.0% average student '
+                                      'rating across 38 unit deliveries since 2019 (16 at 100%) '
+                                      'through innovative assessment design including "Cloud Core" '
+                                      'virtual company simulation',
                                       'Executive Education - Providing AI training to academics, '
                                       'education professionals, agriculture and mining industry '
                                       'executives']},
-                {'title': 'Course Leadership & Development',
+                {'title': 'Course Lead — Information Systems',
                  'organization': 'Curtin University',
                  'location': 'Perth, WA',
-                 'period': 'Ongoing',
+                 'period': '2020 – 2023',
                  'responsibilities': ['Course Lead for Information Systems undergraduate and '
                                       'postgraduate degree programs',
+                                      'Led the repositioning of the Master of Information Systems '
+                                      'and Technology into a standalone degree',
                                       'Unit coordination across multiple levels - postgraduate, '
                                       'undergraduate, core, non-core, and service units (domestic '
                                       'and international)',
@@ -281,22 +315,35 @@ CV = {'personal': {'name': 'Michael Borck',
                 'field': 'Mathematics',
                 'institution': 'Queensland University of Technology',
                 'year': 1989}],
- 'publications': {'books': [{'title': 'Python Step By Step in an AI World',
-                             'description': 'Comprehensive guide to Python programming in the '
-                                            'context of artificial intelligence',
-                             'license': 'Creative Commons'},
-                            {'title': 'JumpStart Python in the AI Era',
-                             'description': 'Accelerated learning approach for Python in AI '
-                                            'applications',
-                             'license': 'Creative Commons'},
-                            {'title': 'Intentional Prompting: Blending AI and Human Oversight',
-                             'description': 'Strategic guide to effective AI interaction and '
-                                            'governance',
-                             'license': 'Creative Commons'},
-                            {'title': 'Python Dev Book: From Zero to Production',
-                             'description': 'Complete development lifecycle guide for Python '
-                                            'applications',
-                             'license': 'Creative Commons'}],
+ 'publications': {'books': [{'title': 'Conversation, Not Delegation: How to Think With AI, Not '
+                                      'Just Use It',
+                             'description': 'Book 1 (the method). Foundational methodology: the '
+                                            'Conversation Loop, VET, cognitive traps, and AI Last. '
+                                            'Two titles in the series adopted as e-readings by '
+                                            'Kaplan Business School',
+                             'license': 'Self-published; free online, KDP print/ISBN'},
+                            {'title': 'The Human Edge: Using AI with Judgement',
+                             'description': 'Book 2 (the practice). Trust, brief, check, deliver - '
+                                            'professional judgement for everyday work when '
+                                            'everyone has the same tools',
+                             'license': 'Self-published; free online, KDP print/ISBN'},
+                            {'title': 'Speak Software: Programming at the Natural-Language Layer',
+                             'description': 'Book 3 (the build). You describe, an agent builds, '
+                                            'and you decide whether it is true - specification, '
+                                            'guardrails, and verification',
+                             'license': 'Self-published; free online'},
+                            {'title': 'Model Data, Verify AI: Relational Design and SQL in the AI '
+                                      'Era',
+                             'description': 'Book 4 (the data). Model the data, prove the queries, '
+                                            'change the schema without gambling - the data layer '
+                                            'when AI writes the SQL',
+                             'license': 'Self-published; free online'},
+                            {'title': "The 'Learning with AI' series (companions)",
+                             'description': 'Companion volumes apply the core method across '
+                                            'programming (Think/Code/Converse/Ship Python, Build '
+                                            'Web), security and networking, and education - 20+ '
+                                            'open textbooks in total, all free to read online',
+                             'license': 'Self-published; free online, KDP print/ISBN'}],
                   'thesis': [{'title': 'Feature Extraction from Multi-modal Data',
                               'year': 2017,
                               'type': 'Doctor of Philosophy (PhD)',
@@ -336,13 +383,53 @@ CV = {'personal': {'name': 'Michael Borck',
                                    'title': 'Industrial Application of Sensor Nets',
                                    'venue': 'Computer',
                                    'volume': '33(9)',
-                                   'pages': '18-26'}],
+                                   'pages': '18-26'},
+                                  {'authors': 'Borck, M.',
+                                   'year': 2026,
+                                   'title': 'Cognitive Strategy Transfer: Why Human '
+                                            'Complexity-Management Strategies Improve Large '
+                                            'Language Model Performance',
+                                   'venue': 'ACIS 2026 (Australasian Conference on Information '
+                                            'Systems)',
+                                   'location': 'Perth, Australia',
+                                   'note': 'Solo author; accepted'},
+                                  {'authors': 'Cocks, N., B. Lush, I. MacKenzie, E. Calton, P. '
+                                              'Simpson, C. Fernandes, J. Beilby, M. Low, M. Borck, '
+                                              'A. Angus, M. Reed, M. Jopia Vilches, and S. Raghav',
+                                   'year': 2026,
+                                   'title': 'Designing AI-mediated interactive learning '
+                                            'environments for communication skills: Insights from '
+                                            'two implementations',
+                                   'venue': 'ASCILITE 2026 (Australasian Society for Computers in '
+                                            'Learning in Tertiary Education)',
+                                   'location': 'Brisbane, Australia',
+                                   'note': 'Contributing author'}],
                   'honours': [{'title': 'A Bayesian Belief Network Approach to Predicting the '
                                         'Prices of Australian Commonwealth Government Interest '
                                         'Rate Securities',
                                'year': 2001,
                                'type': 'Honours',
                                'institution': 'School of Computing, Curtin University'}]},
+ 'grants': [{'title': 'Scaffolding AI Interaction: A Low-Cost Intervention for Equitable Student '
+                      'Outcomes',
+             'scheme': 'Curtin Needs-Based Funding (Learning & Teaching) Grant',
+             'funder': 'Curtin University (LITEC)',
+             'role': 'Lead Investigator (CI)',
+             'amount': 'AUD $20,000',
+             'year': 2026,
+             'summary': 'A four-unit controlled trial with pre-registered equity measures, testing '
+                        'whether a low-cost conversational prompt raises the quality of student-AI '
+                        'interaction and lifts outcomes for low-SES and first-in-family students. '
+                        'Co-investigators: Moraes, Reiners, Ralph.'},
+            {'title': 'Assessment 2030 Future Fund — AI Digital-Human Pilot',
+             'scheme': 'Assessment 2030 Future Fund',
+             'funder': 'Curtin University',
+             'role': 'Technical Co-Lead (Lead: Dr Sonia Raghav)',
+             'amount': 'AUD $10,560',
+             'year': 2025,
+             'summary': 'An AI digital-human pilot building oral-communication confidence in a '
+                        'large core Management unit; a cross-disciplinary collaboration with '
+                        'Management colleagues.'}],
  'projects': [{'name': 'Reality Reigns',
                'description': 'Swipe-based decision game providing interactive fiction '
                               'storytelling from fantasy adventures to educational simulations'},
@@ -356,10 +443,7 @@ CV = {'personal': {'name': 'Michael Borck',
                'description': 'AI-based assessment feedback tool for various assessment types'},
               {'name': 'Student Feedback Analyzer',
                'description': 'AI tool that analyzes student feedback forms to suggest course '
-                              'improvements'},
-              {'name': 'Image Processing for Orange', 'year': 'Ongoing'},
-              {'name': 'Graph Merging, Scikit Image', 'year': 2015},
-              {'name': 'User Guide, imgAnnotation Tool', 'year': 2014}],
+                              'improvements'}],
  'skills': {'programming': {'core': ['Python',
                                      'C/C++',
                                      'C#',
@@ -393,7 +477,11 @@ CV = {'personal': {'name': 'Michael Borck',
  'service': {'profession': [{'role': 'Conference Paper Reviewer',
                              'organization': 'Australian Conference on Information Systems '
                                              '(International)',
-                             'year': 2019}],
+                             'year': 2019},
+                            {'role': 'Conference Paper Reviewer',
+                             'organization': 'Australian Conference on Information Systems '
+                                             '(International)',
+                             'year': '2023, 2024, 2025, 2026'}],
              'community': [{'role': 'Lead Developer',
                             'project': 'Image Processing for Orange',
                             'period': '2015-2019'},
@@ -405,12 +493,12 @@ CV = {'personal': {'name': 'Michael Borck',
                             'year': 2014}]},
  'memberships': [{'organization': 'Australian Computer Society (ACS)',
                   'status': 'Certified Professional',
-                  'year': 2011,
-                  'note': '(ongoing professional development required)'}],
+                  'year': 2011}],
  'interests': ['Karate',
                'Muay Thai',
                'Krav Maga',
                'Atari 2600 Programming',
+               'RetroVerse Studios (indie game studio)',
                'Astronomy',
                'Photography'],
  'references': 'Available upon request'}

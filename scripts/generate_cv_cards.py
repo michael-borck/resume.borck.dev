@@ -162,7 +162,7 @@ def create_card_decks(cv_data):
     card_decks['academic'].append({
         'type': 'navigation',
         'title': 'Academic Path Complete',
-        'text': f'{cv_data["personal"]["name"]} has achieved 100% student satisfaction and pioneered AI education. Continue exploring?',
+        'text': f'{cv_data["personal"]["name"]} has achieved an 85% average student rating across 38 deliveries and pioneered AI education. Continue exploring?',
         'icon': '🎓',
         'imagePath': 'assets/img/education/university.png',
         'leftChoice': 'View Projects',
@@ -308,8 +308,8 @@ def create_card_decks(cv_data):
     card_decks['achievements'] = [
         {
             'type': 'achievement',
-            'title': '100% Student Satisfaction',
-            'text': 'Achieved perfect satisfaction scores across multiple units including ISYS3015, ISYS2001, and ISYS6018.',
+            'title': '85% Average Student Rating',
+            'text': 'Across 38 unit deliveries since 2019, with 16 deliveries at 100% and all six survey dimensions at or above 80%.',
             'icon': '🏆',
             'imagePath': 'assets/img/education/university.png',
             'leftChoice': 'Amazing!',
@@ -331,7 +331,7 @@ def create_card_decks(cv_data):
         {
             'type': 'achievement',
             'title': 'Published Author',
-            'text': '4 technical books (Creative Commons licensed) and 6+ peer-reviewed publications in computer vision and machine learning.',
+            'text': 'Author of the "Learning with AI" series: 4 core books plus domain companions (self-published, free online), and 7 peer-reviewed publications across computer vision, machine learning, and AI in education.',
             'icon': '📚',
             'imagePath': 'assets/img/education/learning.png',
             'leftChoice': 'Scholarly!',

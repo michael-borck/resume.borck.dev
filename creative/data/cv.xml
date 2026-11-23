@@ -8,6 +8,9 @@
     <github>https://github.com/michael-borck</github>
     <portfolio>https://borck.dev</portfolio>
     <education_platform>https://borck.education</education_platform>
+    <orcid>https://orcid.org/0000-0002-0950-6396</orcid>
+    <scholar>https://scholar.google.com/citations?user=fwNMowoAAAAJ</scholar>
+    <research>https://research.borck.dev</research>
     <location>Perth, WA</location>
   </personal>
   <world>
@@ -133,7 +136,7 @@
     </regions>
   </world>
   <summary>
-    <main>AI Leader and Cyber Security expert with 25+ years spanning military → academia → industry consulting transition. Author of the Conversation, Not Delegation book series, creator of innovative educational AI tools, and pioneer in AI-enhanced pedagogy serving academics, education, agriculture and mining sectors. Founder of LocoLabo, an applied local-AI research lab, with a rare combination of technical depth and educational innovation expertise. Teaching philosophy grounded in three conceptual pillars - Caring, Competence, and Passion, with a core principle of &quot;Make Contact Count.&quot;</main>
+    <main>AI Leader and Cyber Security expert with 35+ years spanning military → academia → industry consulting. Author of the &quot;Learning with AI&quot; open-textbook series (Conversation, Not Delegation; The Human Edge; Speak Software; Model Data, Verify AI, plus domain companions), creator of innovative educational AI tools, and a leader in AI-enhanced pedagogy serving academics, education, agriculture and mining sectors. Founder of LocoLabo, a self-funded applied-AI research lab (12 projects, 52 GPUs, $0 sponsorship) mapping what small local models can do on hardware people already own, with a rare combination of technical depth and educational innovation expertise. Teaching philosophy grounded in three conceptual pillars - Caring, Competence, and Passion, with a core principle of &quot;Make Contact Count.&quot;</main>
   </summary>
   <teaching>
     <philosophy>
@@ -143,12 +146,16 @@
     </philosophy>
     <satisfaction>
       <item>
-        <metric>100% Satisfaction Scores</metric>
-        <details>Achieved across ISYS3015 Business Application Development, ISYS2001 Introduction to Business Programming, and ISYS6018 Information Security</details>
+        <metric>85.0% average student rating</metric>
+        <details>Across 38 unit deliveries since 2019 (eVALUate to 2022, Insight from 2023); all six survey dimensions at or above 80% - Assessments 89.2%, Engagement 86.8%, Expectations 85.5%, Resources 84.9%, Support 81.2%</details>
       </item>
       <item>
-        <metric>100% &#x27;Effective Teacher&#x27; Ratings</metric>
-        <details>Across Enterprise Network Security, Business Systems Selection, and Introduction to Programming units</details>
+        <metric>16 deliveries at 100%</metric>
+        <details>Top results sustained across 8 units, alongside a 12% average pass-rate uplift in AI-redesigned units and a return to 100% in Semester 2 2025 after the 2024 AI transition</details>
+      </item>
+      <item>
+        <metric>Full-span teaching reach</metric>
+        <details>Undergraduate, postgraduate and executive education - a range few academics deliver across - online and on-campus, domestic and international (China), from small specialist classes to cohorts of 300</details>
       </item>
     </satisfaction>
     <feedback>
@@ -173,14 +180,16 @@
     </innovations>
   </teaching>
   <achievements>
-    <item>Educational Leadership - AI Leader for School of Marketing and Management, led development of AI curriculum serving 500+ students across undergraduate and postgraduate programs</item>
-    <item>Teaching Excellence - Achieved 100% student satisfaction scores across multiple units (ISYS3015, ISYS2001, ISYS6018) with consistent &quot;effective teacher&quot; ratings</item>
-    <item>Technical Innovation - Creator of multiple AI-powered educational tools including Reality Reigns, Talk Buddy, and Curriculum Curator with 290+ downloads</item>
-    <item>Industry Impact - Executive education training delivered to 100+ professionals across 15+ companies in academics, education, agriculture and mining sectors</item>
-    <item>Assessment Innovation - Developed award-winning &quot;Cloud Core&quot; virtual company simulation providing authentic industry experience</item>
-    <item>Research Excellence - 6+ peer-reviewed publications in computer vision and machine learning with focus on mobile mapping systems</item>
-    <item>Open Source Contribution - Lead developer for Image Processing for Orange, serving the broader scientific community</item>
-    <item>Military Leadership - Managed critical defence projects including military messaging systems and submarine IT infrastructure</item>
+    <item>Teaching Excellence - 85.0% average student rating across 38 unit deliveries since 2019, with 16 deliveries scoring 100% and all six survey dimensions at or above 80%</item>
+    <item>Research Funding - Lead Investigator on the AUD $20,000 Curtin Needs-Based Funding (Learning &amp; Teaching) Grant 2026, awarded on an evidence base of 14,973 logged student-AI interactions; technical co-lead on the Assessment 2030 Future Fund (AUD $10,560, 2025)</item>
+    <item>Research Outputs - Accepted ACIS 2026 (solo) and ASCILITE 2026 (contributing) papers, with a sustained program of AI-in-education scholarship and invited research seminars</item>
+    <item>Course Leadership - Led the repositioning of the Master of Information Systems and Technology into a standalone degree, growing it ~6x to 110 EFTSL (2025) and 148 EFTSL year-to-date (2026); secured Australian Computer Society accreditation</item>
+    <item>Curriculum Innovation - Redesigned 8 units for the AI era and built 2 new postgraduate units from scratch, delivering a 12% average pass-rate uplift</item>
+    <item>Assessment Innovation - Created CloudCore Networks, selected by Curtin&#x27;s Assessment 2030 as a Lane 2 (AI-robust) exemplar, and the foundation for WorkReady under the $735,000 WIL-Ignite project</item>
+    <item>Executive Education - Designed and delivered 5 AI courses to ~190 participants across 6 sessions (4.3/5 satisfaction), profiled in the Australian Financial Review alongside Bond and Melbourne</item>
+    <item>Open Educational Resources - 30+ free apps and the &#x27;Learning with AI&#x27; open-textbook series (4 core books + domain companions, 1,400+ monthly downloads); 2 titles adopted as e-readings by Kaplan Business School, and the Curriculum Curator tool adopted as the foundation of FLUX</item>
+    <item>Discipline Recognition - Invited to the FBL Advisory Board, the Curtin Future of Work Institute, and the Curtin Festival of AI; peer-reviewer for ACIS since 2023</item>
+    <item>Professional Standing - Certified Professional Member of the Australian Computer Society (ACS); led the discipline&#x27;s accreditation and international articulation (SCNU) agenda</item>
   </achievements>
   <experience>
     <item>
@@ -190,22 +199,23 @@
       <period>Feb 2016 – Present</period>
       <responsibilities>
         <item>AI Program Leadership - AI Leader for the School, developing new AI programs within undergraduate and postgraduate curricula</item>
-        <item>Research Leadership - Founder of LocoLabo, an applied local-AI research lab</item>
+        <item>Research Leadership - Founder of LocoLabo, a self-funded applied-AI research lab (12 projects, 52 GPUs, $0 sponsorship) mapping what small local models can do on hardware people already own; umbrella for the Spanish-named project family (LocoLLM, LocoBanco, LocoEnsayo, LocoPuente, LocoAgente, LocoConvoy)</item>
         <item>Core Teaching Areas - AI, Programming (Python), and Cyber Security</item>
         <item>Curriculum Development - Backbone developer for Python and Web development programs</item>
         <item>Cyber Security - Lead lecturer for cyber security programs with advanced digital forensics curriculum</item>
         <item>Educational Innovation - Pioneer in AI-enhanced pedagogy and interactive learning methodologies, with teaching philosophy grounded in Caring, Competence, and Passion</item>
-        <item>Student Engagement - Achieved 100% student satisfaction scores through innovative assessment design including &quot;Cloud Core&quot; virtual company simulation</item>
+        <item>Student Engagement - Achieved an 85.0% average student rating across 38 unit deliveries since 2019 (16 at 100%) through innovative assessment design including &quot;Cloud Core&quot; virtual company simulation</item>
         <item>Executive Education - Providing AI training to academics, education professionals, agriculture and mining industry executives</item>
       </responsibilities>
     </item>
     <item>
-      <title>Course Leadership &amp; Development</title>
+      <title>Course Lead — Information Systems</title>
       <organization>Curtin University</organization>
       <location>Perth, WA</location>
-      <period>Ongoing</period>
+      <period>2020 – 2023</period>
       <responsibilities>
         <item>Course Lead for Information Systems undergraduate and postgraduate degree programs</item>
+        <item>Led the repositioning of the Master of Information Systems and Technology into a standalone degree</item>
         <item>Unit coordination across multiple levels - postgraduate, undergraduate, core, non-core, and service units (domestic and international)</item>
         <item>Advanced Canvas LMS and Blackboard development and customization</item>
         <item>Creator of interactive educational tools and assessment frameworks</item>
@@ -350,24 +360,29 @@
   <publications>
     <books>
       <item>
-        <title>Python Step By Step in an AI World</title>
-        <description>Comprehensive guide to Python programming in the context of artificial intelligence</description>
-        <license>Creative Commons</license>
+        <title>Conversation, Not Delegation: How to Think With AI, Not Just Use It</title>
+        <description>Book 1 (the method). Foundational methodology: the Conversation Loop, VET, cognitive traps, and AI Last. Two titles in the series adopted as e-readings by Kaplan Business School</description>
+        <license>Self-published; free online, KDP print/ISBN</license>
       </item>
       <item>
-        <title>JumpStart Python in the AI Era</title>
-        <description>Accelerated learning approach for Python in AI applications</description>
-        <license>Creative Commons</license>
+        <title>The Human Edge: Using AI with Judgement</title>
+        <description>Book 2 (the practice). Trust, brief, check, deliver - professional judgement for everyday work when everyone has the same tools</description>
+        <license>Self-published; free online, KDP print/ISBN</license>
       </item>
       <item>
-        <title>Intentional Prompting: Blending AI and Human Oversight</title>
-        <description>Strategic guide to effective AI interaction and governance</description>
-        <license>Creative Commons</license>
+        <title>Speak Software: Programming at the Natural-Language Layer</title>
+        <description>Book 3 (the build). You describe, an agent builds, and you decide whether it is true - specification, guardrails, and verification</description>
+        <license>Self-published; free online</license>
       </item>
       <item>
-        <title>Python Dev Book: From Zero to Production</title>
-        <description>Complete development lifecycle guide for Python applications</description>
-        <license>Creative Commons</license>
+        <title>Model Data, Verify AI: Relational Design and SQL in the AI Era</title>
+        <description>Book 4 (the data). Model the data, prove the queries, change the schema without gambling - the data layer when AI writes the SQL</description>
+        <license>Self-published; free online</license>
+      </item>
+      <item>
+        <title>The &#x27;Learning with AI&#x27; series (companions)</title>
+        <description>Companion volumes apply the core method across programming (Think/Code/Converse/Ship Python, Build Web), security and networking, and education - 20+ open textbooks in total, all free to read online</description>
+        <license>Self-published; free online, KDP print/ISBN</license>
       </item>
     </books>
     <thesis>
@@ -420,6 +435,22 @@
         <volume>33(9)</volume>
         <pages>18-26</pages>
       </item>
+      <item>
+        <authors>Borck, M.</authors>
+        <year>2026</year>
+        <title>Cognitive Strategy Transfer: Why Human Complexity-Management Strategies Improve Large Language Model Performance</title>
+        <venue>ACIS 2026 (Australasian Conference on Information Systems)</venue>
+        <location>Perth, Australia</location>
+        <note>Solo author; accepted</note>
+      </item>
+      <item>
+        <authors>Cocks, N., B. Lush, I. MacKenzie, E. Calton, P. Simpson, C. Fernandes, J. Beilby, M. Low, M. Borck, A. Angus, M. Reed, M. Jopia Vilches, and S. Raghav</authors>
+        <year>2026</year>
+        <title>Designing AI-mediated interactive learning environments for communication skills: Insights from two implementations</title>
+        <venue>ASCILITE 2026 (Australasian Society for Computers in Learning in Tertiary Education)</venue>
+        <location>Brisbane, Australia</location>
+        <note>Contributing author</note>
+      </item>
     </conferences>
     <honours>
       <item>
@@ -430,6 +461,26 @@
       </item>
     </honours>
   </publications>
+  <grants>
+    <item>
+      <title>Scaffolding AI Interaction: A Low-Cost Intervention for Equitable Student Outcomes</title>
+      <scheme>Curtin Needs-Based Funding (Learning &amp; Teaching) Grant</scheme>
+      <funder>Curtin University (LITEC)</funder>
+      <role>Lead Investigator (CI)</role>
+      <amount>AUD $20,000</amount>
+      <year>2026</year>
+      <summary>A four-unit controlled trial with pre-registered equity measures, testing whether a low-cost conversational prompt raises the quality of student-AI interaction and lifts outcomes for low-SES and first-in-family students. Co-investigators: Moraes, Reiners, Ralph.</summary>
+    </item>
+    <item>
+      <title>Assessment 2030 Future Fund — AI Digital-Human Pilot</title>
+      <scheme>Assessment 2030 Future Fund</scheme>
+      <funder>Curtin University</funder>
+      <role>Technical Co-Lead (Lead: Dr Sonia Raghav)</role>
+      <amount>AUD $10,560</amount>
+      <year>2025</year>
+      <summary>An AI digital-human pilot building oral-communication confidence in a large core Management unit; a cross-disciplinary collaboration with Management colleagues.</summary>
+    </item>
+  </grants>
   <projects>
     <item>
       <name>Reality Reigns</name>
@@ -450,18 +501,6 @@
     <item>
       <name>Student Feedback Analyzer</name>
       <description>AI tool that analyzes student feedback forms to suggest course improvements</description>
-    </item>
-    <item>
-      <name>Image Processing for Orange</name>
-      <year>Ongoing</year>
-    </item>
-    <item>
-      <name>Graph Merging, Scikit Image</name>
-      <year>2015</year>
-    </item>
-    <item>
-      <name>User Guide, imgAnnotation Tool</name>
-      <year>2014</year>
     </item>
   </projects>
   <skills>
@@ -542,6 +581,11 @@
         <organization>Australian Conference on Information Systems (International)</organization>
         <year>2019</year>
       </item>
+      <item>
+        <role>Conference Paper Reviewer</role>
+        <organization>Australian Conference on Information Systems (International)</organization>
+        <year>2023, 2024, 2025, 2026</year>
+      </item>
     </profession>
     <community>
       <item>
@@ -566,7 +610,6 @@
       <organization>Australian Computer Society (ACS)</organization>
       <status>Certified Professional</status>
       <year>2011</year>
-      <note>(ongoing professional development required)</note>
     </item>
   </memberships>
   <interests>
@@ -574,6 +617,7 @@
     <item>Muay Thai</item>
     <item>Krav Maga</item>
     <item>Atari 2600 Programming</item>
+    <item>RetroVerse Studios (indie game studio)</item>
     <item>Astronomy</item>
     <item>Photography</item>
   </interests>

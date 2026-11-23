@@ -6,7 +6,9 @@ and reach the **Archive**. Die and the run ends — permadeath; start a new seed
 
 ## Roguelike features
 
+- **Live ASCII map** — a persistent map pane redraws every turn as you move the `@`; a message log sits beside it.
 - **Procedural dungeons** — new layout each run (seeded; `?seed=123` to replay).
+- **Field of view** — you only see what your `@` can currently see; explored-but-out-of-sight tiles dim.
 - **Turn-based** — every move/attack gives foes a turn.
 - **Combat & HP** — bump into a foe (or `attack <dir>`) to strike; foes hit back.
 - **Loot** — potions (`!`) heal, blades (`)`) raise ATK, relics (`*`) reveal résumé facts.
@@ -19,7 +21,7 @@ and reach the **Archive**. Die and the run ends — permadeath; start a new seed
 dungeon/
 ├── index.html
 ├── assets/css/dungeon.css
-├── assets/js/dungeon.js      # RNG, generation, turns, combat, parser
+├── assets/js/dungeon.js      # RNG, generation, FOV, turns, combat, parser
 └── data/dungeon.json         # relic pool + monsters + tuning (from cv-data.yml)
 ```
 
@@ -38,16 +40,16 @@ the CV-derived relic pool, monster names, and tuning.
 
 | Input | Action |
 |---|---|
-| `n s e w` (or `h j k l`) | move one tile; walk into a foe to attack |
+| Arrow keys / `w a s d` / `h j k l` | move one tile; walk into a foe to attack |
 | `attack <dir>` | strike without moving |
-| `wait` / `.` | hold position (foes act) |
+| `wait` / `.` / space | hold position (foes act) |
 | `potion` / `p` | heal |
 | `look` / `l` | survey surroundings |
-| `map` / `m` | explored map |
-| `descend` / `d` | take the stairs |
-| `inventory` / `i` · `stats` · `seed` · `help` | |
+| `descend` / `d` / `>` | take the stairs |
+| `inventory` / `i` · `help` / `?` | inventory · help |
+| `/` or Enter | type a command (Esc returns to movement) |
 
 ## Tests
 
 `window.__DUNGEON_TEST__` exposes `generation()`, `cmd()`, `teleport()`,
-`nearestEnemy()`, `toStairs()`, `toArchive()`, `setAtk()`, `setHp()`, `newRun()`.
+`nearestEnemy()`, `toStairs()`, `toArchive()`, `setAtk()`, `setHp()`, `newRun()`, `render()`.

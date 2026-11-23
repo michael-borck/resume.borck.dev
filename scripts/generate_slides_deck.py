@@ -58,9 +58,9 @@ def slides(cv: dict):
     # By the numbers
     out.append((0, "By the numbers", "A career measured in students, publications and shipped tools", f"""
 <div class="row c3">
-  <div class="card"><div class="lab"><p>Experience</p></div><p><strong>25+ years</strong><br>military → academia → consulting</p></div>
-  <div class="card"><div class="lab"><p>Teaching</p></div><p><strong>100%</strong> satisfaction scores across multiple units</p></div>
-  <div class="card"><div class="lab"><p>Output</p></div><p><strong>4 books</strong> · 6+ papers · many tools</p></div>
+  <div class="card"><div class="lab"><p>Experience</p></div><p><strong>35+ years</strong><br>military → academia → consulting</p></div>
+  <div class="card"><div class="lab"><p>Teaching</p></div><p><strong>85%</strong> avg student rating · 38 deliveries</p></div>
+  <div class="card"><div class="lab"><p>Output</p></div><p><strong>4 books + companions</strong> · 7 papers · many tools</p></div>
 </div>""", "Hit three numbers only. Let them ask for more."))
 
     # Career timeline
@@ -123,7 +123,7 @@ def slides(cv: dict):
     blines = [f"{s(b.get('title'))} ({s(b.get('license'))})" for b in pubs]
     if blines:
         out.append((2, "Published", "Books and papers", f'<div class="b">{bullets(blines)}</div>',
-                    "Creative Commons by choice: give the work away."))
+                    "Self-published by choice: free to read, give the work away."))
 
     # Achievements
     ach = cv.get("achievements", []) or []

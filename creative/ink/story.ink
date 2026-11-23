@@ -37,7 +37,7 @@ The crossroads. Wind moves the lanterns. {visited_count} of 8 places have been o
 You enter The Keep. A fortress of long service where each banner is a post held.
 
 Lecturer — School of Marketing and Management at Curtin University (Feb 2016 – Present).
-Course Leadership & Development at Curtin University (Ongoing).
+Course Lead — Information Systems at Curtin University (2020 – 2023).
 Associate Lecturer at Curtin University (Jan 2001 – Dec 2007).
 
 ~ keep_open = 0
@@ -82,9 +82,9 @@ Curriculum Curator: AI-based tool for creating, managing and curating learning m
 # image: ../world/assets/img/scroll.png
 You enter The Hall of Legends. A hall of trophies, awards and published tomes.
 
-Educational Leadership - AI Leader for School of Marketing and Management, led development of AI curriculum serving 500+ students across undergraduate and postgraduate programs
-Teaching Excellence - Achieved 100% student satisfaction scores across multiple units (ISYS3015, ISYS2001, ISYS6018) with consistent "effective teacher" ratings
-Technical Innovation - Creator of multiple AI-powered educational tools including Reality Reigns, Talk Buddy, and Curriculum Curator with 290+ downloads
+Teaching Excellence - 85.0% average student rating across 38 unit deliveries since 2019, with 16 deliveries scoring 100% and all six survey dimensions at or above 80%
+Research Funding - Lead Investigator on the AUD $20,000 Curtin Needs-Based Funding (Learning & Teaching) Grant 2026, awarded on an evidence base of 14,973 logged student-AI interactions; technical co-lead on the Assessment 2030 Future Fund (AUD $10,560, 2025)
+Research Outputs - Accepted ACIS 2026 (solo) and ASCILITE 2026 (contributing) papers, with a sustained program of AI-in-education scholarship and invited research seminars
 
 ~ scroll_open = 0
 ~ visited_count = visited_count + 1
@@ -95,8 +95,8 @@ Technical Innovation - Creator of multiple AI-powered educational tools includin
 You enter The Training Grounds. A field of chalk and candlelight where lessons never end.
 
 Make Contact Count - maximising impact through every student interaction
-100% Satisfaction Scores — Achieved across ISYS3015 Business Application Development, ISYS2001 Introduction to Business Programming, and ISYS6018 Information Security
-100% 'Effective Teacher' Ratings — Across Enterprise Network Security, Business Systems Selection, and Introduction to Programming units
+85.0% average student rating — Across 38 unit deliveries since 2019 (eVALUate to 2022, Insight from 2023); all six survey dimensions at or above 80% - Assessments 89.2%, Engagement 86.8%, Expectations 85.5%, Resources 84.9%, Support 81.2%
+16 deliveries at 100% — Top results sustained across 8 units, alongside a 12% average pass-rate uplift in AI-redesigned units and a return to 100% in Semester 2 2025 after the 2024 AI transition
 
 ~ grounds_open = 0
 ~ visited_count = visited_count + 1
@@ -118,7 +118,7 @@ User Contribution — Graph Merging for Scikit Image
 # image: ../world/assets/img/beach.png
 You enter The Far Shore. Salt air, a telescope, and a kata at dawn.
 
-Away from work: Karate, Muay Thai, Krav Maga, Atari 2600 Programming, Astronomy, Photography.
+Away from work: Karate, Muay Thai, Krav Maga, Atari 2600 Programming, RetroVerse Studios (indie game studio), Astronomy, Photography.
 
 ~ shore_open = 0
 ~ visited_count = visited_count + 1
@@ -126,7 +126,7 @@ Away from work: Karate, Muay Thai, Krav Maga, Atari 2600 Programming, Astronomy,
 
 === michael ===
 # image: ../world/assets/img/camp.png
-AI Leader and Cyber Security expert with 25+ years spanning military → academia → industry consulting transition. Author of the Conversation, Not Delegation book series, creator of innovative educational AI tools, and pioneer in AI-enhanced pedagogy serving academics, education, agriculture and mining sectors. Founder of LocoLabo, an applied local-AI research lab, with a rare combination of technical depth and educational innovation expertise. Teaching philosophy grounded in three conceptual pillars - Caring, Competence, and Passion, with a core principle of "Make Contact Count."
+AI Leader and Cyber Security expert with 35+ years spanning military → academia → industry consulting. Author of the "Learning with AI" open-textbook series (Conversation, Not Delegation; The Human Edge; Speak Software; Model Data, Verify AI, plus domain companions), creator of innovative educational AI tools, and a leader in AI-enhanced pedagogy serving academics, education, agriculture and mining sectors. Founder of LocoLabo, a self-funded applied-AI research lab (12 projects, 52 GPUs, $0 sponsorship) mapping what small local models can do on hardware people already own, with a rare combination of technical depth and educational innovation expertise. Teaching philosophy grounded in three conceptual pillars - Caring, Competence, and Passion, with a core principle of "Make Contact Count."
 
 Michael Borck — Perth, WA.
 Reach out: michael.borck@curtin.edu.au.

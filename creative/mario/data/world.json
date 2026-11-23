@@ -48,7 +48,7 @@
    "body": [
     "Lecturer \u2014 School of Marketing and Management \u2014 Curtin University (Feb 2016 \u2013 Present)",
     "AI Program Leadership - AI Leader for the School, developing new AI programs within undergraduate and postgraduate curricula",
-    "Research Leadership - Founder of LocoLabo, an applied local-AI research lab",
+    "Research Leadership - Founder of LocoLabo, a self-funded applied-AI research lab (12 projects, 52 GPUs, $0 sponsorship) mapping what small local models can do on hardware people already own; umbrella for the Spanish-named project family (LocoLLM, LocoBanco, LocoEnsayo, LocoPuente, LocoAgente, LocoConvoy)",
     "Core Teaching Areas - AI, Programming (Python), and Cyber Security",
     "Curriculum Development - Backbone developer for Python and Web development programs"
    ],
@@ -128,15 +128,15 @@
   },
   {
    "id": "awards",
-   "name": "100% Satisfaction",
+   "name": "85% Student Rating",
    "icon": "scroll",
    "x": 34,
    "y": 76,
    "body": [
-    "100% Satisfaction Scores \u2014 Achieved across ISYS3015 Business Application Development, ISYS2001 Introduction to Business Programming, and ISYS6018 Information Security",
-    "100% 'Effective Teacher' Ratings \u2014 Across Enterprise Network Security, Business Systems Selection, and Introduction to Programming units",
-    "Teaching Excellence - Achieved 100% student satisfaction scores across multiple units (ISYS3015, ISYS2001, ISYS6018) with consistent \"effective teacher\" ratings",
-    "Technical Innovation - Creator of multiple AI-powered educational tools including Reality Reigns, Talk Buddy, and Curriculum Curator with 290+ downloads"
+    "85.0% average student rating \u2014 Across 38 unit deliveries since 2019 (eVALUate to 2022, Insight from 2023); all six survey dimensions at or above 80% - Assessments 89.2%, Engagement 86.8%, Expectations 85.5%, Resources 84.9%, Support 81.2%",
+    "16 deliveries at 100% \u2014 Top results sustained across 8 units, alongside a 12% average pass-rate uplift in AI-redesigned units and a return to 100% in Semester 2 2025 after the 2024 AI transition",
+    "Curriculum Innovation - Redesigned 8 units for the AI era and built 2 new postgraduate units from scratch, delivering a 12% average pass-rate uplift",
+    "Assessment Innovation - Created CloudCore Networks, selected by Curtin's Assessment 2030 as a Lane 2 (AI-robust) exemplar, and the foundation for WorkReady under the $735,000 WIL-Ignite project"
    ],
    "castle": false,
    "links": [
@@ -151,10 +151,10 @@
    "x": 52,
    "y": 70,
    "body": [
-    "Python Step By Step in an AI World",
-    "JumpStart Python in the AI Era",
-    "Intentional Prompting: Blending AI and Human Oversight",
-    "Python Dev Book: From Zero to Production"
+    "Conversation, Not Delegation: How to Think With AI, Not Just Use It",
+    "The Human Edge: Using AI with Judgement",
+    "Speak Software: Programming at the Natural-Language Layer",
+    "Model Data, Verify AI: Relational Design and SQL in the AI Era"
    ],
    "castle": false,
    "links": [

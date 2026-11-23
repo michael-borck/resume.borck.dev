@@ -120,9 +120,20 @@ def to_markdown(cv: dict) -> str:
         for b in pubs.get("books", []) or []:
             out.append(f"- **{s(b.get('title'))}** — {s(b.get('description'))} ({s(b.get('license'))})")
         for c in pubs.get("conferences", []) or []:
-            out.append(f"- {s(c.get('authors'))} ({s(c.get('year'))}). *{s(c.get('title'))}*. {s(c.get('venue'))}, {s(c.get('location'))}.")
+            loc = f", {s(c.get('location'))}" if c.get("location") else ""
+            out.append(f"- {s(c.get('authors'))} ({s(c.get('year'))}). *{s(c.get('title'))}*. {s(c.get('venue'))}{loc}.")
         for t in pubs.get("thesis", []) or []:
             out.append(f"- {s(t.get('title'))} — {s(t.get('type'))}, {s(t.get('year'))}")
+        out.append("")
+
+    if cv.get("grants"):
+        h2("Grants & Research Funding")
+        for g in cv["grants"]:
+            meta = ", ".join(x for x in [s(g.get("role")), s(g.get("amount"))] if x)
+            tail = f" — {meta}" if meta else ""
+            out.append(f"- **{s(g.get('title'))}** — {s(g.get('scheme'))}, {s(g.get('funder'))} ({s(g.get('year'))}){tail}")
+            if g.get("summary"):
+                out.append(f"  - {s(g.get('summary'))}")
         out.append("")
 
     teaching = cv.get("teaching") or {}
@@ -276,6 +287,17 @@ def to_latex(cv: dict) -> str:
             L.append(r"\item " + tex(a))
         L.append(r"\end{itemize}")
 
+    if cv.get("grants"):
+        section("Grants & Research Funding")
+        L.append(r"\begin{itemize}")
+        for g in cv["grants"]:
+            meta = ", ".join(x for x in [s(g.get("role")), s(g.get("amount"))] if x)
+            tail = " — " + tex(meta) if meta else ""
+            L.append(r"\item \textbf{" + tex(g.get("title")) + "} — " + tex(g.get("scheme")) + ", " + tex(g.get("funder")) + " (" + tex(g.get("year")) + ")" + tail)
+            if g.get("summary"):
+                L.append(r"\item[] \textit{" + tex(g.get("summary")) + "}")
+        L.append(r"\end{itemize}")
+
     L.append(r"\end{document}")
     return "\n".join(L) + "\n"
 
@@ -405,6 +427,11 @@ def sql_rows(cv: dict):
     for h in pubs.get("honours", []) or []:
         n += 1; rows.append((n, n, "honour", h.get("title"), None, h.get("year"), h.get("institution"), None, None))
     add("publication", ["id", "sort", "kind", "title", "authors", "year", "venue", "description", "license"], rows)
+
+    rows = []
+    for i, g in enumerate(cv.get("grants", []) or [], 1):
+        rows.append((i, i, g.get("title"), g.get("scheme"), g.get("funder"), g.get("role"), g.get("amount"), g.get("year"), g.get("summary")))
+    add("grant", ["id", "sort", "title", "scheme", "funder", "role", "amount", "year", "summary"], rows)
 
     rows = []
     for i, c in enumerate(cv.get("certifications", []) or [], 1):

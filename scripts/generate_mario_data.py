@@ -108,7 +108,7 @@ def build(cv: dict) -> dict:
         ("phd",       "The Doctorate",      "tower",  55, 36, phd_body, False),
         ("python",    "Python & Web",       "dojo",   68, 26, python_body, False),
         ("locolab",   "LocoLabo",           "tower",  80, 46, loco_body, False),
-        ("awards",    "100% Satisfaction",  "scroll", 34, 76, awards_body, False),
+        ("awards",    "85% Student Rating", "scroll", 34, 76, awards_body, False),
         ("books",     "Published Author",   "scroll", 52, 70, books_body, False),
         ("tools",     "Reality Reigns &c.", "chest",  62, 58, tools_body, False),
         ("degrees",   "The Degrees",        "scroll", 70, 74, degrees_body, False),

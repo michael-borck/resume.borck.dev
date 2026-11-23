@@ -5,7 +5,7 @@
     "x": 50,
     "y": 50
   },
-  "summary": "AI Leader and Cyber Security expert with 25+ years spanning military \u2192 academia \u2192 industry consulting transition. Author of the Conversation, Not Delegation book series, creator of innovative educational AI tools, and pioneer in AI-enhanced pedagogy serving academics, education, agriculture and mining sectors. Founder of LocoLabo, an applied local-AI research lab, with a rare combination of technical depth and educational innovation expertise. Teaching philosophy grounded in three conceptual pillars - Caring, Competence, and Passion, with a core principle of \"Make Contact Count.\"",
+  "summary": "AI Leader and Cyber Security expert with 35+ years spanning military \u2192 academia \u2192 industry consulting. Author of the \"Learning with AI\" open-textbook series (Conversation, Not Delegation; The Human Edge; Speak Software; Model Data, Verify AI, plus domain companions), creator of innovative educational AI tools, and a leader in AI-enhanced pedagogy serving academics, education, agriculture and mining sectors. Founder of LocoLabo, a self-funded applied-AI research lab (12 projects, 52 GPUs, $0 sponsorship) mapping what small local models can do on hardware people already own, with a rare combination of technical depth and educational innovation expertise. Teaching philosophy grounded in three conceptual pillars - Caring, Competence, and Passion, with a core principle of \"Make Contact Count.\"",
   "contact": {
     "id": "contact",
     "name": "Michael Borck",
@@ -46,23 +46,24 @@
           "body": [
             "Lecturer \u2014 School of Marketing and Management \u2014 Curtin University (Feb 2016 \u2013 Present)",
             "AI Program Leadership - AI Leader for the School, developing new AI programs within undergraduate and postgraduate curricula",
-            "Research Leadership - Founder of LocoLabo, an applied local-AI research lab",
+            "Research Leadership - Founder of LocoLabo, a self-funded applied-AI research lab (12 projects, 52 GPUs, $0 sponsorship) mapping what small local models can do on hardware people already own; umbrella for the Spanish-named project family (LocoLLM, LocoBanco, LocoEnsayo, LocoPuente, LocoAgente, LocoConvoy)",
             "Core Teaching Areas - AI, Programming (Python), and Cyber Security",
             "Curriculum Development - Backbone developer for Python and Web development programs",
             "Cyber Security - Lead lecturer for cyber security programs with advanced digital forensics curriculum",
             "Educational Innovation - Pioneer in AI-enhanced pedagogy and interactive learning methodologies, with teaching philosophy grounded in Caring, Competence, and Passion",
-            "Student Engagement - Achieved 100% student satisfaction scores through innovative assessment design including \"Cloud Core\" virtual company simulation",
+            "Student Engagement - Achieved an 85.0% average student rating across 38 unit deliveries since 2019 (16 at 100%) through innovative assessment design including \"Cloud Core\" virtual company simulation",
             "Executive Education - Providing AI training to academics, education professionals, agriculture and mining industry executives"
           ]
         },
         {
-          "name": "Course Leadership & Development",
-          "subtitle": "Curtin University \u00b7 Perth, WA \u00b7 Ongoing",
+          "name": "Course Lead \u2014 Information Systems",
+          "subtitle": "Curtin University \u00b7 Perth, WA \u00b7 2020 \u2013 2023",
           "icon": "keep",
           "kind": "experience",
           "body": [
-            "Course Leadership & Development \u2014 Curtin University (Ongoing)",
+            "Course Lead \u2014 Information Systems \u2014 Curtin University (2020 \u2013 2023)",
             "Course Lead for Information Systems undergraduate and postgraduate degree programs",
+            "Led the repositioning of the Master of Information Systems and Technology into a standalone degree",
             "Unit coordination across multiple levels - postgraduate, undergraduate, core, non-core, and service units (domestic and international)",
             "Advanced Canvas LMS and Blackboard development and customization",
             "Creator of interactive educational tools and assessment frameworks"
@@ -300,15 +301,6 @@
             "Student Feedback Analyzer",
             "AI tool that analyzes student feedback forms to suggest course improvements"
           ]
-        },
-        {
-          "name": "Image Processing for Orange",
-          "subtitle": "Ongoing",
-          "icon": "chest",
-          "kind": "project",
-          "body": [
-            "Image Processing for Orange (Ongoing)"
-          ]
         }
       ]
     },
@@ -321,57 +313,57 @@
       "y": 82,
       "markers": [
         {
-          "name": "Educational Leadership",
-          "subtitle": "AI Leader for School of Marketing and Management, led development of AI curriculum serving 500+ students across undergraduate and postgraduate programs",
-          "icon": "scroll",
-          "kind": "achievement",
-          "body": [
-            "Educational Leadership - AI Leader for School of Marketing and Management, led development of AI curriculum serving 500+ students across undergraduate and postgraduate programs"
-          ]
-        },
-        {
           "name": "Teaching Excellence",
-          "subtitle": "Achieved 100% student satisfaction scores across multiple units (ISYS3015, ISYS2001, ISYS6018) with consistent \"effective teacher\" ratings",
+          "subtitle": "85.0% average student rating across 38 unit deliveries since 2019, with 16 deliveries scoring 100% and all six survey dimensions at or above 80%",
           "icon": "scroll",
           "kind": "achievement",
           "body": [
-            "Teaching Excellence - Achieved 100% student satisfaction scores across multiple units (ISYS3015, ISYS2001, ISYS6018) with consistent \"effective teacher\" ratings"
+            "Teaching Excellence - 85.0% average student rating across 38 unit deliveries since 2019, with 16 deliveries scoring 100% and all six survey dimensions at or above 80%"
           ]
         },
         {
-          "name": "Technical Innovation",
-          "subtitle": "Creator of multiple AI-powered educational tools including Reality Reigns, Talk Buddy, and Curriculum Curator with 290+ downloads",
+          "name": "Research Funding",
+          "subtitle": "Lead Investigator on the AUD $20,000 Curtin Needs-Based Funding (Learning & Teaching) Grant 2026, awarded on an evidence base of 14,973 logged student-AI interactions; technical co-lead on the Assessment 2030 Future Fund (AUD $10,560, 2025)",
           "icon": "scroll",
           "kind": "achievement",
           "body": [
-            "Technical Innovation - Creator of multiple AI-powered educational tools including Reality Reigns, Talk Buddy, and Curriculum Curator with 290+ downloads"
+            "Research Funding - Lead Investigator on the AUD $20,000 Curtin Needs-Based Funding (Learning & Teaching) Grant 2026, awarded on an evidence base of 14,973 logged student-AI interactions; technical co-lead on the Assessment 2030 Future Fund (AUD $10,560, 2025)"
           ]
         },
         {
-          "name": "Industry Impact",
-          "subtitle": "Executive education training delivered to 100+ professionals across 15+ companies in academics, education, agriculture and mining sectors",
+          "name": "Research Outputs",
+          "subtitle": "Accepted ACIS 2026 (solo) and ASCILITE 2026 (contributing) papers, with a sustained program of AI-in-education scholarship and invited research seminars",
           "icon": "scroll",
           "kind": "achievement",
           "body": [
-            "Industry Impact - Executive education training delivered to 100+ professionals across 15+ companies in academics, education, agriculture and mining sectors"
+            "Research Outputs - Accepted ACIS 2026 (solo) and ASCILITE 2026 (contributing) papers, with a sustained program of AI-in-education scholarship and invited research seminars"
+          ]
+        },
+        {
+          "name": "Course Leadership",
+          "subtitle": "Led the repositioning of the Master of Information Systems and Technology into a standalone degree, growing it ~6x to 110 EFTSL (2025) and 148 EFTSL year-to-date (2026); secured Australian Computer Society accreditation",
+          "icon": "scroll",
+          "kind": "achievement",
+          "body": [
+            "Course Leadership - Led the repositioning of the Master of Information Systems and Technology into a standalone degree, growing it ~6x to 110 EFTSL (2025) and 148 EFTSL year-to-date (2026); secured Australian Computer Society accreditation"
+          ]
+        },
+        {
+          "name": "Curriculum Innovation",
+          "subtitle": "Redesigned 8 units for the AI era and built 2 new postgraduate units from scratch, delivering a 12% average pass-rate uplift",
+          "icon": "scroll",
+          "kind": "achievement",
+          "body": [
+            "Curriculum Innovation - Redesigned 8 units for the AI era and built 2 new postgraduate units from scratch, delivering a 12% average pass-rate uplift"
           ]
         },
         {
           "name": "Assessment Innovation",
-          "subtitle": "Developed award-winning \"Cloud Core\" virtual company simulation providing authentic industry experience",
+          "subtitle": "Created CloudCore Networks, selected by Curtin's Assessment 2030 as a Lane 2 (AI-robust) exemplar, and the foundation for WorkReady under the $735,000 WIL-Ignite project",
           "icon": "scroll",
           "kind": "achievement",
           "body": [
-            "Assessment Innovation - Developed award-winning \"Cloud Core\" virtual company simulation providing authentic industry experience"
-          ]
-        },
-        {
-          "name": "Research Excellence",
-          "subtitle": "6+ peer-reviewed publications in computer vision and machine learning with focus on mobile mapping systems",
-          "icon": "scroll",
-          "kind": "achievement",
-          "body": [
-            "Research Excellence - 6+ peer-reviewed publications in computer vision and machine learning with focus on mobile mapping systems"
+            "Assessment Innovation - Created CloudCore Networks, selected by Curtin's Assessment 2030 as a Lane 2 (AI-robust) exemplar, and the foundation for WorkReady under the $735,000 WIL-Ignite project"
           ]
         }
       ]
@@ -395,33 +387,33 @@
           ]
         },
         {
-          "name": "100% Satisfaction Scores",
-          "subtitle": "Achieved across ISYS3015 Business Application Development, ISYS2001 Introduction to Business Programming, and ISYS6018 Information Security",
+          "name": "85.0% average student rating",
+          "subtitle": "Across 38 unit deliveries since 2019 (eVALUate to 2022, Insight from 2023); all six survey dimensions at or above 80% - Assessments 89.2%, Engagement 86.8%, Expectations 85.5%, Resources 84.9%, Support 81.2%",
           "icon": "dojo",
           "kind": "teaching",
           "body": [
-            "100% Satisfaction Scores",
-            "Achieved across ISYS3015 Business Application Development, ISYS2001 Introduction to Business Programming, and ISYS6018 Information Security"
+            "85.0% average student rating",
+            "Across 38 unit deliveries since 2019 (eVALUate to 2022, Insight from 2023); all six survey dimensions at or above 80% - Assessments 89.2%, Engagement 86.8%, Expectations 85.5%, Resources 84.9%, Support 81.2%"
           ]
         },
         {
-          "name": "100% 'Effective Teacher' Ratings",
-          "subtitle": "Across Enterprise Network Security, Business Systems Selection, and Introduction to Programming units",
+          "name": "16 deliveries at 100%",
+          "subtitle": "Top results sustained across 8 units, alongside a 12% average pass-rate uplift in AI-redesigned units and a return to 100% in Semester 2 2025 after the 2024 AI transition",
           "icon": "dojo",
           "kind": "teaching",
           "body": [
-            "100% 'Effective Teacher' Ratings",
-            "Across Enterprise Network Security, Business Systems Selection, and Introduction to Programming units"
+            "16 deliveries at 100%",
+            "Top results sustained across 8 units, alongside a 12% average pass-rate uplift in AI-redesigned units and a return to 100% in Semester 2 2025 after the 2024 AI transition"
           ]
         },
         {
-          "name": "Cloud Core Simulation",
-          "subtitle": "Created complete virtual company with IT infrastructure, policies, and staff chatbot for authentic audit experiences",
-          "icon": "signpost",
-          "kind": "innovation",
+          "name": "Full-span teaching reach",
+          "subtitle": "Undergraduate, postgraduate and executive education - a range few academics deliver across - online and on-campus, domestic and international (China), from small specialist classes to cohorts of 300",
+          "icon": "dojo",
+          "kind": "teaching",
           "body": [
-            "Cloud Core Simulation",
-            "Created complete virtual company with IT infrastructure, policies, and staff chatbot for authentic audit experiences"
+            "Full-span teaching reach",
+            "Undergraduate, postgraduate and executive education - a range few academics deliver across - online and on-campus, domestic and international (China), from small specialist classes to cohorts of 300"
           ]
         }
       ]
@@ -517,21 +509,21 @@
           ]
         },
         {
+          "name": "RetroVerse Studios (indie game studio)",
+          "subtitle": "A life beyond work",
+          "icon": "beach",
+          "kind": "interest",
+          "body": [
+            "Enjoys RetroVerse Studios (indie game studio)"
+          ]
+        },
+        {
           "name": "Astronomy",
           "subtitle": "A life beyond work",
           "icon": "beach",
           "kind": "interest",
           "body": [
             "Enjoys Astronomy"
-          ]
-        },
-        {
-          "name": "Photography",
-          "subtitle": "A life beyond work",
-          "icon": "beach",
-          "kind": "interest",
-          "body": [
-            "Enjoys Photography"
           ]
         }
       ]
